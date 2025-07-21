@@ -1,0 +1,42 @@
+digraph process_for_optimizing_a_process_86 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"AND_SPLIT--2. Identifying the process_PF1V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "AND_SPLIT--2. Identifying the process_PF1V"
+		"identify the process's components" [shape=box]
+		"AND_SPLIT--2. Identifying the process_PF1V" -> "identify the process's components"
+		"assess the performance of the process" [shape=box]
+		"AND_SPLIT--2. Identifying the process_PF1V" -> "assess the performance of the process"
+		"confirm if the process requires optimization" [shape=box]
+		"assess the performance of the process" -> "confirm if the process requires optimization"
+		"AND_JOIN--2. Identifying the process_PF1V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify the process's components" -> "AND_JOIN--2. Identifying the process_PF1V"
+		"confirm if the process requires optimization" -> "AND_JOIN--2. Identifying the process_PF1V"
+		"look to see if the process can be simplified" [shape=box]
+		"AND_JOIN--2. Identifying the process_PF1V" -> "look to see if the process can be simplified"
+		"write the potential process improvements" [shape=box]
+		"look to see if the process can be simplified" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"define what would make the improvements successful" [shape=box]
+		"get approval for processing improvements" -> "define what would make the improvements successful"
+		"determine how the process will be monitored" [shape=box]
+		"define what would make the improvements successful" -> "determine how the process will be monitored"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"determine how the process will be monitored" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the process for optimizing a process. It begins when you confirm the basic information. 
+Once confirming the basic information occurs, the process is split into 2 parallel branches: identifying the process's components and assessing the performance of the process. 
+When assessing the performance of the process is completed, you need to confirm if the process requires optimization.
+Once all pre-tasks are executed, then you need to look to see if the process can be simplified.
+When looking to see if the process can be simplified is completed, writing the potential process improvements should be done. 
+When writing the potential process improvements is completed, getting approval for processing improvements should be done. 
+After getting approval for processing improvements, defining what would make the improvements successful needs to be done. 
+After defining what would make the improvements successful, determining how the process will be monitored should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,43 @@
+digraph account_payable_process_34 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"file a copy for internal records" [shape=box]
+		"create a receiving report" [shape=box]
+		"file a copy for internal records" -> "create a receiving report"
+		"AND_SPLIT--3. Document validation_3HW9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create a receiving report" -> "AND_SPLIT--3. Document validation_3HW9"
+		"gather the receiving report" [shape=box]
+		"AND_SPLIT--3. Document validation_3HW9" -> "gather the receiving report"
+		"confirm all documents have been amended" [shape=box]
+		"AND_SPLIT--3. Document validation_3HW9" -> "confirm all documents have been amended"
+		"AND_SPLIT--3. Document validation_R4XG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"gather the receiving report" -> "AND_SPLIT--3. Document validation_R4XG"
+		"report errors to relevant team member" [shape=box]
+		"AND_SPLIT--3. Document validation_R4XG" -> "report errors to relevant team member"
+		"gather the vendors invoice" [shape=box]
+		"AND_SPLIT--3. Document validation_R4XG" -> "gather the vendors invoice"
+		"double check a three-way match" [shape=box]
+		"AND_SPLIT--3. Document validation_R4XG" -> "double check a three-way match"
+		"AND_JOIN--3. Document validation_R4XG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"report errors to relevant team member" -> "AND_JOIN--3. Document validation_R4XG"
+		"gather the vendors invoice" -> "AND_JOIN--3. Document validation_R4XG"
+		"double check a three-way match" -> "AND_JOIN--3. Document validation_R4XG"
+		"AND_JOIN--3. Document validation_3HW9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Document validation_R4XG" -> "AND_JOIN--3. Document validation_3HW9"
+		"confirm all documents have been amended" -> "AND_JOIN--3. Document validation_3HW9"
+		"create voucher for the documents" [shape=box]
+		"AND_JOIN--3. Document validation_3HW9" -> "create voucher for the documents"
+	}
+	START_NODE -> "file a copy for internal records"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"create voucher for the documents" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It begins when you file a copy for internal records. 
+When filing a copy for internal records is completed, you need to create a receiving report.
+Once creating a receiving report occurs, the process is split into 2 parallel branches: gathering the receiving report and confirming all documents have been amended. 
+After gathering the receiving report, the next tasks should be reporting errors to relevant team member, gathering the vendors invoice and doubling check a three-way match, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to create voucher for the documents.
+The process is now completed. 
+"
+}

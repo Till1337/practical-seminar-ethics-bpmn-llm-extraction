@@ -1,0 +1,26 @@
+digraph purchase_order_workflow_9 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"get approval from finance team" [shape=box]
+		"record the basic details" -> "get approval from finance team"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"get approval from finance team" -> "inform the supplier the order is ready for approval"
+		"get approval from supplier" [shape=box]
+		"inform the supplier the order is ready for approval" -> "get approval from supplier"
+		"confirm the delivery date" [shape=box]
+		"get approval from supplier" -> "confirm the delivery date"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"confirm the delivery date" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It starts with recording the basic details. 
+After recording the basic details, you need to get approval from finance team.
+Once getting approval from finance team occurs, informing the supplier the order is ready for approval should be done. 
+Once informing the supplier the order is ready for approval occurs, getting approval from supplier should be done. 
+Once getting approval from supplier occurs, confirming the delivery date needs to be done. 
+The process is now completed. 
+"
+}

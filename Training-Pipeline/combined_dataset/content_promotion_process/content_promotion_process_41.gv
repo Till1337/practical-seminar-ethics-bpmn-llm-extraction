@@ -1,0 +1,24 @@
+digraph content_promotion_process_41 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"OR_SPLIT--2. Content promotion_FX2D" [label=O fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "OR_SPLIT--2. Content promotion_FX2D"
+		"repurpose your content" [shape=box]
+		"OR_SPLIT--2. Content promotion_FX2D" -> "repurpose your content"
+		"pay for promotion" [shape=box]
+		"OR_SPLIT--2. Content promotion_FX2D" -> "pay for promotion"
+		"OR_JOIN--2. Content promotion_FX2D" [label=O fixedsize=true shape=diamond width=0.5]
+		"repurpose your content" -> "OR_JOIN--2. Content promotion_FX2D"
+		"pay for promotion" -> "OR_JOIN--2. Content promotion_FX2D"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--2. Content promotion_FX2D" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the content promotion process. It starts with preparing a summary of your content. 
+When preparing a summary of your content is completed, one or more of the following paths should be executed: repurposing your content, paying for promotion. 
+The process is now completed. 
+"
+}

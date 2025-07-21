@@ -1,0 +1,56 @@
+digraph churn_rate_prevention_process_145 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_YB0V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "AND_SPLIT--2. Evaluate product usage_YB0V"
+		"quantify the impact of cancellation" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_YB0V" -> "quantify the impact of cancellation"
+		"analyze how they use your product" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_YB0V" -> "analyze how they use your product"
+		"AND_JOIN--2. Evaluate product usage_YB0V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"quantify the impact of cancellation" -> "AND_JOIN--2. Evaluate product usage_YB0V"
+		"analyze how they use your product" -> "AND_JOIN--2. Evaluate product usage_YB0V"
+		"confirm call date and time" [shape=box]
+		"AND_JOIN--2. Evaluate product usage_YB0V" -> "confirm call date and time"
+		"ask open-ended questions" [shape=box]
+		"confirm call date and time" -> "ask open-ended questions"
+		"describe your ideas to increase value" [shape=box]
+		"ask open-ended questions" -> "describe your ideas to increase value"
+		"OR_SPLIT--6. Outcome_4Z1V" [label=O fixedsize=true shape=diamond width=0.5]
+		"describe your ideas to increase value" -> "OR_SPLIT--6. Outcome_4Z1V"
+		"thank them for their time and feedback" [shape=box]
+		"OR_SPLIT--6. Outcome_4Z1V" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"OR_SPLIT--6. Outcome_4Z1V" -> "record the customer’s decision"
+		"OR_JOIN--6. Outcome_4Z1V" [label=O fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "OR_JOIN--6. Outcome_4Z1V"
+		"record the customer’s decision" -> "OR_JOIN--6. Outcome_4Z1V"
+		"ask if they have any other concerns" [shape=box]
+		"OR_JOIN--6. Outcome_4Z1V" -> "ask if they have any other concerns"
+		"AND_SPLIT--8. Final steps_N9I3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "AND_SPLIT--8. Final steps_N9I3"
+		"note down important learnings from the conversation" [shape=box]
+		"AND_SPLIT--8. Final steps_N9I3" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"AND_SPLIT--8. Final steps_N9I3" -> "send learnings to appropriate managers"
+		"AND_JOIN--8. Final steps_N9I3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "AND_JOIN--8. Final steps_N9I3"
+		"send learnings to appropriate managers" -> "AND_JOIN--8. Final steps_N9I3"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--8. Final steps_N9I3" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the churn rate prevention process. It starts with recording basic details. 
+After recording basic details, the process is split into 2 parallel branches: quantifying the impact of cancellation and analyzing how they use your product. 
+Once all pre-tasks are executed, then you need to confirm call date and time.
+Once confirming call date and time occurs, you need to ask open-ended questions.
+When asking open-ended questions is completed, describing your ideas to increase value needs to be done. 
+After describing your ideas to increase value, one or more of the following paths should be executed: thanking them for their time and feedback, recording the customer’s decision. 
+After that, asking if they have any other concerns should be done. 
+After asking if they have any other concerns, the process is split into 2 parallel branches: noting down important learnings from the conversation and sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,24 @@
+digraph content_promotion_process_165 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_JA6E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_JA6E"
+		"pay for promotion" [shape=box]
+		"AND_SPLIT--2. Content promotion_JA6E" -> "pay for promotion"
+		"perform outreach" [shape=box]
+		"AND_SPLIT--2. Content promotion_JA6E" -> "perform outreach"
+		"AND_JOIN--2. Content promotion_JA6E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"pay for promotion" -> "AND_JOIN--2. Content promotion_JA6E"
+		"perform outreach" -> "AND_JOIN--2. Content promotion_JA6E"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_JA6E" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It begins when you prepare a summary of your content. 
+Once preparing a summary of your content occurs, the process is split into 2 parallel branches: paying for promotion and performing outreach. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,46 @@
+digraph loan_application_process_96 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"fill in the employment information form" [shape=box]
+		"receive the application by credit department" [shape=box]
+		"fill in the employment information form" -> "receive the application by credit department"
+		"AND_SPLIT--3. Application processing _14LR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "AND_SPLIT--3. Application processing _14LR"
+		"check for the completeness" [shape=box]
+		"AND_SPLIT--3. Application processing _14LR" -> "check for the completeness"
+		"send application back to the applicant" [shape=box]
+		"AND_SPLIT--3. Application processing _14LR" -> "send application back to the applicant"
+		"give the written notice to applicant" [shape=box]
+		"check for the completeness" -> "give the written notice to applicant"
+		"AND_JOIN--3. Application processing _14LR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"give the written notice to applicant" -> "AND_JOIN--3. Application processing _14LR"
+		"send application back to the applicant" -> "AND_JOIN--3. Application processing _14LR"
+		"AND_SPLIT--4. Underwriting process_F4BG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Application processing _14LR" -> "AND_SPLIT--4. Underwriting process_F4BG"
+		"check the credit score and risk score" [shape=box]
+		"AND_SPLIT--4. Underwriting process_F4BG" -> "check the credit score and risk score"
+		"begin the underwriting process" [shape=box]
+		"AND_SPLIT--4. Underwriting process_F4BG" -> "begin the underwriting process"
+		"AND_JOIN--4. Underwriting process_F4BG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the credit score and risk score" -> "AND_JOIN--4. Underwriting process_F4BG"
+		"begin the underwriting process" -> "AND_JOIN--4. Underwriting process_F4BG"
+		"reduce loan amount" [shape=box]
+		"AND_JOIN--4. Underwriting process_F4BG" -> "reduce loan amount"
+		"receive the loans fund" [shape=box]
+		"reduce loan amount" -> "receive the loans fund"
+	}
+	START_NODE -> "fill in the employment information form"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It starts with filling in the employment information form. 
+When filling in the employment information form is completed, receiving the application by credit department should be done. 
+Once receiving the application by credit department occurs, the next tasks should be checking for the completeness and sending application back to the applicant, they should be done in parallel. 
+After checking for the completeness, you need to give the written notice to applicant.
+Once all pre-tasks are executed, then the next tasks should be checking the credit score and risk score and beginning the underwriting process, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to reduce loan amount.
+After reducing loan amount, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

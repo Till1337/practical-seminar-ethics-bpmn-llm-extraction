@@ -1,0 +1,52 @@
+digraph process_for_optimizing_a_process_188 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"AND_SPLIT--2. Identifying the process_A7X0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "AND_SPLIT--2. Identifying the process_A7X0"
+		"confirm if the process requires optimization" [shape=box]
+		"AND_SPLIT--2. Identifying the process_A7X0" -> "confirm if the process requires optimization"
+		"identify the process's components" [shape=box]
+		"AND_SPLIT--2. Identifying the process_A7X0" -> "identify the process's components"
+		"assess the performance of the process" [shape=box]
+		"confirm if the process requires optimization" -> "assess the performance of the process"
+		"AND_JOIN--2. Identifying the process_A7X0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assess the performance of the process" -> "AND_JOIN--2. Identifying the process_A7X0"
+		"identify the process's components" -> "AND_JOIN--2. Identifying the process_A7X0"
+		"define how long it takes to complete the process" [shape=box]
+		"AND_JOIN--2. Identifying the process_A7X0" -> "define how long it takes to complete the process"
+		"write the potential process improvements" [shape=box]
+		"define how long it takes to complete the process" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"use the updated process" [shape=box]
+		"get approval for processing improvements" -> "use the updated process"
+		"OR_SPLIT--7. Optimizing the process_6KHM" [label=O fixedsize=true shape=diamond width=0.5]
+		"use the updated process" -> "OR_SPLIT--7. Optimizing the process_6KHM"
+		"communicate the process changes" [shape=box]
+		"OR_SPLIT--7. Optimizing the process_6KHM" -> "communicate the process changes"
+		"implement the process changes" [shape=box]
+		"OR_SPLIT--7. Optimizing the process_6KHM" -> "implement the process changes"
+		"schedule the next process review and optimization" [shape=box]
+		"OR_SPLIT--7. Optimizing the process_6KHM" -> "schedule the next process review and optimization"
+		"OR_JOIN--7. Optimizing the process_6KHM" [label=O fixedsize=true shape=diamond width=0.5]
+		"communicate the process changes" -> "OR_JOIN--7. Optimizing the process_6KHM"
+		"implement the process changes" -> "OR_JOIN--7. Optimizing the process_6KHM"
+		"schedule the next process review and optimization" -> "OR_JOIN--7. Optimizing the process_6KHM"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--7. Optimizing the process_6KHM" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the process for optimizing a process. It starts with confirming the basic information. 
+After confirming the basic information, the next tasks should be confirming if the process requires optimization and identifying the process's components, they should be done in parallel. 
+Once confirming if the process requires optimization occurs, you need to assess the performance of the process.
+Once all pre-tasks are executed, then defining how long it takes to complete the process needs to be done. 
+When defining how long it takes to complete the process is completed, writing the potential process improvements needs to be done. 
+When writing the potential process improvements is completed, you need to get approval for processing improvements.
+When getting approval for processing improvements is completed, using the updated process needs to be done. 
+Once using the updated process occurs, one or more of the following paths should be executed: communicating the process changes, implementing the process changes, scheduling the next process review and optimization. 
+The process is now completed. 
+"
+}

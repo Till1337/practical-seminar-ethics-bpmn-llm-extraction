@@ -1,0 +1,83 @@
+digraph process_for_optimizing_a_process_99 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"AND_SPLIT--2. Identifying the process_HBZK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "AND_SPLIT--2. Identifying the process_HBZK"
+		"confirm if the process requires optimization" [shape=box]
+		"AND_SPLIT--2. Identifying the process_HBZK" -> "confirm if the process requires optimization"
+		"identify the process's components" [shape=box]
+		"AND_SPLIT--2. Identifying the process_HBZK" -> "identify the process's components"
+		"AND_JOIN--2. Identifying the process_HBZK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm if the process requires optimization" -> "AND_JOIN--2. Identifying the process_HBZK"
+		"identify the process's components" -> "AND_JOIN--2. Identifying the process_HBZK"
+		"OR_SPLIT--3. Rethinking the process_UYUD" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Identifying the process_HBZK" -> "OR_SPLIT--3. Rethinking the process_UYUD"
+		"assess if any steps are confusing" [shape=box]
+		"OR_SPLIT--3. Rethinking the process_UYUD" -> "assess if any steps are confusing"
+		"consider where bottlenecks occur" [shape=box]
+		"OR_SPLIT--3. Rethinking the process_UYUD" -> "consider where bottlenecks occur"
+		"AND_SPLIT--3. Rethinking the process_LX4U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assess if any steps are confusing" -> "AND_SPLIT--3. Rethinking the process_LX4U"
+		"define how long it takes to complete the process" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_LX4U" -> "define how long it takes to complete the process"
+		"look to see if the process can be simplified" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_LX4U" -> "look to see if the process can be simplified"
+		"AND_JOIN--3. Rethinking the process_LX4U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define how long it takes to complete the process" -> "AND_JOIN--3. Rethinking the process_LX4U"
+		"look to see if the process can be simplified" -> "AND_JOIN--3. Rethinking the process_LX4U"
+		"examine potentially wasteful steps" [shape=box]
+		"consider where bottlenecks occur" -> "examine potentially wasteful steps"
+		"OR_JOIN--3. Rethinking the process_UYUD" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Rethinking the process_LX4U" -> "OR_JOIN--3. Rethinking the process_UYUD"
+		"examine potentially wasteful steps" -> "OR_JOIN--3. Rethinking the process_UYUD"
+		"write the potential process improvements" [shape=box]
+		"OR_JOIN--3. Rethinking the process_UYUD" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"OR_SPLIT--6. Testing the process improvements_ISUR" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval for processing improvements" -> "OR_SPLIT--6. Testing the process improvements_ISUR"
+		"define what would make the improvements successful" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_ISUR" -> "define what would make the improvements successful"
+		"choose who will test the updated process" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_ISUR" -> "choose who will test the updated process"
+		"OR_SPLIT--6. Testing the process improvements_U0K3" [label=O fixedsize=true shape=diamond width=0.5]
+		"choose who will test the updated process" -> "OR_SPLIT--6. Testing the process improvements_U0K3"
+		"update the process documents" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_U0K3" -> "update the process documents"
+		"use the updated process" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_U0K3" -> "use the updated process"
+		"OR_JOIN--6. Testing the process improvements_U0K3" [label=O fixedsize=true shape=diamond width=0.5]
+		"update the process documents" -> "OR_JOIN--6. Testing the process improvements_U0K3"
+		"use the updated process" -> "OR_JOIN--6. Testing the process improvements_U0K3"
+		"OR_JOIN--6. Testing the process improvements_ISUR" [label=O fixedsize=true shape=diamond width=0.5]
+		"define what would make the improvements successful" -> "OR_JOIN--6. Testing the process improvements_ISUR"
+		"OR_JOIN--6. Testing the process improvements_U0K3" -> "OR_JOIN--6. Testing the process improvements_ISUR"
+		"AND_SPLIT--7. Optimizing the process_S3H0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--6. Testing the process improvements_ISUR" -> "AND_SPLIT--7. Optimizing the process_S3H0"
+		"communicate the process changes" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_S3H0" -> "communicate the process changes"
+		"implement the process changes" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_S3H0" -> "implement the process changes"
+		"AND_JOIN--7. Optimizing the process_S3H0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"communicate the process changes" -> "AND_JOIN--7. Optimizing the process_S3H0"
+		"implement the process changes" -> "AND_JOIN--7. Optimizing the process_S3H0"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Optimizing the process_S3H0" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the process for optimizing a process. It begins when you confirm the basic information. 
+When confirming the basic information is completed, the process is split into 2 parallel branches: confirming if the process requires optimization and identifying the process's components. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: assessing if any steps are confusing, considering where bottlenecks occur. 
+After assessing if any steps are confusing, the next tasks should be defining how long it takes to complete the process and looking to see if the process can be simplified, they should be done in parallel. 
+When considering where bottlenecks occur is completed, examining potentially wasteful steps needs to be done. 
+Afterwards, writing the potential process improvements should be done. 
+When writing the potential process improvements is completed, getting approval for processing improvements should be done. 
+After getting approval for processing improvements, one or more of the following paths should be executed: defining what would make the improvements successful, choosing who will test the updated process. 
+When choosing who will test the updated process is completed, one or more of the following paths should be executed: updating the process documents, using the updated process. 
+Afterwards, the process is split into 2 parallel branches: communicating the process changes and implementing the process changes. 
+The process is now completed. 
+"
+}

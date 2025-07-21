@@ -1,0 +1,73 @@
+digraph employee_onboarding_process_77 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"discuss role, goals and projects with supervisor" [shape=box]
+		"make an introduction" -> "discuss role, goals and projects with supervisor"
+		"OR_SPLIT--3. First day_3KF4" [label=O fixedsize=true shape=diamond width=0.5]
+		"discuss role, goals and projects with supervisor" -> "OR_SPLIT--3. First day_3KF4"
+		"induct into company culture" [shape=box]
+		"OR_SPLIT--3. First day_3KF4" -> "induct into company culture"
+		"assign a mentor" [shape=box]
+		"OR_SPLIT--3. First day_3KF4" -> "assign a mentor"
+		"OR_SPLIT--3. First day_CA65" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign a mentor" -> "OR_SPLIT--3. First day_CA65"
+		"explain your expectations" [shape=box]
+		"OR_SPLIT--3. First day_CA65" -> "explain your expectations"
+		"tour the office" [shape=box]
+		"OR_SPLIT--3. First day_CA65" -> "tour the office"
+		"hold a welcoming ceremony" [shape=box]
+		"explain your expectations" -> "hold a welcoming ceremony"
+		"OR_JOIN--3. First day_CA65" [label=O fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "OR_JOIN--3. First day_CA65"
+		"tour the office" -> "OR_JOIN--3. First day_CA65"
+		"OR_JOIN--3. First day_3KF4" [label=O fixedsize=true shape=diamond width=0.5]
+		"induct into company culture" -> "OR_JOIN--3. First day_3KF4"
+		"OR_JOIN--3. First day_CA65" -> "OR_JOIN--3. First day_3KF4"
+		"AND_SPLIT--4. First week_GH3X" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. First day_3KF4" -> "AND_SPLIT--4. First week_GH3X"
+		"explain expectations for the following month" [shape=box]
+		"AND_SPLIT--4. First week_GH3X" -> "explain expectations for the following month"
+		"check the paperwork" [shape=box]
+		"AND_SPLIT--4. First week_GH3X" -> "check the paperwork"
+		"get approval" [shape=box]
+		"explain expectations for the following month" -> "get approval"
+		"AND_JOIN--4. First week_GH3X" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "AND_JOIN--4. First week_GH3X"
+		"check the paperwork" -> "AND_JOIN--4. First week_GH3X"
+		"OR_SPLIT--5. First month_E1LG" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. First week_GH3X" -> "OR_SPLIT--5. First month_E1LG"
+		"encourage them to socially interact with the team" [shape=box]
+		"OR_SPLIT--5. First month_E1LG" -> "encourage them to socially interact with the team"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_E1LG" -> "plan check-in meetings"
+		"OR_SPLIT--5. First month_8UQH" [label=O fixedsize=true shape=diamond width=0.5]
+		"plan check-in meetings" -> "OR_SPLIT--5. First month_8UQH"
+		"provide reading material for personal growth" [shape=box]
+		"OR_SPLIT--5. First month_8UQH" -> "provide reading material for personal growth"
+		"explain long-term goals" [shape=box]
+		"OR_SPLIT--5. First month_8UQH" -> "explain long-term goals"
+		"OR_JOIN--5. First month_8UQH" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide reading material for personal growth" -> "OR_JOIN--5. First month_8UQH"
+		"explain long-term goals" -> "OR_JOIN--5. First month_8UQH"
+		"OR_JOIN--5. First month_E1LG" [label=O fixedsize=true shape=diamond width=0.5]
+		"encourage them to socially interact with the team" -> "OR_JOIN--5. First month_E1LG"
+		"OR_JOIN--5. First month_8UQH" -> "OR_JOIN--5. First month_E1LG"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_E1LG" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It starts with making an introduction. 
+After making an introduction, discussing role, goals and projects with supervisor needs to be done. 
+After discussing role, goals and projects with supervisor, one or more of the following paths should be executed: inducting into company culture, assigning a mentor. 
+Once assigning a mentor occurs, one or more of the following paths should be executed: explaining your expectations, touring the office. 
+Once explaining your expectations occurs, holding a welcoming ceremony should be done. 
+Afterwards, the process is split into 2 parallel branches: explaining expectations for the following month and checking the paperwork. 
+Once explaining expectations for the following month occurs, you need to get approval.
+Once all pre-tasks are executed, then one or more of the following paths should be executed: encouraging them to socially interact with the team, planning check-in meetings. 
+Once planning check-in meetings occurs, one or more of the following paths should be executed: providing reading material for personal growth, explaining long-term goals. 
+The process is now completed. 
+"
+}

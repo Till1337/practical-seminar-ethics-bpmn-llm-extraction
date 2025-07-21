@@ -1,0 +1,66 @@
+digraph churn_rate_prevention_process_59 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"analyze how they use your product" [shape=box]
+		"record basic details" -> "analyze how they use your product"
+		"AND_SPLIT--3. Contact the customer_MU7O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze how they use your product" -> "AND_SPLIT--3. Contact the customer_MU7O"
+		"confirm call date and time" [shape=box]
+		"AND_SPLIT--3. Contact the customer_MU7O" -> "confirm call date and time"
+		"record whether or not the customer responded" [shape=box]
+		"AND_SPLIT--3. Contact the customer_MU7O" -> "record whether or not the customer responded"
+		"AND_JOIN--3. Contact the customer_MU7O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm call date and time" -> "AND_JOIN--3. Contact the customer_MU7O"
+		"record whether or not the customer responded" -> "AND_JOIN--3. Contact the customer_MU7O"
+		"summarize why they want to leave" [shape=box]
+		"AND_JOIN--3. Contact the customer_MU7O" -> "summarize why they want to leave"
+		"OR_SPLIT--5. Retention incentives_08I7" [label=O fixedsize=true shape=diamond width=0.5]
+		"summarize why they want to leave" -> "OR_SPLIT--5. Retention incentives_08I7"
+		"present them with a special offer" [shape=box]
+		"OR_SPLIT--5. Retention incentives_08I7" -> "present them with a special offer"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_08I7" -> "inform them of key metrics demonstrating value"
+		"describe your ideas to increase value" [shape=box]
+		"present them with a special offer" -> "describe your ideas to increase value"
+		"OR_JOIN--5. Retention incentives_08I7" [label=O fixedsize=true shape=diamond width=0.5]
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_08I7"
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_08I7"
+		"AND_SPLIT--6. Outcome_5R5O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Retention incentives_08I7" -> "AND_SPLIT--6. Outcome_5R5O"
+		"thank them for their time and feedback" [shape=box]
+		"AND_SPLIT--6. Outcome_5R5O" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"AND_SPLIT--6. Outcome_5R5O" -> "record the customer’s decision"
+		"AND_JOIN--6. Outcome_5R5O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "AND_JOIN--6. Outcome_5R5O"
+		"record the customer’s decision" -> "AND_JOIN--6. Outcome_5R5O"
+		"ask if they have any other concerns" [shape=box]
+		"AND_JOIN--6. Outcome_5R5O" -> "ask if they have any other concerns"
+		"AND_SPLIT--8. Final steps_J0WT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "AND_SPLIT--8. Final steps_J0WT"
+		"note down important learnings from the conversation" [shape=box]
+		"AND_SPLIT--8. Final steps_J0WT" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"AND_SPLIT--8. Final steps_J0WT" -> "send learnings to appropriate managers"
+		"AND_JOIN--8. Final steps_J0WT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "AND_JOIN--8. Final steps_J0WT"
+		"send learnings to appropriate managers" -> "AND_JOIN--8. Final steps_J0WT"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--8. Final steps_J0WT" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It starts with recording basic details. 
+After recording basic details, analyzing how they use your product should be done. 
+After analyzing how they use your product, the process is split into 2 parallel branches: confirming call date and time and recording whether or not the customer responded. 
+Once all pre-tasks are executed, then summarizing why they want to leave needs to be done. 
+After summarizing why they want to leave, one or more of the following paths should be executed: presenting them with a special offer, informing them of key metrics demonstrating value. 
+When presenting them with a special offer is completed, describing your ideas to increase value should be done. 
+After that, the next tasks should be thanking them for their time and feedback and recording the customer’s decision, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to ask if they have any other concerns.
+After asking if they have any other concerns, the process is split into 2 parallel branches: noting down important learnings from the conversation and sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,30 @@
+digraph client_onboarding_process_for_a_marketing_agency_28 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the received marketing and media resources" [shape=box]
+		"research the campaign ideas" [shape=box]
+		"confirm the received marketing and media resources" -> "research the campaign ideas"
+		"AND_SPLIT--4. Project start_51DG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"research the campaign ideas" -> "AND_SPLIT--4. Project start_51DG"
+		"inform client of project start" [shape=box]
+		"AND_SPLIT--4. Project start_51DG" -> "inform client of project start"
+		"assign work to the team" [shape=box]
+		"AND_SPLIT--4. Project start_51DG" -> "assign work to the team"
+		"AND_JOIN--4. Project start_51DG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "AND_JOIN--4. Project start_51DG"
+		"assign work to the team" -> "AND_JOIN--4. Project start_51DG"
+		"have a follow-up call" [shape=box]
+		"AND_JOIN--4. Project start_51DG" -> "have a follow-up call"
+	}
+	START_NODE -> "confirm the received marketing and media resources"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"have a follow-up call" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It starts with confirming the received marketing and media resources. 
+When confirming the received marketing and media resources is completed, researching the campaign ideas should be done. 
+After researching the campaign ideas, the process is split into 2 parallel branches: informing client of project start and assigning work to the team. 
+Once all pre-tasks are executed, then you need to have a follow-up call.
+The process is now completed. 
+"
+}

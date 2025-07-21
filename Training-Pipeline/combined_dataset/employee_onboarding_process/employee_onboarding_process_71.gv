@@ -1,0 +1,36 @@
+digraph employee_onboarding_process_71 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"create accounts" [shape=box]
+		"make an introduction" -> "create accounts"
+		"tour the office" [shape=box]
+		"create accounts" -> "tour the office"
+		"get approval" [shape=box]
+		"tour the office" -> "get approval"
+		"AND_SPLIT--5. First month_FLK5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "AND_SPLIT--5. First month_FLK5"
+		"plan check-in meetings" [shape=box]
+		"AND_SPLIT--5. First month_FLK5" -> "plan check-in meetings"
+		"provide reading material for personal growth" [shape=box]
+		"AND_SPLIT--5. First month_FLK5" -> "provide reading material for personal growth"
+		"explain long-term goals" [shape=box]
+		"plan check-in meetings" -> "explain long-term goals"
+		"AND_JOIN--5. First month_FLK5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain long-term goals" -> "AND_JOIN--5. First month_FLK5"
+		"provide reading material for personal growth" -> "AND_JOIN--5. First month_FLK5"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. First month_FLK5" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It begins when you make an introduction. 
+After making an introduction, creating accounts should be done. 
+When creating accounts is completed, you need to tour the office.
+Once touring the office occurs, getting approval should be done. 
+When getting approval is completed, the next tasks should be planning check-in meetings and providing reading material for personal growth, they should be done in parallel. 
+Once planning check-in meetings occurs, explaining long-term goals needs to be done. 
+The process is now completed. 
+"
+}

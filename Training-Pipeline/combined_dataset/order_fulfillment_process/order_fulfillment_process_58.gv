@@ -1,0 +1,33 @@
+digraph order_fulfillment_process_58 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"perform quality checks" [shape=box]
+		"confirm that payment has been received" -> "perform quality checks"
+		"print packing slip" [shape=box]
+		"perform quality checks" -> "print packing slip"
+		"AND_SPLIT--4. Dispatching the products_RO3R" [label="+" fixedsize=true shape=diamond width=0.5]
+		"print packing slip" -> "AND_SPLIT--4. Dispatching the products_RO3R"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_RO3R" -> "examine your other orders for delivery overlaps"
+		"arrange the delivery" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_RO3R" -> "arrange the delivery"
+		"AND_JOIN--4. Dispatching the products_RO3R" [label="+" fixedsize=true shape=diamond width=0.5]
+		"examine your other orders for delivery overlaps" -> "AND_JOIN--4. Dispatching the products_RO3R"
+		"arrange the delivery" -> "AND_JOIN--4. Dispatching the products_RO3R"
+		"send a confirmation email to the customer" [shape=box]
+		"AND_JOIN--4. Dispatching the products_RO3R" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It starts with confirming that payment has been received. 
+When confirming that payment has been received is completed, performing quality checks should be done. 
+When performing quality checks is completed, printing packing slip should be done. 
+When printing packing slip is completed, the next tasks should be examining your other orders for delivery overlaps and arranging the delivery, they should be done in parallel. 
+Once all pre-tasks are executed, then sending a confirmation email to the customer needs to be done. 
+The process is now completed. 
+"
+}

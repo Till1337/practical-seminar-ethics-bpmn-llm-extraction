@@ -1,0 +1,36 @@
+digraph purchase_order_workflow_84 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"get approval from finance team" [shape=box]
+		"create the purchase requisition" -> "get approval from finance team"
+		"create the purchase order" [shape=box]
+		"get approval from finance team" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"OR_SPLIT--6. Final steps_2PY9" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "OR_SPLIT--6. Final steps_2PY9"
+		"record the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_2PY9" -> "record the purchase order"
+		"send details to the department" [shape=box]
+		"OR_SPLIT--6. Final steps_2PY9" -> "send details to the department"
+		"file the purchase order" [shape=box]
+		"record the purchase order" -> "file the purchase order"
+		"OR_JOIN--6. Final steps_2PY9" [label=O fixedsize=true shape=diamond width=0.5]
+		"file the purchase order" -> "OR_JOIN--6. Final steps_2PY9"
+		"send details to the department" -> "OR_JOIN--6. Final steps_2PY9"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Final steps_2PY9" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It begins when you create the purchase requisition. 
+Once creating the purchase requisition occurs, getting approval from finance team needs to be done. 
+When getting approval from finance team is completed, creating the purchase order needs to be done. 
+When creating the purchase order is completed, getting approval from supplier needs to be done. 
+After getting approval from supplier, one or more of the following paths should be executed: recording the purchase order, sending details to the department. 
+When recording the purchase order is completed, filing the purchase order should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,46 @@
+digraph budget_preparation_process_82 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"prioritize three to five goals" [shape=box]
+		"evaluate any significant variances" -> "prioritize three to five goals"
+		"OR_SPLIT--4. Projected expenses_DSVY" [label=O fixedsize=true shape=diamond width=0.5]
+		"prioritize three to five goals" -> "OR_SPLIT--4. Projected expenses_DSVY"
+		"list all department expenses" [shape=box]
+		"OR_SPLIT--4. Projected expenses_DSVY" -> "list all department expenses"
+		"calculate the total annual budget" [shape=box]
+		"OR_SPLIT--4. Projected expenses_DSVY" -> "calculate the total annual budget"
+		"OR_JOIN--4. Projected expenses_DSVY" [label=O fixedsize=true shape=diamond width=0.5]
+		"list all department expenses" -> "OR_JOIN--4. Projected expenses_DSVY"
+		"calculate the total annual budget" -> "OR_JOIN--4. Projected expenses_DSVY"
+		"project total annual income" [shape=box]
+		"OR_JOIN--4. Projected expenses_DSVY" -> "project total annual income"
+		"OR_SPLIT--6. Putting it all together_APGJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "OR_SPLIT--6. Putting it all together_APGJ"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_SPLIT--6. Putting it all together_APGJ" -> "record financial data in a budget spreadsheet"
+		"finalize the budget" [shape=box]
+		"OR_SPLIT--6. Putting it all together_APGJ" -> "finalize the budget"
+		"OR_JOIN--6. Putting it all together_APGJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "OR_JOIN--6. Putting it all together_APGJ"
+		"finalize the budget" -> "OR_JOIN--6. Putting it all together_APGJ"
+		"incorporate into the master budget" [shape=box]
+		"OR_JOIN--6. Putting it all together_APGJ" -> "incorporate into the master budget"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"incorporate into the master budget" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you set target date for approval. 
+When setting target date for approval is completed, evaluating any significant variances should be done. 
+Once evaluating any significant variances occurs, prioritizing three to five goals should be done. 
+After prioritizing three to five goals, one or more of the following paths should be executed: listing all department expenses, calculating the total annual budget. 
+Then, you need to project total annual income.
+When projecting total annual income is completed, one or more of the following paths should be executed: recording financial data in a budget spreadsheet, finalizing the budget. 
+Then, incorporating into the master budget should be done. 
+The process is now completed. 
+"
+}

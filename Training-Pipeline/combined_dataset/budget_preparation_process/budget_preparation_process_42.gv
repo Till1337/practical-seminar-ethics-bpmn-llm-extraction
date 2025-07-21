@@ -1,0 +1,49 @@
+digraph budget_preparation_process_42 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"record basic details" -> "evaluate any significant variances"
+		"AND_SPLIT--3. Goals_EAYF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "AND_SPLIT--3. Goals_EAYF"
+		"prioritize three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_EAYF" -> "prioritize three to five goals"
+		"determine ways of achieving the goals" [shape=box]
+		"AND_SPLIT--3. Goals_EAYF" -> "determine ways of achieving the goals"
+		"define three to five goals" [shape=box]
+		"prioritize three to five goals" -> "define three to five goals"
+		"AND_JOIN--3. Goals_EAYF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define three to five goals" -> "AND_JOIN--3. Goals_EAYF"
+		"determine ways of achieving the goals" -> "AND_JOIN--3. Goals_EAYF"
+		"calculate the total annual budget" [shape=box]
+		"AND_JOIN--3. Goals_EAYF" -> "calculate the total annual budget"
+		"OR_SPLIT--5. Projected income/funding_LEJX" [label=O fixedsize=true shape=diamond width=0.5]
+		"calculate the total annual budget" -> "OR_SPLIT--5. Projected income/funding_LEJX"
+		"list all sources of income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_LEJX" -> "list all sources of income"
+		"project total annual income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_LEJX" -> "project total annual income"
+		"OR_JOIN--5. Projected income/funding_LEJX" [label=O fixedsize=true shape=diamond width=0.5]
+		"list all sources of income" -> "OR_JOIN--5. Projected income/funding_LEJX"
+		"project total annual income" -> "OR_JOIN--5. Projected income/funding_LEJX"
+		"finalize the budget" [shape=box]
+		"OR_JOIN--5. Projected income/funding_LEJX" -> "finalize the budget"
+		"obtain approval from top management" [shape=box]
+		"finalize the budget" -> "obtain approval from top management"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"obtain approval from top management" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It starts with recording basic details. 
+Once recording basic details occurs, you need to evaluate any significant variances.
+When evaluating any significant variances is completed, the next tasks should be prioritizing three to five goals and determining ways of achieving the goals, they should be done in parallel. 
+After prioritizing three to five goals, defining three to five goals needs to be done. 
+Once all pre-tasks are executed, then you need to calculate the total annual budget.
+Once calculating the total annual budget occurs, one or more of the following paths should be executed: listing all sources of income, projecting total annual income. 
+Then, finalizing the budget should be done. 
+After finalizing the budget, obtaining approval from top management needs to be done. 
+The process is now completed. 
+"
+}

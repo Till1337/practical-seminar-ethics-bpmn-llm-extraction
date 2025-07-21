@@ -1,0 +1,49 @@
+digraph project_management_process_175 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"record the basic idea" [shape=box]
+		"make an introduction" -> "record the basic idea"
+		"OR_SPLIT--3. Definition and Planning_348C" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the basic idea" -> "OR_SPLIT--3. Definition and Planning_348C"
+		"draw up a project plan" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_348C" -> "draw up a project plan"
+		"set a budget" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_348C" -> "set a budget"
+		"state the available resources" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_348C" -> "state the available resources"
+		"lay out a timeline" [shape=box]
+		"draw up a project plan" -> "lay out a timeline"
+		"OR_JOIN--3. Definition and Planning_348C" [label=O fixedsize=true shape=diamond width=0.5]
+		"lay out a timeline" -> "OR_JOIN--3. Definition and Planning_348C"
+		"set a budget" -> "OR_JOIN--3. Definition and Planning_348C"
+		"state the available resources" -> "OR_JOIN--3. Definition and Planning_348C"
+		"have a kickoff meeting" [shape=box]
+		"OR_JOIN--3. Definition and Planning_348C" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"OR_SPLIT--6. Close_YV9G" [label=O fixedsize=true shape=diamond width=0.5]
+		"keep communication" -> "OR_SPLIT--6. Close_YV9G"
+		"evaluate project outcomes" [shape=box]
+		"OR_SPLIT--6. Close_YV9G" -> "evaluate project outcomes"
+		"terminate contractors" [shape=box]
+		"OR_SPLIT--6. Close_YV9G" -> "terminate contractors"
+		"OR_JOIN--6. Close_YV9G" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate project outcomes" -> "OR_JOIN--6. Close_YV9G"
+		"terminate contractors" -> "OR_JOIN--6. Close_YV9G"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Close_YV9G" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, recording the basic idea should be done. 
+When recording the basic idea is completed, one or more of the following paths should be executed: drawing up a project plan, setting a budget, stating the available resources. 
+When drawing up a project plan is completed, laying out a timeline should be done. 
+Afterwards, having a kickoff meeting needs to be done. 
+After having a kickoff meeting, keeping communication needs to be done. 
+When keeping communication is completed, one or more of the following paths should be executed: evaluating project outcomes, terminating contractors. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,56 @@
+digraph budget_preparation_process_176 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"review the most recent budget" [shape=box]
+		"record basic details" -> "review the most recent budget"
+		"prioritize three to five goals" [shape=box]
+		"review the most recent budget" -> "prioritize three to five goals"
+		"AND_SPLIT--4. Projected expenses_9QDK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prioritize three to five goals" -> "AND_SPLIT--4. Projected expenses_9QDK"
+		"list all department expenses" [shape=box]
+		"AND_SPLIT--4. Projected expenses_9QDK" -> "list all department expenses"
+		"estimate the average monthly cost" [shape=box]
+		"AND_SPLIT--4. Projected expenses_9QDK" -> "estimate the average monthly cost"
+		"calculate the total annual budget" [shape=box]
+		"AND_SPLIT--4. Projected expenses_9QDK" -> "calculate the total annual budget"
+		"AND_JOIN--4. Projected expenses_9QDK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_9QDK"
+		"estimate the average monthly cost" -> "AND_JOIN--4. Projected expenses_9QDK"
+		"calculate the total annual budget" -> "AND_JOIN--4. Projected expenses_9QDK"
+		"AND_SPLIT--5. Projected income/funding_VME4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Projected expenses_9QDK" -> "AND_SPLIT--5. Projected income/funding_VME4"
+		"list all sources of income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_VME4" -> "list all sources of income"
+		"project total annual income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_VME4" -> "project total annual income"
+		"AND_JOIN--5. Projected income/funding_VME4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all sources of income" -> "AND_JOIN--5. Projected income/funding_VME4"
+		"project total annual income" -> "AND_JOIN--5. Projected income/funding_VME4"
+		"OR_SPLIT--6. Putting it all together_RJ1W" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Projected income/funding_VME4" -> "OR_SPLIT--6. Putting it all together_RJ1W"
+		"finalize the budget" [shape=box]
+		"OR_SPLIT--6. Putting it all together_RJ1W" -> "finalize the budget"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_SPLIT--6. Putting it all together_RJ1W" -> "record financial data in a budget spreadsheet"
+		"OR_JOIN--6. Putting it all together_RJ1W" [label=O fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "OR_JOIN--6. Putting it all together_RJ1W"
+		"record financial data in a budget spreadsheet" -> "OR_JOIN--6. Putting it all together_RJ1W"
+		"assign management responsibilities" [shape=box]
+		"OR_JOIN--6. Putting it all together_RJ1W" -> "assign management responsibilities"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"assign management responsibilities" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the budget preparation process. It starts with recording basic details. 
+Once recording basic details occurs, you need to review the most recent budget.
+After reviewing the most recent budget, you need to prioritize three to five goals.
+Once prioritizing three to five goals occurs, the process is split into 3 parallel branches: listing all department expenses, estimating the average monthly cost and calculating the total annual budget. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: listing all sources of income and projecting total annual income. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: finalizing the budget, recording financial data in a budget spreadsheet. 
+Then, assigning management responsibilities should be done. 
+The process is now completed. 
+"
+}

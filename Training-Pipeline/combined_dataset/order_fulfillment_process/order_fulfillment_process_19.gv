@@ -1,0 +1,36 @@
+digraph order_fulfillment_process_19 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"perform quality checks" [shape=box]
+		"record order details" -> "perform quality checks"
+		"measure products" [shape=box]
+		"perform quality checks" -> "measure products"
+		"AND_SPLIT--4. Dispatching the products_IT5F" [label="+" fixedsize=true shape=diamond width=0.5]
+		"measure products" -> "AND_SPLIT--4. Dispatching the products_IT5F"
+		"arrange the delivery" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_IT5F" -> "arrange the delivery"
+		"load items into the delivery vehicle" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_IT5F" -> "load items into the delivery vehicle"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_IT5F" -> "examine your other orders for delivery overlaps"
+		"AND_JOIN--4. Dispatching the products_IT5F" [label="+" fixedsize=true shape=diamond width=0.5]
+		"arrange the delivery" -> "AND_JOIN--4. Dispatching the products_IT5F"
+		"load items into the delivery vehicle" -> "AND_JOIN--4. Dispatching the products_IT5F"
+		"examine your other orders for delivery overlaps" -> "AND_JOIN--4. Dispatching the products_IT5F"
+		"send a confirmation email to the customer" [shape=box]
+		"AND_JOIN--4. Dispatching the products_IT5F" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the order fulfillment process. It begins when you record order details. 
+After recording order details, performing quality checks needs to be done. 
+After performing quality checks, measuring products should be done. 
+When measuring products is completed, the process is split into 3 parallel branches: arranging the delivery, loading items into the delivery vehicle and examining your other orders for delivery overlaps. 
+Once all pre-tasks are executed, then sending a confirmation email to the customer needs to be done. 
+The process is now completed. 
+"
+}

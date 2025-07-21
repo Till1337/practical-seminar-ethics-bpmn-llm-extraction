@@ -1,0 +1,43 @@
+digraph order_fulfillment_process_109 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_UKB5" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "OR_SPLIT--2. Retrieving products from your inventory_UKB5"
+		"check that the products are in stock" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_UKB5" -> "check that the products are in stock"
+		"request the ordered products from your inventory" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_UKB5" -> "request the ordered products from your inventory"
+		"OR_JOIN--2. Retrieving products from your inventory_UKB5" [label=O fixedsize=true shape=diamond width=0.5]
+		"check that the products are in stock" -> "OR_JOIN--2. Retrieving products from your inventory_UKB5"
+		"request the ordered products from your inventory" -> "OR_JOIN--2. Retrieving products from your inventory_UKB5"
+		"print packing slip" [shape=box]
+		"OR_JOIN--2. Retrieving products from your inventory_UKB5" -> "print packing slip"
+		"AND_SPLIT--4. Dispatching the products_7BJG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"print packing slip" -> "AND_SPLIT--4. Dispatching the products_7BJG"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_7BJG" -> "examine your other orders for delivery overlaps"
+		"load items into the delivery vehicle" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_7BJG" -> "load items into the delivery vehicle"
+		"arrange the delivery" [shape=box]
+		"AND_SPLIT--4. Dispatching the products_7BJG" -> "arrange the delivery"
+		"AND_JOIN--4. Dispatching the products_7BJG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"examine your other orders for delivery overlaps" -> "AND_JOIN--4. Dispatching the products_7BJG"
+		"load items into the delivery vehicle" -> "AND_JOIN--4. Dispatching the products_7BJG"
+		"arrange the delivery" -> "AND_JOIN--4. Dispatching the products_7BJG"
+		"send a confirmation email to the customer" [shape=box]
+		"AND_JOIN--4. Dispatching the products_7BJG" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+Once confirming that payment has been received occurs, one or more of the following paths should be executed: checking that the products are in stock, requesting the ordered products from your inventory. 
+Afterwards, printing packing slip needs to be done. 
+After printing packing slip, the process is split into 3 parallel branches: examining your other orders for delivery overlaps, loading items into the delivery vehicle and arranging the delivery. 
+Once all pre-tasks are executed, then sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

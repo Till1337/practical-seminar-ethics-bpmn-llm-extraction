@@ -1,0 +1,57 @@
+{
+  "name": "camunda-ethical-heatmap-plugin",
+  "version": "1.0.0",
+  "description": "A Camunda Modeler plugin that visualizes ethical risks and values as heatmaps on BPMN diagrams",
+  "main": "index.js",
+  "author": "Ethical AI Research Team",
+  "license": "MIT",
+  "keywords": [
+    "camunda",
+    "bpmn",
+    "ethical-ai",
+    "heatmap",
+    "visualization",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/ethical-heatmap-plugin.git"
+  },
+  "files": [
+    "index.js",
+    "menu.js",
+    "client.js",
+    "plugin.css"
+  ],
+  "camunda-modeler": {
+    "menu": "./menu.js"
+  },
+  "dependencies": {
+    "bpmn-js": "^17.11.1",
+    "diagram-js": "^14.9.0",
+    "heatmap.js": "^2.0.5",
+    "min-dom": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^10.0.0",
+    "camunda-modeler-plugin-helpers": "^5.0.0-alpha.0",
+    "css-loader": "^7.1.2",
+    "fs-extra": "^11.0.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0"
+  },
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "webpack --config webpack.config.plugin.js --mode production",
+    "build:dev": "webpack --config webpack.config.plugin.js --mode development",
+    "deploy": "node scripts/deploy.js",
+    "clean": "rm -rf build",
+    "all": "npm run clean && npm run build && npm run deploy"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

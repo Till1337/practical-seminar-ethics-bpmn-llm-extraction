@@ -1,0 +1,56 @@
+digraph process_for_optimizing_a_process_88 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"OR_SPLIT--2. Identifying the process_V2VZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "OR_SPLIT--2. Identifying the process_V2VZ"
+		"identify the process's components" [shape=box]
+		"OR_SPLIT--2. Identifying the process_V2VZ" -> "identify the process's components"
+		"assess the performance of the process" [shape=box]
+		"OR_SPLIT--2. Identifying the process_V2VZ" -> "assess the performance of the process"
+		"OR_JOIN--2. Identifying the process_V2VZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the process's components" -> "OR_JOIN--2. Identifying the process_V2VZ"
+		"assess the performance of the process" -> "OR_JOIN--2. Identifying the process_V2VZ"
+		"AND_SPLIT--3. Rethinking the process_6OA4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Identifying the process_V2VZ" -> "AND_SPLIT--3. Rethinking the process_6OA4"
+		"define how long it takes to complete the process" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_6OA4" -> "define how long it takes to complete the process"
+		"consider where bottlenecks occur" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_6OA4" -> "consider where bottlenecks occur"
+		"assess if any steps are confusing" [shape=box]
+		"consider where bottlenecks occur" -> "assess if any steps are confusing"
+		"AND_JOIN--3. Rethinking the process_6OA4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define how long it takes to complete the process" -> "AND_JOIN--3. Rethinking the process_6OA4"
+		"assess if any steps are confusing" -> "AND_JOIN--3. Rethinking the process_6OA4"
+		"write the potential process improvements" [shape=box]
+		"AND_JOIN--3. Rethinking the process_6OA4" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"use the updated process" [shape=box]
+		"get approval for processing improvements" -> "use the updated process"
+		"AND_SPLIT--7. Optimizing the process_BX84" [label="+" fixedsize=true shape=diamond width=0.5]
+		"use the updated process" -> "AND_SPLIT--7. Optimizing the process_BX84"
+		"communicate the process changes" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_BX84" -> "communicate the process changes"
+		"schedule the next process review and optimization" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_BX84" -> "schedule the next process review and optimization"
+		"AND_JOIN--7. Optimizing the process_BX84" [label="+" fixedsize=true shape=diamond width=0.5]
+		"communicate the process changes" -> "AND_JOIN--7. Optimizing the process_BX84"
+		"schedule the next process review and optimization" -> "AND_JOIN--7. Optimizing the process_BX84"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Optimizing the process_BX84" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the process for optimizing a process. It starts with confirming the basic information. 
+After confirming the basic information, one or more of the following paths should be executed: identifying the process's components, assessing the performance of the process. 
+Afterwards, the process is split into 2 parallel branches: defining how long it takes to complete the process and considering where bottlenecks occur. 
+When considering where bottlenecks occur is completed, assessing if any steps are confusing should be done. 
+Once all pre-tasks are executed, then writing the potential process improvements needs to be done. 
+Once writing the potential process improvements occurs, you need to get approval for processing improvements.
+Once getting approval for processing improvements occurs, using the updated process needs to be done. 
+When using the updated process is completed, the next tasks should be communicating the process changes and scheduling the next process review and optimization, they should be done in parallel. 
+The process is now completed. 
+"
+}

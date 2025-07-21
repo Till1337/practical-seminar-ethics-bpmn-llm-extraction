@@ -1,0 +1,39 @@
+digraph process_for_optimizing_a_process_78 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"assess the performance of the process" [shape=box]
+		"confirm the basic information" -> "assess the performance of the process"
+		"consider where bottlenecks occur" [shape=box]
+		"assess the performance of the process" -> "consider where bottlenecks occur"
+		"write the potential process improvements" [shape=box]
+		"consider where bottlenecks occur" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"OR_SPLIT--6. Testing the process improvements_X7PR" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval for processing improvements" -> "OR_SPLIT--6. Testing the process improvements_X7PR"
+		"update the process documents" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_X7PR" -> "update the process documents"
+		"define what would make the improvements successful" [shape=box]
+		"OR_SPLIT--6. Testing the process improvements_X7PR" -> "define what would make the improvements successful"
+		"OR_JOIN--6. Testing the process improvements_X7PR" [label=O fixedsize=true shape=diamond width=0.5]
+		"update the process documents" -> "OR_JOIN--6. Testing the process improvements_X7PR"
+		"define what would make the improvements successful" -> "OR_JOIN--6. Testing the process improvements_X7PR"
+		"communicate the process changes" [shape=box]
+		"OR_JOIN--6. Testing the process improvements_X7PR" -> "communicate the process changes"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"communicate the process changes" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the process for optimizing a process. It starts with confirming the basic information. 
+When confirming the basic information is completed, assessing the performance of the process needs to be done. 
+When assessing the performance of the process is completed, considering where bottlenecks occur needs to be done. 
+After considering where bottlenecks occur, you need to write the potential process improvements.
+After writing the potential process improvements, getting approval for processing improvements should be done. 
+When getting approval for processing improvements is completed, one or more of the following paths should be executed: updating the process documents, defining what would make the improvements successful. 
+Afterwards, you need to communicate the process changes.
+The process is now completed. 
+"
+}

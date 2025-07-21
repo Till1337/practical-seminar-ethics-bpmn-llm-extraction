@@ -1,0 +1,52 @@
+digraph churn_rate_prevention_process_98 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"determine ways to increase value" [shape=box]
+		"record basic details" -> "determine ways to increase value"
+		"give them a call" [shape=box]
+		"determine ways to increase value" -> "give them a call"
+		"identify the root cause(s) of the problem" [shape=box]
+		"give them a call" -> "identify the root cause(s) of the problem"
+		"OR_SPLIT--5. Retention incentives_AIFZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the root cause(s) of the problem" -> "OR_SPLIT--5. Retention incentives_AIFZ"
+		"present them with a special offer" [shape=box]
+		"OR_SPLIT--5. Retention incentives_AIFZ" -> "present them with a special offer"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_AIFZ" -> "describe your ideas to increase value"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"describe your ideas to increase value" -> "inform them of key metrics demonstrating value"
+		"OR_JOIN--5. Retention incentives_AIFZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"present them with a special offer" -> "OR_JOIN--5. Retention incentives_AIFZ"
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_AIFZ"
+		"record the customer’s decision" [shape=box]
+		"OR_JOIN--5. Retention incentives_AIFZ" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"OR_SPLIT--8. Final steps_MU5M" [label=O fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "OR_SPLIT--8. Final steps_MU5M"
+		"note down important learnings from the conversation" [shape=box]
+		"OR_SPLIT--8. Final steps_MU5M" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"OR_SPLIT--8. Final steps_MU5M" -> "send learnings to appropriate managers"
+		"OR_JOIN--8. Final steps_MU5M" [label=O fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "OR_JOIN--8. Final steps_MU5M"
+		"send learnings to appropriate managers" -> "OR_JOIN--8. Final steps_MU5M"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--8. Final steps_MU5M" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It starts with recording basic details. 
+After recording basic details, determining ways to increase value needs to be done. 
+Once determining ways to increase value occurs, giving them a call needs to be done. 
+After giving them a call, identifying the root cause(s) of the problem should be done. 
+After identifying the root cause(s) of the problem, one or more of the following paths should be executed: presenting them with a special offer, describing your ideas to increase value. 
+After describing your ideas to increase value, informing them of key metrics demonstrating value should be done. 
+Then, you need to record the customer’s decision.
+When recording the customer’s decision is completed, asking if they have any other concerns should be done. 
+After asking if they have any other concerns, one or more of the following paths should be executed: noting down important learnings from the conversation, sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

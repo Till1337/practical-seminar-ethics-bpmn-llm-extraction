@@ -1,0 +1,47 @@
+digraph client_onboarding_process_for_a_marketing_agency_97 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the signed documents" [shape=box]
+		"AND_SPLIT--2. Setting the agenda_63NW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the signed documents" -> "AND_SPLIT--2. Setting the agenda_63NW"
+		"create first draft of the marketing plan " [shape=box]
+		"AND_SPLIT--2. Setting the agenda_63NW" -> "create first draft of the marketing plan "
+		"schedule future calls" [shape=box]
+		"AND_SPLIT--2. Setting the agenda_63NW" -> "schedule future calls"
+		"AND_JOIN--2. Setting the agenda_63NW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create first draft of the marketing plan " -> "AND_JOIN--2. Setting the agenda_63NW"
+		"schedule future calls" -> "AND_JOIN--2. Setting the agenda_63NW"
+		"OR_SPLIT--4. Project start_FE15" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Setting the agenda_63NW" -> "OR_SPLIT--4. Project start_FE15"
+		"assign work to the team" [shape=box]
+		"OR_SPLIT--4. Project start_FE15" -> "assign work to the team"
+		"inform client of project start" [shape=box]
+		"OR_SPLIT--4. Project start_FE15" -> "inform client of project start"
+		"OR_JOIN--4. Project start_FE15" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign work to the team" -> "OR_JOIN--4. Project start_FE15"
+		"inform client of project start" -> "OR_JOIN--4. Project start_FE15"
+		"OR_SPLIT--5. Four weeks into the project_X5O1" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Project start_FE15" -> "OR_SPLIT--5. Four weeks into the project_X5O1"
+		"make changes based on follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_X5O1" -> "make changes based on follow-up call"
+		"have a follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_X5O1" -> "have a follow-up call"
+		"send a post-onboarding survey" [shape=box]
+		"make changes based on follow-up call" -> "send a post-onboarding survey"
+		"OR_JOIN--5. Four weeks into the project_X5O1" [label=O fixedsize=true shape=diamond width=0.5]
+		"send a post-onboarding survey" -> "OR_JOIN--5. Four weeks into the project_X5O1"
+		"have a follow-up call" -> "OR_JOIN--5. Four weeks into the project_X5O1"
+	}
+	START_NODE -> "check the signed documents"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Four weeks into the project_X5O1" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the client onboarding process for a marketing agency. It starts with checking the signed documents. 
+Once checking the signed documents occurs, the process is split into 2 parallel branches: creating first draft of the marketing plan  and scheduling future calls. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: assigning work to the team, informing client of project start. 
+Afterwards, one or more of the following paths should be executed: making changes based on follow-up call, having a follow-up call. 
+Once making changes based on follow-up call occurs, you need to send a post-onboarding survey.
+The process is now completed. 
+"
+}

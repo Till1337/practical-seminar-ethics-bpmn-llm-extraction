@@ -1,0 +1,33 @@
+digraph accounts_receivable_process_182 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_HRS4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "AND_SPLIT--2. Establish your credit practices_HRS4"
+		"send the buyer your terms of sale" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_HRS4" -> "send the buyer your terms of sale"
+		"send a credit application form to the buyer" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_HRS4" -> "send a credit application form to the buyer"
+		"AND_JOIN--2. Establish your credit practices_HRS4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send the buyer your terms of sale" -> "AND_JOIN--2. Establish your credit practices_HRS4"
+		"send a credit application form to the buyer" -> "AND_JOIN--2. Establish your credit practices_HRS4"
+		"generate the invoice" [shape=box]
+		"AND_JOIN--2. Establish your credit practices_HRS4" -> "generate the invoice"
+		"establish monthly contact with your client" [shape=box]
+		"generate the invoice" -> "establish monthly contact with your client"
+		"record the sales on credit of services" [shape=box]
+		"establish monthly contact with your client" -> "record the sales on credit of services"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of services" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the accounts receivable process. It starts with recording the buyer's details. 
+When recording the buyer's details is completed, the next tasks should be sending the buyer your terms of sale and sending a credit application form to the buyer, they should be done in parallel. 
+Once all pre-tasks are executed, then generating the invoice should be done. 
+Once generating the invoice occurs, establishing monthly contact with your client needs to be done. 
+When establishing monthly contact with your client is completed, recording the sales on credit of services needs to be done. 
+The process is now completed. 
+"
+}

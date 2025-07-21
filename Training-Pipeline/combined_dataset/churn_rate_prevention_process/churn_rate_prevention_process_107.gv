@@ -1,0 +1,79 @@
+digraph churn_rate_prevention_process_107 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_8NEN" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Evaluate product usage_8NEN"
+		"determine ways to increase value" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_8NEN" -> "determine ways to increase value"
+		"quantify the impact of cancellation" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_8NEN" -> "quantify the impact of cancellation"
+		"OR_JOIN--2. Evaluate product usage_8NEN" [label=O fixedsize=true shape=diamond width=0.5]
+		"determine ways to increase value" -> "OR_JOIN--2. Evaluate product usage_8NEN"
+		"quantify the impact of cancellation" -> "OR_JOIN--2. Evaluate product usage_8NEN"
+		"AND_SPLIT--3. Contact the customer_3YH7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Evaluate product usage_8NEN" -> "AND_SPLIT--3. Contact the customer_3YH7"
+		"record whether or not the customer responded" [shape=box]
+		"AND_SPLIT--3. Contact the customer_3YH7" -> "record whether or not the customer responded"
+		"give them a call" [shape=box]
+		"AND_SPLIT--3. Contact the customer_3YH7" -> "give them a call"
+		"OR_SPLIT--3. Contact the customer_P0XN" [label=O fixedsize=true shape=diamond width=0.5]
+		"give them a call" -> "OR_SPLIT--3. Contact the customer_P0XN"
+		"record if they are willing to talk" [shape=box]
+		"OR_SPLIT--3. Contact the customer_P0XN" -> "record if they are willing to talk"
+		"confirm call date and time" [shape=box]
+		"OR_SPLIT--3. Contact the customer_P0XN" -> "confirm call date and time"
+		"send them an email" [shape=box]
+		"record if they are willing to talk" -> "send them an email"
+		"OR_JOIN--3. Contact the customer_P0XN" [label=O fixedsize=true shape=diamond width=0.5]
+		"send them an email" -> "OR_JOIN--3. Contact the customer_P0XN"
+		"confirm call date and time" -> "OR_JOIN--3. Contact the customer_P0XN"
+		"AND_JOIN--3. Contact the customer_3YH7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record whether or not the customer responded" -> "AND_JOIN--3. Contact the customer_3YH7"
+		"OR_JOIN--3. Contact the customer_P0XN" -> "AND_JOIN--3. Contact the customer_3YH7"
+		"OR_SPLIT--4. Understand customer concerns_Y3RA" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Contact the customer_3YH7" -> "OR_SPLIT--4. Understand customer concerns_Y3RA"
+		"identify the root cause(s) of the problem" [shape=box]
+		"OR_SPLIT--4. Understand customer concerns_Y3RA" -> "identify the root cause(s) of the problem"
+		"ask open-ended questions" [shape=box]
+		"OR_SPLIT--4. Understand customer concerns_Y3RA" -> "ask open-ended questions"
+		"summarize why they want to leave" [shape=box]
+		"ask open-ended questions" -> "summarize why they want to leave"
+		"OR_JOIN--4. Understand customer concerns_Y3RA" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the root cause(s) of the problem" -> "OR_JOIN--4. Understand customer concerns_Y3RA"
+		"summarize why they want to leave" -> "OR_JOIN--4. Understand customer concerns_Y3RA"
+		"OR_SPLIT--5. Retention incentives_B637" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Understand customer concerns_Y3RA" -> "OR_SPLIT--5. Retention incentives_B637"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_B637" -> "inform them of key metrics demonstrating value"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_B637" -> "describe your ideas to increase value"
+		"OR_JOIN--5. Retention incentives_B637" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_B637"
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_B637"
+		"thank them for their time and feedback" [shape=box]
+		"OR_JOIN--5. Retention incentives_B637" -> "thank them for their time and feedback"
+		"ask if they have any other concerns" [shape=box]
+		"thank them for their time and feedback" -> "ask if they have any other concerns"
+		"note down important learnings from the conversation" [shape=box]
+		"ask if they have any other concerns" -> "note down important learnings from the conversation"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"note down important learnings from the conversation" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It starts with recording basic details. 
+After recording basic details, one or more of the following paths should be executed: determining ways to increase value, quantifying the impact of cancellation. 
+Afterwards, the next tasks should be recording whether or not the customer responded and giving them a call, they should be done in parallel. 
+After giving them a call, one or more of the following paths should be executed: recording if they are willing to talk, confirming call date and time. 
+After recording if they are willing to talk, sending them an email should be done. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: identifying the root cause(s) of the problem, asking open-ended questions. 
+When asking open-ended questions is completed, you need to summarize why they want to leave.
+Then, one or more of the following paths should be executed: informing them of key metrics demonstrating value, describing your ideas to increase value. 
+Then, you need to thank them for their time and feedback.
+After thanking them for their time and feedback, asking if they have any other concerns should be done. 
+Once asking if they have any other concerns occurs, noting down important learnings from the conversation needs to be done. 
+The process is now completed. 
+"
+}

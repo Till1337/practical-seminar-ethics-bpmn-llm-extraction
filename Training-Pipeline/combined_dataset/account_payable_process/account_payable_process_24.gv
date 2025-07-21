@@ -1,0 +1,23 @@
+digraph account_payable_process_24 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the senior accountant in your department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the senior accountant in your department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"check dates to avoid penalty charges" [shape=box]
+		"report errors to relevant team member" -> "check dates to avoid penalty charges"
+	}
+	START_NODE -> "send to the senior accountant in your department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check dates to avoid penalty charges" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It starts with sending to the senior accountant in your department. 
+Once sending to the senior accountant in your department occurs, you need to create a receiving report.
+When creating a receiving report is completed, reporting errors to relevant team member needs to be done. 
+When reporting errors to relevant team member is completed, you need to check dates to avoid penalty charges.
+The process is now completed. 
+"
+}

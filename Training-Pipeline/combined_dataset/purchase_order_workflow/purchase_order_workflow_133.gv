@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_133 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"get approval from finance team" [shape=box]
+		"record the basic details" -> "get approval from finance team"
+		"create the purchase order" [shape=box]
+		"get approval from finance team" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"OR_SPLIT--6. Final steps_7WWA" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "OR_SPLIT--6. Final steps_7WWA"
+		"record the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_7WWA" -> "record the purchase order"
+		"file the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_7WWA" -> "file the purchase order"
+		"OR_JOIN--6. Final steps_7WWA" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the purchase order" -> "OR_JOIN--6. Final steps_7WWA"
+		"file the purchase order" -> "OR_JOIN--6. Final steps_7WWA"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Final steps_7WWA" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It starts with recording the basic details. 
+After recording the basic details, you need to get approval from finance team.
+After getting approval from finance team, creating the purchase order should be done. 
+After creating the purchase order, you need to get approval from supplier.
+Once getting approval from supplier occurs, one or more of the following paths should be executed: recording the purchase order, filing the purchase order. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,39 @@
+digraph budget_preparation_process_170 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"OR_SPLIT--2. Current financial status_FDBN" [label=O fixedsize=true shape=diamond width=0.5]
+		"set target date for approval" -> "OR_SPLIT--2. Current financial status_FDBN"
+		"evaluate any significant variances" [shape=box]
+		"OR_SPLIT--2. Current financial status_FDBN" -> "evaluate any significant variances"
+		"review the most recent budget" [shape=box]
+		"OR_SPLIT--2. Current financial status_FDBN" -> "review the most recent budget"
+		"OR_JOIN--2. Current financial status_FDBN" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_JOIN--2. Current financial status_FDBN"
+		"review the most recent budget" -> "OR_JOIN--2. Current financial status_FDBN"
+		"determine ways of achieving the goals" [shape=box]
+		"OR_JOIN--2. Current financial status_FDBN" -> "determine ways of achieving the goals"
+		"list all department expenses" [shape=box]
+		"determine ways of achieving the goals" -> "list all department expenses"
+		"list all sources of income" [shape=box]
+		"list all department expenses" -> "list all sources of income"
+		"finalize the budget" [shape=box]
+		"list all sources of income" -> "finalize the budget"
+		"assign management responsibilities" [shape=box]
+		"finalize the budget" -> "assign management responsibilities"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"assign management responsibilities" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you set target date for approval. 
+Once setting target date for approval occurs, one or more of the following paths should be executed: evaluating any significant variances, reviewing the most recent budget. 
+Then, you need to determine ways of achieving the goals.
+After determining ways of achieving the goals, you need to list all department expenses.
+Once listing all department expenses occurs, you need to list all sources of income.
+Once listing all sources of income occurs, finalizing the budget needs to be done. 
+When finalizing the budget is completed, assigning management responsibilities needs to be done. 
+The process is now completed. 
+"
+}

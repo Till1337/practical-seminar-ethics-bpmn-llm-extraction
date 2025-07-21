@@ -1,0 +1,20 @@
+digraph customer_support_process_for_the_ticket_management_62 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'Technical Issue'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'Technical Issue'"
+		"replicate the issue" [shape=box]
+		"Determine ticket type as 'Technical Issue'" -> "replicate the issue"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"replicate the issue" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the customer support process for the ticket management. It begins when you check the ticket type. 
+When checking the ticket type is completed, you need to Determine ticket type as 'Technical Issue'.
+After determining ticket type as 'Technical Issue', replicating the issue should be done. 
+The process is now completed. 
+"
+}

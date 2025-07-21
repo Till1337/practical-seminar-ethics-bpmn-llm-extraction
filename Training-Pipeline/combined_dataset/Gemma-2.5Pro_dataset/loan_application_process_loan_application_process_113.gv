@@ -1,0 +1,51 @@
+digraph loan_application_process_113 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the previous loan statement to the lender" [shape=box]
+		"OR_SPLIT--2. Loan application_IIY1" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide the previous loan statement to the lender" -> "OR_SPLIT--2. Loan application_IIY1"
+		"complete the loan application by borrower" [shape=box]
+		"OR_SPLIT--2. Loan application_IIY1" -> "complete the loan application by borrower"
+		"receive the application by credit department" [shape=box]
+		"OR_SPLIT--2. Loan application_IIY1" -> "receive the application by credit department"
+		"OR_JOIN--2. Loan application_IIY1" [label=O fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "OR_JOIN--2. Loan application_IIY1"
+		"receive the application by credit department" -> "OR_JOIN--2. Loan application_IIY1"
+		subgraph "CLUSTER_XOR_3. Application processing _9ROM" {
+			color=white label="check for the completeness"
+			"XOR_SPLIT--check for the completeness_U8AI" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"OR_JOIN--2. Loan application_IIY1" -> "XOR_SPLIT--check for the completeness_U8AI" [label="check for the completeness"]
+		"XOR_SPLIT--check for the completeness_U8AI" -> "XOR_JOIN--check for the completeness_U8AI" [label="is complete"]
+		"send application back to the applicant" [shape=box]
+		"XOR_SPLIT--check for the completeness_U8AI" -> "send application back to the applicant" [label="is not complete"]
+		"XOR_JOIN--check for the completeness_U8AI" [label=X fixedsize=true shape=diamond width=0.5]
+		"send application back to the applicant" -> "XOR_JOIN--check for the completeness_U8AI"
+		"OR_SPLIT--4. Underwriting process_SYD3" [label=O fixedsize=true shape=diamond width=0.5]
+		"XOR_JOIN--check for the completeness_U8AI" -> "OR_SPLIT--4. Underwriting process_SYD3"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_SYD3" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_SYD3" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_SYD3" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_SYD3"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_SYD3"
+		"approve the loan application" [shape=box]
+		"OR_JOIN--4. Underwriting process_SYD3" -> "approve the loan application"
+		"receive the loans fund" [shape=box]
+		"approve the loan application" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the previous loan statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the loan application process. It starts with providing the previous loan statement to the lender. 
+Once providing the previous loan statement to the lender occurs, one or more of the following paths should be executed: completing the loan application by borrower, receiving the application by credit department. 
+Then, checking for the completeness should be taken into account. if all is complete, then nothing needs to be done, otherwise you should send application back to the applicant. 
+Afterwards, one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+After that, approving the loan application should be done. 
+When approving the loan application is completed, receiving the loans fund should be done. 
+The process is now completed. 
+"
+}

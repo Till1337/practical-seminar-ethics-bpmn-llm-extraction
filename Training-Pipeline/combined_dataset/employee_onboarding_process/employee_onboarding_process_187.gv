@@ -1,0 +1,53 @@
+digraph employee_onboarding_process_187 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"provide a job description with responsibilities" [shape=box]
+		"make an introduction" -> "provide a job description with responsibilities"
+		"induct into company culture" [shape=box]
+		"provide a job description with responsibilities" -> "induct into company culture"
+		"OR_SPLIT--4. First week_IJH8" [label=O fixedsize=true shape=diamond width=0.5]
+		"induct into company culture" -> "OR_SPLIT--4. First week_IJH8"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_IJH8" -> "check the paperwork"
+		"explain expectations for the following month" [shape=box]
+		"OR_SPLIT--4. First week_IJH8" -> "explain expectations for the following month"
+		"OR_JOIN--4. First week_IJH8" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_IJH8"
+		"explain expectations for the following month" -> "OR_JOIN--4. First week_IJH8"
+		"OR_SPLIT--5. First month_K4VP" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_IJH8" -> "OR_SPLIT--5. First month_K4VP"
+		"explain long-term goals" [shape=box]
+		"OR_SPLIT--5. First month_K4VP" -> "explain long-term goals"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_K4VP" -> "plan check-in meetings"
+		"encourage them to socially interact with the team" [shape=box]
+		"OR_SPLIT--5. First month_K4VP" -> "encourage them to socially interact with the team"
+		"OR_SPLIT--5. First month_Z9TC" [label=O fixedsize=true shape=diamond width=0.5]
+		"encourage them to socially interact with the team" -> "OR_SPLIT--5. First month_Z9TC"
+		"provide reading material for personal growth" [shape=box]
+		"OR_SPLIT--5. First month_Z9TC" -> "provide reading material for personal growth"
+		"review onboarding process over the next 60 days" [shape=box]
+		"OR_SPLIT--5. First month_Z9TC" -> "review onboarding process over the next 60 days"
+		"OR_JOIN--5. First month_Z9TC" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide reading material for personal growth" -> "OR_JOIN--5. First month_Z9TC"
+		"review onboarding process over the next 60 days" -> "OR_JOIN--5. First month_Z9TC"
+		"OR_JOIN--5. First month_K4VP" [label=O fixedsize=true shape=diamond width=0.5]
+		"explain long-term goals" -> "OR_JOIN--5. First month_K4VP"
+		"plan check-in meetings" -> "OR_JOIN--5. First month_K4VP"
+		"OR_JOIN--5. First month_Z9TC" -> "OR_JOIN--5. First month_K4VP"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_K4VP" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It begins when you make an introduction. 
+When making an introduction is completed, you need to provide a job description with responsibilities.
+When providing a job description with responsibilities is completed, inducting into company culture should be done. 
+Once inducting into company culture occurs, one or more of the following paths should be executed: checking the paperwork, explaining expectations for the following month. 
+After that, one or more of the following paths should be executed: explaining long-term goals, planning check-in meetings, encouraging them to socially interact with the team. 
+When encouraging them to socially interact with the team is completed, one or more of the following paths should be executed: providing reading material for personal growth, reviewing onboarding process over the next 60 days. 
+The process is now completed. 
+"
+}

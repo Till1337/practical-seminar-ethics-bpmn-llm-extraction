@@ -1,0 +1,56 @@
+digraph employee_onboarding_process_56 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"prepare benefits package" [shape=box]
+		"make an introduction" -> "prepare benefits package"
+		"assign a mentor" [shape=box]
+		"prepare benefits package" -> "assign a mentor"
+		"OR_SPLIT--4. First week_WYWM" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign a mentor" -> "OR_SPLIT--4. First week_WYWM"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_WYWM" -> "check the paperwork"
+		"assign first project" [shape=box]
+		"OR_SPLIT--4. First week_WYWM" -> "assign first project"
+		"OR_SPLIT--4. First week_QFFL" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign first project" -> "OR_SPLIT--4. First week_QFFL"
+		"get approval" [shape=box]
+		"OR_SPLIT--4. First week_QFFL" -> "get approval"
+		"explain expectations for the following month" [shape=box]
+		"OR_SPLIT--4. First week_QFFL" -> "explain expectations for the following month"
+		"OR_JOIN--4. First week_QFFL" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_JOIN--4. First week_QFFL"
+		"explain expectations for the following month" -> "OR_JOIN--4. First week_QFFL"
+		"OR_JOIN--4. First week_WYWM" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_WYWM"
+		"OR_JOIN--4. First week_QFFL" -> "OR_JOIN--4. First week_WYWM"
+		"AND_SPLIT--5. First month_GGD9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_WYWM" -> "AND_SPLIT--5. First month_GGD9"
+		"plan check-in meetings" [shape=box]
+		"AND_SPLIT--5. First month_GGD9" -> "plan check-in meetings"
+		"provide reading material for personal growth" [shape=box]
+		"AND_SPLIT--5. First month_GGD9" -> "provide reading material for personal growth"
+		"explain long-term goals" [shape=box]
+		"AND_SPLIT--5. First month_GGD9" -> "explain long-term goals"
+		"encourage them to socially interact with the team" [shape=box]
+		"plan check-in meetings" -> "encourage them to socially interact with the team"
+		"AND_JOIN--5. First month_GGD9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"encourage them to socially interact with the team" -> "AND_JOIN--5. First month_GGD9"
+		"provide reading material for personal growth" -> "AND_JOIN--5. First month_GGD9"
+		"explain long-term goals" -> "AND_JOIN--5. First month_GGD9"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. First month_GGD9" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It starts with making an introduction. 
+After making an introduction, preparing benefits package should be done. 
+Once preparing benefits package occurs, assigning a mentor should be done. 
+When assigning a mentor is completed, one or more of the following paths should be executed: checking the paperwork, assigning first project. 
+When assigning first project is completed, one or more of the following paths should be executed: getting approval, explaining expectations for the following month. 
+Then, the next tasks should be planning check-in meetings, providing reading material for personal growth and explaining long-term goals, they should be done in parallel. 
+Once planning check-in meetings occurs, you need to encourage them to socially interact with the team.
+The process is now completed. 
+"
+}

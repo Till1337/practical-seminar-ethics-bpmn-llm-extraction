@@ -1,0 +1,59 @@
+digraph churn_rate_prevention_process_85 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"identify key points of value" [shape=box]
+		"record basic details" -> "identify key points of value"
+		"record whether or not the customer responded" [shape=box]
+		"identify key points of value" -> "record whether or not the customer responded"
+		"identify the root cause(s) of the problem" [shape=box]
+		"record whether or not the customer responded" -> "identify the root cause(s) of the problem"
+		"OR_SPLIT--5. Retention incentives_TR4M" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the root cause(s) of the problem" -> "OR_SPLIT--5. Retention incentives_TR4M"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_TR4M" -> "inform them of key metrics demonstrating value"
+		"present them with a special offer" [shape=box]
+		"OR_SPLIT--5. Retention incentives_TR4M" -> "present them with a special offer"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_TR4M" -> "describe your ideas to increase value"
+		"OR_JOIN--5. Retention incentives_TR4M" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_TR4M"
+		"present them with a special offer" -> "OR_JOIN--5. Retention incentives_TR4M"
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_TR4M"
+		"AND_SPLIT--6. Outcome_TFDG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Retention incentives_TR4M" -> "AND_SPLIT--6. Outcome_TFDG"
+		"record the customer’s decision" [shape=box]
+		"AND_SPLIT--6. Outcome_TFDG" -> "record the customer’s decision"
+		"thank them for their time and feedback" [shape=box]
+		"AND_SPLIT--6. Outcome_TFDG" -> "thank them for their time and feedback"
+		"AND_JOIN--6. Outcome_TFDG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the customer’s decision" -> "AND_JOIN--6. Outcome_TFDG"
+		"thank them for their time and feedback" -> "AND_JOIN--6. Outcome_TFDG"
+		"ask if they have any other concerns" [shape=box]
+		"AND_JOIN--6. Outcome_TFDG" -> "ask if they have any other concerns"
+		"OR_SPLIT--8. Final steps_5TG9" [label=O fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "OR_SPLIT--8. Final steps_5TG9"
+		"note down important learnings from the conversation" [shape=box]
+		"OR_SPLIT--8. Final steps_5TG9" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"OR_SPLIT--8. Final steps_5TG9" -> "send learnings to appropriate managers"
+		"OR_JOIN--8. Final steps_5TG9" [label=O fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "OR_JOIN--8. Final steps_5TG9"
+		"send learnings to appropriate managers" -> "OR_JOIN--8. Final steps_5TG9"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--8. Final steps_5TG9" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the churn rate prevention process. It starts with recording basic details. 
+Once recording basic details occurs, identifying key points of value needs to be done. 
+After identifying key points of value, recording whether or not the customer responded should be done. 
+When recording whether or not the customer responded is completed, you need to identify the root cause(s) of the problem.
+Once identifying the root cause(s) of the problem occurs, one or more of the following paths should be executed: informing them of key metrics demonstrating value, presenting them with a special offer, describing your ideas to increase value. 
+Afterwards, the next tasks should be recording the customer’s decision and thanking them for their time and feedback, they should be done in parallel. 
+Once all pre-tasks are executed, then asking if they have any other concerns needs to be done. 
+Once asking if they have any other concerns occurs, one or more of the following paths should be executed: noting down important learnings from the conversation, sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

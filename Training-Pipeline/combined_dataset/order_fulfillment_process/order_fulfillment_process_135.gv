@@ -1,0 +1,33 @@
+digraph order_fulfillment_process_135 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_I8LD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "AND_SPLIT--2. Retrieving products from your inventory_I8LD"
+		"record which products were taken from storage" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_I8LD" -> "record which products were taken from storage"
+		"check that the products are in stock" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_I8LD" -> "check that the products are in stock"
+		"AND_JOIN--2. Retrieving products from your inventory_I8LD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record which products were taken from storage" -> "AND_JOIN--2. Retrieving products from your inventory_I8LD"
+		"check that the products are in stock" -> "AND_JOIN--2. Retrieving products from your inventory_I8LD"
+		"print invoice" [shape=box]
+		"AND_JOIN--2. Retrieving products from your inventory_I8LD" -> "print invoice"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"print invoice" -> "examine your other orders for delivery overlaps"
+		"send a confirmation email to the customer" [shape=box]
+		"examine your other orders for delivery overlaps" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+After confirming that payment has been received, the process is split into 2 parallel branches: recording which products were taken from storage and checking that the products are in stock. 
+Once all pre-tasks are executed, then printing invoice should be done. 
+Once printing invoice occurs, examining your other orders for delivery overlaps needs to be done. 
+After examining your other orders for delivery overlaps, sending a confirmation email to the customer needs to be done. 
+The process is now completed. 
+"
+}

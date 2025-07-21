@@ -1,0 +1,53 @@
+digraph budget_preparation_process_26 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Current financial status_SMZF" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Current financial status_SMZF"
+		"evaluate any significant variances" [shape=box]
+		"OR_SPLIT--2. Current financial status_SMZF" -> "evaluate any significant variances"
+		"review the most recent budget" [shape=box]
+		"OR_SPLIT--2. Current financial status_SMZF" -> "review the most recent budget"
+		"OR_JOIN--2. Current financial status_SMZF" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_JOIN--2. Current financial status_SMZF"
+		"review the most recent budget" -> "OR_JOIN--2. Current financial status_SMZF"
+		"OR_SPLIT--3. Goals_NMQD" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Current financial status_SMZF" -> "OR_SPLIT--3. Goals_NMQD"
+		"prioritize three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_NMQD" -> "prioritize three to five goals"
+		"define three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_NMQD" -> "define three to five goals"
+		"OR_JOIN--3. Goals_NMQD" [label=O fixedsize=true shape=diamond width=0.5]
+		"prioritize three to five goals" -> "OR_JOIN--3. Goals_NMQD"
+		"define three to five goals" -> "OR_JOIN--3. Goals_NMQD"
+		"list all department expenses" [shape=box]
+		"OR_JOIN--3. Goals_NMQD" -> "list all department expenses"
+		"project total annual income" [shape=box]
+		"list all department expenses" -> "project total annual income"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"project total annual income" -> "record financial data in a budget spreadsheet"
+		"OR_SPLIT--7. Final steps_L740" [label=O fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "OR_SPLIT--7. Final steps_L740"
+		"obtain approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_L740" -> "obtain approval from top management"
+		"request approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_L740" -> "request approval from top management"
+		"OR_JOIN--7. Final steps_L740" [label=O fixedsize=true shape=diamond width=0.5]
+		"obtain approval from top management" -> "OR_JOIN--7. Final steps_L740"
+		"request approval from top management" -> "OR_JOIN--7. Final steps_L740"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--7. Final steps_L740" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It starts with recording basic details. 
+When recording basic details is completed, one or more of the following paths should be executed: evaluating any significant variances, reviewing the most recent budget. 
+Afterwards, one or more of the following paths should be executed: prioritizing three to five goals, defining three to five goals. 
+Then, listing all department expenses should be done. 
+Once listing all department expenses occurs, you need to project total annual income.
+When projecting total annual income is completed, recording financial data in a budget spreadsheet needs to be done. 
+After recording financial data in a budget spreadsheet, one or more of the following paths should be executed: obtaining approval from top management, requesting approval from top management. 
+The process is now completed. 
+"
+}

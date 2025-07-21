@@ -1,0 +1,39 @@
+digraph purchase_order_workflow_158 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"get approval from finance team" [shape=box]
+		"create the purchase requisition" -> "get approval from finance team"
+		"create the purchase order" [shape=box]
+		"get approval from finance team" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"OR_SPLIT--6. Final steps_T3M8" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "OR_SPLIT--6. Final steps_T3M8"
+		"record the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_T3M8" -> "record the purchase order"
+		"file the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_T3M8" -> "file the purchase order"
+		"send details to the department" [shape=box]
+		"OR_SPLIT--6. Final steps_T3M8" -> "send details to the department"
+		"confirm the delivery date" [shape=box]
+		"record the purchase order" -> "confirm the delivery date"
+		"OR_JOIN--6. Final steps_T3M8" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm the delivery date" -> "OR_JOIN--6. Final steps_T3M8"
+		"file the purchase order" -> "OR_JOIN--6. Final steps_T3M8"
+		"send details to the department" -> "OR_JOIN--6. Final steps_T3M8"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Final steps_T3M8" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It begins when you create the purchase requisition. 
+After creating the purchase requisition, getting approval from finance team should be done. 
+Once getting approval from finance team occurs, creating the purchase order needs to be done. 
+Once creating the purchase order occurs, you need to get approval from supplier.
+After getting approval from supplier, one or more of the following paths should be executed: recording the purchase order, filing the purchase order, sending details to the department. 
+When recording the purchase order is completed, confirming the delivery date should be done. 
+The process is now completed. 
+"
+}

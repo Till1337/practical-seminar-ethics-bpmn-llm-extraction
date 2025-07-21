@@ -1,0 +1,23 @@
+digraph account_payable_process_86 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the vendor accounting department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the vendor accounting department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"create voucher for the documents" [shape=box]
+		"report errors to relevant team member" -> "create voucher for the documents"
+	}
+	START_NODE -> "send to the vendor accounting department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"create voucher for the documents" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the account payable process. It starts with sending to the vendor accounting department. 
+Once sending to the vendor accounting department occurs, you need to create a receiving report.
+After creating a receiving report, reporting errors to relevant team member should be done. 
+When reporting errors to relevant team member is completed, you need to create voucher for the documents.
+The process is now completed. 
+"
+}

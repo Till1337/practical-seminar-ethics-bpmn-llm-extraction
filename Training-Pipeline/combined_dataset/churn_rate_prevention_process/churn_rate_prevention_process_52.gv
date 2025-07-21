@@ -1,0 +1,52 @@
+digraph churn_rate_prevention_process_52 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"analyze how they use your product" [shape=box]
+		"record basic details" -> "analyze how they use your product"
+		"confirm call date and time" [shape=box]
+		"analyze how they use your product" -> "confirm call date and time"
+		"AND_SPLIT--4. Understand customer concerns_QJ6N" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm call date and time" -> "AND_SPLIT--4. Understand customer concerns_QJ6N"
+		"ask open-ended questions" [shape=box]
+		"AND_SPLIT--4. Understand customer concerns_QJ6N" -> "ask open-ended questions"
+		"identify the root cause(s) of the problem" [shape=box]
+		"AND_SPLIT--4. Understand customer concerns_QJ6N" -> "identify the root cause(s) of the problem"
+		"summarize why they want to leave" [shape=box]
+		"AND_SPLIT--4. Understand customer concerns_QJ6N" -> "summarize why they want to leave"
+		"AND_JOIN--4. Understand customer concerns_QJ6N" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask open-ended questions" -> "AND_JOIN--4. Understand customer concerns_QJ6N"
+		"identify the root cause(s) of the problem" -> "AND_JOIN--4. Understand customer concerns_QJ6N"
+		"summarize why they want to leave" -> "AND_JOIN--4. Understand customer concerns_QJ6N"
+		"describe your ideas to increase value" [shape=box]
+		"AND_JOIN--4. Understand customer concerns_QJ6N" -> "describe your ideas to increase value"
+		"OR_SPLIT--6. Outcome_YXTP" [label=O fixedsize=true shape=diamond width=0.5]
+		"describe your ideas to increase value" -> "OR_SPLIT--6. Outcome_YXTP"
+		"thank them for their time and feedback" [shape=box]
+		"OR_SPLIT--6. Outcome_YXTP" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"OR_SPLIT--6. Outcome_YXTP" -> "record the customer’s decision"
+		"OR_JOIN--6. Outcome_YXTP" [label=O fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "OR_JOIN--6. Outcome_YXTP"
+		"record the customer’s decision" -> "OR_JOIN--6. Outcome_YXTP"
+		"ask if they have any other concerns" [shape=box]
+		"OR_JOIN--6. Outcome_YXTP" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It begins when you record basic details. 
+Once recording basic details occurs, analyzing how they use your product should be done. 
+Once analyzing how they use your product occurs, you need to confirm call date and time.
+After confirming call date and time, the process is split into 3 parallel branches: asking open-ended questions, identifying the root cause(s) of the problem and summarizing why they want to leave. 
+Once all pre-tasks are executed, then describing your ideas to increase value should be done. 
+When describing your ideas to increase value is completed, one or more of the following paths should be executed: thanking them for their time and feedback, recording the customer’s decision. 
+After that, asking if they have any other concerns should be done. 
+Once asking if they have any other concerns occurs, you need to send learnings to appropriate managers.
+The process is now completed. 
+"
+}

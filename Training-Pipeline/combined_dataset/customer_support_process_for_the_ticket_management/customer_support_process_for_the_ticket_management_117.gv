@@ -1,0 +1,35 @@
+digraph customer_support_process_for_the_ticket_management_117 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"AND_SPLIT--2. Ticket type_5IE7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "AND_SPLIT--2. Ticket type_5IE7"
+		"Determine ticket type as 'Simple Question'" [shape=box]
+		"AND_SPLIT--2. Ticket type_5IE7" -> "Determine ticket type as 'Simple Question'"
+		"Determine ticket type as 'Billing Question'" [shape=box]
+		"AND_SPLIT--2. Ticket type_5IE7" -> "Determine ticket type as 'Billing Question'"
+		"AND_JOIN--2. Ticket type_5IE7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Simple Question'" -> "AND_JOIN--2. Ticket type_5IE7"
+		"Determine ticket type as 'Billing Question'" -> "AND_JOIN--2. Ticket type_5IE7"
+		subgraph "CLUSTER_XOR_3. Ticket Action_4NOY" {
+			color=white label="replicate the issue"
+			"XOR_SPLIT--replicate the issue_JZZ3" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"AND_JOIN--2. Ticket type_5IE7" -> "XOR_SPLIT--replicate the issue_JZZ3" [label="replicate the issue"]
+		"XOR_SPLIT--replicate the issue_JZZ3" -> "XOR_JOIN--replicate the issue_JZZ3" [label="could replicate"]
+		"replicate the issue" [shape=box]
+		"XOR_SPLIT--replicate the issue_JZZ3" -> "replicate the issue" [label="could not replicate"]
+		"XOR_JOIN--replicate the issue_JZZ3" [label=X fixedsize=true shape=diamond width=0.5]
+		"replicate the issue" -> "XOR_JOIN--replicate the issue_JZZ3"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"XOR_JOIN--replicate the issue_JZZ3" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It begins when you check the ticket type. 
+Once checking the ticket type occurs, the next tasks should be determining ticket type as 'Simple Question' and determining ticket type as 'Billing Question', they should be done in parallel. 
+Once all pre-tasks are executed, then replicating the issue should be considered. if all could replicate, then nothing needs to be done, otherwise you should replicate the issue. 
+The process is now completed. 
+"
+}

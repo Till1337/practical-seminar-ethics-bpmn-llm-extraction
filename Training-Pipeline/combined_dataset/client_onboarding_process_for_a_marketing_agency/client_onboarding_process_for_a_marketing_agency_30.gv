@@ -1,0 +1,30 @@
+digraph client_onboarding_process_for_a_marketing_agency_30 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send a welcome email" [shape=box]
+		"confirm questionnaire is complete" [shape=box]
+		"send a welcome email" -> "confirm questionnaire is complete"
+		"OR_SPLIT--4. Project start_RGM8" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm questionnaire is complete" -> "OR_SPLIT--4. Project start_RGM8"
+		"assign work to the team" [shape=box]
+		"OR_SPLIT--4. Project start_RGM8" -> "assign work to the team"
+		"inform client of project start" [shape=box]
+		"OR_SPLIT--4. Project start_RGM8" -> "inform client of project start"
+		"OR_JOIN--4. Project start_RGM8" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign work to the team" -> "OR_JOIN--4. Project start_RGM8"
+		"inform client of project start" -> "OR_JOIN--4. Project start_RGM8"
+		"make changes based on follow-up call" [shape=box]
+		"OR_JOIN--4. Project start_RGM8" -> "make changes based on follow-up call"
+	}
+	START_NODE -> "send a welcome email"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"make changes based on follow-up call" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the client onboarding process for a marketing agency. It starts with sending a welcome email. 
+Once sending a welcome email occurs, confirming questionnaire is complete should be done. 
+When confirming questionnaire is complete is completed, one or more of the following paths should be executed: assigning work to the team, informing client of project start. 
+Afterwards, you need to make changes based on follow-up call.
+The process is now completed. 
+"
+}

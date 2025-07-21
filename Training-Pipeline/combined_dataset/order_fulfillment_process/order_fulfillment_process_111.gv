@@ -1,0 +1,46 @@
+digraph order_fulfillment_process_111 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_O1CV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "AND_SPLIT--2. Retrieving products from your inventory_O1CV"
+		"record which products were taken from storage" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_O1CV" -> "record which products were taken from storage"
+		"perform quality checks" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_O1CV" -> "perform quality checks"
+		"check that the products are in stock" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_O1CV" -> "check that the products are in stock"
+		"request the ordered products from your inventory" [shape=box]
+		"perform quality checks" -> "request the ordered products from your inventory"
+		"AND_JOIN--2. Retrieving products from your inventory_O1CV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record which products were taken from storage" -> "AND_JOIN--2. Retrieving products from your inventory_O1CV"
+		"request the ordered products from your inventory" -> "AND_JOIN--2. Retrieving products from your inventory_O1CV"
+		"check that the products are in stock" -> "AND_JOIN--2. Retrieving products from your inventory_O1CV"
+		"attach the shipping label to the packaging" [shape=box]
+		"AND_JOIN--2. Retrieving products from your inventory_O1CV" -> "attach the shipping label to the packaging"
+		"OR_SPLIT--4. Dispatching the products_DF5V" [label=O fixedsize=true shape=diamond width=0.5]
+		"attach the shipping label to the packaging" -> "OR_SPLIT--4. Dispatching the products_DF5V"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_DF5V" -> "load items into the delivery vehicle"
+		"arrange the delivery" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_DF5V" -> "arrange the delivery"
+		"OR_JOIN--4. Dispatching the products_DF5V" [label=O fixedsize=true shape=diamond width=0.5]
+		"load items into the delivery vehicle" -> "OR_JOIN--4. Dispatching the products_DF5V"
+		"arrange the delivery" -> "OR_JOIN--4. Dispatching the products_DF5V"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_DF5V" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the order fulfillment process. It begins when you confirm that payment has been received. 
+After confirming that payment has been received, the next tasks should be recording which products were taken from storage, performing quality checks and checking that the products are in stock, they should be done in parallel. 
+After performing quality checks, requesting the ordered products from your inventory should be done. 
+Once all pre-tasks are executed, then attaching the shipping label to the packaging should be done. 
+After attaching the shipping label to the packaging, one or more of the following paths should be executed: loading items into the delivery vehicle, arranging the delivery. 
+Then, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

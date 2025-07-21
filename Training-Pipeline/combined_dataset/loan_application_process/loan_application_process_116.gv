@@ -1,0 +1,50 @@
+digraph loan_application_process_116 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the address proof to the lender" [shape=box]
+		"AND_SPLIT--2. Loan application_PF1Z" [label="+" fixedsize=true shape=diamond width=0.5]
+		"submit the address proof to the lender" -> "AND_SPLIT--2. Loan application_PF1Z"
+		"complete the loan application by borrower" [shape=box]
+		"AND_SPLIT--2. Loan application_PF1Z" -> "complete the loan application by borrower"
+		"receive the application by credit department" [shape=box]
+		"AND_SPLIT--2. Loan application_PF1Z" -> "receive the application by credit department"
+		"AND_JOIN--2. Loan application_PF1Z" [label="+" fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "AND_JOIN--2. Loan application_PF1Z"
+		"receive the application by credit department" -> "AND_JOIN--2. Loan application_PF1Z"
+		"send application back to the applicant" [shape=box]
+		"AND_JOIN--2. Loan application_PF1Z" -> "send application back to the applicant"
+		"OR_SPLIT--4. Underwriting process_2IGS" [label=O fixedsize=true shape=diamond width=0.5]
+		"send application back to the applicant" -> "OR_SPLIT--4. Underwriting process_2IGS"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_2IGS" -> "check the credit score and risk score"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_2IGS" -> "begin the underwriting process"
+		"OR_JOIN--4. Underwriting process_2IGS" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_2IGS"
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_2IGS"
+		"AND_SPLIT--5. Credit decision_HYQH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_2IGS" -> "AND_SPLIT--5. Credit decision_HYQH"
+		"reduce loan amount" [shape=box]
+		"AND_SPLIT--5. Credit decision_HYQH" -> "reduce loan amount"
+		"change the interest rate" [shape=box]
+		"AND_SPLIT--5. Credit decision_HYQH" -> "change the interest rate"
+		"AND_JOIN--5. Credit decision_HYQH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"reduce loan amount" -> "AND_JOIN--5. Credit decision_HYQH"
+		"change the interest rate" -> "AND_JOIN--5. Credit decision_HYQH"
+		"receive the loans fund" [shape=box]
+		"AND_JOIN--5. Credit decision_HYQH" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the address proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the loan application process. It begins when you submit the address proof to the lender. 
+Once submitting the address proof to the lender occurs, the process is split into 2 parallel branches: completing the loan application by borrower and receiving the application by credit department. 
+Once all pre-tasks are executed, then you need to send application back to the applicant.
+When sending application back to the applicant is completed, one or more of the following paths should be executed: checking the credit score and risk score, beginning the underwriting process. 
+After that, the process is split into 2 parallel branches: reducing loan amount and changing the interest rate. 
+Once all pre-tasks are executed, then receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

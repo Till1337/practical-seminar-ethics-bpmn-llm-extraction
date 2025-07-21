@@ -1,0 +1,40 @@
+digraph "final grades submission process_19" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"unmute all gradebook columns" [shape=box]
+		"calculate the grades" [shape=box]
+		"unmute all gradebook columns" -> "calculate the grades"
+		"apply any changes" [shape=box]
+		"calculate the grades" -> "apply any changes"
+		"OR_SPLIT--4. Re-calculate and get approval_YPDP" [label=O fixedsize=true shape=diamond width=0.5]
+		"apply any changes" -> "OR_SPLIT--4. Re-calculate and get approval_YPDP"
+		"export the course summary" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_YPDP" -> "export the course summary"
+		"export the final grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_YPDP" -> "export the final grades"
+		"OR_JOIN--4. Re-calculate and get approval_YPDP" [label=O fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "OR_JOIN--4. Re-calculate and get approval_YPDP"
+		"export the final grades" -> "OR_JOIN--4. Re-calculate and get approval_YPDP"
+		"OR_SPLIT--5. Submit results to SSO_NAE9" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Re-calculate and get approval_YPDP" -> "OR_SPLIT--5. Submit results to SSO_NAE9"
+		"get approval signatures by the course director" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_NAE9" -> "get approval signatures by the course director"
+		"submit results to SSO" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_NAE9" -> "submit results to SSO"
+		"OR_JOIN--5. Submit results to SSO_NAE9" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval signatures by the course director" -> "OR_JOIN--5. Submit results to SSO_NAE9"
+		"submit results to SSO" -> "OR_JOIN--5. Submit results to SSO_NAE9"
+	}
+	START_NODE -> "unmute all gradebook columns"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Submit results to SSO_NAE9" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It starts with unmuting all gradebook columns. 
+When unmuting all gradebook columns is completed, calculating the grades should be done. 
+After calculating the grades, applying any changes needs to be done. 
+Once applying any changes occurs, one or more of the following paths should be executed: exporting the course summary, exporting the final grades. 
+Then, one or more of the following paths should be executed: getting approval signatures by the course director, submitting results to SSO. 
+The process is now completed. 
+"
+}

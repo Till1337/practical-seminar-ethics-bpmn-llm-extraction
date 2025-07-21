@@ -1,0 +1,30 @@
+digraph client_onboarding_process_for_a_marketing_agency_124 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send a welcome email" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_M39N" [label=O fixedsize=true shape=diamond width=0.5]
+		"send a welcome email" -> "OR_SPLIT--2. Setting the agenda_M39N"
+		"schedule future calls" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_M39N" -> "schedule future calls"
+		"update the project management profile" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_M39N" -> "update the project management profile"
+		"OR_JOIN--2. Setting the agenda_M39N" [label=O fixedsize=true shape=diamond width=0.5]
+		"schedule future calls" -> "OR_JOIN--2. Setting the agenda_M39N"
+		"update the project management profile" -> "OR_JOIN--2. Setting the agenda_M39N"
+		"inform client of project start" [shape=box]
+		"OR_JOIN--2. Setting the agenda_M39N" -> "inform client of project start"
+		"have a follow-up call" [shape=box]
+		"inform client of project start" -> "have a follow-up call"
+	}
+	START_NODE -> "send a welcome email"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"have a follow-up call" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It begins when you send a welcome email. 
+When sending a welcome email is completed, one or more of the following paths should be executed: scheduling future calls, updating the project management profile. 
+Afterwards, you need to inform client of project start.
+After informing client of project start, having a follow-up call needs to be done. 
+The process is now completed. 
+"
+}

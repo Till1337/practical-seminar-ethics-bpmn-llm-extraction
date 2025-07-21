@@ -1,0 +1,59 @@
+digraph project_management_process_94 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_1W7L" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Conception and Initiation_1W7L"
+		"work out its value" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_1W7L" -> "work out its value"
+		"get approval" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_1W7L" -> "get approval"
+		"record the basic idea" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_1W7L" -> "record the basic idea"
+		"AND_JOIN--2. Conception and Initiation_1W7L" [label="+" fixedsize=true shape=diamond width=0.5]
+		"work out its value" -> "AND_JOIN--2. Conception and Initiation_1W7L"
+		"get approval" -> "AND_JOIN--2. Conception and Initiation_1W7L"
+		"record the basic idea" -> "AND_JOIN--2. Conception and Initiation_1W7L"
+		"AND_SPLIT--3. Definition and Planning_ODOW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Conception and Initiation_1W7L" -> "AND_SPLIT--3. Definition and Planning_ODOW"
+		"state the available resources" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_ODOW" -> "state the available resources"
+		"draw up a project plan" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_ODOW" -> "draw up a project plan"
+		"lay out a timeline" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_ODOW" -> "lay out a timeline"
+		"set a budget" [shape=box]
+		"lay out a timeline" -> "set a budget"
+		"AND_JOIN--3. Definition and Planning_ODOW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"state the available resources" -> "AND_JOIN--3. Definition and Planning_ODOW"
+		"draw up a project plan" -> "AND_JOIN--3. Definition and Planning_ODOW"
+		"set a budget" -> "AND_JOIN--3. Definition and Planning_ODOW"
+		"have a kickoff meeting" [shape=box]
+		"AND_JOIN--3. Definition and Planning_ODOW" -> "have a kickoff meeting"
+		"AND_SPLIT--5. Performance and Control_32C9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"have a kickoff meeting" -> "AND_SPLIT--5. Performance and Control_32C9"
+		"record KPIs" [shape=box]
+		"AND_SPLIT--5. Performance and Control_32C9" -> "record KPIs"
+		"keep communication" [shape=box]
+		"AND_SPLIT--5. Performance and Control_32C9" -> "keep communication"
+		"AND_JOIN--5. Performance and Control_32C9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "AND_JOIN--5. Performance and Control_32C9"
+		"keep communication" -> "AND_JOIN--5. Performance and Control_32C9"
+		"ensure the project is completed" [shape=box]
+		"AND_JOIN--5. Performance and Control_32C9" -> "ensure the project is completed"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"ensure the project is completed" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the project management process. It starts with making an introduction. 
+After making an introduction, the process is split into 3 parallel branches: working out its value, getting approval and recording the basic idea. 
+Once all pre-tasks are executed, then the process is split into 3 parallel branches: stating the available resources, drawing up a project plan and laying out a timeline. 
+When laying out a timeline is completed, you need to set a budget.
+Once all pre-tasks are executed, then having a kickoff meeting should be done. 
+Once having a kickoff meeting occurs, the next tasks should be recording KPIs and keeping communication, they should be done in parallel. 
+Once all pre-tasks are executed, then ensuring the project is completed needs to be done. 
+The process is now completed. 
+"
+}

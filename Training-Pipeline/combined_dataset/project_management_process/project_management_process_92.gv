@@ -1,0 +1,37 @@
+digraph project_management_process_92 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		subgraph "CLUSTER_XOR_2. Conception and Initiation_LF1K" {
+			color=white label="identify the approval status"
+			"XOR_SPLIT--identify the approval status_5JAE" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"make an introduction" -> "XOR_SPLIT--identify the approval status_5JAE" [label="identify the approval status"]
+		"XOR_SPLIT--identify the approval status_5JAE" -> "XOR_JOIN--identify the approval status_5JAE" [label=approved]
+		"record the basic idea" [shape=box]
+		"XOR_SPLIT--identify the approval status_5JAE" -> "record the basic idea" [label=rejected]
+		"XOR_JOIN--identify the approval status_5JAE" [label=X fixedsize=true shape=diamond width=0.5]
+		"record the basic idea" -> "XOR_JOIN--identify the approval status_5JAE"
+		"state the available resources" [shape=box]
+		"XOR_JOIN--identify the approval status_5JAE" -> "state the available resources"
+		"have a kickoff meeting" [shape=box]
+		"state the available resources" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"terminate contractors" [shape=box]
+		"keep communication" -> "terminate contractors"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"terminate contractors" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, identifying the approval status should be taken into account. if all approved, then nothing needs to be done, otherwise you should record the basic idea. 
+Afterwards, stating the available resources needs to be done. 
+When stating the available resources is completed, having a kickoff meeting needs to be done. 
+After having a kickoff meeting, keeping communication should be done. 
+When keeping communication is completed, you need to terminate contractors.
+The process is now completed. 
+"
+}

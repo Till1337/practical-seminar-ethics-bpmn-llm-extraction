@@ -1,0 +1,40 @@
+digraph employee_onboarding_process_27 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"prepare employee paperwork" [shape=box]
+		"make an introduction" -> "prepare employee paperwork"
+		"tour the office" [shape=box]
+		"prepare employee paperwork" -> "tour the office"
+		"OR_SPLIT--4. First week_UIQJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"tour the office" -> "OR_SPLIT--4. First week_UIQJ"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_UIQJ" -> "check the paperwork"
+		"explain expectations for the following month" [shape=box]
+		"OR_SPLIT--4. First week_UIQJ" -> "explain expectations for the following month"
+		"OR_JOIN--4. First week_UIQJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_UIQJ"
+		"explain expectations for the following month" -> "OR_JOIN--4. First week_UIQJ"
+		"OR_SPLIT--5. First month_LCPS" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_UIQJ" -> "OR_SPLIT--5. First month_LCPS"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_LCPS" -> "plan check-in meetings"
+		"explain long-term goals" [shape=box]
+		"OR_SPLIT--5. First month_LCPS" -> "explain long-term goals"
+		"OR_JOIN--5. First month_LCPS" [label=O fixedsize=true shape=diamond width=0.5]
+		"plan check-in meetings" -> "OR_JOIN--5. First month_LCPS"
+		"explain long-term goals" -> "OR_JOIN--5. First month_LCPS"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_LCPS" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It starts with making an introduction. 
+After making an introduction, preparing employee paperwork needs to be done. 
+When preparing employee paperwork is completed, touring the office needs to be done. 
+After touring the office, one or more of the following paths should be executed: checking the paperwork, explaining expectations for the following month. 
+Afterwards, one or more of the following paths should be executed: planning check-in meetings, explaining long-term goals. 
+The process is now completed. 
+"
+}

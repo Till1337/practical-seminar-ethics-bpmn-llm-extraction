@@ -1,0 +1,79 @@
+digraph startup_due_diligence_for_a_venture_capitalist_150 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn why startups fail so often" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ILMU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn why startups fail so often" -> "AND_SPLIT--2. Filter out the terrible products_ILMU"
+		"make plans for future products" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ILMU" -> "make plans for future products"
+		"specific product rate of growth" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ILMU" -> "specific product rate of growth"
+		"specific product market size" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ILMU" -> "specific product market size"
+		"specific product market share" [shape=box]
+		"specific product rate of growth" -> "specific product market share"
+		"consider product necessity" [shape=box]
+		"specific product market size" -> "consider product necessity"
+		"AND_JOIN--2. Filter out the terrible products_ILMU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make plans for future products" -> "AND_JOIN--2. Filter out the terrible products_ILMU"
+		"specific product market share" -> "AND_JOIN--2. Filter out the terrible products_ILMU"
+		"consider product necessity" -> "AND_JOIN--2. Filter out the terrible products_ILMU"
+		"AND_SPLIT--3. Review the funding team_NHBL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Filter out the terrible products_ILMU" -> "AND_SPLIT--3. Review the funding team_NHBL"
+		"review number of employees" [shape=box]
+		"AND_SPLIT--3. Review the funding team_NHBL" -> "review number of employees"
+		"review relationship to founder" [shape=box]
+		"AND_SPLIT--3. Review the funding team_NHBL" -> "review relationship to founder"
+		"AND_SPLIT--3. Review the funding team_H6OR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review number of employees" -> "AND_SPLIT--3. Review the funding team_H6OR"
+		"review trustworthiness" [shape=box]
+		"AND_SPLIT--3. Review the funding team_H6OR" -> "review trustworthiness"
+		"review expertise" [shape=box]
+		"AND_SPLIT--3. Review the funding team_H6OR" -> "review expertise"
+		"AND_JOIN--3. Review the funding team_H6OR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review trustworthiness" -> "AND_JOIN--3. Review the funding team_H6OR"
+		"review expertise" -> "AND_JOIN--3. Review the funding team_H6OR"
+		"AND_JOIN--3. Review the funding team_NHBL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_H6OR" -> "AND_JOIN--3. Review the funding team_NHBL"
+		"review relationship to founder" -> "AND_JOIN--3. Review the funding team_NHBL"
+		"check income statements" [shape=box]
+		"AND_JOIN--3. Review the funding team_NHBL" -> "check income statements"
+		"AND_SPLIT--5. Evaluate the Competition_9KTW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check income statements" -> "AND_SPLIT--5. Evaluate the Competition_9KTW"
+		"project the market share" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_9KTW" -> "project the market share"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_9KTW" -> "analyze the reputation of competition"
+		"AND_JOIN--5. Evaluate the Competition_9KTW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"project the market share" -> "AND_JOIN--5. Evaluate the Competition_9KTW"
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_9KTW"
+		"OR_SPLIT--6. Legal Analysis_YDWU" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Evaluate the Competition_9KTW" -> "OR_SPLIT--6. Legal Analysis_YDWU"
+		"check insurance" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_YDWU" -> "check insurance"
+		"check patents" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_YDWU" -> "check patents"
+		"check past lawsuits" [shape=box]
+		"check insurance" -> "check past lawsuits"
+		"OR_JOIN--6. Legal Analysis_YDWU" [label=O fixedsize=true shape=diamond width=0.5]
+		"check past lawsuits" -> "OR_JOIN--6. Legal Analysis_YDWU"
+		"check patents" -> "OR_JOIN--6. Legal Analysis_YDWU"
+	}
+	START_NODE -> "learn why startups fail so often"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Legal Analysis_YDWU" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It starts with learning why startups fail so often. 
+After learning why startups fail so often, the process is split into 3 parallel branches: making plans for future products, specificking product rate of growth and specificking product market size. 
+After specificking product rate of growth, you need to specific product market share.
+When specificking product market size is completed, considering product necessity should be done. 
+Once all pre-tasks are executed, then the next tasks should be reviewing number of employees and reviewing relationship to founder, they should be done in parallel. 
+Once reviewing number of employees occurs, the next tasks should be reviewing trustworthiness and reviewing expertise, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to check income statements.
+When checking income statements is completed, the process is split into 2 parallel branches: projecting the market share and analyzing the reputation of competition. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: checking insurance, checking patents. 
+Once checking insurance occurs, checking past lawsuits needs to be done. 
+The process is now completed. 
+"
+}

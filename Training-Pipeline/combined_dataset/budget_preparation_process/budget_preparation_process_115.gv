@@ -1,0 +1,59 @@
+digraph budget_preparation_process_115 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"determine ways of achieving the goals" [shape=box]
+		"evaluate any significant variances" -> "determine ways of achieving the goals"
+		"AND_SPLIT--4. Projected expenses_Z45C" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "AND_SPLIT--4. Projected expenses_Z45C"
+		"calculate the total annual budget" [shape=box]
+		"AND_SPLIT--4. Projected expenses_Z45C" -> "calculate the total annual budget"
+		"estimate the average monthly cost" [shape=box]
+		"AND_SPLIT--4. Projected expenses_Z45C" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"AND_SPLIT--4. Projected expenses_Z45C" -> "list all department expenses"
+		"AND_JOIN--4. Projected expenses_Z45C" [label="+" fixedsize=true shape=diamond width=0.5]
+		"calculate the total annual budget" -> "AND_JOIN--4. Projected expenses_Z45C"
+		"estimate the average monthly cost" -> "AND_JOIN--4. Projected expenses_Z45C"
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_Z45C"
+		"OR_SPLIT--5. Projected income/funding_VDN6" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Projected expenses_Z45C" -> "OR_SPLIT--5. Projected income/funding_VDN6"
+		"project total annual income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_VDN6" -> "project total annual income"
+		"list all sources of income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_VDN6" -> "list all sources of income"
+		"OR_JOIN--5. Projected income/funding_VDN6" [label=O fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "OR_JOIN--5. Projected income/funding_VDN6"
+		"list all sources of income" -> "OR_JOIN--5. Projected income/funding_VDN6"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_JOIN--5. Projected income/funding_VDN6" -> "record financial data in a budget spreadsheet"
+		"AND_SPLIT--7. Final steps_4O4A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_SPLIT--7. Final steps_4O4A"
+		"obtain approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_4O4A" -> "obtain approval from top management"
+		"request approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_4O4A" -> "request approval from top management"
+		"assign management responsibilities" [shape=box]
+		"obtain approval from top management" -> "assign management responsibilities"
+		"AND_JOIN--7. Final steps_4O4A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign management responsibilities" -> "AND_JOIN--7. Final steps_4O4A"
+		"request approval from top management" -> "AND_JOIN--7. Final steps_4O4A"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_4O4A" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the budget preparation process. It begins when you set target date for approval. 
+Once setting target date for approval occurs, you need to evaluate any significant variances.
+After evaluating any significant variances, you need to determine ways of achieving the goals.
+After determining ways of achieving the goals, the process is split into 3 parallel branches: calculating the total annual budget, estimating the average monthly cost and listing all department expenses. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: projecting total annual income, listing all sources of income. 
+Then, recording financial data in a budget spreadsheet should be done. 
+After recording financial data in a budget spreadsheet, the next tasks should be obtaining approval from top management and requesting approval from top management, they should be done in parallel. 
+Once obtaining approval from top management occurs, assigning management responsibilities needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,35 @@
+digraph churn_rate_prevention_process_29 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"identify key points of value" [shape=box]
+		"record basic details" -> "identify key points of value"
+		"give them a call" [shape=box]
+		"identify key points of value" -> "give them a call"
+		"identify the root cause(s) of the problem" [shape=box]
+		"give them a call" -> "identify the root cause(s) of the problem"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"identify the root cause(s) of the problem" -> "inform them of key metrics demonstrating value"
+		"record the customer’s decision" [shape=box]
+		"inform them of key metrics demonstrating value" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It begins when you record basic details. 
+After recording basic details, identifying key points of value needs to be done. 
+When identifying key points of value is completed, you need to give them a call.
+When giving them a call is completed, you need to identify the root cause(s) of the problem.
+Once identifying the root cause(s) of the problem occurs, informing them of key metrics demonstrating value needs to be done. 
+After informing them of key metrics demonstrating value, recording the customer’s decision should be done. 
+After recording the customer’s decision, you need to ask if they have any other concerns.
+Once asking if they have any other concerns occurs, sending learnings to appropriate managers should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,26 @@
+digraph order_fulfillment_process_141 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"request the ordered products from your inventory" [shape=box]
+		"record order details" -> "request the ordered products from your inventory"
+		"measure products" [shape=box]
+		"request the ordered products from your inventory" -> "measure products"
+		"load items into the delivery vehicle" [shape=box]
+		"measure products" -> "load items into the delivery vehicle"
+		"send a confirmation email to the customer" [shape=box]
+		"load items into the delivery vehicle" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the order fulfillment process. It starts with recording order details. 
+When recording order details is completed, requesting the ordered products from your inventory needs to be done. 
+When requesting the ordered products from your inventory is completed, measuring products needs to be done. 
+When measuring products is completed, you need to load items into the delivery vehicle.
+Once loading items into the delivery vehicle occurs, sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

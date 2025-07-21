@@ -1,0 +1,70 @@
+digraph budget_preparation_process_171 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"review the most recent budget" [shape=box]
+		"set target date for approval" -> "review the most recent budget"
+		"AND_SPLIT--3. Goals_L426" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review the most recent budget" -> "AND_SPLIT--3. Goals_L426"
+		"define three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_L426" -> "define three to five goals"
+		"prioritize three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_L426" -> "prioritize three to five goals"
+		"AND_JOIN--3. Goals_L426" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define three to five goals" -> "AND_JOIN--3. Goals_L426"
+		"prioritize three to five goals" -> "AND_JOIN--3. Goals_L426"
+		"calculate the total annual budget" [shape=box]
+		"AND_JOIN--3. Goals_L426" -> "calculate the total annual budget"
+		"AND_SPLIT--5. Projected income/funding_QEC0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"calculate the total annual budget" -> "AND_SPLIT--5. Projected income/funding_QEC0"
+		"list all sources of income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_QEC0" -> "list all sources of income"
+		"project total annual income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_QEC0" -> "project total annual income"
+		"AND_JOIN--5. Projected income/funding_QEC0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all sources of income" -> "AND_JOIN--5. Projected income/funding_QEC0"
+		"project total annual income" -> "AND_JOIN--5. Projected income/funding_QEC0"
+		"AND_SPLIT--6. Putting it all together_F418" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Projected income/funding_QEC0" -> "AND_SPLIT--6. Putting it all together_F418"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_SPLIT--6. Putting it all together_F418" -> "record financial data in a budget spreadsheet"
+		"finalize the budget" [shape=box]
+		"AND_SPLIT--6. Putting it all together_F418" -> "finalize the budget"
+		"AND_JOIN--6. Putting it all together_F418" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_JOIN--6. Putting it all together_F418"
+		"finalize the budget" -> "AND_JOIN--6. Putting it all together_F418"
+		"AND_SPLIT--7. Final steps_JH2Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--6. Putting it all together_F418" -> "AND_SPLIT--7. Final steps_JH2Q"
+		"assign management responsibilities" [shape=box]
+		"AND_SPLIT--7. Final steps_JH2Q" -> "assign management responsibilities"
+		"incorporate into the master budget" [shape=box]
+		"AND_SPLIT--7. Final steps_JH2Q" -> "incorporate into the master budget"
+		"AND_SPLIT--7. Final steps_PED8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign management responsibilities" -> "AND_SPLIT--7. Final steps_PED8"
+		"request approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_PED8" -> "request approval from top management"
+		"obtain approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_PED8" -> "obtain approval from top management"
+		"AND_JOIN--7. Final steps_PED8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"request approval from top management" -> "AND_JOIN--7. Final steps_PED8"
+		"obtain approval from top management" -> "AND_JOIN--7. Final steps_PED8"
+		"AND_JOIN--7. Final steps_JH2Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--7. Final steps_PED8" -> "AND_JOIN--7. Final steps_JH2Q"
+		"incorporate into the master budget" -> "AND_JOIN--7. Final steps_JH2Q"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_JH2Q" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It starts with setting target date for approval. 
+When setting target date for approval is completed, reviewing the most recent budget needs to be done. 
+Once reviewing the most recent budget occurs, the next tasks should be defining three to five goals and prioritizing three to five goals, they should be done in parallel. 
+Once all pre-tasks are executed, then calculating the total annual budget should be done. 
+After calculating the total annual budget, the process is split into 2 parallel branches: listing all sources of income and projecting total annual income. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: recording financial data in a budget spreadsheet and finalizing the budget. 
+Once all pre-tasks are executed, then the next tasks should be assigning management responsibilities and incorporating into the master budget, they should be done in parallel. 
+After assigning management responsibilities, the next tasks should be requesting approval from top management and obtaining approval from top management, they should be done in parallel. 
+The process is now completed. 
+"
+}

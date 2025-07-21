@@ -1,0 +1,39 @@
+digraph startup_due_diligence_for_a_venture_capitalist_157 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"do the SWOT analysis" [shape=box]
+		"learn how to identify future failures" -> "do the SWOT analysis"
+		"review expertise" [shape=box]
+		"do the SWOT analysis" -> "review expertise"
+		"check cash flow" [shape=box]
+		"review expertise" -> "check cash flow"
+		"AND_SPLIT--5. Evaluate the Competition_9I7J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "AND_SPLIT--5. Evaluate the Competition_9I7J"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_9I7J" -> "analyze the reputation of competition"
+		"analyze the growth stage of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_9I7J" -> "analyze the growth stage of competition"
+		"know exact competition" [shape=box]
+		"analyze the growth stage of competition" -> "know exact competition"
+		"AND_JOIN--5. Evaluate the Competition_9I7J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_9I7J"
+		"know exact competition" -> "AND_JOIN--5. Evaluate the Competition_9I7J"
+		"check insurance" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_9I7J" -> "check insurance"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check insurance" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the startup due diligence for a venture capitalist. It begins when you learn how to identify future failures. 
+When learning how to identify future failures is completed, doing the SWOT analysis should be doingne. 
+Once doing the SWOT analysis occurs, you need to review expertise.
+Once reviewing expertise occurs, you need to check cash flow.
+After checking cash flow, the next tasks should be analyzing the reputation of competition and analyzing the growth stage of competition, they should be done in parallel. 
+When analyzing the growth stage of competition is completed, you need to know exact competition.
+Once all pre-tasks are executed, then you need to check insurance.
+The process is now completed. 
+"
+}

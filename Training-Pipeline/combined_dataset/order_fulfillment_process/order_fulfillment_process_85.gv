@@ -1,0 +1,40 @@
+digraph order_fulfillment_process_85 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_K5JC" [label=O fixedsize=true shape=diamond width=0.5]
+		"record order details" -> "OR_SPLIT--2. Retrieving products from your inventory_K5JC"
+		"record which products were taken from storage" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_K5JC" -> "record which products were taken from storage"
+		"check that the products are in stock" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_K5JC" -> "check that the products are in stock"
+		"OR_JOIN--2. Retrieving products from your inventory_K5JC" [label=O fixedsize=true shape=diamond width=0.5]
+		"record which products were taken from storage" -> "OR_JOIN--2. Retrieving products from your inventory_K5JC"
+		"check that the products are in stock" -> "OR_JOIN--2. Retrieving products from your inventory_K5JC"
+		"print invoice" [shape=box]
+		"OR_JOIN--2. Retrieving products from your inventory_K5JC" -> "print invoice"
+		"OR_SPLIT--4. Dispatching the products_IX1N" [label=O fixedsize=true shape=diamond width=0.5]
+		"print invoice" -> "OR_SPLIT--4. Dispatching the products_IX1N"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_IX1N" -> "examine your other orders for delivery overlaps"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_IX1N" -> "load items into the delivery vehicle"
+		"OR_JOIN--4. Dispatching the products_IX1N" [label=O fixedsize=true shape=diamond width=0.5]
+		"examine your other orders for delivery overlaps" -> "OR_JOIN--4. Dispatching the products_IX1N"
+		"load items into the delivery vehicle" -> "OR_JOIN--4. Dispatching the products_IX1N"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_IX1N" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the order fulfillment process. It begins when you record order details. 
+After recording order details, one or more of the following paths should be executed: recording which products were taken from storage, checking that the products are in stock. 
+Then, printing invoice should be done. 
+When printing invoice is completed, one or more of the following paths should be executed: examining your other orders for delivery overlaps, loading items into the delivery vehicle. 
+After that, sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

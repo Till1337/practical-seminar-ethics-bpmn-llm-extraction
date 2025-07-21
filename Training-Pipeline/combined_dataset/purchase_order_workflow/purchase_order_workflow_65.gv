@@ -1,0 +1,40 @@
+digraph purchase_order_workflow_65 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"AND_SPLIT--2. Approval_UHU9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the basic details" -> "AND_SPLIT--2. Approval_UHU9"
+		"get approval from finance team" [shape=box]
+		"AND_SPLIT--2. Approval_UHU9" -> "get approval from finance team"
+		"get approval from manager" [shape=box]
+		"AND_SPLIT--2. Approval_UHU9" -> "get approval from manager"
+		"AND_JOIN--2. Approval_UHU9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "AND_JOIN--2. Approval_UHU9"
+		"get approval from manager" -> "AND_JOIN--2. Approval_UHU9"
+		"AND_SPLIT--4. Creation_6I4D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Approval_UHU9" -> "AND_SPLIT--4. Creation_6I4D"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"AND_SPLIT--4. Creation_6I4D" -> "inform the supplier the order is ready for approval"
+		"create the purchase order" [shape=box]
+		"AND_SPLIT--4. Creation_6I4D" -> "create the purchase order"
+		"AND_JOIN--4. Creation_6I4D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform the supplier the order is ready for approval" -> "AND_JOIN--4. Creation_6I4D"
+		"create the purchase order" -> "AND_JOIN--4. Creation_6I4D"
+		"get approval from supplier" [shape=box]
+		"AND_JOIN--4. Creation_6I4D" -> "get approval from supplier"
+		"file the purchase order" [shape=box]
+		"get approval from supplier" -> "file the purchase order"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"file the purchase order" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It begins when you record the basic details. 
+Once recording the basic details occurs, the next tasks should be getting approval from finance team and getting approval from manager, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: informing the supplier the order is ready for approval and creating the purchase order. 
+Once all pre-tasks are executed, then getting approval from supplier should be done. 
+Once getting approval from supplier occurs, filing the purchase order should be done. 
+The process is now completed. 
+"
+}

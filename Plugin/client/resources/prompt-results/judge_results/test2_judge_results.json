@@ -1,0 +1,46 @@
+[
+  {
+    "method": "zero_shot",
+    "step_name": "Data-controls review",
+    "score": 4.0,
+    "strengths": ["Privacy protection"],
+    "weaknesses": ["Misses data bias"],
+    "missed_concerns": ["Algorithmic fairness"],
+    "invalid_concerns": [],
+    "overall_feedback": "The ethical analysis provides a foundation but lacks depth and specificity...",
+    "improvement_suggestions": ["Specify actors responsible for each step..."]
+  },
+  {
+    "method": "zero_shot",
+    "step_name": "Sustainability audit",
+    "score": 4.0,
+    "strengths": ["Checks for child labor."],
+    "weaknesses": ["Could include labor rights."],
+    "missed_concerns": ["Labor rights", "Fair wages"],
+    "invalid_concerns": [],
+    "overall_feedback": "The ethical analysis provides a foundation but lacks depth and specificity...",
+    "improvement_suggestions": ["Specify actors responsible for each step..."]
+  },
+  {
+    "method": "few_shot",
+    "step_name": "Data-controls review",
+    "score": 4.0,
+    "strengths": ["Privacy is correctly identified."],
+    "weaknesses": ["Misses security measures and compliance specifics."],
+    "missed_concerns": ["Security", "Compliance"],
+    "invalid_concerns": [],
+    "overall_feedback": "The ethical analysis covers several relevant dimensions but lacks comprehensiveness...",
+    "improvement_suggestions": ["Conduct more comprehensive ethical audits..."]
+  },
+  {
+    "method": "few_shot",
+    "step_name": "Sustainability audit",
+    "score": 4.0,
+    "strengths": ["Sustainability is well-covered."],
+    "weaknesses": ["Misses transparency in reporting and inclusivity."],
+    "missed_concerns": ["Transparency", "Inclusivity"],
+    "invalid_concerns": [],
+    "overall_feedback": "The ethical analysis covers several relevant dimensions but lacks comprehensiveness...",
+    "improvement_suggestions": ["Conduct more comprehensive ethical audits..."]
+  }
+]

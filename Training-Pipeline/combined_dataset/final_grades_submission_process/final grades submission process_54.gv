@@ -1,0 +1,56 @@
+digraph "final grades submission process_54" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_SAYC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "AND_SPLIT--2. Apply special grades or criteria_SAYC"
+		"prepare grades for SSO" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_SAYC" -> "prepare grades for SSO"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_SAYC" -> "import gradebook"
+		"apply special grades to individuals" [shape=box]
+		"prepare grades for SSO" -> "apply special grades to individuals"
+		"select exam assignment" [shape=box]
+		"import gradebook" -> "select exam assignment"
+		"AND_JOIN--2. Apply special grades or criteria_SAYC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply special grades to individuals" -> "AND_JOIN--2. Apply special grades or criteria_SAYC"
+		"select exam assignment" -> "AND_JOIN--2. Apply special grades or criteria_SAYC"
+		"review grades summary" [shape=box]
+		"AND_JOIN--2. Apply special grades or criteria_SAYC" -> "review grades summary"
+		"OR_SPLIT--4. Re-calculate and get approval_0L9J" [label=O fixedsize=true shape=diamond width=0.5]
+		"review grades summary" -> "OR_SPLIT--4. Re-calculate and get approval_0L9J"
+		"export the final grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_0L9J" -> "export the final grades"
+		"recalculate the grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_0L9J" -> "recalculate the grades"
+		"OR_JOIN--4. Re-calculate and get approval_0L9J" [label=O fixedsize=true shape=diamond width=0.5]
+		"export the final grades" -> "OR_JOIN--4. Re-calculate and get approval_0L9J"
+		"recalculate the grades" -> "OR_JOIN--4. Re-calculate and get approval_0L9J"
+		"OR_SPLIT--5. Submit results to SSO_MYYR" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Re-calculate and get approval_0L9J" -> "OR_SPLIT--5. Submit results to SSO_MYYR"
+		"send examiners grade approval sheet" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_MYYR" -> "send examiners grade approval sheet"
+		"submit results to SSO" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_MYYR" -> "submit results to SSO"
+		"get approval signatures by the course director" [shape=box]
+		"submit results to SSO" -> "get approval signatures by the course director"
+		"OR_JOIN--5. Submit results to SSO_MYYR" [label=O fixedsize=true shape=diamond width=0.5]
+		"send examiners grade approval sheet" -> "OR_JOIN--5. Submit results to SSO_MYYR"
+		"get approval signatures by the course director" -> "OR_JOIN--5. Submit results to SSO_MYYR"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Submit results to SSO_MYYR" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It begins when you enter results in the canvas gradebook. 
+When entering results in the canvas gradebook is completed, the next tasks should be preparing grades for SSO and importing gradebook, they should be done in parallel. 
+After preparing grades for SSO, applying special grades to individuals should be done. 
+After importing gradebook, you need to select exam assignment.
+Once all pre-tasks are executed, then reviewing grades summary needs to be done. 
+When reviewing grades summary is completed, one or more of the following paths should be executed: exporting the final grades, recalculating the grades. 
+Then, one or more of the following paths should be executed: sending examiners grade approval sheet, submitting results to SSO. 
+After submitting results to SSO, getting approval signatures by the course director needs to be done. 
+The process is now completed. 
+"
+}

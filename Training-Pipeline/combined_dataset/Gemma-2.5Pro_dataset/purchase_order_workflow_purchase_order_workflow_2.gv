@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_2 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"OR_SPLIT--2. Approval_MI7Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the basic details" -> "OR_SPLIT--2. Approval_MI7Y"
+		"get approval from manager" [shape=box]
+		"OR_SPLIT--2. Approval_MI7Y" -> "get approval from manager"
+		"get approval from finance team" [shape=box]
+		"OR_SPLIT--2. Approval_MI7Y" -> "get approval from finance team"
+		"OR_JOIN--2. Approval_MI7Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from manager" -> "OR_JOIN--2. Approval_MI7Y"
+		"get approval from finance team" -> "OR_JOIN--2. Approval_MI7Y"
+		"create the purchase order" [shape=box]
+		"OR_JOIN--2. Approval_MI7Y" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"send details to the department" [shape=box]
+		"get approval from supplier" -> "send details to the department"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send details to the department" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It begins when you record the basic details. 
+After recording the basic details, one or more of the following paths should be executed: getting approval from manager, getting approval from finance team. 
+Then, creating the purchase order should be done. 
+Once creating the purchase order occurs, you need to get approval from supplier.
+After getting approval from supplier, you need to send details to the department.
+The process is now completed. 
+"
+}

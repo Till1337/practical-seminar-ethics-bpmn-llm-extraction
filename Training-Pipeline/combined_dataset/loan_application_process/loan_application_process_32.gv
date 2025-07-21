@@ -1,0 +1,50 @@
+digraph loan_application_process_32 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the address proof to the lender" [shape=box]
+		"complete the loan application by borrower" [shape=box]
+		"submit the address proof to the lender" -> "complete the loan application by borrower"
+		"AND_SPLIT--3. Application processing _S9TA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "AND_SPLIT--3. Application processing _S9TA"
+		"check for the completeness" [shape=box]
+		"AND_SPLIT--3. Application processing _S9TA" -> "check for the completeness"
+		"give the written notice to applicant" [shape=box]
+		"AND_SPLIT--3. Application processing _S9TA" -> "give the written notice to applicant"
+		"AND_JOIN--3. Application processing _S9TA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check for the completeness" -> "AND_JOIN--3. Application processing _S9TA"
+		"give the written notice to applicant" -> "AND_JOIN--3. Application processing _S9TA"
+		"OR_SPLIT--4. Underwriting process_HBGS" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Application processing _S9TA" -> "OR_SPLIT--4. Underwriting process_HBGS"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_HBGS" -> "check the credit score and risk score"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_HBGS" -> "begin the underwriting process"
+		"OR_JOIN--4. Underwriting process_HBGS" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_HBGS"
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_HBGS"
+		"OR_SPLIT--5. Credit decision_L0TT" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_HBGS" -> "OR_SPLIT--5. Credit decision_L0TT"
+		"approve the loan application" [shape=box]
+		"OR_SPLIT--5. Credit decision_L0TT" -> "approve the loan application"
+		"change the interest rate" [shape=box]
+		"OR_SPLIT--5. Credit decision_L0TT" -> "change the interest rate"
+		"OR_JOIN--5. Credit decision_L0TT" [label=O fixedsize=true shape=diamond width=0.5]
+		"approve the loan application" -> "OR_JOIN--5. Credit decision_L0TT"
+		"change the interest rate" -> "OR_JOIN--5. Credit decision_L0TT"
+		"receive the loans fund" [shape=box]
+		"OR_JOIN--5. Credit decision_L0TT" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the address proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It begins when you submit the address proof to the lender. 
+After submitting the address proof to the lender, you need to complete the loan application by borrower.
+When completing the loan application by borrower is completingd, the next tasks should be checking for the completeness and giving the written notice to applicant, they should be done in parallel. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: checking the credit score and risk score, beginning the underwriting process. 
+Then, one or more of the following paths should be executed: approving the loan application, changing the interest rate. 
+Afterwards, you need to receive the loans fund.
+The process is now completed. 
+"
+}

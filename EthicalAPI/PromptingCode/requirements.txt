@@ -1,0 +1,15 @@
+
+# Web framework and API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+
+# LLM integrations
+ollama>=0.1.0
+google-generativeai>=0.3.0
+google.genai>=0.1.0
+groq>=0.4.0
+
+# Logging and utilities
+concurrent-log-handler>=0.9.20
+python-dotenv>=1.0.0

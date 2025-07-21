@@ -1,0 +1,63 @@
+digraph employee_onboarding_process_96 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Before first day_XXB4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Before first day_XXB4"
+		"get approval" [shape=box]
+		"AND_SPLIT--2. Before first day_XXB4" -> "get approval"
+		"prepare benefits package" [shape=box]
+		"AND_SPLIT--2. Before first day_XXB4" -> "prepare benefits package"
+		"AND_JOIN--2. Before first day_XXB4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "AND_JOIN--2. Before first day_XXB4"
+		"prepare benefits package" -> "AND_JOIN--2. Before first day_XXB4"
+		"AND_SPLIT--3. First day_CY4A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Before first day_XXB4" -> "AND_SPLIT--3. First day_CY4A"
+		"induct into company culture" [shape=box]
+		"AND_SPLIT--3. First day_CY4A" -> "induct into company culture"
+		"take out to lunch" [shape=box]
+		"AND_SPLIT--3. First day_CY4A" -> "take out to lunch"
+		"tour the office" [shape=box]
+		"induct into company culture" -> "tour the office"
+		"AND_SPLIT--3. First day_VON6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"take out to lunch" -> "AND_SPLIT--3. First day_VON6"
+		"assign training material" [shape=box]
+		"AND_SPLIT--3. First day_VON6" -> "assign training material"
+		"hold a welcoming ceremony" [shape=box]
+		"AND_SPLIT--3. First day_VON6" -> "hold a welcoming ceremony"
+		"OR_SPLIT--3. First day_YF19" [label=O fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "OR_SPLIT--3. First day_YF19"
+		"explain your expectations" [shape=box]
+		"OR_SPLIT--3. First day_YF19" -> "explain your expectations"
+		"assign a mentor" [shape=box]
+		"OR_SPLIT--3. First day_YF19" -> "assign a mentor"
+		"OR_JOIN--3. First day_YF19" [label=O fixedsize=true shape=diamond width=0.5]
+		"explain your expectations" -> "OR_JOIN--3. First day_YF19"
+		"assign a mentor" -> "OR_JOIN--3. First day_YF19"
+		"AND_JOIN--3. First day_VON6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign training material" -> "AND_JOIN--3. First day_VON6"
+		"OR_JOIN--3. First day_YF19" -> "AND_JOIN--3. First day_VON6"
+		"AND_JOIN--3. First day_CY4A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"tour the office" -> "AND_JOIN--3. First day_CY4A"
+		"AND_JOIN--3. First day_VON6" -> "AND_JOIN--3. First day_CY4A"
+		"get approval" [shape=box]
+		"AND_JOIN--3. First day_CY4A" -> "get approval"
+		"explain long-term goals" [shape=box]
+		"get approval" -> "explain long-term goals"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"explain long-term goals" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the employee onboarding process. It begins when you make an introduction. 
+After making an introduction, the process is split into 2 parallel branches: getting approval and preparing benefits package. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: inducting into company culture and taking out to lunch. 
+When inducting into company culture is completed, touring the office needs to be done. 
+When taking out to lunch is completed, the next tasks should be assigning training material and holding a welcoming ceremony, they should be done in parallel. 
+Once holding a welcoming ceremony occurs, one or more of the following paths should be executed: explaining your expectations, assigning a mentor. 
+Once all pre-tasks are executed, then getting approval needs to be done. 
+When getting approval is completed, explaining long-term goals needs to be done. 
+The process is now completed. 
+"
+}

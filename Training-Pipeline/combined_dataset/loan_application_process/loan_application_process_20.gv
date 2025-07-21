@@ -1,0 +1,43 @@
+digraph loan_application_process_20 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the ID proof to the lender" [shape=box]
+		"complete the loan application by borrower" [shape=box]
+		"submit the ID proof to the lender" -> "complete the loan application by borrower"
+		"send application back to the applicant" [shape=box]
+		"complete the loan application by borrower" -> "send application back to the applicant"
+		"OR_SPLIT--4. Underwriting process_GXBS" [label=O fixedsize=true shape=diamond width=0.5]
+		"send application back to the applicant" -> "OR_SPLIT--4. Underwriting process_GXBS"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_GXBS" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_GXBS" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_GXBS" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_GXBS"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_GXBS"
+		"AND_SPLIT--5. Credit decision_2FU8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_GXBS" -> "AND_SPLIT--5. Credit decision_2FU8"
+		"change the interest rate" [shape=box]
+		"AND_SPLIT--5. Credit decision_2FU8" -> "change the interest rate"
+		"approve the loan application" [shape=box]
+		"AND_SPLIT--5. Credit decision_2FU8" -> "approve the loan application"
+		"AND_JOIN--5. Credit decision_2FU8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"change the interest rate" -> "AND_JOIN--5. Credit decision_2FU8"
+		"approve the loan application" -> "AND_JOIN--5. Credit decision_2FU8"
+		"receive the loans fund" [shape=box]
+		"AND_JOIN--5. Credit decision_2FU8" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the ID proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It starts with submitting the ID proof to the lender. 
+Once submitting the ID proof to the lender occurs, completing the loan application by borrower needs to be done. 
+When completing the loan application by borrower is completingd, sending application back to the applicant needs to be done. 
+After sending application back to the applicant, one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+Then, the next tasks should be changing the interest rate and approving the loan application, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to receive the loans fund.
+The process is now completed. 
+"
+}

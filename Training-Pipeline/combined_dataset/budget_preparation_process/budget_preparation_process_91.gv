@@ -1,0 +1,46 @@
+digraph budget_preparation_process_91 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"OR_SPLIT--3. Goals_WO72" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_SPLIT--3. Goals_WO72"
+		"prioritize three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_WO72" -> "prioritize three to five goals"
+		"define three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_WO72" -> "define three to five goals"
+		"OR_JOIN--3. Goals_WO72" [label=O fixedsize=true shape=diamond width=0.5]
+		"prioritize three to five goals" -> "OR_JOIN--3. Goals_WO72"
+		"define three to five goals" -> "OR_JOIN--3. Goals_WO72"
+		"calculate the total annual budget" [shape=box]
+		"OR_JOIN--3. Goals_WO72" -> "calculate the total annual budget"
+		"list all sources of income" [shape=box]
+		"calculate the total annual budget" -> "list all sources of income"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"list all sources of income" -> "record financial data in a budget spreadsheet"
+		"AND_SPLIT--7. Final steps_NHNY" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_SPLIT--7. Final steps_NHNY"
+		"assign management responsibilities" [shape=box]
+		"AND_SPLIT--7. Final steps_NHNY" -> "assign management responsibilities"
+		"obtain approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_NHNY" -> "obtain approval from top management"
+		"AND_JOIN--7. Final steps_NHNY" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign management responsibilities" -> "AND_JOIN--7. Final steps_NHNY"
+		"obtain approval from top management" -> "AND_JOIN--7. Final steps_NHNY"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_NHNY" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It starts with setting target date for approval. 
+After setting target date for approval, evaluating any significant variances needs to be done. 
+When evaluating any significant variances is completed, one or more of the following paths should be executed: prioritizing three to five goals, defining three to five goals. 
+After that, you need to calculate the total annual budget.
+When calculating the total annual budget is completed, listing all sources of income needs to be done. 
+After listing all sources of income, recording financial data in a budget spreadsheet should be done. 
+Once recording financial data in a budget spreadsheet occurs, the next tasks should be assigning management responsibilities and obtaining approval from top management, they should be done in parallel. 
+The process is now completed. 
+"
+}

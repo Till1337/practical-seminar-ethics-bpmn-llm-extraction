@@ -1,0 +1,60 @@
+digraph employee_onboarding_process_131 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"prepare employee paperwork" [shape=box]
+		"make an introduction" -> "prepare employee paperwork"
+		"AND_SPLIT--3. First day_4T5V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare employee paperwork" -> "AND_SPLIT--3. First day_4T5V"
+		"take out to lunch" [shape=box]
+		"AND_SPLIT--3. First day_4T5V" -> "take out to lunch"
+		"assign training material" [shape=box]
+		"AND_SPLIT--3. First day_4T5V" -> "assign training material"
+		"AND_JOIN--3. First day_4T5V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"take out to lunch" -> "AND_JOIN--3. First day_4T5V"
+		"assign training material" -> "AND_JOIN--3. First day_4T5V"
+		"AND_SPLIT--4. First week_L4JV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. First day_4T5V" -> "AND_SPLIT--4. First week_L4JV"
+		"explain expectations for the following month" [shape=box]
+		"AND_SPLIT--4. First week_L4JV" -> "explain expectations for the following month"
+		"assign first project" [shape=box]
+		"AND_SPLIT--4. First week_L4JV" -> "assign first project"
+		"get approval" [shape=box]
+		"assign first project" -> "get approval"
+		"AND_JOIN--4. First week_L4JV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain expectations for the following month" -> "AND_JOIN--4. First week_L4JV"
+		"get approval" -> "AND_JOIN--4. First week_L4JV"
+		"OR_SPLIT--5. First month_2EED" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. First week_L4JV" -> "OR_SPLIT--5. First month_2EED"
+		"review onboarding process over the next 60 days" [shape=box]
+		"OR_SPLIT--5. First month_2EED" -> "review onboarding process over the next 60 days"
+		"encourage them to socially interact with the team" [shape=box]
+		"OR_SPLIT--5. First month_2EED" -> "encourage them to socially interact with the team"
+		"AND_SPLIT--5. First month_93SW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"encourage them to socially interact with the team" -> "AND_SPLIT--5. First month_93SW"
+		"explain long-term goals" [shape=box]
+		"AND_SPLIT--5. First month_93SW" -> "explain long-term goals"
+		"provide reading material for personal growth" [shape=box]
+		"AND_SPLIT--5. First month_93SW" -> "provide reading material for personal growth"
+		"AND_JOIN--5. First month_93SW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain long-term goals" -> "AND_JOIN--5. First month_93SW"
+		"provide reading material for personal growth" -> "AND_JOIN--5. First month_93SW"
+		"OR_JOIN--5. First month_2EED" [label=O fixedsize=true shape=diamond width=0.5]
+		"review onboarding process over the next 60 days" -> "OR_JOIN--5. First month_2EED"
+		"AND_JOIN--5. First month_93SW" -> "OR_JOIN--5. First month_2EED"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_2EED" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It starts with making an introduction. 
+When making an introduction is completed, preparing employee paperwork should be done. 
+When preparing employee paperwork is completed, the process is split into 2 parallel branches: taking out to lunch and assigning training material. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: explaining expectations for the following month and assigning first project. 
+After assigning first project, you need to get approval.
+Once all pre-tasks are executed, then one or more of the following paths should be executed: reviewing onboarding process over the next 60 days, encouraging them to socially interact with the team. 
+After encouraging them to socially interact with the team, the process is split into 2 parallel branches: explaining long-term goals and providing reading material for personal growth. 
+The process is now completed. 
+"
+}

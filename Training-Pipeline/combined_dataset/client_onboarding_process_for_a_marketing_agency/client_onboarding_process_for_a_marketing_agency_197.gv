@@ -1,0 +1,40 @@
+digraph client_onboarding_process_for_a_marketing_agency_197 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details for the client" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_JQAM" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details for the client" -> "OR_SPLIT--2. Setting the agenda_JQAM"
+		"schedule future calls" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_JQAM" -> "schedule future calls"
+		"update the project management profile" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_JQAM" -> "update the project management profile"
+		"OR_JOIN--2. Setting the agenda_JQAM" [label=O fixedsize=true shape=diamond width=0.5]
+		"schedule future calls" -> "OR_JOIN--2. Setting the agenda_JQAM"
+		"update the project management profile" -> "OR_JOIN--2. Setting the agenda_JQAM"
+		"inform client of project start" [shape=box]
+		"OR_JOIN--2. Setting the agenda_JQAM" -> "inform client of project start"
+		"OR_SPLIT--5. Four weeks into the project_XAYK" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "OR_SPLIT--5. Four weeks into the project_XAYK"
+		"make changes based on follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_XAYK" -> "make changes based on follow-up call"
+		"have a follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_XAYK" -> "have a follow-up call"
+		"send a post-onboarding survey" [shape=box]
+		"have a follow-up call" -> "send a post-onboarding survey"
+		"OR_JOIN--5. Four weeks into the project_XAYK" [label=O fixedsize=true shape=diamond width=0.5]
+		"make changes based on follow-up call" -> "OR_JOIN--5. Four weeks into the project_XAYK"
+		"send a post-onboarding survey" -> "OR_JOIN--5. Four weeks into the project_XAYK"
+	}
+	START_NODE -> "record basic details for the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Four weeks into the project_XAYK" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the client onboarding process for a marketing agency. It starts with recording basic details for the client. 
+When recording basic details for the client is completed, one or more of the following paths should be executed: scheduling future calls, updating the project management profile. 
+Afterwards, informing client of project start needs to be done. 
+When informing client of project start is completed, one or more of the following paths should be executed: making changes based on follow-up call, having a follow-up call. 
+When having a follow-up call is completed, sending a post-onboarding survey should be done. 
+The process is now completed. 
+"
+}

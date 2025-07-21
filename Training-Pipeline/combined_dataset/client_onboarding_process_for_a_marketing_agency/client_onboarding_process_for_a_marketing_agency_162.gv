@@ -1,0 +1,37 @@
+digraph client_onboarding_process_for_a_marketing_agency_162 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the received marketing and media resources" [shape=box]
+		"update the project management profile" [shape=box]
+		"confirm the received marketing and media resources" -> "update the project management profile"
+		"OR_SPLIT--4. Project start_7F0P" [label=O fixedsize=true shape=diamond width=0.5]
+		"update the project management profile" -> "OR_SPLIT--4. Project start_7F0P"
+		"inform client of project start" [shape=box]
+		"OR_SPLIT--4. Project start_7F0P" -> "inform client of project start"
+		"assign work to the team" [shape=box]
+		"OR_SPLIT--4. Project start_7F0P" -> "assign work to the team"
+		"OR_JOIN--4. Project start_7F0P" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "OR_JOIN--4. Project start_7F0P"
+		"assign work to the team" -> "OR_JOIN--4. Project start_7F0P"
+		"OR_SPLIT--5. Four weeks into the project_6NBO" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Project start_7F0P" -> "OR_SPLIT--5. Four weeks into the project_6NBO"
+		"send a post-onboarding survey" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_6NBO" -> "send a post-onboarding survey"
+		"make changes based on follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_6NBO" -> "make changes based on follow-up call"
+		"OR_JOIN--5. Four weeks into the project_6NBO" [label=O fixedsize=true shape=diamond width=0.5]
+		"send a post-onboarding survey" -> "OR_JOIN--5. Four weeks into the project_6NBO"
+		"make changes based on follow-up call" -> "OR_JOIN--5. Four weeks into the project_6NBO"
+	}
+	START_NODE -> "confirm the received marketing and media resources"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Four weeks into the project_6NBO" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It begins when you confirm the received marketing and media resources. 
+After confirming the received marketing and media resources, you need to update the project management profile.
+After updating the project management profile, one or more of the following paths should be executed: informing client of project start, assigning work to the team. 
+Then, one or more of the following paths should be executed: sending a post-onboarding survey, making changes based on follow-up call. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,30 @@
+digraph account_payable_process_54 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter purchase order details" [shape=box]
+		"create a receiving report" [shape=box]
+		"enter purchase order details" -> "create a receiving report"
+		"double check a three-way match" [shape=box]
+		"create a receiving report" -> "double check a three-way match"
+		"OR_SPLIT--4. Payment_ED3V" [label=O fixedsize=true shape=diamond width=0.5]
+		"double check a three-way match" -> "OR_SPLIT--4. Payment_ED3V"
+		"store in paid invoice file" [shape=box]
+		"OR_SPLIT--4. Payment_ED3V" -> "store in paid invoice file"
+		"create voucher for the documents" [shape=box]
+		"OR_SPLIT--4. Payment_ED3V" -> "create voucher for the documents"
+		"OR_JOIN--4. Payment_ED3V" [label=O fixedsize=true shape=diamond width=0.5]
+		"store in paid invoice file" -> "OR_JOIN--4. Payment_ED3V"
+		"create voucher for the documents" -> "OR_JOIN--4. Payment_ED3V"
+	}
+	START_NODE -> "enter purchase order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--4. Payment_ED3V" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the account payable process. It begins when you enter purchase order details. 
+When entering purchase order details is completed, you need to create a receiving report.
+Once creating a receiving report occurs, you need to double check a three-way match.
+After doubling check a three-way match, one or more of the following paths should be executed: storing in paid invoice file, creating voucher for the documents. 
+The process is now completed. 
+"
+}

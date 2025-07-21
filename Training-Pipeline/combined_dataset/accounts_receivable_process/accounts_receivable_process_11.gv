@@ -1,0 +1,47 @@
+digraph accounts_receivable_process_11 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_ASKE" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "OR_SPLIT--2. Establish your credit practices_ASKE"
+		"send the buyer your terms of sale" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_ASKE" -> "send the buyer your terms of sale"
+		"send a credit application form to the buyer" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_ASKE" -> "send a credit application form to the buyer"
+		"OR_JOIN--2. Establish your credit practices_ASKE" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the buyer your terms of sale" -> "OR_JOIN--2. Establish your credit practices_ASKE"
+		"send a credit application form to the buyer" -> "OR_JOIN--2. Establish your credit practices_ASKE"
+		"OR_SPLIT--3. Invoicing_B5RY" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Establish your credit practices_ASKE" -> "OR_SPLIT--3. Invoicing_B5RY"
+		"generate the invoice" [shape=box]
+		"OR_SPLIT--3. Invoicing_B5RY" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"OR_SPLIT--3. Invoicing_B5RY" -> "send the invoice in your accounting software"
+		"OR_JOIN--3. Invoicing_B5RY" [label=O fixedsize=true shape=diamond width=0.5]
+		"generate the invoice" -> "OR_JOIN--3. Invoicing_B5RY"
+		"send the invoice in your accounting software" -> "OR_JOIN--3. Invoicing_B5RY"
+		"OR_SPLIT--4. Tracking_WJUJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Invoicing_B5RY" -> "OR_SPLIT--4. Tracking_WJUJ"
+		"record your activity digitally" [shape=box]
+		"OR_SPLIT--4. Tracking_WJUJ" -> "record your activity digitally"
+		"establish monthly contact with your client" [shape=box]
+		"OR_SPLIT--4. Tracking_WJUJ" -> "establish monthly contact with your client"
+		"OR_JOIN--4. Tracking_WJUJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"record your activity digitally" -> "OR_JOIN--4. Tracking_WJUJ"
+		"establish monthly contact with your client" -> "OR_JOIN--4. Tracking_WJUJ"
+		"record the sales on credit of goods" [shape=box]
+		"OR_JOIN--4. Tracking_WJUJ" -> "record the sales on credit of goods"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of goods" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It starts with recording the buyer's details. 
+When recording the buyer's details is completed, one or more of the following paths should be executed: sending the buyer your terms of sale, sending a credit application form to the buyer. 
+Afterwards, one or more of the following paths should be executed: generating the invoice, sending the invoice in your accounting software. 
+After that, one or more of the following paths should be executed: recording your activity digitally, establishing monthly contact with your client. 
+After that, recording the sales on credit of goods needs to be done. 
+The process is now completed. 
+"
+}

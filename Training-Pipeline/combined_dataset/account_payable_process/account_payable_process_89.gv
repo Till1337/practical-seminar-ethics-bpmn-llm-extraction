@@ -1,0 +1,23 @@
+digraph account_payable_process_89 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"gather the receiving report" [shape=box]
+		"create a receiving report" -> "gather the receiving report"
+		"create voucher for the documents" [shape=box]
+		"gather the receiving report" -> "create voucher for the documents"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"create voucher for the documents" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It begins when you send to the receiving department. 
+Once sending to the receiving department occurs, creating a receiving report should be done. 
+Once creating a receiving report occurs, gathering the receiving report needs to be done. 
+After gathering the receiving report, creating voucher for the documents needs to be done. 
+The process is now completed. 
+"
+}

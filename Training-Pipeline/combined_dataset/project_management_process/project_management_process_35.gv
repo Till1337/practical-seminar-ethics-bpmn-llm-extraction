@@ -1,0 +1,47 @@
+digraph project_management_process_35 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		subgraph "CLUSTER_XOR_2. Conception and Initiation_FTSV" {
+			color=white label="identify the approval status"
+			"XOR_SPLIT--identify the approval status_BL7F" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"make an introduction" -> "XOR_SPLIT--identify the approval status_BL7F" [label="identify the approval status"]
+		"XOR_SPLIT--identify the approval status_BL7F" -> "XOR_JOIN--identify the approval status_BL7F" [label=approved]
+		"work out its value" [shape=box]
+		"XOR_SPLIT--identify the approval status_BL7F" -> "work out its value" [label=rejected]
+		"XOR_JOIN--identify the approval status_BL7F" [label=X fixedsize=true shape=diamond width=0.5]
+		"work out its value" -> "XOR_JOIN--identify the approval status_BL7F"
+		"AND_SPLIT--3. Definition and Planning_G7WO" [label="+" fixedsize=true shape=diamond width=0.5]
+		"XOR_JOIN--identify the approval status_BL7F" -> "AND_SPLIT--3. Definition and Planning_G7WO"
+		"state the available resources" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_G7WO" -> "state the available resources"
+		"set a budget" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_G7WO" -> "set a budget"
+		"lay out a timeline" [shape=box]
+		"state the available resources" -> "lay out a timeline"
+		"AND_JOIN--3. Definition and Planning_G7WO" [label="+" fixedsize=true shape=diamond width=0.5]
+		"lay out a timeline" -> "AND_JOIN--3. Definition and Planning_G7WO"
+		"set a budget" -> "AND_JOIN--3. Definition and Planning_G7WO"
+		"have a kickoff meeting" [shape=box]
+		"AND_JOIN--3. Definition and Planning_G7WO" -> "have a kickoff meeting"
+		"record KPIs" [shape=box]
+		"have a kickoff meeting" -> "record KPIs"
+		"ensure the project is completed" [shape=box]
+		"record KPIs" -> "ensure the project is completed"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"ensure the project is completed" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, identifying the approval status should be taken into account. if all approved, then nothing needs to be done, otherwise you should work out its value. 
+Afterwards, the next tasks should be stating the available resources and setting a budget, they should be done in parallel. 
+When stating the available resources is completed, you need to lay out a timeline.
+Once all pre-tasks are executed, then having a kickoff meeting needs to be done. 
+Once having a kickoff meeting occurs, recording KPIs should be done. 
+After recording KPIs, ensuring the project is completed needs to be done. 
+The process is now completed. 
+"
+}

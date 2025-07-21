@@ -1,0 +1,40 @@
+digraph order_fulfillment_process_89 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_WPSS" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "OR_SPLIT--2. Retrieving products from your inventory_WPSS"
+		"perform quality checks" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_WPSS" -> "perform quality checks"
+		"request the ordered products from your inventory" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_WPSS" -> "request the ordered products from your inventory"
+		"OR_JOIN--2. Retrieving products from your inventory_WPSS" [label=O fixedsize=true shape=diamond width=0.5]
+		"perform quality checks" -> "OR_JOIN--2. Retrieving products from your inventory_WPSS"
+		"request the ordered products from your inventory" -> "OR_JOIN--2. Retrieving products from your inventory_WPSS"
+		"get approval" [shape=box]
+		"OR_JOIN--2. Retrieving products from your inventory_WPSS" -> "get approval"
+		"OR_SPLIT--4. Dispatching the products_FIMM" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_SPLIT--4. Dispatching the products_FIMM"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_FIMM" -> "load items into the delivery vehicle"
+		"arrange the delivery" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_FIMM" -> "arrange the delivery"
+		"OR_JOIN--4. Dispatching the products_FIMM" [label=O fixedsize=true shape=diamond width=0.5]
+		"load items into the delivery vehicle" -> "OR_JOIN--4. Dispatching the products_FIMM"
+		"arrange the delivery" -> "OR_JOIN--4. Dispatching the products_FIMM"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_FIMM" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+After confirming that payment has been received, one or more of the following paths should be executed: performing quality checks, requesting the ordered products from your inventory. 
+Then, getting approval should be done. 
+Once getting approval occurs, one or more of the following paths should be executed: loading items into the delivery vehicle, arranging the delivery. 
+Then, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

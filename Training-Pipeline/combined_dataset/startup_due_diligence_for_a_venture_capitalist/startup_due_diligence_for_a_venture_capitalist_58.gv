@@ -1,0 +1,63 @@
+digraph startup_due_diligence_for_a_venture_capitalist_58 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_QI01" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_QI01"
+		"specific product market share" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_QI01" -> "specific product market share"
+		"do the SWOT analysis" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_QI01" -> "do the SWOT analysis"
+		"AND_JOIN--2. Filter out the terrible products_QI01" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market share" -> "AND_JOIN--2. Filter out the terrible products_QI01"
+		"do the SWOT analysis" -> "AND_JOIN--2. Filter out the terrible products_QI01"
+		"AND_SPLIT--3. Review the funding team_XKRX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Filter out the terrible products_QI01" -> "AND_SPLIT--3. Review the funding team_XKRX"
+		"review relationship to founder" [shape=box]
+		"AND_SPLIT--3. Review the funding team_XKRX" -> "review relationship to founder"
+		"review enthusiasm" [shape=box]
+		"AND_SPLIT--3. Review the funding team_XKRX" -> "review enthusiasm"
+		"AND_JOIN--3. Review the funding team_XKRX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review relationship to founder" -> "AND_JOIN--3. Review the funding team_XKRX"
+		"review enthusiasm" -> "AND_JOIN--3. Review the funding team_XKRX"
+		"AND_SPLIT--4. Evaluate Financial Viability_49I5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_XKRX" -> "AND_SPLIT--4. Evaluate Financial Viability_49I5"
+		"check current debt" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_49I5" -> "check current debt"
+		"check exit strategy" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_49I5" -> "check exit strategy"
+		"AND_SPLIT--4. Evaluate Financial Viability_OAN1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "AND_SPLIT--4. Evaluate Financial Viability_OAN1"
+		"check income statements" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_OAN1" -> "check income statements"
+		"check quarterly projections" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_OAN1" -> "check quarterly projections"
+		"check cash flow" [shape=box]
+		"check quarterly projections" -> "check cash flow"
+		"AND_JOIN--4. Evaluate Financial Viability_OAN1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check income statements" -> "AND_JOIN--4. Evaluate Financial Viability_OAN1"
+		"check cash flow" -> "AND_JOIN--4. Evaluate Financial Viability_OAN1"
+		"AND_JOIN--4. Evaluate Financial Viability_49I5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Evaluate Financial Viability_OAN1" -> "AND_JOIN--4. Evaluate Financial Viability_49I5"
+		"check exit strategy" -> "AND_JOIN--4. Evaluate Financial Viability_49I5"
+		"project the market share" [shape=box]
+		"AND_JOIN--4. Evaluate Financial Viability_49I5" -> "project the market share"
+		"check past lawsuits" [shape=box]
+		"project the market share" -> "check past lawsuits"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check past lawsuits" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, the next tasks should be specificking product market share and doing the SWOT analysis, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be reviewing relationship to founder and reviewing enthusiasm, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be checking current debt and checking exit strategy, they should be done in parallel. 
+Once checking current debt occurs, the next tasks should be checking income statements and checking quarterly projections, they should be done in parallel. 
+Once checking quarterly projections occurs, checking cash flow needs to be done. 
+Once all pre-tasks are executed, then projecting the market share should be done. 
+When projecting the market share is completed, you need to check past lawsuits.
+The process is now completed. 
+"
+}

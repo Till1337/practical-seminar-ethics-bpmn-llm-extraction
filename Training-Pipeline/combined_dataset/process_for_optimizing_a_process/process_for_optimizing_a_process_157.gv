@@ -1,0 +1,42 @@
+digraph process_for_optimizing_a_process_157 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"AND_SPLIT--2. Identifying the process_QKFI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "AND_SPLIT--2. Identifying the process_QKFI"
+		"identify the process's components" [shape=box]
+		"AND_SPLIT--2. Identifying the process_QKFI" -> "identify the process's components"
+		"assess the performance of the process" [shape=box]
+		"AND_SPLIT--2. Identifying the process_QKFI" -> "assess the performance of the process"
+		"confirm if the process requires optimization" [shape=box]
+		"assess the performance of the process" -> "confirm if the process requires optimization"
+		"AND_JOIN--2. Identifying the process_QKFI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify the process's components" -> "AND_JOIN--2. Identifying the process_QKFI"
+		"confirm if the process requires optimization" -> "AND_JOIN--2. Identifying the process_QKFI"
+		"define how long it takes to complete the process" [shape=box]
+		"AND_JOIN--2. Identifying the process_QKFI" -> "define how long it takes to complete the process"
+		"write the potential process improvements" [shape=box]
+		"define how long it takes to complete the process" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"define what would make the improvements successful" [shape=box]
+		"get approval for processing improvements" -> "define what would make the improvements successful"
+		"implement the process changes" [shape=box]
+		"define what would make the improvements successful" -> "implement the process changes"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"implement the process changes" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the process for optimizing a process. It begins when you confirm the basic information. 
+When confirming the basic information is completed, the next tasks should be identifying the process's components and assessing the performance of the process, they should be done in parallel. 
+Once assessing the performance of the process occurs, confirming if the process requires optimization needs to be done. 
+Once all pre-tasks are executed, then defining how long it takes to complete the process needs to be done. 
+When defining how long it takes to complete the process is completed, you need to write the potential process improvements.
+When writing the potential process improvements is completed, getting approval for processing improvements needs to be done. 
+When getting approval for processing improvements is completed, you need to define what would make the improvements successful.
+Once defining what would make the improvements successful occurs, implementing the process changes needs to be done. 
+The process is now completed. 
+"
+}

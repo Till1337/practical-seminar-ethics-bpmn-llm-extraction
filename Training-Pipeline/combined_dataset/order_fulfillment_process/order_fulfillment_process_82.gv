@@ -1,0 +1,33 @@
+digraph order_fulfillment_process_82 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"check that the products are in stock" [shape=box]
+		"record order details" -> "check that the products are in stock"
+		"OR_SPLIT--3. Packaging products_WZM5" [label=O fixedsize=true shape=diamond width=0.5]
+		"check that the products are in stock" -> "OR_SPLIT--3. Packaging products_WZM5"
+		"measure products" [shape=box]
+		"OR_SPLIT--3. Packaging products_WZM5" -> "measure products"
+		"package the items securely" [shape=box]
+		"OR_SPLIT--3. Packaging products_WZM5" -> "package the items securely"
+		"OR_JOIN--3. Packaging products_WZM5" [label=O fixedsize=true shape=diamond width=0.5]
+		"measure products" -> "OR_JOIN--3. Packaging products_WZM5"
+		"package the items securely" -> "OR_JOIN--3. Packaging products_WZM5"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_JOIN--3. Packaging products_WZM5" -> "load items into the delivery vehicle"
+		"send a confirmation email to the customer" [shape=box]
+		"load items into the delivery vehicle" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the order fulfillment process. It starts with recording order details. 
+Once recording order details occurs, you need to check that the products are in stock.
+Once checking that the products are in stock occurs, one or more of the following paths should be executed: measuring products, packaging the items securely. 
+Afterwards, loading items into the delivery vehicle needs to be done. 
+After loading items into the delivery vehicle, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

@@ -1,0 +1,40 @@
+digraph accounts_receivable_process_12 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"send a credit application form to the buyer" [shape=box]
+		"record the buyer's details" -> "send a credit application form to the buyer"
+		"AND_SPLIT--3. Invoicing_UU9J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send a credit application form to the buyer" -> "AND_SPLIT--3. Invoicing_UU9J"
+		"generate the invoice" [shape=box]
+		"AND_SPLIT--3. Invoicing_UU9J" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"AND_SPLIT--3. Invoicing_UU9J" -> "send the invoice in your accounting software"
+		"AND_JOIN--3. Invoicing_UU9J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"generate the invoice" -> "AND_JOIN--3. Invoicing_UU9J"
+		"send the invoice in your accounting software" -> "AND_JOIN--3. Invoicing_UU9J"
+		"record your activity digitally" [shape=box]
+		"AND_JOIN--3. Invoicing_UU9J" -> "record your activity digitally"
+		"OR_SPLIT--5. Accounting for accounts receivable_9K8Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"record your activity digitally" -> "OR_SPLIT--5. Accounting for accounts receivable_9K8Y"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_9K8Y" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_9K8Y" -> "record the sales on credit of services"
+		"OR_JOIN--5. Accounting for accounts receivable_9K8Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_9K8Y"
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_9K8Y"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_9K8Y" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the accounts receivable process. It begins when you record the buyer's details. 
+After recording the buyer's details, sending a credit application form to the buyer needs to be done. 
+Once sending a credit application form to the buyer occurs, the next tasks should be generating the invoice and sending the invoice in your accounting software, they should be done in parallel. 
+Once all pre-tasks are executed, then recording your activity digitally should be done. 
+Once recording your activity digitally occurs, one or more of the following paths should be executed: recording the sales on credit of goods, recording the sales on credit of services. 
+The process is now completed. 
+"
+}

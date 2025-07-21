@@ -1,0 +1,27 @@
+digraph customer_support_process_for_the_ticket_management_170 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"OR_SPLIT--2. Ticket type_NMO4" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "OR_SPLIT--2. Ticket type_NMO4"
+		"Determine ticket type as 'App Question'" [shape=box]
+		"OR_SPLIT--2. Ticket type_NMO4" -> "Determine ticket type as 'App Question'"
+		"Determine ticket type as 'I'm not sure question'" [shape=box]
+		"OR_SPLIT--2. Ticket type_NMO4" -> "Determine ticket type as 'I'm not sure question'"
+		"OR_JOIN--2. Ticket type_NMO4" [label=O fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'App Question'" -> "OR_JOIN--2. Ticket type_NMO4"
+		"Determine ticket type as 'I'm not sure question'" -> "OR_JOIN--2. Ticket type_NMO4"
+		"response ticket question" [shape=box]
+		"OR_JOIN--2. Ticket type_NMO4" -> "response ticket question"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"response ticket question" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the customer support process for the ticket management. It begins when you check the ticket type. 
+When checking the ticket type is completed, one or more of the following paths should be executed: determining ticket type as 'App Question', determining ticket type as 'I'm not sure question'. 
+Afterwards, you need to response ticket question.
+The process is now completed. 
+"
+}

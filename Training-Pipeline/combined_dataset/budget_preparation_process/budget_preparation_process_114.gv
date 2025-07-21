@@ -1,0 +1,67 @@
+digraph budget_preparation_process_114 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"AND_SPLIT--3. Goals_PFHQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "AND_SPLIT--3. Goals_PFHQ"
+		"define three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_PFHQ" -> "define three to five goals"
+		"determine ways of achieving the goals" [shape=box]
+		"AND_SPLIT--3. Goals_PFHQ" -> "determine ways of achieving the goals"
+		"AND_JOIN--3. Goals_PFHQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define three to five goals" -> "AND_JOIN--3. Goals_PFHQ"
+		"determine ways of achieving the goals" -> "AND_JOIN--3. Goals_PFHQ"
+		"AND_SPLIT--4. Projected expenses_411I" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Goals_PFHQ" -> "AND_SPLIT--4. Projected expenses_411I"
+		"estimate the average monthly cost" [shape=box]
+		"AND_SPLIT--4. Projected expenses_411I" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"AND_SPLIT--4. Projected expenses_411I" -> "list all department expenses"
+		"AND_JOIN--4. Projected expenses_411I" [label="+" fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "AND_JOIN--4. Projected expenses_411I"
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_411I"
+		"OR_SPLIT--5. Projected income/funding_OZ9B" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Projected expenses_411I" -> "OR_SPLIT--5. Projected income/funding_OZ9B"
+		"list all sources of income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_OZ9B" -> "list all sources of income"
+		"project total annual income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_OZ9B" -> "project total annual income"
+		"OR_JOIN--5. Projected income/funding_OZ9B" [label=O fixedsize=true shape=diamond width=0.5]
+		"list all sources of income" -> "OR_JOIN--5. Projected income/funding_OZ9B"
+		"project total annual income" -> "OR_JOIN--5. Projected income/funding_OZ9B"
+		"OR_SPLIT--6. Putting it all together_JXU9" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Projected income/funding_OZ9B" -> "OR_SPLIT--6. Putting it all together_JXU9"
+		"finalize the budget" [shape=box]
+		"OR_SPLIT--6. Putting it all together_JXU9" -> "finalize the budget"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_SPLIT--6. Putting it all together_JXU9" -> "record financial data in a budget spreadsheet"
+		"OR_JOIN--6. Putting it all together_JXU9" [label=O fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "OR_JOIN--6. Putting it all together_JXU9"
+		"record financial data in a budget spreadsheet" -> "OR_JOIN--6. Putting it all together_JXU9"
+		"OR_SPLIT--7. Final steps_VYFF" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--6. Putting it all together_JXU9" -> "OR_SPLIT--7. Final steps_VYFF"
+		"request approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_VYFF" -> "request approval from top management"
+		"obtain approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_VYFF" -> "obtain approval from top management"
+		"OR_JOIN--7. Final steps_VYFF" [label=O fixedsize=true shape=diamond width=0.5]
+		"request approval from top management" -> "OR_JOIN--7. Final steps_VYFF"
+		"obtain approval from top management" -> "OR_JOIN--7. Final steps_VYFF"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--7. Final steps_VYFF" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It begins when you set target date for approval. 
+After setting target date for approval, evaluating any significant variances should be done. 
+When evaluating any significant variances is completed, the process is split into 2 parallel branches: defining three to five goals and determining ways of achieving the goals. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: estimating the average monthly cost and listing all department expenses. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: listing all sources of income, projecting total annual income. 
+Then, one or more of the following paths should be executed: finalizing the budget, recording financial data in a budget spreadsheet. 
+Then, one or more of the following paths should be executed: requesting approval from top management, obtaining approval from top management. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,62 @@
+digraph churn_rate_prevention_process_166 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"identify key points of value" [shape=box]
+		"record basic details" -> "identify key points of value"
+		"AND_SPLIT--3. Contact the customer_IBE6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify key points of value" -> "AND_SPLIT--3. Contact the customer_IBE6"
+		"record if they are willing to talk" [shape=box]
+		"AND_SPLIT--3. Contact the customer_IBE6" -> "record if they are willing to talk"
+		"give them a call" [shape=box]
+		"AND_SPLIT--3. Contact the customer_IBE6" -> "give them a call"
+		"send them an email" [shape=box]
+		"AND_SPLIT--3. Contact the customer_IBE6" -> "send them an email"
+		"AND_JOIN--3. Contact the customer_IBE6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record if they are willing to talk" -> "AND_JOIN--3. Contact the customer_IBE6"
+		"give them a call" -> "AND_JOIN--3. Contact the customer_IBE6"
+		"send them an email" -> "AND_JOIN--3. Contact the customer_IBE6"
+		"summarize why they want to leave" [shape=box]
+		"AND_JOIN--3. Contact the customer_IBE6" -> "summarize why they want to leave"
+		"OR_SPLIT--5. Retention incentives_MFON" [label=O fixedsize=true shape=diamond width=0.5]
+		"summarize why they want to leave" -> "OR_SPLIT--5. Retention incentives_MFON"
+		"present them with a special offer" [shape=box]
+		"OR_SPLIT--5. Retention incentives_MFON" -> "present them with a special offer"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_MFON" -> "describe your ideas to increase value"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"describe your ideas to increase value" -> "inform them of key metrics demonstrating value"
+		"OR_JOIN--5. Retention incentives_MFON" [label=O fixedsize=true shape=diamond width=0.5]
+		"present them with a special offer" -> "OR_JOIN--5. Retention incentives_MFON"
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_MFON"
+		"OR_SPLIT--6. Outcome_BC2H" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Retention incentives_MFON" -> "OR_SPLIT--6. Outcome_BC2H"
+		"record the customer’s decision" [shape=box]
+		"OR_SPLIT--6. Outcome_BC2H" -> "record the customer’s decision"
+		"thank them for their time and feedback" [shape=box]
+		"OR_SPLIT--6. Outcome_BC2H" -> "thank them for their time and feedback"
+		"OR_JOIN--6. Outcome_BC2H" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the customer’s decision" -> "OR_JOIN--6. Outcome_BC2H"
+		"thank them for their time and feedback" -> "OR_JOIN--6. Outcome_BC2H"
+		"ask if they have any other concerns" [shape=box]
+		"OR_JOIN--6. Outcome_BC2H" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It begins when you record basic details. 
+Once recording basic details occurs, you need to identify key points of value.
+After identifying key points of value, the next tasks should be recording if they are willing to talk, giving them a call and sending them an email, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to summarize why they want to leave.
+When summarizing why they want to leave is completed, one or more of the following paths should be executed: presenting them with a special offer, describing your ideas to increase value. 
+After describing your ideas to increase value, informing them of key metrics demonstrating value needs to be done. 
+After that, one or more of the following paths should be executed: recording the customer’s decision, thanking them for their time and feedback. 
+Afterwards, asking if they have any other concerns needs to be done. 
+Once asking if they have any other concerns occurs, sending learnings to appropriate managers needs to be done. 
+The process is now completed. 
+"
+}

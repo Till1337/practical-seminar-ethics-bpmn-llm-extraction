@@ -1,0 +1,40 @@
+digraph client_onboarding_process_for_a_marketing_agency_56 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details for the client" [shape=box]
+		"get approval for the first draft" [shape=box]
+		"record basic details for the client" -> "get approval for the first draft"
+		"AND_SPLIT--4. Project start_UQ67" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for the first draft" -> "AND_SPLIT--4. Project start_UQ67"
+		"inform client of project start" [shape=box]
+		"AND_SPLIT--4. Project start_UQ67" -> "inform client of project start"
+		"assign work to the team" [shape=box]
+		"AND_SPLIT--4. Project start_UQ67" -> "assign work to the team"
+		"AND_JOIN--4. Project start_UQ67" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "AND_JOIN--4. Project start_UQ67"
+		"assign work to the team" -> "AND_JOIN--4. Project start_UQ67"
+		"AND_SPLIT--5. Four weeks into the project_M98D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Project start_UQ67" -> "AND_SPLIT--5. Four weeks into the project_M98D"
+		"send a post-onboarding survey" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_M98D" -> "send a post-onboarding survey"
+		"make changes based on follow-up call" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_M98D" -> "make changes based on follow-up call"
+		"have a follow-up call" [shape=box]
+		"make changes based on follow-up call" -> "have a follow-up call"
+		"AND_JOIN--5. Four weeks into the project_M98D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send a post-onboarding survey" -> "AND_JOIN--5. Four weeks into the project_M98D"
+		"have a follow-up call" -> "AND_JOIN--5. Four weeks into the project_M98D"
+	}
+	START_NODE -> "record basic details for the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Four weeks into the project_M98D" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It begins when you record basic details for the client. 
+Once recording basic details for the client occurs, getting approval for the first draft should be done. 
+After getting approval for the first draft, the process is split into 2 parallel branches: informing client of project start and assigning work to the team. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: sending a post-onboarding survey and making changes based on follow-up call. 
+After making changes based on follow-up call, you need to have a follow-up call.
+The process is now completed. 
+"
+}

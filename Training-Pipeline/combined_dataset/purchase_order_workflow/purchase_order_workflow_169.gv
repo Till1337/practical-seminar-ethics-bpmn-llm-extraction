@@ -1,0 +1,53 @@
+digraph purchase_order_workflow_169 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"AND_SPLIT--2. Approval_9WYQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create the purchase requisition" -> "AND_SPLIT--2. Approval_9WYQ"
+		"get approval from finance team" [shape=box]
+		"AND_SPLIT--2. Approval_9WYQ" -> "get approval from finance team"
+		"get approval from manager" [shape=box]
+		"AND_SPLIT--2. Approval_9WYQ" -> "get approval from manager"
+		"AND_JOIN--2. Approval_9WYQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "AND_JOIN--2. Approval_9WYQ"
+		"get approval from manager" -> "AND_JOIN--2. Approval_9WYQ"
+		"AND_SPLIT--4. Creation_P1ID" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Approval_9WYQ" -> "AND_SPLIT--4. Creation_P1ID"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"AND_SPLIT--4. Creation_P1ID" -> "inform the supplier the order is ready for approval"
+		"create the purchase order" [shape=box]
+		"AND_SPLIT--4. Creation_P1ID" -> "create the purchase order"
+		"AND_JOIN--4. Creation_P1ID" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform the supplier the order is ready for approval" -> "AND_JOIN--4. Creation_P1ID"
+		"create the purchase order" -> "AND_JOIN--4. Creation_P1ID"
+		"get approval from supplier" [shape=box]
+		"AND_JOIN--4. Creation_P1ID" -> "get approval from supplier"
+		"OR_SPLIT--6. Final steps_C9JM" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "OR_SPLIT--6. Final steps_C9JM"
+		"send details to the department" [shape=box]
+		"OR_SPLIT--6. Final steps_C9JM" -> "send details to the department"
+		"confirm the delivery date" [shape=box]
+		"OR_SPLIT--6. Final steps_C9JM" -> "confirm the delivery date"
+		"record the purchase order" [shape=box]
+		"OR_SPLIT--6. Final steps_C9JM" -> "record the purchase order"
+		"file the purchase order" [shape=box]
+		"confirm the delivery date" -> "file the purchase order"
+		"OR_JOIN--6. Final steps_C9JM" [label=O fixedsize=true shape=diamond width=0.5]
+		"send details to the department" -> "OR_JOIN--6. Final steps_C9JM"
+		"file the purchase order" -> "OR_JOIN--6. Final steps_C9JM"
+		"record the purchase order" -> "OR_JOIN--6. Final steps_C9JM"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Final steps_C9JM" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the purchase order workflow. It begins when you create the purchase requisition. 
+When creating the purchase requisition is completed, the next tasks should be getting approval from finance team and getting approval from manager, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: informing the supplier the order is ready for approval and creating the purchase order. 
+Once all pre-tasks are executed, then getting approval from supplier should be done. 
+When getting approval from supplier is completed, one or more of the following paths should be executed: sending details to the department, confirming the delivery date, recording the purchase order. 
+Once confirming the delivery date occurs, filing the purchase order should be done. 
+The process is now completed. 
+"
+}

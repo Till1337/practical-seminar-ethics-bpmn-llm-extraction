@@ -1,0 +1,26 @@
+digraph order_fulfillment_process_96 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"record which products were taken from storage" [shape=box]
+		"record order details" -> "record which products were taken from storage"
+		"print packing slip" [shape=box]
+		"record which products were taken from storage" -> "print packing slip"
+		"arrange the delivery" [shape=box]
+		"print packing slip" -> "arrange the delivery"
+		"send a confirmation email to the customer" [shape=box]
+		"arrange the delivery" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the order fulfillment process. It begins when you record order details. 
+After recording order details, you need to record which products were taken from storage.
+When recording which products were taken from storage is completed, you need to print packing slip.
+When printing packing slip is completed, arranging the delivery needs to be done. 
+When arranging the delivery is completed, sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

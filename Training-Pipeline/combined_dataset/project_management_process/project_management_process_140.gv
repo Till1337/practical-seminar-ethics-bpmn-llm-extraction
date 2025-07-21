@@ -1,0 +1,60 @@
+digraph project_management_process_140 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"OR_SPLIT--2. Conception and Initiation_WT1L" [label=O fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "OR_SPLIT--2. Conception and Initiation_WT1L"
+		"get approval" [shape=box]
+		"OR_SPLIT--2. Conception and Initiation_WT1L" -> "get approval"
+		"work out its value" [shape=box]
+		"OR_SPLIT--2. Conception and Initiation_WT1L" -> "work out its value"
+		"identify the approval status" [shape=box]
+		"get approval" -> "identify the approval status"
+		"OR_JOIN--2. Conception and Initiation_WT1L" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the approval status" -> "OR_JOIN--2. Conception and Initiation_WT1L"
+		"work out its value" -> "OR_JOIN--2. Conception and Initiation_WT1L"
+		"OR_SPLIT--3. Definition and Planning_RQ7X" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Conception and Initiation_WT1L" -> "OR_SPLIT--3. Definition and Planning_RQ7X"
+		"lay out a timeline" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_RQ7X" -> "lay out a timeline"
+		"draw up a project plan" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_RQ7X" -> "draw up a project plan"
+		"OR_JOIN--3. Definition and Planning_RQ7X" [label=O fixedsize=true shape=diamond width=0.5]
+		"lay out a timeline" -> "OR_JOIN--3. Definition and Planning_RQ7X"
+		"draw up a project plan" -> "OR_JOIN--3. Definition and Planning_RQ7X"
+		"have a kickoff meeting" [shape=box]
+		"OR_JOIN--3. Definition and Planning_RQ7X" -> "have a kickoff meeting"
+		"OR_SPLIT--5. Performance and Control_N53L" [label=O fixedsize=true shape=diamond width=0.5]
+		"have a kickoff meeting" -> "OR_SPLIT--5. Performance and Control_N53L"
+		"record KPIs" [shape=box]
+		"OR_SPLIT--5. Performance and Control_N53L" -> "record KPIs"
+		"keep communication" [shape=box]
+		"OR_SPLIT--5. Performance and Control_N53L" -> "keep communication"
+		"OR_JOIN--5. Performance and Control_N53L" [label=O fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "OR_JOIN--5. Performance and Control_N53L"
+		"keep communication" -> "OR_JOIN--5. Performance and Control_N53L"
+		"AND_SPLIT--6. Close_QI1Z" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Performance and Control_N53L" -> "AND_SPLIT--6. Close_QI1Z"
+		"terminate contractors" [shape=box]
+		"AND_SPLIT--6. Close_QI1Z" -> "terminate contractors"
+		"ensure the project is completed" [shape=box]
+		"AND_SPLIT--6. Close_QI1Z" -> "ensure the project is completed"
+		"AND_JOIN--6. Close_QI1Z" [label="+" fixedsize=true shape=diamond width=0.5]
+		"terminate contractors" -> "AND_JOIN--6. Close_QI1Z"
+		"ensure the project is completed" -> "AND_JOIN--6. Close_QI1Z"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_QI1Z" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It starts with making an introduction. 
+Once making an introduction occurs, one or more of the following paths should be executed: getting approval, working out its value. 
+When getting approval is completed, identifying the approval status needs to be done. 
+After that, one or more of the following paths should be executed: laying out a timeline, drawing up a project plan. 
+After that, having a kickoff meeting needs to be done. 
+When having a kickoff meeting is completed, one or more of the following paths should be executed: recording KPIs, keeping communication. 
+Then, the next tasks should be terminating contractors and ensuring the project is completed, they should be done in parallel. 
+The process is now completed. 
+"
+}

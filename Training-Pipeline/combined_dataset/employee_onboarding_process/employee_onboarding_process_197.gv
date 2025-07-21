@@ -1,0 +1,60 @@
+digraph employee_onboarding_process_197 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Before first day_N8FU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Before first day_N8FU"
+		"prepare employee paperwork" [shape=box]
+		"AND_SPLIT--2. Before first day_N8FU" -> "prepare employee paperwork"
+		"provide a job description with responsibilities" [shape=box]
+		"AND_SPLIT--2. Before first day_N8FU" -> "provide a job description with responsibilities"
+		"prepare benefits package" [shape=box]
+		"provide a job description with responsibilities" -> "prepare benefits package"
+		"AND_JOIN--2. Before first day_N8FU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare employee paperwork" -> "AND_JOIN--2. Before first day_N8FU"
+		"prepare benefits package" -> "AND_JOIN--2. Before first day_N8FU"
+		"assign a mentor" [shape=box]
+		"AND_JOIN--2. Before first day_N8FU" -> "assign a mentor"
+		"AND_SPLIT--4. First week_9KJC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign a mentor" -> "AND_SPLIT--4. First week_9KJC"
+		"explain expectations for the following month" [shape=box]
+		"AND_SPLIT--4. First week_9KJC" -> "explain expectations for the following month"
+		"get approval" [shape=box]
+		"AND_SPLIT--4. First week_9KJC" -> "get approval"
+		"AND_JOIN--4. First week_9KJC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain expectations for the following month" -> "AND_JOIN--4. First week_9KJC"
+		"get approval" -> "AND_JOIN--4. First week_9KJC"
+		"OR_SPLIT--5. First month_H8K8" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. First week_9KJC" -> "OR_SPLIT--5. First month_H8K8"
+		"encourage them to socially interact with the team" [shape=box]
+		"OR_SPLIT--5. First month_H8K8" -> "encourage them to socially interact with the team"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_H8K8" -> "plan check-in meetings"
+		"OR_SPLIT--5. First month_WXD5" [label=O fixedsize=true shape=diamond width=0.5]
+		"encourage them to socially interact with the team" -> "OR_SPLIT--5. First month_WXD5"
+		"provide reading material for personal growth" [shape=box]
+		"OR_SPLIT--5. First month_WXD5" -> "provide reading material for personal growth"
+		"explain long-term goals" [shape=box]
+		"OR_SPLIT--5. First month_WXD5" -> "explain long-term goals"
+		"OR_JOIN--5. First month_WXD5" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide reading material for personal growth" -> "OR_JOIN--5. First month_WXD5"
+		"explain long-term goals" -> "OR_JOIN--5. First month_WXD5"
+		"OR_JOIN--5. First month_H8K8" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. First month_WXD5" -> "OR_JOIN--5. First month_H8K8"
+		"plan check-in meetings" -> "OR_JOIN--5. First month_H8K8"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_H8K8" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It starts with making an introduction. 
+After making an introduction, the next tasks should be preparing employee paperwork and providing a job description with responsibilities, they should be done in parallel. 
+After providing a job description with responsibilities, preparing benefits package should be done. 
+Once all pre-tasks are executed, then assigning a mentor should be done. 
+Once assigning a mentor occurs, the process is split into 2 parallel branches: explaining expectations for the following month and getting approval. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: encouraging them to socially interact with the team, planning check-in meetings. 
+After encouraging them to socially interact with the team, one or more of the following paths should be executed: providing reading material for personal growth, explaining long-term goals. 
+The process is now completed. 
+"
+}

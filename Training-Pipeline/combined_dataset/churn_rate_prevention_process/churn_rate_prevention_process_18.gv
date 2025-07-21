@@ -1,0 +1,76 @@
+digraph churn_rate_prevention_process_18 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_3P4V" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Evaluate product usage_3P4V"
+		"analyze how they use your product" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_3P4V" -> "analyze how they use your product"
+		"identify key points of value" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_3P4V" -> "identify key points of value"
+		"OR_JOIN--2. Evaluate product usage_3P4V" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze how they use your product" -> "OR_JOIN--2. Evaluate product usage_3P4V"
+		"identify key points of value" -> "OR_JOIN--2. Evaluate product usage_3P4V"
+		"AND_SPLIT--3. Contact the customer_VOL0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Evaluate product usage_3P4V" -> "AND_SPLIT--3. Contact the customer_VOL0"
+		"record whether or not the customer responded" [shape=box]
+		"AND_SPLIT--3. Contact the customer_VOL0" -> "record whether or not the customer responded"
+		"give them a call" [shape=box]
+		"AND_SPLIT--3. Contact the customer_VOL0" -> "give them a call"
+		"AND_SPLIT--3. Contact the customer_3WYU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"give them a call" -> "AND_SPLIT--3. Contact the customer_3WYU"
+		"record if they are willing to talk" [shape=box]
+		"AND_SPLIT--3. Contact the customer_3WYU" -> "record if they are willing to talk"
+		"confirm call date and time" [shape=box]
+		"AND_SPLIT--3. Contact the customer_3WYU" -> "confirm call date and time"
+		"AND_JOIN--3. Contact the customer_3WYU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record if they are willing to talk" -> "AND_JOIN--3. Contact the customer_3WYU"
+		"confirm call date and time" -> "AND_JOIN--3. Contact the customer_3WYU"
+		"AND_JOIN--3. Contact the customer_VOL0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record whether or not the customer responded" -> "AND_JOIN--3. Contact the customer_VOL0"
+		"AND_JOIN--3. Contact the customer_3WYU" -> "AND_JOIN--3. Contact the customer_VOL0"
+		"AND_SPLIT--4. Understand customer concerns_I6K8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Contact the customer_VOL0" -> "AND_SPLIT--4. Understand customer concerns_I6K8"
+		"ask open-ended questions" [shape=box]
+		"AND_SPLIT--4. Understand customer concerns_I6K8" -> "ask open-ended questions"
+		"identify the root cause(s) of the problem" [shape=box]
+		"AND_SPLIT--4. Understand customer concerns_I6K8" -> "identify the root cause(s) of the problem"
+		"summarize why they want to leave" [shape=box]
+		"identify the root cause(s) of the problem" -> "summarize why they want to leave"
+		"AND_JOIN--4. Understand customer concerns_I6K8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask open-ended questions" -> "AND_JOIN--4. Understand customer concerns_I6K8"
+		"summarize why they want to leave" -> "AND_JOIN--4. Understand customer concerns_I6K8"
+		"present them with a special offer" [shape=box]
+		"AND_JOIN--4. Understand customer concerns_I6K8" -> "present them with a special offer"
+		"AND_SPLIT--6. Outcome_4YX3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"present them with a special offer" -> "AND_SPLIT--6. Outcome_4YX3"
+		"thank them for their time and feedback" [shape=box]
+		"AND_SPLIT--6. Outcome_4YX3" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"AND_SPLIT--6. Outcome_4YX3" -> "record the customer’s decision"
+		"AND_JOIN--6. Outcome_4YX3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "AND_JOIN--6. Outcome_4YX3"
+		"record the customer’s decision" -> "AND_JOIN--6. Outcome_4YX3"
+		"ask if they have any other concerns" [shape=box]
+		"AND_JOIN--6. Outcome_4YX3" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It begins when you record basic details. 
+When recording basic details is completed, one or more of the following paths should be executed: analyzing how they use your product, identifying key points of value. 
+Afterwards, the process is split into 2 parallel branches: recording whether or not the customer responded and giving them a call. 
+When giving them a call is completed, the process is split into 2 parallel branches: recording if they are willing to talk and confirming call date and time. 
+Once all pre-tasks are executed, then the next tasks should be asking open-ended questions and identifying the root cause(s) of the problem, they should be done in parallel. 
+Once identifying the root cause(s) of the problem occurs, you need to summarize why they want to leave.
+Once all pre-tasks are executed, then presenting them with a special offer needs to be done. 
+Once presenting them with a special offer occurs, the process is split into 2 parallel branches: thanking them for their time and feedback and recording the customer’s decision. 
+Once all pre-tasks are executed, then asking if they have any other concerns needs to be done. 
+After asking if they have any other concerns, sending learnings to appropriate managers needs to be done. 
+The process is now completed. 
+"
+}

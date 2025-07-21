@@ -1,0 +1,62 @@
+digraph churn_rate_prevention_process_173 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"analyze how they use your product" [shape=box]
+		"record basic details" -> "analyze how they use your product"
+		"OR_SPLIT--3. Contact the customer_ZZFD" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze how they use your product" -> "OR_SPLIT--3. Contact the customer_ZZFD"
+		"give them a call" [shape=box]
+		"OR_SPLIT--3. Contact the customer_ZZFD" -> "give them a call"
+		"send them an email" [shape=box]
+		"OR_SPLIT--3. Contact the customer_ZZFD" -> "send them an email"
+		"record if they are willing to talk" [shape=box]
+		"OR_SPLIT--3. Contact the customer_ZZFD" -> "record if they are willing to talk"
+		"record whether or not the customer responded" [shape=box]
+		"give them a call" -> "record whether or not the customer responded"
+		"OR_JOIN--3. Contact the customer_ZZFD" [label=O fixedsize=true shape=diamond width=0.5]
+		"record whether or not the customer responded" -> "OR_JOIN--3. Contact the customer_ZZFD"
+		"send them an email" -> "OR_JOIN--3. Contact the customer_ZZFD"
+		"record if they are willing to talk" -> "OR_JOIN--3. Contact the customer_ZZFD"
+		"summarize why they want to leave" [shape=box]
+		"OR_JOIN--3. Contact the customer_ZZFD" -> "summarize why they want to leave"
+		"OR_SPLIT--5. Retention incentives_WR0P" [label=O fixedsize=true shape=diamond width=0.5]
+		"summarize why they want to leave" -> "OR_SPLIT--5. Retention incentives_WR0P"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_WR0P" -> "inform them of key metrics demonstrating value"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_WR0P" -> "describe your ideas to increase value"
+		"OR_JOIN--5. Retention incentives_WR0P" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_WR0P"
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_WR0P"
+		"record the customer’s decision" [shape=box]
+		"OR_JOIN--5. Retention incentives_WR0P" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"AND_SPLIT--8. Final steps_PFXH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "AND_SPLIT--8. Final steps_PFXH"
+		"send learnings to appropriate managers" [shape=box]
+		"AND_SPLIT--8. Final steps_PFXH" -> "send learnings to appropriate managers"
+		"note down important learnings from the conversation" [shape=box]
+		"AND_SPLIT--8. Final steps_PFXH" -> "note down important learnings from the conversation"
+		"AND_JOIN--8. Final steps_PFXH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send learnings to appropriate managers" -> "AND_JOIN--8. Final steps_PFXH"
+		"note down important learnings from the conversation" -> "AND_JOIN--8. Final steps_PFXH"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--8. Final steps_PFXH" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It starts with recording basic details. 
+After recording basic details, you need to analyze how they use your product.
+After analyzing how they use your product, one or more of the following paths should be executed: giving them a call, sending them an email, recording if they are willing to talk. 
+After giving them a call, recording whether or not the customer responded needs to be done. 
+Then, summarizing why they want to leave needs to be done. 
+After summarizing why they want to leave, one or more of the following paths should be executed: informing them of key metrics demonstrating value, describing your ideas to increase value. 
+Afterwards, recording the customer’s decision needs to be done. 
+When recording the customer’s decision is completed, you need to ask if they have any other concerns.
+After asking if they have any other concerns, the next tasks should be sending learnings to appropriate managers and noting down important learnings from the conversation, they should be done in parallel. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,46 @@
+digraph accounts_receivable_process_50 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_SF7I" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "OR_SPLIT--2. Establish your credit practices_SF7I"
+		"send the buyer your terms of sale" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_SF7I" -> "send the buyer your terms of sale"
+		"run a credit check on the purchasing company" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_SF7I" -> "run a credit check on the purchasing company"
+		"send a credit application form to the buyer" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_SF7I" -> "send a credit application form to the buyer"
+		"get approval for post-credit check review" [shape=box]
+		"send a credit application form to the buyer" -> "get approval for post-credit check review"
+		"OR_JOIN--2. Establish your credit practices_SF7I" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the buyer your terms of sale" -> "OR_JOIN--2. Establish your credit practices_SF7I"
+		"run a credit check on the purchasing company" -> "OR_JOIN--2. Establish your credit practices_SF7I"
+		"get approval for post-credit check review" -> "OR_JOIN--2. Establish your credit practices_SF7I"
+		"check customer payment terms" [shape=box]
+		"OR_JOIN--2. Establish your credit practices_SF7I" -> "check customer payment terms"
+		"record your activity digitally" [shape=box]
+		"check customer payment terms" -> "record your activity digitally"
+		"OR_SPLIT--5. Accounting for accounts receivable_KKI0" [label=O fixedsize=true shape=diamond width=0.5]
+		"record your activity digitally" -> "OR_SPLIT--5. Accounting for accounts receivable_KKI0"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_KKI0" -> "record the sales on credit of services"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_KKI0" -> "record the sales on credit of goods"
+		"OR_JOIN--5. Accounting for accounts receivable_KKI0" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_KKI0"
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_KKI0"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_KKI0" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It begins when you record the buyer's details. 
+Once recording the buyer's details occurs, one or more of the following paths should be executed: sending the buyer your terms of sale, running a credit check on the purchasing company, sending a credit application form to the buyer. 
+When sending a credit application form to the buyer is completed, getting approval for post-credit check review should be done. 
+Afterwards, you need to check customer payment terms.
+After checking customer payment terms, recording your activity digitally needs to be done. 
+Once recording your activity digitally occurs, one or more of the following paths should be executed: recording the sales on credit of services, recording the sales on credit of goods. 
+The process is now completed. 
+"
+}

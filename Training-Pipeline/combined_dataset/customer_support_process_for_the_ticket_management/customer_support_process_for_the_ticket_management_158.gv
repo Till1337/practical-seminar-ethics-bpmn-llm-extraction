@@ -1,0 +1,27 @@
+digraph customer_support_process_for_the_ticket_management_158 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"AND_SPLIT--2. Ticket type_NTSG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "AND_SPLIT--2. Ticket type_NTSG"
+		"Determine ticket type as 'Billing Question'" [shape=box]
+		"AND_SPLIT--2. Ticket type_NTSG" -> "Determine ticket type as 'Billing Question'"
+		"Determine ticket type as 'Sales Question'" [shape=box]
+		"AND_SPLIT--2. Ticket type_NTSG" -> "Determine ticket type as 'Sales Question'"
+		"AND_JOIN--2. Ticket type_NTSG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Billing Question'" -> "AND_JOIN--2. Ticket type_NTSG"
+		"Determine ticket type as 'Sales Question'" -> "AND_JOIN--2. Ticket type_NTSG"
+		"replicate the issue" [shape=box]
+		"AND_JOIN--2. Ticket type_NTSG" -> "replicate the issue"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"replicate the issue" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the customer support process for the ticket management. It starts with checking the ticket type. 
+Once checking the ticket type occurs, the process is split into 2 parallel branches: determining ticket type as 'Billing Question' and determining ticket type as 'Sales Question'. 
+Once all pre-tasks are executed, then replicating the issue should be done. 
+The process is now completed. 
+"
+}

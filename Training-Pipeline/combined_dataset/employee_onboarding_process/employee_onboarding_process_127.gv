@@ -1,0 +1,26 @@
+digraph employee_onboarding_process_127 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"provide a job description with responsibilities" [shape=box]
+		"make an introduction" -> "provide a job description with responsibilities"
+		"take out to lunch" [shape=box]
+		"provide a job description with responsibilities" -> "take out to lunch"
+		"explain expectations for the following month" [shape=box]
+		"take out to lunch" -> "explain expectations for the following month"
+		"plan check-in meetings" [shape=box]
+		"explain expectations for the following month" -> "plan check-in meetings"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"plan check-in meetings" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the employee onboarding process. It begins when you make an introduction. 
+After making an introduction, providing a job description with responsibilities should be done. 
+After providing a job description with responsibilities, taking out to lunch needs to be done. 
+After taking out to lunch, you need to explain expectations for the following month.
+When explaining expectations for the following month is completed, planning check-in meetings should be done. 
+The process is now completed. 
+"
+}

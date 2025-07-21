@@ -1,0 +1,46 @@
+digraph "final grades submission process_174" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"seek pre-approval of final grades" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_D749" [label=O fixedsize=true shape=diamond width=0.5]
+		"seek pre-approval of final grades" -> "OR_SPLIT--2. Apply special grades or criteria_D749"
+		"apply special grades to individuals" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_D749" -> "apply special grades to individuals"
+		"apply score criteria" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_D749" -> "apply score criteria"
+		"OR_SPLIT--2. Apply special grades or criteria_H4DY" [label=O fixedsize=true shape=diamond width=0.5]
+		"apply special grades to individuals" -> "OR_SPLIT--2. Apply special grades or criteria_H4DY"
+		"calculate the grades" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_H4DY" -> "calculate the grades"
+		"prepare grades for SSO" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_H4DY" -> "prepare grades for SSO"
+		"OR_JOIN--2. Apply special grades or criteria_H4DY" [label=O fixedsize=true shape=diamond width=0.5]
+		"calculate the grades" -> "OR_JOIN--2. Apply special grades or criteria_H4DY"
+		"prepare grades for SSO" -> "OR_JOIN--2. Apply special grades or criteria_H4DY"
+		"select exam assignment" [shape=box]
+		"apply score criteria" -> "select exam assignment"
+		"OR_JOIN--2. Apply special grades or criteria_D749" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Apply special grades or criteria_H4DY" -> "OR_JOIN--2. Apply special grades or criteria_D749"
+		"select exam assignment" -> "OR_JOIN--2. Apply special grades or criteria_D749"
+		"review course summary" [shape=box]
+		"OR_JOIN--2. Apply special grades or criteria_D749" -> "review course summary"
+		"export the final grades" [shape=box]
+		"review course summary" -> "export the final grades"
+		"get approval signatures by the course director" [shape=box]
+		"export the final grades" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "seek pre-approval of final grades"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the final grades submission process. It starts with seeking pre-approval of final grades. 
+After seeking pre-approval of final grades, one or more of the following paths should be executed: applying special grades to individuals, applying score criteria. 
+When applying special grades to individuals is completed, one or more of the following paths should be executed: calculating the grades, preparing grades for SSO. 
+After applying score criteria, selecting exam assignment needs to be done. 
+Then, reviewing course summary needs to be done. 
+After reviewing course summary, exporting the final grades should be done. 
+Once exporting the final grades occurs, you need to get approval signatures by the course director.
+The process is now completed. 
+"
+}

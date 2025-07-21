@@ -1,0 +1,17 @@
+digraph content_promotion_process_98 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"pay for promotion" [shape=box]
+		"prepare a summary of your content" -> "pay for promotion"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"pay for promotion" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It begins when you prepare a summary of your content. 
+Once preparing a summary of your content occurs, paying for promotion should be done. 
+The process is now completed. 
+"
+}

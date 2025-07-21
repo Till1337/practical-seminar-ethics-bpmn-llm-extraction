@@ -1,0 +1,50 @@
+digraph project_management_process_163 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_I357" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Conception and Initiation_I357"
+		"identify the approval status" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_I357" -> "identify the approval status"
+		"get approval" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_I357" -> "get approval"
+		"AND_JOIN--2. Conception and Initiation_I357" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify the approval status" -> "AND_JOIN--2. Conception and Initiation_I357"
+		"get approval" -> "AND_JOIN--2. Conception and Initiation_I357"
+		"AND_SPLIT--3. Definition and Planning_3Z4S" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Conception and Initiation_I357" -> "AND_SPLIT--3. Definition and Planning_3Z4S"
+		"draw up a project plan" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_3Z4S" -> "draw up a project plan"
+		"state the available resources" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_3Z4S" -> "state the available resources"
+		"AND_JOIN--3. Definition and Planning_3Z4S" [label="+" fixedsize=true shape=diamond width=0.5]
+		"draw up a project plan" -> "AND_JOIN--3. Definition and Planning_3Z4S"
+		"state the available resources" -> "AND_JOIN--3. Definition and Planning_3Z4S"
+		"have a kickoff meeting" [shape=box]
+		"AND_JOIN--3. Definition and Planning_3Z4S" -> "have a kickoff meeting"
+		"record KPIs" [shape=box]
+		"have a kickoff meeting" -> "record KPIs"
+		"OR_SPLIT--6. Close_2NBN" [label=O fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "OR_SPLIT--6. Close_2NBN"
+		"ensure the project is completed" [shape=box]
+		"OR_SPLIT--6. Close_2NBN" -> "ensure the project is completed"
+		"evaluate project outcomes" [shape=box]
+		"OR_SPLIT--6. Close_2NBN" -> "evaluate project outcomes"
+		"OR_JOIN--6. Close_2NBN" [label=O fixedsize=true shape=diamond width=0.5]
+		"ensure the project is completed" -> "OR_JOIN--6. Close_2NBN"
+		"evaluate project outcomes" -> "OR_JOIN--6. Close_2NBN"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Close_2NBN" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the project management process. It begins when you make an introduction. 
+Once making an introduction occurs, the next tasks should be identifying the approval status and getting approval, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be drawing up a project plan and stating the available resources, they should be done in parallel. 
+Once all pre-tasks are executed, then having a kickoff meeting needs to be done. 
+Once having a kickoff meeting occurs, you need to record KPIs.
+After recording KPIs, one or more of the following paths should be executed: ensuring the project is completed, evaluating project outcomes. 
+The process is now completed. 
+"
+}

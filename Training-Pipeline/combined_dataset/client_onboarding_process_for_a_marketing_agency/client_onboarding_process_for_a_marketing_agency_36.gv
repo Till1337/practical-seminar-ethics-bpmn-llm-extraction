@@ -1,0 +1,23 @@
+digraph client_onboarding_process_for_a_marketing_agency_36 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the signed documents" [shape=box]
+		"update client's CRM" [shape=box]
+		"check the signed documents" -> "update client's CRM"
+		"inform client of project start" [shape=box]
+		"update client's CRM" -> "inform client of project start"
+		"send a post-onboarding survey" [shape=box]
+		"inform client of project start" -> "send a post-onboarding survey"
+	}
+	START_NODE -> "check the signed documents"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a post-onboarding survey" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the client onboarding process for a marketing agency. It begins when you check the signed documents. 
+After checking the signed documents, updating client's CRM needs to be done. 
+When updating client's CRM is completed, informing client of project start needs to be done. 
+After informing client of project start, sending a post-onboarding survey should be done. 
+The process is now completed. 
+"
+}

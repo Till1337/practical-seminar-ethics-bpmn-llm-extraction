@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_109 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"get approval from finance team" [shape=box]
+		"record the basic details" -> "get approval from finance team"
+		"create the purchase order" [shape=box]
+		"get approval from finance team" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"AND_SPLIT--6. Final steps_VRRC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "AND_SPLIT--6. Final steps_VRRC"
+		"file the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_VRRC" -> "file the purchase order"
+		"confirm the delivery date" [shape=box]
+		"AND_SPLIT--6. Final steps_VRRC" -> "confirm the delivery date"
+		"AND_JOIN--6. Final steps_VRRC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"file the purchase order" -> "AND_JOIN--6. Final steps_VRRC"
+		"confirm the delivery date" -> "AND_JOIN--6. Final steps_VRRC"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Final steps_VRRC" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the purchase order workflow. It begins when you record the basic details. 
+After recording the basic details, getting approval from finance team needs to be done. 
+When getting approval from finance team is completed, you need to create the purchase order.
+When creating the purchase order is completed, getting approval from supplier should be done. 
+After getting approval from supplier, the process is split into 2 parallel branches: filing the purchase order and confirming the delivery date. 
+The process is now completed. 
+"
+}

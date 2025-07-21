@@ -1,0 +1,38 @@
+digraph customer_support_process_for_the_ticket_management_79 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'I'm not sure question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'I'm not sure question'"
+		"OR_SPLIT--3. Ticket Action_FET9" [label=O fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'I'm not sure question'" -> "OR_SPLIT--3. Ticket Action_FET9"
+		"response ticket question" [shape=box]
+		"OR_SPLIT--3. Ticket Action_FET9" -> "response ticket question"
+		"test technical issues" [shape=box]
+		"OR_SPLIT--3. Ticket Action_FET9" -> "test technical issues"
+		subgraph "CLUSTER_XOR_3. Ticket Action_9O9F" {
+			color=white label="replicate the issue"
+			"XOR_SPLIT--replicate the issue_PKBA" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"test technical issues" -> "XOR_SPLIT--replicate the issue_PKBA" [label="replicate the issue"]
+		"XOR_SPLIT--replicate the issue_PKBA" -> "XOR_JOIN--replicate the issue_PKBA" [label="could replicate"]
+		"replicate the issue" [shape=box]
+		"XOR_SPLIT--replicate the issue_PKBA" -> "replicate the issue" [label="could not replicate"]
+		"XOR_JOIN--replicate the issue_PKBA" [label=X fixedsize=true shape=diamond width=0.5]
+		"replicate the issue" -> "XOR_JOIN--replicate the issue_PKBA"
+		"OR_JOIN--3. Ticket Action_FET9" [label=O fixedsize=true shape=diamond width=0.5]
+		"response ticket question" -> "OR_JOIN--3. Ticket Action_FET9"
+		"XOR_JOIN--replicate the issue_PKBA" -> "OR_JOIN--3. Ticket Action_FET9"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--3. Ticket Action_FET9" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It starts with checking the ticket type. 
+After checking the ticket type, determining ticket type as 'I'm not sure question' needs to be done. 
+When determining ticket type as 'I'm not sure question' is completed, one or more of the following paths should be executed: responsing ticket question, testing technical issues. 
+When testing technical issues is completed, replicating the issue should be considered. if all could replicate, then nothing needs to be done, otherwise you should replicate the issue. 
+The process is now completed. 
+"
+}

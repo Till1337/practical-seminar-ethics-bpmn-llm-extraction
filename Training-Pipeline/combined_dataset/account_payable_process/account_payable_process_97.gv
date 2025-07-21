@@ -1,0 +1,40 @@
+digraph account_payable_process_97 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"AND_SPLIT--4. Payment_W34I" [label="+" fixedsize=true shape=diamond width=0.5]
+		"report errors to relevant team member" -> "AND_SPLIT--4. Payment_W34I"
+		"check dates to avoid penalty charges" [shape=box]
+		"AND_SPLIT--4. Payment_W34I" -> "check dates to avoid penalty charges"
+		"enter the invoice into the accounts payable account" [shape=box]
+		"AND_SPLIT--4. Payment_W34I" -> "enter the invoice into the accounts payable account"
+		"OR_SPLIT--4. Payment_Q1N2" [label=O fixedsize=true shape=diamond width=0.5]
+		"enter the invoice into the accounts payable account" -> "OR_SPLIT--4. Payment_Q1N2"
+		"stamp all documents" [shape=box]
+		"OR_SPLIT--4. Payment_Q1N2" -> "stamp all documents"
+		"schedule the payment" [shape=box]
+		"OR_SPLIT--4. Payment_Q1N2" -> "schedule the payment"
+		"OR_JOIN--4. Payment_Q1N2" [label=O fixedsize=true shape=diamond width=0.5]
+		"stamp all documents" -> "OR_JOIN--4. Payment_Q1N2"
+		"schedule the payment" -> "OR_JOIN--4. Payment_Q1N2"
+		"AND_JOIN--4. Payment_W34I" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check dates to avoid penalty charges" -> "AND_JOIN--4. Payment_W34I"
+		"OR_JOIN--4. Payment_Q1N2" -> "AND_JOIN--4. Payment_W34I"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--4. Payment_W34I" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the account payable process. It starts with sending to the receiving department. 
+When sending to the receiving department is completed, creating a receiving report needs to be done. 
+Once creating a receiving report occurs, you need to report errors to relevant team member.
+After reporting errors to relevant team member, the next tasks should be checking dates to avoid penalty charges and entering the invoice into the accounts payable account, they should be done in parallel. 
+After entering the invoice into the accounts payable account, one or more of the following paths should be executed: stamping all documents, scheduling the payment. 
+The process is now completed. 
+"
+}

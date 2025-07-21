@@ -1,0 +1,56 @@
+digraph startup_due_diligence_for_a_venture_capitalist_63 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn why startups fail so often" [shape=box]
+		"consider product necessity" [shape=box]
+		"learn why startups fail so often" -> "consider product necessity"
+		"review employee salary and benefits" [shape=box]
+		"consider product necessity" -> "review employee salary and benefits"
+		"AND_SPLIT--4. Evaluate Financial Viability_EB9V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review employee salary and benefits" -> "AND_SPLIT--4. Evaluate Financial Viability_EB9V"
+		"check current debt" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_EB9V" -> "check current debt"
+		"check cash flow" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_EB9V" -> "check cash flow"
+		"AND_SPLIT--4. Evaluate Financial Viability_GI56" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "AND_SPLIT--4. Evaluate Financial Viability_GI56"
+		"check quarterly projections" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_GI56" -> "check quarterly projections"
+		"check income statements" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_GI56" -> "check income statements"
+		"check exit strategy" [shape=box]
+		"check quarterly projections" -> "check exit strategy"
+		"AND_JOIN--4. Evaluate Financial Viability_GI56" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check exit strategy" -> "AND_JOIN--4. Evaluate Financial Viability_GI56"
+		"check income statements" -> "AND_JOIN--4. Evaluate Financial Viability_GI56"
+		"AND_JOIN--4. Evaluate Financial Viability_EB9V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Evaluate Financial Viability_GI56" -> "AND_JOIN--4. Evaluate Financial Viability_EB9V"
+		"check cash flow" -> "AND_JOIN--4. Evaluate Financial Viability_EB9V"
+		"AND_SPLIT--5. Evaluate the Competition_P1B9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Evaluate Financial Viability_EB9V" -> "AND_SPLIT--5. Evaluate the Competition_P1B9"
+		"analyze the growth stage of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_P1B9" -> "analyze the growth stage of competition"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_P1B9" -> "analyze the reputation of competition"
+		"AND_JOIN--5. Evaluate the Competition_P1B9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze the growth stage of competition" -> "AND_JOIN--5. Evaluate the Competition_P1B9"
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_P1B9"
+		"check past lawsuits" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_P1B9" -> "check past lawsuits"
+	}
+	START_NODE -> "learn why startups fail so often"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check past lawsuits" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning why startups fail so often. 
+When learning why startups fail so often is completed, considering product necessity needs to be done. 
+Once considering product necessity occurs, you need to review employee salary and benefits.
+Once reviewing employee salary and benefits occurs, the process is split into 2 parallel branches: checking current debt and checking cash flow. 
+When checking current debt is completed, the next tasks should be checking quarterly projections and checking income statements, they should be done in parallel. 
+After checking quarterly projections, you need to check exit strategy.
+Once all pre-tasks are executed, then the next tasks should be analyzing the growth stage of competition and analyzing the reputation of competition, they should be done in parallel. 
+Once all pre-tasks are executed, then checking past lawsuits should be done. 
+The process is now completed. 
+"
+}

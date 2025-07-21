@@ -1,0 +1,40 @@
+digraph purchase_order_workflow_34 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"AND_SPLIT--2. Approval_SV8S" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the basic details" -> "AND_SPLIT--2. Approval_SV8S"
+		"get approval from finance team" [shape=box]
+		"AND_SPLIT--2. Approval_SV8S" -> "get approval from finance team"
+		"get approval from manager" [shape=box]
+		"AND_SPLIT--2. Approval_SV8S" -> "get approval from manager"
+		"AND_JOIN--2. Approval_SV8S" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "AND_JOIN--2. Approval_SV8S"
+		"get approval from manager" -> "AND_JOIN--2. Approval_SV8S"
+		"create the purchase order" [shape=box]
+		"AND_JOIN--2. Approval_SV8S" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"AND_SPLIT--6. Final steps_XFA4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "AND_SPLIT--6. Final steps_XFA4"
+		"send details to the department" [shape=box]
+		"AND_SPLIT--6. Final steps_XFA4" -> "send details to the department"
+		"file the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_XFA4" -> "file the purchase order"
+		"AND_JOIN--6. Final steps_XFA4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send details to the department" -> "AND_JOIN--6. Final steps_XFA4"
+		"file the purchase order" -> "AND_JOIN--6. Final steps_XFA4"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Final steps_XFA4" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It begins when you record the basic details. 
+After recording the basic details, the process is split into 2 parallel branches: getting approval from finance team and getting approval from manager. 
+Once all pre-tasks are executed, then creating the purchase order should be done. 
+After creating the purchase order, getting approval from supplier needs to be done. 
+After getting approval from supplier, the next tasks should be sending details to the department and filing the purchase order, they should be done in parallel. 
+The process is now completed. 
+"
+}

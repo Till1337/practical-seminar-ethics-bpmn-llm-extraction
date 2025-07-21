@@ -1,0 +1,75 @@
+digraph startup_due_diligence_for_a_venture_capitalist_111 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn why startups fail so often" [shape=box]
+		"check location of startup" [shape=box]
+		"learn why startups fail so often" -> "check location of startup"
+		"AND_SPLIT--3. Review the funding team_GEB7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check location of startup" -> "AND_SPLIT--3. Review the funding team_GEB7"
+		"review employee salary and benefits" [shape=box]
+		"AND_SPLIT--3. Review the funding team_GEB7" -> "review employee salary and benefits"
+		"review trustworthiness" [shape=box]
+		"AND_SPLIT--3. Review the funding team_GEB7" -> "review trustworthiness"
+		"review company mission and direction" [shape=box]
+		"review employee salary and benefits" -> "review company mission and direction"
+		"review expertise" [shape=box]
+		"review trustworthiness" -> "review expertise"
+		"AND_JOIN--3. Review the funding team_GEB7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review company mission and direction" -> "AND_JOIN--3. Review the funding team_GEB7"
+		"review expertise" -> "AND_JOIN--3. Review the funding team_GEB7"
+		"OR_SPLIT--4. Evaluate Financial Viability_GEKV" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_GEB7" -> "OR_SPLIT--4. Evaluate Financial Viability_GEKV"
+		"check exit strategy" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_GEKV" -> "check exit strategy"
+		"check cash flow" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_GEKV" -> "check cash flow"
+		"AND_SPLIT--4. Evaluate Financial Viability_9KS2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "AND_SPLIT--4. Evaluate Financial Viability_9KS2"
+		"check income statements" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_9KS2" -> "check income statements"
+		"check quarterly projections" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_9KS2" -> "check quarterly projections"
+		"check current debt" [shape=box]
+		"check income statements" -> "check current debt"
+		"AND_JOIN--4. Evaluate Financial Viability_9KS2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "AND_JOIN--4. Evaluate Financial Viability_9KS2"
+		"check quarterly projections" -> "AND_JOIN--4. Evaluate Financial Viability_9KS2"
+		"OR_JOIN--4. Evaluate Financial Viability_GEKV" [label=O fixedsize=true shape=diamond width=0.5]
+		"check exit strategy" -> "OR_JOIN--4. Evaluate Financial Viability_GEKV"
+		"AND_JOIN--4. Evaluate Financial Viability_9KS2" -> "OR_JOIN--4. Evaluate Financial Viability_GEKV"
+		"AND_SPLIT--5. Evaluate the Competition_7UYE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Evaluate Financial Viability_GEKV" -> "AND_SPLIT--5. Evaluate the Competition_7UYE"
+		"project the market share" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_7UYE" -> "project the market share"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_7UYE" -> "analyze the reputation of competition"
+		"analyze the growth stage of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_7UYE" -> "analyze the growth stage of competition"
+		"know exact competition" [shape=box]
+		"project the market share" -> "know exact competition"
+		"AND_JOIN--5. Evaluate the Competition_7UYE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"know exact competition" -> "AND_JOIN--5. Evaluate the Competition_7UYE"
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_7UYE"
+		"analyze the growth stage of competition" -> "AND_JOIN--5. Evaluate the Competition_7UYE"
+		"check trademarks" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_7UYE" -> "check trademarks"
+	}
+	START_NODE -> "learn why startups fail so often"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check trademarks" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It starts with learning why startups fail so often. 
+Once learning why startups fail so often occurs, checking location of startup needs to be done. 
+When checking location of startup is completed, the next tasks should be reviewing employee salary and benefits and reviewing trustworthiness, they should be done in parallel. 
+When reviewing employee salary and benefits is completed, you need to review company mission and direction.
+When reviewing trustworthiness is completed, reviewing expertise should be done. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: checking exit strategy, checking cash flow. 
+Once checking cash flow occurs, the process is split into 2 parallel branches: checking income statements and checking quarterly projections. 
+After checking income statements, you need to check current debt.
+After that, the next tasks should be projecting the market share, analyzing the reputation of competition and analyzing the growth stage of competition, they should be done in parallel. 
+When projecting the market share is completed, knowing exact competition should be done. 
+Once all pre-tasks are executed, then checking trademarks should be done. 
+The process is now completed. 
+"
+}

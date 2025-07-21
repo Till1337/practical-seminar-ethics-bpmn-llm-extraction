@@ -1,0 +1,60 @@
+digraph accounts_receivable_process_144 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_5LW4" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "OR_SPLIT--2. Establish your credit practices_5LW4"
+		"get approval for post-credit check review" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_5LW4" -> "get approval for post-credit check review"
+		"run a credit check on the purchasing company" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_5LW4" -> "run a credit check on the purchasing company"
+		"send the buyer your terms of sale" [shape=box]
+		"OR_SPLIT--2. Establish your credit practices_5LW4" -> "send the buyer your terms of sale"
+		"OR_JOIN--2. Establish your credit practices_5LW4" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval for post-credit check review" -> "OR_JOIN--2. Establish your credit practices_5LW4"
+		"run a credit check on the purchasing company" -> "OR_JOIN--2. Establish your credit practices_5LW4"
+		"send the buyer your terms of sale" -> "OR_JOIN--2. Establish your credit practices_5LW4"
+		"OR_SPLIT--3. Invoicing_PPMF" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Establish your credit practices_5LW4" -> "OR_SPLIT--3. Invoicing_PPMF"
+		"send the invoice in your accounting software" [shape=box]
+		"OR_SPLIT--3. Invoicing_PPMF" -> "send the invoice in your accounting software"
+		"check customer payment terms" [shape=box]
+		"OR_SPLIT--3. Invoicing_PPMF" -> "check customer payment terms"
+		"OR_JOIN--3. Invoicing_PPMF" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the invoice in your accounting software" -> "OR_JOIN--3. Invoicing_PPMF"
+		"check customer payment terms" -> "OR_JOIN--3. Invoicing_PPMF"
+		"OR_SPLIT--4. Tracking_BVOO" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Invoicing_PPMF" -> "OR_SPLIT--4. Tracking_BVOO"
+		"record your activity digitally" [shape=box]
+		"OR_SPLIT--4. Tracking_BVOO" -> "record your activity digitally"
+		"make a second physical copy" [shape=box]
+		"OR_SPLIT--4. Tracking_BVOO" -> "make a second physical copy"
+		"establish monthly contact with your client" [shape=box]
+		"OR_SPLIT--4. Tracking_BVOO" -> "establish monthly contact with your client"
+		"OR_JOIN--4. Tracking_BVOO" [label=O fixedsize=true shape=diamond width=0.5]
+		"record your activity digitally" -> "OR_JOIN--4. Tracking_BVOO"
+		"make a second physical copy" -> "OR_JOIN--4. Tracking_BVOO"
+		"establish monthly contact with your client" -> "OR_JOIN--4. Tracking_BVOO"
+		"OR_SPLIT--5. Accounting for accounts receivable_HZIW" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Tracking_BVOO" -> "OR_SPLIT--5. Accounting for accounts receivable_HZIW"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_HZIW" -> "record the sales on credit of services"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_HZIW" -> "record the sales on credit of goods"
+		"OR_JOIN--5. Accounting for accounts receivable_HZIW" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_HZIW"
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_HZIW"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_HZIW" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the accounts receivable process. It begins when you record the buyer's details. 
+After recording the buyer's details, one or more of the following paths should be executed: getting approval for post-credit check review, running a credit check on the purchasing company, sending the buyer your terms of sale. 
+After that, one or more of the following paths should be executed: sending the invoice in your accounting software, checking customer payment terms. 
+Then, one or more of the following paths should be executed: recording your activity digitally, making a second physical copy, establishing monthly contact with your client. 
+After that, one or more of the following paths should be executed: recording the sales on credit of services, recording the sales on credit of goods. 
+The process is now completed. 
+"
+}

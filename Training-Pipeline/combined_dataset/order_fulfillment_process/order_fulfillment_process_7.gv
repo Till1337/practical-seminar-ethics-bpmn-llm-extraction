@@ -1,0 +1,56 @@
+digraph order_fulfillment_process_7 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_XCPC" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "OR_SPLIT--2. Retrieving products from your inventory_XCPC"
+		"record which products were taken from storage" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_XCPC" -> "record which products were taken from storage"
+		"perform quality checks" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_XCPC" -> "perform quality checks"
+		"request the ordered products from your inventory" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_XCPC" -> "request the ordered products from your inventory"
+		"OR_JOIN--2. Retrieving products from your inventory_XCPC" [label=O fixedsize=true shape=diamond width=0.5]
+		"record which products were taken from storage" -> "OR_JOIN--2. Retrieving products from your inventory_XCPC"
+		"perform quality checks" -> "OR_JOIN--2. Retrieving products from your inventory_XCPC"
+		"request the ordered products from your inventory" -> "OR_JOIN--2. Retrieving products from your inventory_XCPC"
+		"AND_SPLIT--3. Packaging products_9UTQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Retrieving products from your inventory_XCPC" -> "AND_SPLIT--3. Packaging products_9UTQ"
+		"print packing slip" [shape=box]
+		"AND_SPLIT--3. Packaging products_9UTQ" -> "print packing slip"
+		"get approval" [shape=box]
+		"AND_SPLIT--3. Packaging products_9UTQ" -> "get approval"
+		"OR_SPLIT--3. Packaging products_EBU3" [label=O fixedsize=true shape=diamond width=0.5]
+		"print packing slip" -> "OR_SPLIT--3. Packaging products_EBU3"
+		"package the items securely" [shape=box]
+		"OR_SPLIT--3. Packaging products_EBU3" -> "package the items securely"
+		"print invoice" [shape=box]
+		"OR_SPLIT--3. Packaging products_EBU3" -> "print invoice"
+		"measure products" [shape=box]
+		"print invoice" -> "measure products"
+		"OR_JOIN--3. Packaging products_EBU3" [label=O fixedsize=true shape=diamond width=0.5]
+		"package the items securely" -> "OR_JOIN--3. Packaging products_EBU3"
+		"measure products" -> "OR_JOIN--3. Packaging products_EBU3"
+		"AND_JOIN--3. Packaging products_9UTQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Packaging products_EBU3" -> "AND_JOIN--3. Packaging products_9UTQ"
+		"get approval" -> "AND_JOIN--3. Packaging products_9UTQ"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"AND_JOIN--3. Packaging products_9UTQ" -> "examine your other orders for delivery overlaps"
+		"send a confirmation email to the customer" [shape=box]
+		"examine your other orders for delivery overlaps" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+Once confirming that payment has been received occurs, one or more of the following paths should be executed: recording which products were taken from storage, performing quality checks, requesting the ordered products from your inventory. 
+Afterwards, the next tasks should be printing packing slip and getting approval, they should be done in parallel. 
+When printing packing slip is completed, one or more of the following paths should be executed: packaging the items securely, printing invoice. 
+Once printing invoice occurs, measuring products should be done. 
+Once all pre-tasks are executed, then you need to examine your other orders for delivery overlaps.
+Once examining your other orders for delivery overlaps occurs, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

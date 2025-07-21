@@ -1,0 +1,46 @@
+digraph "final grades submission process_18" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"select exam assignment" [shape=box]
+		"enter results in the canvas gradebook" -> "select exam assignment"
+		"OR_SPLIT--3. Review grades and course summary_KI4Z" [label=O fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "OR_SPLIT--3. Review grades and course summary_KI4Z"
+		"review grades summary" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_KI4Z" -> "review grades summary"
+		"review course summary" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_KI4Z" -> "review course summary"
+		"apply any changes" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_KI4Z" -> "apply any changes"
+		"OR_JOIN--3. Review grades and course summary_KI4Z" [label=O fixedsize=true shape=diamond width=0.5]
+		"review grades summary" -> "OR_JOIN--3. Review grades and course summary_KI4Z"
+		"review course summary" -> "OR_JOIN--3. Review grades and course summary_KI4Z"
+		"apply any changes" -> "OR_JOIN--3. Review grades and course summary_KI4Z"
+		"AND_SPLIT--4. Re-calculate and get approval_29HV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Review grades and course summary_KI4Z" -> "AND_SPLIT--4. Re-calculate and get approval_29HV"
+		"export the final grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_29HV" -> "export the final grades"
+		"export the course summary" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_29HV" -> "export the course summary"
+		"recalculate the grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_29HV" -> "recalculate the grades"
+		"AND_JOIN--4. Re-calculate and get approval_29HV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"export the final grades" -> "AND_JOIN--4. Re-calculate and get approval_29HV"
+		"export the course summary" -> "AND_JOIN--4. Re-calculate and get approval_29HV"
+		"recalculate the grades" -> "AND_JOIN--4. Re-calculate and get approval_29HV"
+		"send examiners grade approval sheet" [shape=box]
+		"AND_JOIN--4. Re-calculate and get approval_29HV" -> "send examiners grade approval sheet"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send examiners grade approval sheet" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It begins when you enter results in the canvas gradebook. 
+Once entering results in the canvas gradebook occurs, selecting exam assignment needs to be done. 
+When selecting exam assignment is completed, one or more of the following paths should be executed: reviewing grades summary, reviewing course summary, applying any changes. 
+Afterwards, the next tasks should be exporting the final grades, exporting the course summary and recalculating the grades, they should be done in parallel. 
+Once all pre-tasks are executed, then sending examiners grade approval sheet should be done. 
+The process is now completed. 
+"
+}

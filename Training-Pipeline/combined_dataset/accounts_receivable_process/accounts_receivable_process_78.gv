@@ -1,0 +1,43 @@
+digraph accounts_receivable_process_78 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"send the buyer your terms of sale" [shape=box]
+		"record the buyer's details" -> "send the buyer your terms of sale"
+		"AND_SPLIT--3. Invoicing_CFMU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send the buyer your terms of sale" -> "AND_SPLIT--3. Invoicing_CFMU"
+		"check customer payment terms" [shape=box]
+		"AND_SPLIT--3. Invoicing_CFMU" -> "check customer payment terms"
+		"send the invoice in your accounting software" [shape=box]
+		"AND_SPLIT--3. Invoicing_CFMU" -> "send the invoice in your accounting software"
+		"generate the invoice" [shape=box]
+		"AND_SPLIT--3. Invoicing_CFMU" -> "generate the invoice"
+		"AND_JOIN--3. Invoicing_CFMU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check customer payment terms" -> "AND_JOIN--3. Invoicing_CFMU"
+		"send the invoice in your accounting software" -> "AND_JOIN--3. Invoicing_CFMU"
+		"generate the invoice" -> "AND_JOIN--3. Invoicing_CFMU"
+		"establish monthly contact with your client" [shape=box]
+		"AND_JOIN--3. Invoicing_CFMU" -> "establish monthly contact with your client"
+		"OR_SPLIT--5. Accounting for accounts receivable_KG0I" [label=O fixedsize=true shape=diamond width=0.5]
+		"establish monthly contact with your client" -> "OR_SPLIT--5. Accounting for accounts receivable_KG0I"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_KG0I" -> "record the sales on credit of services"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_KG0I" -> "record the sales on credit of goods"
+		"OR_JOIN--5. Accounting for accounts receivable_KG0I" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_KG0I"
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_KG0I"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_KG0I" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the accounts receivable process. It begins when you record the buyer's details. 
+After recording the buyer's details, sending the buyer your terms of sale should be done. 
+Once sending the buyer your terms of sale occurs, the process is split into 3 parallel branches: checking customer payment terms, sending the invoice in your accounting software and generating the invoice. 
+Once all pre-tasks are executed, then establishing monthly contact with your client should be done. 
+When establishing monthly contact with your client is completed, one or more of the following paths should be executed: recording the sales on credit of services, recording the sales on credit of goods. 
+The process is now completed. 
+"
+}

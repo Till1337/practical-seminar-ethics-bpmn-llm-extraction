@@ -1,0 +1,33 @@
+digraph employee_onboarding_process_193 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"discuss role, goals and projects with supervisor" [shape=box]
+		"make an introduction" -> "discuss role, goals and projects with supervisor"
+		"OR_SPLIT--3. First day_KX1W" [label=O fixedsize=true shape=diamond width=0.5]
+		"discuss role, goals and projects with supervisor" -> "OR_SPLIT--3. First day_KX1W"
+		"assign a mentor" [shape=box]
+		"OR_SPLIT--3. First day_KX1W" -> "assign a mentor"
+		"take out to lunch" [shape=box]
+		"OR_SPLIT--3. First day_KX1W" -> "take out to lunch"
+		"OR_JOIN--3. First day_KX1W" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign a mentor" -> "OR_JOIN--3. First day_KX1W"
+		"take out to lunch" -> "OR_JOIN--3. First day_KX1W"
+		"explain expectations for the following month" [shape=box]
+		"OR_JOIN--3. First day_KX1W" -> "explain expectations for the following month"
+		"review onboarding process over the next 60 days" [shape=box]
+		"explain expectations for the following month" -> "review onboarding process over the next 60 days"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"review onboarding process over the next 60 days" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It starts with making an introduction. 
+When making an introduction is completed, discussing role, goals and projects with supervisor needs to be done. 
+When discussing role, goals and projects with supervisor is completed, one or more of the following paths should be executed: assigning a mentor, taking out to lunch. 
+After that, you need to explain expectations for the following month.
+After explaining expectations for the following month, reviewing onboarding process over the next 60 days needs to be done. 
+The process is now completed. 
+"
+}

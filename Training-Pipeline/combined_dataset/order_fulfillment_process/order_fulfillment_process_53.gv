@@ -1,0 +1,66 @@
+digraph order_fulfillment_process_53 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_W9HG" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "OR_SPLIT--2. Retrieving products from your inventory_W9HG"
+		"check that the products are in stock" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_W9HG" -> "check that the products are in stock"
+		"record which products were taken from storage" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_W9HG" -> "record which products were taken from storage"
+		"request the ordered products from your inventory" [shape=box]
+		"check that the products are in stock" -> "request the ordered products from your inventory"
+		"OR_JOIN--2. Retrieving products from your inventory_W9HG" [label=O fixedsize=true shape=diamond width=0.5]
+		"request the ordered products from your inventory" -> "OR_JOIN--2. Retrieving products from your inventory_W9HG"
+		"record which products were taken from storage" -> "OR_JOIN--2. Retrieving products from your inventory_W9HG"
+		"AND_SPLIT--3. Packaging products_4X3V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Retrieving products from your inventory_W9HG" -> "AND_SPLIT--3. Packaging products_4X3V"
+		"package the items securely" [shape=box]
+		"AND_SPLIT--3. Packaging products_4X3V" -> "package the items securely"
+		"print packing slip" [shape=box]
+		"AND_SPLIT--3. Packaging products_4X3V" -> "print packing slip"
+		"get approval" [shape=box]
+		"AND_SPLIT--3. Packaging products_4X3V" -> "get approval"
+		"measure products" [shape=box]
+		"print packing slip" -> "measure products"
+		"OR_SPLIT--3. Packaging products_FIYJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_SPLIT--3. Packaging products_FIYJ"
+		"attach the shipping label to the packaging" [shape=box]
+		"OR_SPLIT--3. Packaging products_FIYJ" -> "attach the shipping label to the packaging"
+		"print invoice" [shape=box]
+		"OR_SPLIT--3. Packaging products_FIYJ" -> "print invoice"
+		"OR_JOIN--3. Packaging products_FIYJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"attach the shipping label to the packaging" -> "OR_JOIN--3. Packaging products_FIYJ"
+		"print invoice" -> "OR_JOIN--3. Packaging products_FIYJ"
+		"AND_JOIN--3. Packaging products_4X3V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"package the items securely" -> "AND_JOIN--3. Packaging products_4X3V"
+		"measure products" -> "AND_JOIN--3. Packaging products_4X3V"
+		"OR_JOIN--3. Packaging products_FIYJ" -> "AND_JOIN--3. Packaging products_4X3V"
+		"OR_SPLIT--4. Dispatching the products_01K0" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Packaging products_4X3V" -> "OR_SPLIT--4. Dispatching the products_01K0"
+		"arrange the delivery" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_01K0" -> "arrange the delivery"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_01K0" -> "load items into the delivery vehicle"
+		"OR_JOIN--4. Dispatching the products_01K0" [label=O fixedsize=true shape=diamond width=0.5]
+		"arrange the delivery" -> "OR_JOIN--4. Dispatching the products_01K0"
+		"load items into the delivery vehicle" -> "OR_JOIN--4. Dispatching the products_01K0"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_01K0" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the order fulfillment process. It begins when you confirm that payment has been received. 
+When confirming that payment has been received is completed, one or more of the following paths should be executed: checking that the products are in stock, recording which products were taken from storage. 
+After checking that the products are in stock, requesting the ordered products from your inventory needs to be done. 
+After that, the process is split into 3 parallel branches: packaging the items securely, printing packing slip and getting approval. 
+After printing packing slip, measuring products should be done. 
+Once getting approval occurs, one or more of the following paths should be executed: attaching the shipping label to the packaging, printing invoice. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: arranging the delivery, loading items into the delivery vehicle. 
+Then, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

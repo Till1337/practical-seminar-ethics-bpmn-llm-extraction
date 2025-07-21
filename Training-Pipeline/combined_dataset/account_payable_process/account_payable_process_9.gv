@@ -1,0 +1,33 @@
+digraph account_payable_process_9 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"confirm all documents have been amended" [shape=box]
+		"create a receiving report" -> "confirm all documents have been amended"
+		"OR_SPLIT--4. Payment_B1FR" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm all documents have been amended" -> "OR_SPLIT--4. Payment_B1FR"
+		"create voucher for the documents" [shape=box]
+		"OR_SPLIT--4. Payment_B1FR" -> "create voucher for the documents"
+		"check dates to avoid penalty charges" [shape=box]
+		"OR_SPLIT--4. Payment_B1FR" -> "check dates to avoid penalty charges"
+		"enter the invoice into the accounts payable account" [shape=box]
+		"check dates to avoid penalty charges" -> "enter the invoice into the accounts payable account"
+		"OR_JOIN--4. Payment_B1FR" [label=O fixedsize=true shape=diamond width=0.5]
+		"create voucher for the documents" -> "OR_JOIN--4. Payment_B1FR"
+		"enter the invoice into the accounts payable account" -> "OR_JOIN--4. Payment_B1FR"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--4. Payment_B1FR" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It starts with sending to the receiving department. 
+Once sending to the receiving department occurs, creating a receiving report should be done. 
+Once creating a receiving report occurs, confirming all documents have been amended should be done. 
+When confirming all documents have been amended is completed, one or more of the following paths should be executed: creating voucher for the documents, checking dates to avoid penalty charges. 
+After checking dates to avoid penalty charges, entering the invoice into the accounts payable account needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,51 @@
+digraph loan_application_process_67 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the ID proof to the lender" [shape=box]
+		"receive the application by credit department" [shape=box]
+		"submit the ID proof to the lender" -> "receive the application by credit department"
+		subgraph "CLUSTER_XOR_3. Application processing _OM3H" {
+			color=white label="check for the completeness"
+			"XOR_SPLIT--check for the completeness_5JTD" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"receive the application by credit department" -> "XOR_SPLIT--check for the completeness_5JTD" [label="check for the completeness"]
+		"XOR_SPLIT--check for the completeness_5JTD" -> "XOR_JOIN--check for the completeness_5JTD" [label="is complete"]
+		"check for the completeness" [shape=box]
+		"XOR_SPLIT--check for the completeness_5JTD" -> "check for the completeness" [label="is not complete"]
+		"XOR_JOIN--check for the completeness_5JTD" [label=X fixedsize=true shape=diamond width=0.5]
+		"check for the completeness" -> "XOR_JOIN--check for the completeness_5JTD"
+		"OR_SPLIT--4. Underwriting process_9YDQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"XOR_JOIN--check for the completeness_5JTD" -> "OR_SPLIT--4. Underwriting process_9YDQ"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_9YDQ" -> "check the credit score and risk score"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_9YDQ" -> "begin the underwriting process"
+		"OR_JOIN--4. Underwriting process_9YDQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_9YDQ"
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_9YDQ"
+		"OR_SPLIT--5. Credit decision_0MAL" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_9YDQ" -> "OR_SPLIT--5. Credit decision_0MAL"
+		"change the interest rate" [shape=box]
+		"OR_SPLIT--5. Credit decision_0MAL" -> "change the interest rate"
+		"approve the loan application" [shape=box]
+		"OR_SPLIT--5. Credit decision_0MAL" -> "approve the loan application"
+		"OR_JOIN--5. Credit decision_0MAL" [label=O fixedsize=true shape=diamond width=0.5]
+		"change the interest rate" -> "OR_JOIN--5. Credit decision_0MAL"
+		"approve the loan application" -> "OR_JOIN--5. Credit decision_0MAL"
+		"receive the loans fund" [shape=box]
+		"OR_JOIN--5. Credit decision_0MAL" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the ID proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the loan application process. It starts with submitting the ID proof to the lender. 
+After submitting the ID proof to the lender, receiving the application by credit department needs to be done. 
+Once receiving the application by credit department occurs, checking for the completeness should be considered. if all is complete, then nothing needs to be done, otherwise you should check for the completeness. 
+After that, one or more of the following paths should be executed: checking the credit score and risk score, beginning the underwriting process. 
+Then, one or more of the following paths should be executed: changing the interest rate, approving the loan application. 
+Afterwards, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,50 @@
+digraph employee_onboarding_process_195 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"give access to any tools they will need" [shape=box]
+		"make an introduction" -> "give access to any tools they will need"
+		"OR_SPLIT--3. First day_WTPM" [label=O fixedsize=true shape=diamond width=0.5]
+		"give access to any tools they will need" -> "OR_SPLIT--3. First day_WTPM"
+		"take out to lunch" [shape=box]
+		"OR_SPLIT--3. First day_WTPM" -> "take out to lunch"
+		"hold a welcoming ceremony" [shape=box]
+		"OR_SPLIT--3. First day_WTPM" -> "hold a welcoming ceremony"
+		"OR_JOIN--3. First day_WTPM" [label=O fixedsize=true shape=diamond width=0.5]
+		"take out to lunch" -> "OR_JOIN--3. First day_WTPM"
+		"hold a welcoming ceremony" -> "OR_JOIN--3. First day_WTPM"
+		"OR_SPLIT--4. First week_YGQZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. First day_WTPM" -> "OR_SPLIT--4. First week_YGQZ"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_YGQZ" -> "check the paperwork"
+		"assign first project" [shape=box]
+		"OR_SPLIT--4. First week_YGQZ" -> "assign first project"
+		"explain expectations for the following month" [shape=box]
+		"OR_SPLIT--4. First week_YGQZ" -> "explain expectations for the following month"
+		"OR_JOIN--4. First week_YGQZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_YGQZ"
+		"assign first project" -> "OR_JOIN--4. First week_YGQZ"
+		"explain expectations for the following month" -> "OR_JOIN--4. First week_YGQZ"
+		"OR_SPLIT--5. First month_EW2C" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_YGQZ" -> "OR_SPLIT--5. First month_EW2C"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_EW2C" -> "plan check-in meetings"
+		"encourage them to socially interact with the team" [shape=box]
+		"OR_SPLIT--5. First month_EW2C" -> "encourage them to socially interact with the team"
+		"OR_JOIN--5. First month_EW2C" [label=O fixedsize=true shape=diamond width=0.5]
+		"plan check-in meetings" -> "OR_JOIN--5. First month_EW2C"
+		"encourage them to socially interact with the team" -> "OR_JOIN--5. First month_EW2C"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_EW2C" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It begins when you make an introduction. 
+When making an introduction is completed, you need to give access to any tools they will need.
+Once giving access to any tools they will need occurs, one or more of the following paths should be executed: taking out to lunch, holding a welcoming ceremony. 
+Afterwards, one or more of the following paths should be executed: checking the paperwork, assigning first project, explaining expectations for the following month. 
+Afterwards, one or more of the following paths should be executed: planning check-in meetings, encouraging them to socially interact with the team. 
+The process is now completed. 
+"
+}

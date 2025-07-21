@@ -1,0 +1,43 @@
+digraph purchase_order_workflow_148 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"AND_SPLIT--2. Approval_1HQ5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the basic details" -> "AND_SPLIT--2. Approval_1HQ5"
+		"get approval from finance team" [shape=box]
+		"AND_SPLIT--2. Approval_1HQ5" -> "get approval from finance team"
+		"get approval from manager" [shape=box]
+		"AND_SPLIT--2. Approval_1HQ5" -> "get approval from manager"
+		"AND_JOIN--2. Approval_1HQ5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "AND_JOIN--2. Approval_1HQ5"
+		"get approval from manager" -> "AND_JOIN--2. Approval_1HQ5"
+		"create the purchase order" [shape=box]
+		"AND_JOIN--2. Approval_1HQ5" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"AND_SPLIT--6. Final steps_XWCD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "AND_SPLIT--6. Final steps_XWCD"
+		"file the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_XWCD" -> "file the purchase order"
+		"record the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_XWCD" -> "record the purchase order"
+		"send details to the department" [shape=box]
+		"AND_SPLIT--6. Final steps_XWCD" -> "send details to the department"
+		"AND_JOIN--6. Final steps_XWCD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"file the purchase order" -> "AND_JOIN--6. Final steps_XWCD"
+		"record the purchase order" -> "AND_JOIN--6. Final steps_XWCD"
+		"send details to the department" -> "AND_JOIN--6. Final steps_XWCD"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Final steps_XWCD" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the purchase order workflow. It begins when you record the basic details. 
+After recording the basic details, the process is split into 2 parallel branches: getting approval from finance team and getting approval from manager. 
+Once all pre-tasks are executed, then you need to create the purchase order.
+When creating the purchase order is completed, getting approval from supplier needs to be done. 
+After getting approval from supplier, the process is split into 3 parallel branches: filing the purchase order, recording the purchase order and sending details to the department. 
+The process is now completed. 
+"
+}

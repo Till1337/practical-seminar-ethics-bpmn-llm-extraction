@@ -1,0 +1,47 @@
+digraph employee_onboarding_process_121 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"OR_SPLIT--2. Before first day_GDTI" [label=O fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "OR_SPLIT--2. Before first day_GDTI"
+		"get approval" [shape=box]
+		"OR_SPLIT--2. Before first day_GDTI" -> "get approval"
+		"give access to any tools they will need" [shape=box]
+		"OR_SPLIT--2. Before first day_GDTI" -> "give access to any tools they will need"
+		"OR_JOIN--2. Before first day_GDTI" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_JOIN--2. Before first day_GDTI"
+		"give access to any tools they will need" -> "OR_JOIN--2. Before first day_GDTI"
+		"OR_SPLIT--3. First day_OQK4" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Before first day_GDTI" -> "OR_SPLIT--3. First day_OQK4"
+		"hold a welcoming ceremony" [shape=box]
+		"OR_SPLIT--3. First day_OQK4" -> "hold a welcoming ceremony"
+		"tour the office" [shape=box]
+		"OR_SPLIT--3. First day_OQK4" -> "tour the office"
+		"OR_JOIN--3. First day_OQK4" [label=O fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "OR_JOIN--3. First day_OQK4"
+		"tour the office" -> "OR_JOIN--3. First day_OQK4"
+		"AND_SPLIT--4. First week_U2R4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. First day_OQK4" -> "AND_SPLIT--4. First week_U2R4"
+		"explain expectations for the following month" [shape=box]
+		"AND_SPLIT--4. First week_U2R4" -> "explain expectations for the following month"
+		"check the paperwork" [shape=box]
+		"AND_SPLIT--4. First week_U2R4" -> "check the paperwork"
+		"AND_JOIN--4. First week_U2R4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain expectations for the following month" -> "AND_JOIN--4. First week_U2R4"
+		"check the paperwork" -> "AND_JOIN--4. First week_U2R4"
+		"review onboarding process over the next 60 days" [shape=box]
+		"AND_JOIN--4. First week_U2R4" -> "review onboarding process over the next 60 days"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"review onboarding process over the next 60 days" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It begins when you make an introduction. 
+Once making an introduction occurs, one or more of the following paths should be executed: getting approval, giving access to any tools they will need. 
+Then, one or more of the following paths should be executed: holding a welcoming ceremony, touring the office. 
+After that, the next tasks should be explaining expectations for the following month and checking the paperwork, they should be done in parallel. 
+Once all pre-tasks are executed, then reviewing onboarding process over the next 60 days should be done. 
+The process is now completed. 
+"
+}

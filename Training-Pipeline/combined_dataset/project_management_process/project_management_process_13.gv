@@ -1,0 +1,36 @@
+digraph project_management_process_13 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"record the basic idea" [shape=box]
+		"make an introduction" -> "record the basic idea"
+		"draw up a project plan" [shape=box]
+		"record the basic idea" -> "draw up a project plan"
+		"have a kickoff meeting" [shape=box]
+		"draw up a project plan" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"AND_SPLIT--6. Close_CDDS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"keep communication" -> "AND_SPLIT--6. Close_CDDS"
+		"evaluate project outcomes" [shape=box]
+		"AND_SPLIT--6. Close_CDDS" -> "evaluate project outcomes"
+		"terminate contractors" [shape=box]
+		"AND_SPLIT--6. Close_CDDS" -> "terminate contractors"
+		"AND_JOIN--6. Close_CDDS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"evaluate project outcomes" -> "AND_JOIN--6. Close_CDDS"
+		"terminate contractors" -> "AND_JOIN--6. Close_CDDS"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_CDDS" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, recording the basic idea needs to be done. 
+Once recording the basic idea occurs, you need to draw up a project plan.
+Once drawing up a project plan occurs, having a kickoff meeting should be done. 
+Once having a kickoff meeting occurs, keeping communication needs to be done. 
+When keeping communication is completed, the process is split into 2 parallel branches: evaluating project outcomes and terminating contractors. 
+The process is now completed. 
+"
+}

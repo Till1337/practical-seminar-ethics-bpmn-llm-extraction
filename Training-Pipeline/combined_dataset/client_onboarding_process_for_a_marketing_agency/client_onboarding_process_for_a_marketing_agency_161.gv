@@ -1,0 +1,30 @@
+digraph client_onboarding_process_for_a_marketing_agency_161 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send the contract to the client" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_TKVD" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the contract to the client" -> "OR_SPLIT--2. Setting the agenda_TKVD"
+		"research the campaign ideas" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_TKVD" -> "research the campaign ideas"
+		"schedule future calls" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_TKVD" -> "schedule future calls"
+		"OR_JOIN--2. Setting the agenda_TKVD" [label=O fixedsize=true shape=diamond width=0.5]
+		"research the campaign ideas" -> "OR_JOIN--2. Setting the agenda_TKVD"
+		"schedule future calls" -> "OR_JOIN--2. Setting the agenda_TKVD"
+		"assign work to the team" [shape=box]
+		"OR_JOIN--2. Setting the agenda_TKVD" -> "assign work to the team"
+		"send a post-onboarding survey" [shape=box]
+		"assign work to the team" -> "send a post-onboarding survey"
+	}
+	START_NODE -> "send the contract to the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a post-onboarding survey" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the client onboarding process for a marketing agency. It starts with sending the contract to the client. 
+Once sending the contract to the client occurs, one or more of the following paths should be executed: researching the campaign ideas, scheduling future calls. 
+Then, assigning work to the team should be done. 
+When assigning work to the team is completed, sending a post-onboarding survey should be done. 
+The process is now completed. 
+"
+}

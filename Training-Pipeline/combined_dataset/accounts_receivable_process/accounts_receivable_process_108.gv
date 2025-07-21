@@ -1,0 +1,43 @@
+digraph accounts_receivable_process_108 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"get approval for post-credit check review" [shape=box]
+		"record the buyer's details" -> "get approval for post-credit check review"
+		"send the invoice in your accounting software" [shape=box]
+		"get approval for post-credit check review" -> "send the invoice in your accounting software"
+		"AND_SPLIT--4. Tracking_ASSM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send the invoice in your accounting software" -> "AND_SPLIT--4. Tracking_ASSM"
+		"make a second physical copy" [shape=box]
+		"AND_SPLIT--4. Tracking_ASSM" -> "make a second physical copy"
+		"record your activity digitally" [shape=box]
+		"AND_SPLIT--4. Tracking_ASSM" -> "record your activity digitally"
+		"establish monthly contact with your client" [shape=box]
+		"AND_SPLIT--4. Tracking_ASSM" -> "establish monthly contact with your client"
+		"AND_JOIN--4. Tracking_ASSM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make a second physical copy" -> "AND_JOIN--4. Tracking_ASSM"
+		"record your activity digitally" -> "AND_JOIN--4. Tracking_ASSM"
+		"establish monthly contact with your client" -> "AND_JOIN--4. Tracking_ASSM"
+		"AND_SPLIT--5. Accounting for accounts receivable_NMLD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Tracking_ASSM" -> "AND_SPLIT--5. Accounting for accounts receivable_NMLD"
+		"record the sales on credit of goods" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_NMLD" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_NMLD" -> "record the sales on credit of services"
+		"AND_JOIN--5. Accounting for accounts receivable_NMLD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "AND_JOIN--5. Accounting for accounts receivable_NMLD"
+		"record the sales on credit of services" -> "AND_JOIN--5. Accounting for accounts receivable_NMLD"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Accounting for accounts receivable_NMLD" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It starts with recording the buyer's details. 
+Once recording the buyer's details occurs, getting approval for post-credit check review should be done. 
+When getting approval for post-credit check review is completed, you need to send the invoice in your accounting software.
+When sending the invoice in your accounting software is completed, the next tasks should be making a second physical copy, recording your activity digitally and establishing monthly contact with your client, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be recording the sales on credit of goods and recording the sales on credit of services, they should be done in parallel. 
+The process is now completed. 
+"
+}

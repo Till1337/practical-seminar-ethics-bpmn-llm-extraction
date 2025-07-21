@@ -1,0 +1,60 @@
+digraph "final grades submission process_171" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_5WFL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "AND_SPLIT--2. Apply special grades or criteria_5WFL"
+		"apply special grades to individuals" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_5WFL" -> "apply special grades to individuals"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_5WFL" -> "import gradebook"
+		"AND_SPLIT--2. Apply special grades or criteria_V71A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply special grades to individuals" -> "AND_SPLIT--2. Apply special grades or criteria_V71A"
+		"calculate the grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_V71A" -> "calculate the grades"
+		"prepare grades for SSO" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_V71A" -> "prepare grades for SSO"
+		"OR_SPLIT--2. Apply special grades or criteria_96ZP" [label=O fixedsize=true shape=diamond width=0.5]
+		"calculate the grades" -> "OR_SPLIT--2. Apply special grades or criteria_96ZP"
+		"apply score criteria" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_96ZP" -> "apply score criteria"
+		"select exam assignment" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_96ZP" -> "select exam assignment"
+		"OR_JOIN--2. Apply special grades or criteria_96ZP" [label=O fixedsize=true shape=diamond width=0.5]
+		"apply score criteria" -> "OR_JOIN--2. Apply special grades or criteria_96ZP"
+		"select exam assignment" -> "OR_JOIN--2. Apply special grades or criteria_96ZP"
+		"AND_JOIN--2. Apply special grades or criteria_V71A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Apply special grades or criteria_96ZP" -> "AND_JOIN--2. Apply special grades or criteria_V71A"
+		"prepare grades for SSO" -> "AND_JOIN--2. Apply special grades or criteria_V71A"
+		"AND_JOIN--2. Apply special grades or criteria_5WFL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Apply special grades or criteria_V71A" -> "AND_JOIN--2. Apply special grades or criteria_5WFL"
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_5WFL"
+		"OR_SPLIT--3. Review grades and course summary_0UB0" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Apply special grades or criteria_5WFL" -> "OR_SPLIT--3. Review grades and course summary_0UB0"
+		"review course summary" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_0UB0" -> "review course summary"
+		"apply any changes" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_0UB0" -> "apply any changes"
+		"OR_JOIN--3. Review grades and course summary_0UB0" [label=O fixedsize=true shape=diamond width=0.5]
+		"review course summary" -> "OR_JOIN--3. Review grades and course summary_0UB0"
+		"apply any changes" -> "OR_JOIN--3. Review grades and course summary_0UB0"
+		"export the course summary" [shape=box]
+		"OR_JOIN--3. Review grades and course summary_0UB0" -> "export the course summary"
+		"submit results to SSO" [shape=box]
+		"export the course summary" -> "submit results to SSO"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"submit results to SSO" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with entering results in the canvas gradebook. 
+After entering results in the canvas gradebook, the next tasks should be applying special grades to individuals and importing gradebook, they should be done in parallel. 
+When applying special grades to individuals is completed, the process is split into 2 parallel branches: calculating the grades and preparing grades for SSO. 
+Once calculating the grades occurs, one or more of the following paths should be executed: applying score criteria, selecting exam assignment. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: reviewing course summary, applying any changes. 
+After that, exporting the course summary should be done. 
+When exporting the course summary is completed, submitting results to SSO should be done. 
+The process is now completed. 
+"
+}

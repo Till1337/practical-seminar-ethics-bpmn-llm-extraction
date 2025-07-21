@@ -1,0 +1,46 @@
+digraph "final grades submission process_4" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"select exam assignment" [shape=box]
+		"enter results in the canvas gradebook" -> "select exam assignment"
+		"OR_SPLIT--3. Review grades and course summary_FFMH" [label=O fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "OR_SPLIT--3. Review grades and course summary_FFMH"
+		"review course summary" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_FFMH" -> "review course summary"
+		"apply any changes" [shape=box]
+		"OR_SPLIT--3. Review grades and course summary_FFMH" -> "apply any changes"
+		"review grades summary" [shape=box]
+		"apply any changes" -> "review grades summary"
+		"OR_JOIN--3. Review grades and course summary_FFMH" [label=O fixedsize=true shape=diamond width=0.5]
+		"review course summary" -> "OR_JOIN--3. Review grades and course summary_FFMH"
+		"review grades summary" -> "OR_JOIN--3. Review grades and course summary_FFMH"
+		"OR_SPLIT--4. Re-calculate and get approval_09IO" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Review grades and course summary_FFMH" -> "OR_SPLIT--4. Re-calculate and get approval_09IO"
+		"export the final grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_09IO" -> "export the final grades"
+		"recalculate the grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_09IO" -> "recalculate the grades"
+		"export the course summary" [shape=box]
+		"export the final grades" -> "export the course summary"
+		"OR_JOIN--4. Re-calculate and get approval_09IO" [label=O fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "OR_JOIN--4. Re-calculate and get approval_09IO"
+		"recalculate the grades" -> "OR_JOIN--4. Re-calculate and get approval_09IO"
+		"get approval signatures by the course director" [shape=box]
+		"OR_JOIN--4. Re-calculate and get approval_09IO" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It begins when you enter results in the canvas gradebook. 
+When entering results in the canvas gradebook is completed, selecting exam assignment should be done. 
+When selecting exam assignment is completed, one or more of the following paths should be executed: reviewing course summary, applying any changes. 
+After applying any changes, reviewing grades summary should be done. 
+After that, one or more of the following paths should be executed: exporting the final grades, recalculating the grades. 
+Once exporting the final grades occurs, you need to export the course summary.
+Afterwards, you need to get approval signatures by the course director.
+The process is now completed. 
+"
+}

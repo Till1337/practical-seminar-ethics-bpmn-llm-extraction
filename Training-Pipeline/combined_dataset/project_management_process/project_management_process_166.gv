@@ -1,0 +1,43 @@
+digraph project_management_process_166 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"get approval" [shape=box]
+		"make an introduction" -> "get approval"
+		"draw up a project plan" [shape=box]
+		"get approval" -> "draw up a project plan"
+		"have a kickoff meeting" [shape=box]
+		"draw up a project plan" -> "have a kickoff meeting"
+		"OR_SPLIT--5. Performance and Control_TN5W" [label=O fixedsize=true shape=diamond width=0.5]
+		"have a kickoff meeting" -> "OR_SPLIT--5. Performance and Control_TN5W"
+		"record KPIs" [shape=box]
+		"OR_SPLIT--5. Performance and Control_TN5W" -> "record KPIs"
+		"keep communication" [shape=box]
+		"OR_SPLIT--5. Performance and Control_TN5W" -> "keep communication"
+		"OR_JOIN--5. Performance and Control_TN5W" [label=O fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "OR_JOIN--5. Performance and Control_TN5W"
+		"keep communication" -> "OR_JOIN--5. Performance and Control_TN5W"
+		"AND_SPLIT--6. Close_QNF6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Performance and Control_TN5W" -> "AND_SPLIT--6. Close_QNF6"
+		"ensure the project is completed" [shape=box]
+		"AND_SPLIT--6. Close_QNF6" -> "ensure the project is completed"
+		"terminate contractors" [shape=box]
+		"AND_SPLIT--6. Close_QNF6" -> "terminate contractors"
+		"AND_JOIN--6. Close_QNF6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ensure the project is completed" -> "AND_JOIN--6. Close_QNF6"
+		"terminate contractors" -> "AND_JOIN--6. Close_QNF6"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_QNF6" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the project management process. It starts with making an introduction. 
+After making an introduction, you need to get approval.
+After getting approval, drawing up a project plan needs to be done. 
+Once drawing up a project plan occurs, having a kickoff meeting should be done. 
+When having a kickoff meeting is completed, one or more of the following paths should be executed: recording KPIs, keeping communication. 
+Then, the next tasks should be ensuring the project is completed and terminating contractors, they should be done in parallel. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,63 @@
+digraph budget_preparation_process_6 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"OR_SPLIT--2. Current financial status_N0RG" [label=O fixedsize=true shape=diamond width=0.5]
+		"set target date for approval" -> "OR_SPLIT--2. Current financial status_N0RG"
+		"evaluate any significant variances" [shape=box]
+		"OR_SPLIT--2. Current financial status_N0RG" -> "evaluate any significant variances"
+		"review the most recent budget" [shape=box]
+		"OR_SPLIT--2. Current financial status_N0RG" -> "review the most recent budget"
+		"OR_JOIN--2. Current financial status_N0RG" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_JOIN--2. Current financial status_N0RG"
+		"review the most recent budget" -> "OR_JOIN--2. Current financial status_N0RG"
+		"AND_SPLIT--3. Goals_O60G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Current financial status_N0RG" -> "AND_SPLIT--3. Goals_O60G"
+		"define three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_O60G" -> "define three to five goals"
+		"prioritize three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_O60G" -> "prioritize three to five goals"
+		"determine ways of achieving the goals" [shape=box]
+		"define three to five goals" -> "determine ways of achieving the goals"
+		"AND_JOIN--3. Goals_O60G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "AND_JOIN--3. Goals_O60G"
+		"prioritize three to five goals" -> "AND_JOIN--3. Goals_O60G"
+		"calculate the total annual budget" [shape=box]
+		"AND_JOIN--3. Goals_O60G" -> "calculate the total annual budget"
+		"OR_SPLIT--5. Projected income/funding_7CPQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"calculate the total annual budget" -> "OR_SPLIT--5. Projected income/funding_7CPQ"
+		"project total annual income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_7CPQ" -> "project total annual income"
+		"list all sources of income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_7CPQ" -> "list all sources of income"
+		"OR_JOIN--5. Projected income/funding_7CPQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "OR_JOIN--5. Projected income/funding_7CPQ"
+		"list all sources of income" -> "OR_JOIN--5. Projected income/funding_7CPQ"
+		"AND_SPLIT--6. Putting it all together_E918" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Projected income/funding_7CPQ" -> "AND_SPLIT--6. Putting it all together_E918"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_SPLIT--6. Putting it all together_E918" -> "record financial data in a budget spreadsheet"
+		"finalize the budget" [shape=box]
+		"AND_SPLIT--6. Putting it all together_E918" -> "finalize the budget"
+		"AND_JOIN--6. Putting it all together_E918" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_JOIN--6. Putting it all together_E918"
+		"finalize the budget" -> "AND_JOIN--6. Putting it all together_E918"
+		"assign management responsibilities" [shape=box]
+		"AND_JOIN--6. Putting it all together_E918" -> "assign management responsibilities"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"assign management responsibilities" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It starts with setting target date for approval. 
+Once setting target date for approval occurs, one or more of the following paths should be executed: evaluating any significant variances, reviewing the most recent budget. 
+Afterwards, the process is split into 2 parallel branches: defining three to five goals and prioritizing three to five goals. 
+After defining three to five goals, you need to determine ways of achieving the goals.
+Once all pre-tasks are executed, then calculating the total annual budget needs to be done. 
+After calculating the total annual budget, one or more of the following paths should be executed: projecting total annual income, listing all sources of income. 
+After that, the process is split into 2 parallel branches: recording financial data in a budget spreadsheet and finalizing the budget. 
+Once all pre-tasks are executed, then assigning management responsibilities needs to be done. 
+The process is now completed. 
+"
+}

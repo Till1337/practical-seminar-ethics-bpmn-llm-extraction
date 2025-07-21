@@ -1,0 +1,44 @@
+digraph loan_application_process_199 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the bank statement to the lender" [shape=box]
+		"OR_SPLIT--2. Loan application_RDMZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide the bank statement to the lender" -> "OR_SPLIT--2. Loan application_RDMZ"
+		"complete the loan application by borrower" [shape=box]
+		"OR_SPLIT--2. Loan application_RDMZ" -> "complete the loan application by borrower"
+		"receive the application by credit department" [shape=box]
+		"OR_SPLIT--2. Loan application_RDMZ" -> "receive the application by credit department"
+		"OR_JOIN--2. Loan application_RDMZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "OR_JOIN--2. Loan application_RDMZ"
+		"receive the application by credit department" -> "OR_JOIN--2. Loan application_RDMZ"
+		subgraph "CLUSTER_XOR_3. Application processing _P5EA" {
+			color=white label="check for the completeness"
+			"XOR_SPLIT--check for the completeness_DJC7" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"OR_JOIN--2. Loan application_RDMZ" -> "XOR_SPLIT--check for the completeness_DJC7" [label="check for the completeness"]
+		"XOR_SPLIT--check for the completeness_DJC7" -> "XOR_JOIN--check for the completeness_DJC7" [label="is complete"]
+		"check for the completeness" [shape=box]
+		"XOR_SPLIT--check for the completeness_DJC7" -> "check for the completeness" [label="is not complete"]
+		"XOR_JOIN--check for the completeness_DJC7" [label=X fixedsize=true shape=diamond width=0.5]
+		"check for the completeness" -> "XOR_JOIN--check for the completeness_DJC7"
+		"begin the underwriting process" [shape=box]
+		"XOR_JOIN--check for the completeness_DJC7" -> "begin the underwriting process"
+		"change the interest rate" [shape=box]
+		"begin the underwriting process" -> "change the interest rate"
+		"receive the loans fund" [shape=box]
+		"change the interest rate" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the bank statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the loan application process. It starts with providing the bank statement to the lender. 
+Once providing the bank statement to the lender occurs, one or more of the following paths should be executed: completing the loan application by borrower, receiving the application by credit department. 
+Afterwards, checking for the completeness should be considered. if all is complete, then nothing needs to be done, otherwise you should check for the completeness. 
+Afterwards, you need to begin the underwriting process.
+Once beginning the underwriting process occurs, changing the interest rate needs to be done. 
+When changing the interest rate is completed, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

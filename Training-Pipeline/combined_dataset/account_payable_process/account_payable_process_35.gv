@@ -1,0 +1,33 @@
+digraph account_payable_process_35 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the vendor accounting department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the vendor accounting department" -> "create a receiving report"
+		"AND_SPLIT--3. Document validation_2M7E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create a receiving report" -> "AND_SPLIT--3. Document validation_2M7E"
+		"confirm all documents have been amended" [shape=box]
+		"AND_SPLIT--3. Document validation_2M7E" -> "confirm all documents have been amended"
+		"gather the receiving report" [shape=box]
+		"AND_SPLIT--3. Document validation_2M7E" -> "gather the receiving report"
+		"double check a three-way match" [shape=box]
+		"AND_SPLIT--3. Document validation_2M7E" -> "double check a three-way match"
+		"AND_JOIN--3. Document validation_2M7E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm all documents have been amended" -> "AND_JOIN--3. Document validation_2M7E"
+		"gather the receiving report" -> "AND_JOIN--3. Document validation_2M7E"
+		"double check a three-way match" -> "AND_JOIN--3. Document validation_2M7E"
+		"stamp all documents" [shape=box]
+		"AND_JOIN--3. Document validation_2M7E" -> "stamp all documents"
+	}
+	START_NODE -> "send to the vendor accounting department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"stamp all documents" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the account payable process. It begins when you send to the vendor accounting department. 
+When sending to the vendor accounting department is completed, you need to create a receiving report.
+When creating a receiving report is completed, the process is split into 3 parallel branches: confirming all documents have been amended, gathering the receiving report and doubling check a three-way match. 
+Once all pre-tasks are executed, then stamping all documents needs to be done. 
+The process is now completed. 
+"
+}

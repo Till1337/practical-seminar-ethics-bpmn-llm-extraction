@@ -1,0 +1,43 @@
+digraph startup_due_diligence_for_a_venture_capitalist_39 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_PRUH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_PRUH"
+		"specific product market share" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_PRUH" -> "specific product market share"
+		"consider product necessity" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_PRUH" -> "consider product necessity"
+		"AND_JOIN--2. Filter out the terrible products_PRUH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market share" -> "AND_JOIN--2. Filter out the terrible products_PRUH"
+		"consider product necessity" -> "AND_JOIN--2. Filter out the terrible products_PRUH"
+		"review relationship to founder" [shape=box]
+		"AND_JOIN--2. Filter out the terrible products_PRUH" -> "review relationship to founder"
+		"check current debt" [shape=box]
+		"review relationship to founder" -> "check current debt"
+		"AND_SPLIT--5. Evaluate the Competition_RB0Y" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "AND_SPLIT--5. Evaluate the Competition_RB0Y"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_RB0Y" -> "analyze the reputation of competition"
+		"know exact competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_RB0Y" -> "know exact competition"
+		"AND_JOIN--5. Evaluate the Competition_RB0Y" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_RB0Y"
+		"know exact competition" -> "AND_JOIN--5. Evaluate the Competition_RB0Y"
+		"check trademarks" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_RB0Y" -> "check trademarks"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check trademarks" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, the next tasks should be specificking product market share and considering product necessity, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to review relationship to founder.
+When reviewing relationship to founder is completed, checking current debt should be done. 
+When checking current debt is completed, the process is split into 2 parallel branches: analyzing the reputation of competition and knowing exact competition. 
+Once all pre-tasks are executed, then checking trademarks needs to be done. 
+The process is now completed. 
+"
+}

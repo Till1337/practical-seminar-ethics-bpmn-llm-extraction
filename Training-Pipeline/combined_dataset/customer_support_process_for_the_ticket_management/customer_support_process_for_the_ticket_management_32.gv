@@ -1,0 +1,30 @@
+digraph customer_support_process_for_the_ticket_management_32 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'Sales Question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'Sales Question'"
+		"OR_SPLIT--3. Ticket Action_DM9W" [label=O fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Sales Question'" -> "OR_SPLIT--3. Ticket Action_DM9W"
+		"response ticket question" [shape=box]
+		"OR_SPLIT--3. Ticket Action_DM9W" -> "response ticket question"
+		"replicate the issue" [shape=box]
+		"OR_SPLIT--3. Ticket Action_DM9W" -> "replicate the issue"
+		"test technical issues" [shape=box]
+		"response ticket question" -> "test technical issues"
+		"OR_JOIN--3. Ticket Action_DM9W" [label=O fixedsize=true shape=diamond width=0.5]
+		"test technical issues" -> "OR_JOIN--3. Ticket Action_DM9W"
+		"replicate the issue" -> "OR_JOIN--3. Ticket Action_DM9W"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--3. Ticket Action_DM9W" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It begins when you check the ticket type. 
+Once checking the ticket type occurs, determining ticket type as 'Sales Question' needs to be done. 
+Once determining ticket type as 'Sales Question' occurs, one or more of the following paths should be executed: responsing ticket question, replicating the issue. 
+When responsing ticket question is completed, you need to test technical issues.
+The process is now completed. 
+"
+}

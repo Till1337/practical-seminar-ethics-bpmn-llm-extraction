@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_155 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"OR_SPLIT--2. Approval_VPVX" [label=O fixedsize=true shape=diamond width=0.5]
+		"create the purchase requisition" -> "OR_SPLIT--2. Approval_VPVX"
+		"get approval from finance team" [shape=box]
+		"OR_SPLIT--2. Approval_VPVX" -> "get approval from finance team"
+		"get approval from manager" [shape=box]
+		"OR_SPLIT--2. Approval_VPVX" -> "get approval from manager"
+		"OR_JOIN--2. Approval_VPVX" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "OR_JOIN--2. Approval_VPVX"
+		"get approval from manager" -> "OR_JOIN--2. Approval_VPVX"
+		"create the purchase order" [shape=box]
+		"OR_JOIN--2. Approval_VPVX" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"confirm the delivery date" [shape=box]
+		"get approval from supplier" -> "confirm the delivery date"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"confirm the delivery date" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the purchase order workflow. It starts with creating the purchase requisition. 
+After creating the purchase requisition, one or more of the following paths should be executed: getting approval from finance team, getting approval from manager. 
+After that, creating the purchase order needs to be done. 
+Once creating the purchase order occurs, you need to get approval from supplier.
+When getting approval from supplier is completed, confirming the delivery date should be done. 
+The process is now completed. 
+"
+}

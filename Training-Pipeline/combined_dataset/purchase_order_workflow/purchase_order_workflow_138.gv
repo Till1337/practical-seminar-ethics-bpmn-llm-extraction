@@ -1,0 +1,47 @@
+digraph purchase_order_workflow_138 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"OR_SPLIT--2. Approval_8213" [label=O fixedsize=true shape=diamond width=0.5]
+		"create the purchase requisition" -> "OR_SPLIT--2. Approval_8213"
+		"get approval from manager" [shape=box]
+		"OR_SPLIT--2. Approval_8213" -> "get approval from manager"
+		"get approval from finance team" [shape=box]
+		"OR_SPLIT--2. Approval_8213" -> "get approval from finance team"
+		"OR_JOIN--2. Approval_8213" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval from manager" -> "OR_JOIN--2. Approval_8213"
+		"get approval from finance team" -> "OR_JOIN--2. Approval_8213"
+		"OR_SPLIT--4. Creation_55F8" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Approval_8213" -> "OR_SPLIT--4. Creation_55F8"
+		"create the purchase order" [shape=box]
+		"OR_SPLIT--4. Creation_55F8" -> "create the purchase order"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"OR_SPLIT--4. Creation_55F8" -> "inform the supplier the order is ready for approval"
+		"OR_JOIN--4. Creation_55F8" [label=O fixedsize=true shape=diamond width=0.5]
+		"create the purchase order" -> "OR_JOIN--4. Creation_55F8"
+		"inform the supplier the order is ready for approval" -> "OR_JOIN--4. Creation_55F8"
+		"get approval from supplier" [shape=box]
+		"OR_JOIN--4. Creation_55F8" -> "get approval from supplier"
+		"AND_SPLIT--6. Final steps_E4B5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "AND_SPLIT--6. Final steps_E4B5"
+		"confirm the delivery date" [shape=box]
+		"AND_SPLIT--6. Final steps_E4B5" -> "confirm the delivery date"
+		"send details to the department" [shape=box]
+		"AND_SPLIT--6. Final steps_E4B5" -> "send details to the department"
+		"AND_JOIN--6. Final steps_E4B5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the delivery date" -> "AND_JOIN--6. Final steps_E4B5"
+		"send details to the department" -> "AND_JOIN--6. Final steps_E4B5"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Final steps_E4B5" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the purchase order workflow. It begins when you create the purchase requisition. 
+After creating the purchase requisition, one or more of the following paths should be executed: getting approval from manager, getting approval from finance team. 
+Then, one or more of the following paths should be executed: creating the purchase order, informing the supplier the order is ready for approval. 
+Afterwards, you need to get approval from supplier.
+Once getting approval from supplier occurs, the process is split into 2 parallel branches: confirming the delivery date and sending details to the department. 
+The process is now completed. 
+"
+}

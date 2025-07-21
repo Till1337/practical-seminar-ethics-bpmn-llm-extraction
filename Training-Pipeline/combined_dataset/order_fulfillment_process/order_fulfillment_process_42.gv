@@ -1,0 +1,33 @@
+digraph order_fulfillment_process_42 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"record which products were taken from storage" [shape=box]
+		"confirm that payment has been received" -> "record which products were taken from storage"
+		"OR_SPLIT--3. Packaging products_OPX5" [label=O fixedsize=true shape=diamond width=0.5]
+		"record which products were taken from storage" -> "OR_SPLIT--3. Packaging products_OPX5"
+		"print packing slip" [shape=box]
+		"OR_SPLIT--3. Packaging products_OPX5" -> "print packing slip"
+		"measure products" [shape=box]
+		"OR_SPLIT--3. Packaging products_OPX5" -> "measure products"
+		"OR_JOIN--3. Packaging products_OPX5" [label=O fixedsize=true shape=diamond width=0.5]
+		"print packing slip" -> "OR_JOIN--3. Packaging products_OPX5"
+		"measure products" -> "OR_JOIN--3. Packaging products_OPX5"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"OR_JOIN--3. Packaging products_OPX5" -> "examine your other orders for delivery overlaps"
+		"send a confirmation email to the customer" [shape=box]
+		"examine your other orders for delivery overlaps" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the order fulfillment process. It begins when you confirm that payment has been received. 
+Once confirming that payment has been received occurs, you need to record which products were taken from storage.
+When recording which products were taken from storage is completed, one or more of the following paths should be executed: printing packing slip, measuring products. 
+Afterwards, examining your other orders for delivery overlaps should be done. 
+Once examining your other orders for delivery overlaps occurs, sending a confirmation email to the customer needs to be done. 
+The process is now completed. 
+"
+}

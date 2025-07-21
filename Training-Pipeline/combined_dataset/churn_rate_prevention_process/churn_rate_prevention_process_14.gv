@@ -1,0 +1,58 @@
+digraph churn_rate_prevention_process_14 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_88WO" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Evaluate product usage_88WO"
+		"determine ways to increase value" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_88WO" -> "determine ways to increase value"
+		"identify key points of value" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_88WO" -> "identify key points of value"
+		"analyze how they use your product" [shape=box]
+		"determine ways to increase value" -> "analyze how they use your product"
+		"quantify the impact of cancellation" [shape=box]
+		"identify key points of value" -> "quantify the impact of cancellation"
+		"OR_JOIN--2. Evaluate product usage_88WO" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze how they use your product" -> "OR_JOIN--2. Evaluate product usage_88WO"
+		"quantify the impact of cancellation" -> "OR_JOIN--2. Evaluate product usage_88WO"
+		"record if they are willing to talk" [shape=box]
+		"OR_JOIN--2. Evaluate product usage_88WO" -> "record if they are willing to talk"
+		"identify the root cause(s) of the problem" [shape=box]
+		"record if they are willing to talk" -> "identify the root cause(s) of the problem"
+		"OR_SPLIT--5. Retention incentives_Q3M1" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the root cause(s) of the problem" -> "OR_SPLIT--5. Retention incentives_Q3M1"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_Q3M1" -> "describe your ideas to increase value"
+		"present them with a special offer" [shape=box]
+		"OR_SPLIT--5. Retention incentives_Q3M1" -> "present them with a special offer"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_Q3M1" -> "inform them of key metrics demonstrating value"
+		"OR_JOIN--5. Retention incentives_Q3M1" [label=O fixedsize=true shape=diamond width=0.5]
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_Q3M1"
+		"present them with a special offer" -> "OR_JOIN--5. Retention incentives_Q3M1"
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_Q3M1"
+		"thank them for their time and feedback" [shape=box]
+		"OR_JOIN--5. Retention incentives_Q3M1" -> "thank them for their time and feedback"
+		"ask if they have any other concerns" [shape=box]
+		"thank them for their time and feedback" -> "ask if they have any other concerns"
+		"note down important learnings from the conversation" [shape=box]
+		"ask if they have any other concerns" -> "note down important learnings from the conversation"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"note down important learnings from the conversation" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It starts with recording basic details. 
+When recording basic details is completed, one or more of the following paths should be executed: determining ways to increase value, identifying key points of value. 
+After determining ways to increase value, analyzing how they use your product should be done. 
+After identifying key points of value, quantifying the impact of cancellation needs to be done. 
+Then, recording if they are willing to talk needs to be done. 
+When recording if they are willing to talk is completed, identifying the root cause(s) of the problem should be done. 
+After identifying the root cause(s) of the problem, one or more of the following paths should be executed: describing your ideas to increase value, presenting them with a special offer, informing them of key metrics demonstrating value. 
+Afterwards, thanking them for their time and feedback needs to be done. 
+After thanking them for their time and feedback, you need to ask if they have any other concerns.
+When asking if they have any other concerns is completed, you need to note down important learnings from the conversation.
+The process is now completed. 
+"
+}

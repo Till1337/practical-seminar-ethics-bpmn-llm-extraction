@@ -1,0 +1,56 @@
+digraph "final grades submission process_107" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_3L23" [label=O fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "OR_SPLIT--2. Apply special grades or criteria_3L23"
+		"prepare grades for SSO" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_3L23" -> "prepare grades for SSO"
+		"apply special grades to individuals" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_3L23" -> "apply special grades to individuals"
+		"select exam assignment" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_3L23" -> "select exam assignment"
+		"AND_SPLIT--2. Apply special grades or criteria_3P5G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "AND_SPLIT--2. Apply special grades or criteria_3P5G"
+		"apply score criteria" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_3P5G" -> "apply score criteria"
+		"calculate the grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_3P5G" -> "calculate the grades"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_3P5G" -> "import gradebook"
+		"AND_JOIN--2. Apply special grades or criteria_3P5G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply score criteria" -> "AND_JOIN--2. Apply special grades or criteria_3P5G"
+		"calculate the grades" -> "AND_JOIN--2. Apply special grades or criteria_3P5G"
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_3P5G"
+		"OR_JOIN--2. Apply special grades or criteria_3L23" [label=O fixedsize=true shape=diamond width=0.5]
+		"prepare grades for SSO" -> "OR_JOIN--2. Apply special grades or criteria_3L23"
+		"apply special grades to individuals" -> "OR_JOIN--2. Apply special grades or criteria_3L23"
+		"AND_JOIN--2. Apply special grades or criteria_3P5G" -> "OR_JOIN--2. Apply special grades or criteria_3L23"
+		"review grades summary" [shape=box]
+		"OR_JOIN--2. Apply special grades or criteria_3L23" -> "review grades summary"
+		"recalculate the grades" [shape=box]
+		"review grades summary" -> "recalculate the grades"
+		"AND_SPLIT--5. Submit results to SSO_XAMF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"recalculate the grades" -> "AND_SPLIT--5. Submit results to SSO_XAMF"
+		"get approval signatures by the course director" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_XAMF" -> "get approval signatures by the course director"
+		"submit results to SSO" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_XAMF" -> "submit results to SSO"
+		"AND_JOIN--5. Submit results to SSO_XAMF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval signatures by the course director" -> "AND_JOIN--5. Submit results to SSO_XAMF"
+		"submit results to SSO" -> "AND_JOIN--5. Submit results to SSO_XAMF"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Submit results to SSO_XAMF" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It begins when you enter results in the canvas gradebook. 
+When entering results in the canvas gradebook is completed, one or more of the following paths should be executed: preparing grades for SSO, applying special grades to individuals, selecting exam assignment. 
+Once selecting exam assignment occurs, the next tasks should be applying score criteria, calculating the grades and importing gradebook, they should be done in parallel. 
+After that, you need to review grades summary.
+When reviewing grades summary is completed, recalculating the grades should be done. 
+When recalculating the grades is completed, the process is split into 2 parallel branches: getting approval signatures by the course director and submitting results to SSO. 
+The process is now completed. 
+"
+}

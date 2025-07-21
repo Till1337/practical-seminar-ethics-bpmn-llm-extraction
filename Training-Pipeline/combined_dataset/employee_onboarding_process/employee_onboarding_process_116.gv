@@ -1,0 +1,47 @@
+digraph employee_onboarding_process_116 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"OR_SPLIT--2. Before first day_8453" [label=O fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "OR_SPLIT--2. Before first day_8453"
+		"discuss role, goals and projects with supervisor" [shape=box]
+		"OR_SPLIT--2. Before first day_8453" -> "discuss role, goals and projects with supervisor"
+		"get approval" [shape=box]
+		"OR_SPLIT--2. Before first day_8453" -> "get approval"
+		"OR_JOIN--2. Before first day_8453" [label=O fixedsize=true shape=diamond width=0.5]
+		"discuss role, goals and projects with supervisor" -> "OR_JOIN--2. Before first day_8453"
+		"get approval" -> "OR_JOIN--2. Before first day_8453"
+		"hold a welcoming ceremony" [shape=box]
+		"OR_JOIN--2. Before first day_8453" -> "hold a welcoming ceremony"
+		"OR_SPLIT--4. First week_LBLH" [label=O fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "OR_SPLIT--4. First week_LBLH"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_LBLH" -> "check the paperwork"
+		"assign first project" [shape=box]
+		"OR_SPLIT--4. First week_LBLH" -> "assign first project"
+		"OR_JOIN--4. First week_LBLH" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_LBLH"
+		"assign first project" -> "OR_JOIN--4. First week_LBLH"
+		"OR_SPLIT--5. First month_D3AQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_LBLH" -> "OR_SPLIT--5. First month_D3AQ"
+		"provide reading material for personal growth" [shape=box]
+		"OR_SPLIT--5. First month_D3AQ" -> "provide reading material for personal growth"
+		"plan check-in meetings" [shape=box]
+		"OR_SPLIT--5. First month_D3AQ" -> "plan check-in meetings"
+		"OR_JOIN--5. First month_D3AQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide reading material for personal growth" -> "OR_JOIN--5. First month_D3AQ"
+		"plan check-in meetings" -> "OR_JOIN--5. First month_D3AQ"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. First month_D3AQ" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It begins when you make an introduction. 
+Once making an introduction occurs, one or more of the following paths should be executed: discussing role, goals and projects with supervisor, getting approval. 
+Afterwards, you need to hold a welcoming ceremony.
+When holding a welcoming ceremony is completed, one or more of the following paths should be executed: checking the paperwork, assigning first project. 
+Then, one or more of the following paths should be executed: providing reading material for personal growth, planning check-in meetings. 
+The process is now completed. 
+"
+}

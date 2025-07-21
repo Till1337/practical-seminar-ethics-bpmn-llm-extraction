@@ -1,0 +1,43 @@
+digraph "final grades submission process_181" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"unmute all gradebook columns" [shape=box]
+		"calculate the grades" [shape=box]
+		"unmute all gradebook columns" -> "calculate the grades"
+		"review course summary" [shape=box]
+		"calculate the grades" -> "review course summary"
+		"OR_SPLIT--4. Re-calculate and get approval_6KK2" [label=O fixedsize=true shape=diamond width=0.5]
+		"review course summary" -> "OR_SPLIT--4. Re-calculate and get approval_6KK2"
+		"export the course summary" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_6KK2" -> "export the course summary"
+		"export the final grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_6KK2" -> "export the final grades"
+		"recalculate the grades" [shape=box]
+		"export the final grades" -> "recalculate the grades"
+		"OR_JOIN--4. Re-calculate and get approval_6KK2" [label=O fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "OR_JOIN--4. Re-calculate and get approval_6KK2"
+		"recalculate the grades" -> "OR_JOIN--4. Re-calculate and get approval_6KK2"
+		"AND_SPLIT--5. Submit results to SSO_AIKL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Re-calculate and get approval_6KK2" -> "AND_SPLIT--5. Submit results to SSO_AIKL"
+		"send examiners grade approval sheet" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_AIKL" -> "send examiners grade approval sheet"
+		"submit results to SSO" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_AIKL" -> "submit results to SSO"
+		"AND_JOIN--5. Submit results to SSO_AIKL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send examiners grade approval sheet" -> "AND_JOIN--5. Submit results to SSO_AIKL"
+		"submit results to SSO" -> "AND_JOIN--5. Submit results to SSO_AIKL"
+	}
+	START_NODE -> "unmute all gradebook columns"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Submit results to SSO_AIKL" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the final grades submission process. It starts with unmuting all gradebook columns. 
+When unmuting all gradebook columns is completed, you need to calculate the grades.
+Once calculating the grades occurs, reviewing course summary needs to be done. 
+Once reviewing course summary occurs, one or more of the following paths should be executed: exporting the course summary, exporting the final grades. 
+After exporting the final grades, you need to recalculate the grades.
+Then, the process is split into 2 parallel branches: sending examiners grade approval sheet and submitting results to SSO. 
+The process is now completed. 
+"
+}

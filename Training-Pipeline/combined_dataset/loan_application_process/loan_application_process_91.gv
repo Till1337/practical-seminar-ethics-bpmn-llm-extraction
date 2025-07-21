@@ -1,0 +1,36 @@
+digraph loan_application_process_91 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the previous loan statement to the lender" [shape=box]
+		"AND_SPLIT--2. Loan application_J9PU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"provide the previous loan statement to the lender" -> "AND_SPLIT--2. Loan application_J9PU"
+		"receive the application by credit department" [shape=box]
+		"AND_SPLIT--2. Loan application_J9PU" -> "receive the application by credit department"
+		"complete the loan application by borrower" [shape=box]
+		"AND_SPLIT--2. Loan application_J9PU" -> "complete the loan application by borrower"
+		"AND_JOIN--2. Loan application_J9PU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "AND_JOIN--2. Loan application_J9PU"
+		"complete the loan application by borrower" -> "AND_JOIN--2. Loan application_J9PU"
+		"give the written notice to applicant" [shape=box]
+		"AND_JOIN--2. Loan application_J9PU" -> "give the written notice to applicant"
+		"check the credit score and risk score" [shape=box]
+		"give the written notice to applicant" -> "check the credit score and risk score"
+		"reduce loan amount" [shape=box]
+		"check the credit score and risk score" -> "reduce loan amount"
+		"receive the loans fund" [shape=box]
+		"reduce loan amount" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the previous loan statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the loan application process. It starts with providing the previous loan statement to the lender. 
+Once providing the previous loan statement to the lender occurs, the next tasks should be receiving the application by credit department and completing the loan application by borrower, they should be done in parallel. 
+Once all pre-tasks are executed, then giving the written notice to applicant needs to be done. 
+When giving the written notice to applicant is completed, checking the credit score and risk score should be done. 
+After checking the credit score and risk score, reducing loan amount should be done. 
+After reducing loan amount, you need to receive the loans fund.
+The process is now completed. 
+"
+}

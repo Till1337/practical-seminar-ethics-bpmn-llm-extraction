@@ -1,0 +1,59 @@
+digraph churn_rate_prevention_process_161 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"determine ways to increase value" [shape=box]
+		"record basic details" -> "determine ways to increase value"
+		"confirm call date and time" [shape=box]
+		"determine ways to increase value" -> "confirm call date and time"
+		"OR_SPLIT--4. Understand customer concerns_Z0Q2" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm call date and time" -> "OR_SPLIT--4. Understand customer concerns_Z0Q2"
+		"identify the root cause(s) of the problem" [shape=box]
+		"OR_SPLIT--4. Understand customer concerns_Z0Q2" -> "identify the root cause(s) of the problem"
+		"summarize why they want to leave" [shape=box]
+		"OR_SPLIT--4. Understand customer concerns_Z0Q2" -> "summarize why they want to leave"
+		"ask open-ended questions" [shape=box]
+		"summarize why they want to leave" -> "ask open-ended questions"
+		"OR_JOIN--4. Understand customer concerns_Z0Q2" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the root cause(s) of the problem" -> "OR_JOIN--4. Understand customer concerns_Z0Q2"
+		"ask open-ended questions" -> "OR_JOIN--4. Understand customer concerns_Z0Q2"
+		"present them with a special offer" [shape=box]
+		"OR_JOIN--4. Understand customer concerns_Z0Q2" -> "present them with a special offer"
+		"AND_SPLIT--6. Outcome_XZLD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"present them with a special offer" -> "AND_SPLIT--6. Outcome_XZLD"
+		"thank them for their time and feedback" [shape=box]
+		"AND_SPLIT--6. Outcome_XZLD" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"AND_SPLIT--6. Outcome_XZLD" -> "record the customer’s decision"
+		"AND_JOIN--6. Outcome_XZLD" [label="+" fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "AND_JOIN--6. Outcome_XZLD"
+		"record the customer’s decision" -> "AND_JOIN--6. Outcome_XZLD"
+		"ask if they have any other concerns" [shape=box]
+		"AND_JOIN--6. Outcome_XZLD" -> "ask if they have any other concerns"
+		"AND_SPLIT--8. Final steps_6XZ8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "AND_SPLIT--8. Final steps_6XZ8"
+		"note down important learnings from the conversation" [shape=box]
+		"AND_SPLIT--8. Final steps_6XZ8" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"AND_SPLIT--8. Final steps_6XZ8" -> "send learnings to appropriate managers"
+		"AND_JOIN--8. Final steps_6XZ8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "AND_JOIN--8. Final steps_6XZ8"
+		"send learnings to appropriate managers" -> "AND_JOIN--8. Final steps_6XZ8"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--8. Final steps_6XZ8" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the churn rate prevention process. It starts with recording basic details. 
+When recording basic details is completed, you need to determine ways to increase value.
+When determining ways to increase value is completed, confirming call date and time needs to be done. 
+After confirming call date and time, one or more of the following paths should be executed: identifying the root cause(s) of the problem, summarizing why they want to leave. 
+Once summarizing why they want to leave occurs, asking open-ended questions should be done. 
+Then, presenting them with a special offer should be done. 
+When presenting them with a special offer is completed, the next tasks should be thanking them for their time and feedback and recording the customer’s decision, they should be done in parallel. 
+Once all pre-tasks are executed, then asking if they have any other concerns needs to be done. 
+When asking if they have any other concerns is completed, the process is split into 2 parallel branches: noting down important learnings from the conversation and sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

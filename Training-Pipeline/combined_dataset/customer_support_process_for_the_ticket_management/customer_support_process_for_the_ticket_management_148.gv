@@ -1,0 +1,48 @@
+digraph customer_support_process_for_the_ticket_management_148 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"OR_SPLIT--2. Ticket type_8R7Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "OR_SPLIT--2. Ticket type_8R7Y"
+		"Determine ticket type as 'Mixed-type question'" [shape=box]
+		"OR_SPLIT--2. Ticket type_8R7Y" -> "Determine ticket type as 'Mixed-type question'"
+		"Determine ticket type as 'I'm not sure question'" [shape=box]
+		"OR_SPLIT--2. Ticket type_8R7Y" -> "Determine ticket type as 'I'm not sure question'"
+		"Determine ticket type as 'App Question'" [shape=box]
+		"Determine ticket type as 'Mixed-type question'" -> "Determine ticket type as 'App Question'"
+		"OR_JOIN--2. Ticket type_8R7Y" [label=O fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'App Question'" -> "OR_JOIN--2. Ticket type_8R7Y"
+		"Determine ticket type as 'I'm not sure question'" -> "OR_JOIN--2. Ticket type_8R7Y"
+		"OR_SPLIT--3. Ticket Action_N1YY" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Ticket type_8R7Y" -> "OR_SPLIT--3. Ticket Action_N1YY"
+		"response ticket question" [shape=box]
+		"OR_SPLIT--3. Ticket Action_N1YY" -> "response ticket question"
+		"test technical issues" [shape=box]
+		"OR_SPLIT--3. Ticket Action_N1YY" -> "test technical issues"
+		subgraph "CLUSTER_XOR_3. Ticket Action_YCJ4" {
+			color=white label="replicate the issue"
+			"XOR_SPLIT--replicate the issue_5UMK" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"test technical issues" -> "XOR_SPLIT--replicate the issue_5UMK" [label="replicate the issue"]
+		"XOR_SPLIT--replicate the issue_5UMK" -> "XOR_JOIN--replicate the issue_5UMK" [label="could replicate"]
+		"replicate the issue" [shape=box]
+		"XOR_SPLIT--replicate the issue_5UMK" -> "replicate the issue" [label="could not replicate"]
+		"XOR_JOIN--replicate the issue_5UMK" [label=X fixedsize=true shape=diamond width=0.5]
+		"replicate the issue" -> "XOR_JOIN--replicate the issue_5UMK"
+		"OR_JOIN--3. Ticket Action_N1YY" [label=O fixedsize=true shape=diamond width=0.5]
+		"response ticket question" -> "OR_JOIN--3. Ticket Action_N1YY"
+		"XOR_JOIN--replicate the issue_5UMK" -> "OR_JOIN--3. Ticket Action_N1YY"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--3. Ticket Action_N1YY" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the customer support process for the ticket management. It starts with checking the ticket type. 
+When checking the ticket type is completed, one or more of the following paths should be executed: determining ticket type as 'Mixed-type question', determining ticket type as 'I'm not sure question'. 
+Once determining ticket type as 'Mixed-type question' occurs, determining ticket type as 'App Question' should be done. 
+After that, one or more of the following paths should be executed: responsing ticket question, testing technical issues. 
+Once testing technical issues occurs, replicating the issue should be taken into account. if all could replicate, then nothing needs to be done, otherwise you should replicate the issue. 
+The process is now completed. 
+"
+}

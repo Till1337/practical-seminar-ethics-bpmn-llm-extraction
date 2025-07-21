@@ -1,0 +1,17 @@
+digraph content_promotion_process_107 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"post on related forums and groups" [shape=box]
+		"prepare a summary of your content" -> "post on related forums and groups"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"post on related forums and groups" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It starts with preparing a summary of your content. 
+Once preparing a summary of your content occurs, posting on related forums and groups should be done. 
+The process is now completed. 
+"
+}

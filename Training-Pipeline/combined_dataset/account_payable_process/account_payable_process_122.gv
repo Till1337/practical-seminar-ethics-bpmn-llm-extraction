@@ -1,0 +1,50 @@
+digraph account_payable_process_122 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"AND_SPLIT--3. Document validation_L2GV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create a receiving report" -> "AND_SPLIT--3. Document validation_L2GV"
+		"report errors to relevant team member" [shape=box]
+		"AND_SPLIT--3. Document validation_L2GV" -> "report errors to relevant team member"
+		"double check a three-way match" [shape=box]
+		"AND_SPLIT--3. Document validation_L2GV" -> "double check a three-way match"
+		"AND_JOIN--3. Document validation_L2GV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"report errors to relevant team member" -> "AND_JOIN--3. Document validation_L2GV"
+		"double check a three-way match" -> "AND_JOIN--3. Document validation_L2GV"
+		"AND_SPLIT--4. Payment_QIYW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Document validation_L2GV" -> "AND_SPLIT--4. Payment_QIYW"
+		"create voucher for the documents" [shape=box]
+		"AND_SPLIT--4. Payment_QIYW" -> "create voucher for the documents"
+		"store in paid invoice file" [shape=box]
+		"AND_SPLIT--4. Payment_QIYW" -> "store in paid invoice file"
+		"enter the invoice into the accounts payable account" [shape=box]
+		"AND_SPLIT--4. Payment_QIYW" -> "enter the invoice into the accounts payable account"
+		"AND_SPLIT--4. Payment_HYSB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create voucher for the documents" -> "AND_SPLIT--4. Payment_HYSB"
+		"check dates to avoid penalty charges" [shape=box]
+		"AND_SPLIT--4. Payment_HYSB" -> "check dates to avoid penalty charges"
+		"schedule the payment" [shape=box]
+		"AND_SPLIT--4. Payment_HYSB" -> "schedule the payment"
+		"AND_JOIN--4. Payment_HYSB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check dates to avoid penalty charges" -> "AND_JOIN--4. Payment_HYSB"
+		"schedule the payment" -> "AND_JOIN--4. Payment_HYSB"
+		"AND_JOIN--4. Payment_QIYW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Payment_HYSB" -> "AND_JOIN--4. Payment_QIYW"
+		"store in paid invoice file" -> "AND_JOIN--4. Payment_QIYW"
+		"enter the invoice into the accounts payable account" -> "AND_JOIN--4. Payment_QIYW"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--4. Payment_QIYW" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It starts with sending to the receiving department. 
+Once sending to the receiving department occurs, creating a receiving report needs to be done. 
+After creating a receiving report, the process is split into 2 parallel branches: reporting errors to relevant team member and doubling check a three-way match. 
+Once all pre-tasks are executed, then the next tasks should be creating voucher for the documents, storing in paid invoice file and entering the invoice into the accounts payable account, they should be done in parallel. 
+When creating voucher for the documents is completed, the process is split into 2 parallel branches: checking dates to avoid penalty charges and scheduling the payment. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,77 @@
+digraph budget_preparation_process_177 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Current financial status_6CVZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Current financial status_6CVZ"
+		"review the most recent budget" [shape=box]
+		"OR_SPLIT--2. Current financial status_6CVZ" -> "review the most recent budget"
+		"evaluate any significant variances" [shape=box]
+		"OR_SPLIT--2. Current financial status_6CVZ" -> "evaluate any significant variances"
+		"OR_JOIN--2. Current financial status_6CVZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"review the most recent budget" -> "OR_JOIN--2. Current financial status_6CVZ"
+		"evaluate any significant variances" -> "OR_JOIN--2. Current financial status_6CVZ"
+		"determine ways of achieving the goals" [shape=box]
+		"OR_JOIN--2. Current financial status_6CVZ" -> "determine ways of achieving the goals"
+		"OR_SPLIT--4. Projected expenses_1D06" [label=O fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "OR_SPLIT--4. Projected expenses_1D06"
+		"estimate the average monthly cost" [shape=box]
+		"OR_SPLIT--4. Projected expenses_1D06" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"OR_SPLIT--4. Projected expenses_1D06" -> "list all department expenses"
+		"OR_JOIN--4. Projected expenses_1D06" [label=O fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "OR_JOIN--4. Projected expenses_1D06"
+		"list all department expenses" -> "OR_JOIN--4. Projected expenses_1D06"
+		"OR_SPLIT--5. Projected income/funding_QXCK" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Projected expenses_1D06" -> "OR_SPLIT--5. Projected income/funding_QXCK"
+		"project total annual income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_QXCK" -> "project total annual income"
+		"list all sources of income" [shape=box]
+		"OR_SPLIT--5. Projected income/funding_QXCK" -> "list all sources of income"
+		"OR_JOIN--5. Projected income/funding_QXCK" [label=O fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "OR_JOIN--5. Projected income/funding_QXCK"
+		"list all sources of income" -> "OR_JOIN--5. Projected income/funding_QXCK"
+		"OR_SPLIT--6. Putting it all together_GOMX" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Projected income/funding_QXCK" -> "OR_SPLIT--6. Putting it all together_GOMX"
+		"finalize the budget" [shape=box]
+		"OR_SPLIT--6. Putting it all together_GOMX" -> "finalize the budget"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_SPLIT--6. Putting it all together_GOMX" -> "record financial data in a budget spreadsheet"
+		"OR_JOIN--6. Putting it all together_GOMX" [label=O fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "OR_JOIN--6. Putting it all together_GOMX"
+		"record financial data in a budget spreadsheet" -> "OR_JOIN--6. Putting it all together_GOMX"
+		"OR_SPLIT--7. Final steps_PRXS" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--6. Putting it all together_GOMX" -> "OR_SPLIT--7. Final steps_PRXS"
+		"obtain approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_PRXS" -> "obtain approval from top management"
+		"incorporate into the master budget" [shape=box]
+		"OR_SPLIT--7. Final steps_PRXS" -> "incorporate into the master budget"
+		"OR_SPLIT--7. Final steps_YKMU" [label=O fixedsize=true shape=diamond width=0.5]
+		"obtain approval from top management" -> "OR_SPLIT--7. Final steps_YKMU"
+		"request approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_YKMU" -> "request approval from top management"
+		"assign management responsibilities" [shape=box]
+		"OR_SPLIT--7. Final steps_YKMU" -> "assign management responsibilities"
+		"OR_JOIN--7. Final steps_YKMU" [label=O fixedsize=true shape=diamond width=0.5]
+		"request approval from top management" -> "OR_JOIN--7. Final steps_YKMU"
+		"assign management responsibilities" -> "OR_JOIN--7. Final steps_YKMU"
+		"OR_JOIN--7. Final steps_PRXS" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--7. Final steps_YKMU" -> "OR_JOIN--7. Final steps_PRXS"
+		"incorporate into the master budget" -> "OR_JOIN--7. Final steps_PRXS"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--7. Final steps_PRXS" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you record basic details. 
+Once recording basic details occurs, one or more of the following paths should be executed: reviewing the most recent budget, evaluating any significant variances. 
+Afterwards, determining ways of achieving the goals should be done. 
+When determining ways of achieving the goals is completed, one or more of the following paths should be executed: estimating the average monthly cost, listing all department expenses. 
+Afterwards, one or more of the following paths should be executed: projecting total annual income, listing all sources of income. 
+Then, one or more of the following paths should be executed: finalizing the budget, recording financial data in a budget spreadsheet. 
+After that, one or more of the following paths should be executed: obtaining approval from top management, incorporating into the master budget. 
+After obtaining approval from top management, one or more of the following paths should be executed: requesting approval from top management, assigning management responsibilities. 
+The process is now completed. 
+"
+}

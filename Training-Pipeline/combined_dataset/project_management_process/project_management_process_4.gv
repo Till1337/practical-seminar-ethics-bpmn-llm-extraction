@@ -1,0 +1,36 @@
+digraph project_management_process_4 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"get approval" [shape=box]
+		"make an introduction" -> "get approval"
+		"AND_SPLIT--3. Definition and Planning_G3TP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "AND_SPLIT--3. Definition and Planning_G3TP"
+		"draw up a project plan" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_G3TP" -> "draw up a project plan"
+		"set a budget" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_G3TP" -> "set a budget"
+		"AND_JOIN--3. Definition and Planning_G3TP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"draw up a project plan" -> "AND_JOIN--3. Definition and Planning_G3TP"
+		"set a budget" -> "AND_JOIN--3. Definition and Planning_G3TP"
+		"have a kickoff meeting" [shape=box]
+		"AND_JOIN--3. Definition and Planning_G3TP" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"evaluate project outcomes" [shape=box]
+		"keep communication" -> "evaluate project outcomes"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"evaluate project outcomes" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It begins when you make an introduction. 
+After making an introduction, you need to get approval.
+When getting approval is completed, the process is split into 2 parallel branches: drawing up a project plan and setting a budget. 
+Once all pre-tasks are executed, then you need to have a kickoff meeting.
+Once having a kickoff meeting occurs, keeping communication needs to be done. 
+When keeping communication is completed, evaluating project outcomes needs to be done. 
+The process is now completed. 
+"
+}

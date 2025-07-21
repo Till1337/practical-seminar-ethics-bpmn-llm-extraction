@@ -1,0 +1,35 @@
+digraph customer_support_process_for_the_ticket_management_35 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"AND_SPLIT--2. Ticket type_7DI8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "AND_SPLIT--2. Ticket type_7DI8"
+		"Determine ticket type as 'Technical Issue'" [shape=box]
+		"AND_SPLIT--2. Ticket type_7DI8" -> "Determine ticket type as 'Technical Issue'"
+		"Determine ticket type as 'Feature Request'" [shape=box]
+		"AND_SPLIT--2. Ticket type_7DI8" -> "Determine ticket type as 'Feature Request'"
+		"AND_JOIN--2. Ticket type_7DI8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Technical Issue'" -> "AND_JOIN--2. Ticket type_7DI8"
+		"Determine ticket type as 'Feature Request'" -> "AND_JOIN--2. Ticket type_7DI8"
+		subgraph "CLUSTER_XOR_3. Ticket Action_B2N9" {
+			color=white label="replicate the issue"
+			"XOR_SPLIT--replicate the issue_2QB2" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"AND_JOIN--2. Ticket type_7DI8" -> "XOR_SPLIT--replicate the issue_2QB2" [label="replicate the issue"]
+		"XOR_SPLIT--replicate the issue_2QB2" -> "XOR_JOIN--replicate the issue_2QB2" [label="could replicate"]
+		"response ticket question" [shape=box]
+		"XOR_SPLIT--replicate the issue_2QB2" -> "response ticket question" [label="could not replicate"]
+		"XOR_JOIN--replicate the issue_2QB2" [label=X fixedsize=true shape=diamond width=0.5]
+		"response ticket question" -> "XOR_JOIN--replicate the issue_2QB2"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"XOR_JOIN--replicate the issue_2QB2" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the customer support process for the ticket management. It starts with checking the ticket type. 
+After checking the ticket type, the next tasks should be determining ticket type as 'Technical Issue' and determining ticket type as 'Feature Request', they should be done in parallel. 
+Once all pre-tasks are executed, then replicating the issue should be considered. if all could replicate, then nothing needs to be done, otherwise you should response ticket question. 
+The process is now completed. 
+"
+}

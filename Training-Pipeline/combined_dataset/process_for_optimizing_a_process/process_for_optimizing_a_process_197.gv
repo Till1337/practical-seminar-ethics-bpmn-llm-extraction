@@ -1,0 +1,39 @@
+digraph process_for_optimizing_a_process_197 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"confirm if the process requires optimization" [shape=box]
+		"confirm the basic information" -> "confirm if the process requires optimization"
+		"examine potentially wasteful steps" [shape=box]
+		"confirm if the process requires optimization" -> "examine potentially wasteful steps"
+		"write the potential process improvements" [shape=box]
+		"examine potentially wasteful steps" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"AND_SPLIT--6. Testing the process improvements_6ELK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for processing improvements" -> "AND_SPLIT--6. Testing the process improvements_6ELK"
+		"update the process documents" [shape=box]
+		"AND_SPLIT--6. Testing the process improvements_6ELK" -> "update the process documents"
+		"use the updated process" [shape=box]
+		"AND_SPLIT--6. Testing the process improvements_6ELK" -> "use the updated process"
+		"AND_JOIN--6. Testing the process improvements_6ELK" [label="+" fixedsize=true shape=diamond width=0.5]
+		"update the process documents" -> "AND_JOIN--6. Testing the process improvements_6ELK"
+		"use the updated process" -> "AND_JOIN--6. Testing the process improvements_6ELK"
+		"schedule the next process review and optimization" [shape=box]
+		"AND_JOIN--6. Testing the process improvements_6ELK" -> "schedule the next process review and optimization"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"schedule the next process review and optimization" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the process for optimizing a process. It begins when you confirm the basic information. 
+When confirming the basic information is completed, confirming if the process requires optimization should be done. 
+Once confirming if the process requires optimization occurs, you need to examine potentially wasteful steps.
+When examining potentially wasteful steps is completed, writing the potential process improvements needs to be done. 
+When writing the potential process improvements is completed, you need to get approval for processing improvements.
+After getting approval for processing improvements, the process is split into 2 parallel branches: updating the process documents and using the updated process. 
+Once all pre-tasks are executed, then scheduling the next process review and optimization needs to be done. 
+The process is now completed. 
+"
+}

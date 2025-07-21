@@ -1,0 +1,62 @@
+digraph churn_rate_prevention_process_122 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"determine ways to increase value" [shape=box]
+		"record basic details" -> "determine ways to increase value"
+		"AND_SPLIT--3. Contact the customer_4FP2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways to increase value" -> "AND_SPLIT--3. Contact the customer_4FP2"
+		"record if they are willing to talk" [shape=box]
+		"AND_SPLIT--3. Contact the customer_4FP2" -> "record if they are willing to talk"
+		"send them an email" [shape=box]
+		"AND_SPLIT--3. Contact the customer_4FP2" -> "send them an email"
+		"give them a call" [shape=box]
+		"AND_SPLIT--3. Contact the customer_4FP2" -> "give them a call"
+		"confirm call date and time" [shape=box]
+		"give them a call" -> "confirm call date and time"
+		"AND_JOIN--3. Contact the customer_4FP2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record if they are willing to talk" -> "AND_JOIN--3. Contact the customer_4FP2"
+		"send them an email" -> "AND_JOIN--3. Contact the customer_4FP2"
+		"confirm call date and time" -> "AND_JOIN--3. Contact the customer_4FP2"
+		"summarize why they want to leave" [shape=box]
+		"AND_JOIN--3. Contact the customer_4FP2" -> "summarize why they want to leave"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"summarize why they want to leave" -> "inform them of key metrics demonstrating value"
+		"AND_SPLIT--6. Outcome_4NZ2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "AND_SPLIT--6. Outcome_4NZ2"
+		"thank them for their time and feedback" [shape=box]
+		"AND_SPLIT--6. Outcome_4NZ2" -> "thank them for their time and feedback"
+		"record the customer’s decision" [shape=box]
+		"AND_SPLIT--6. Outcome_4NZ2" -> "record the customer’s decision"
+		"AND_JOIN--6. Outcome_4NZ2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"thank them for their time and feedback" -> "AND_JOIN--6. Outcome_4NZ2"
+		"record the customer’s decision" -> "AND_JOIN--6. Outcome_4NZ2"
+		"ask if they have any other concerns" [shape=box]
+		"AND_JOIN--6. Outcome_4NZ2" -> "ask if they have any other concerns"
+		"OR_SPLIT--8. Final steps_D94A" [label=O fixedsize=true shape=diamond width=0.5]
+		"ask if they have any other concerns" -> "OR_SPLIT--8. Final steps_D94A"
+		"note down important learnings from the conversation" [shape=box]
+		"OR_SPLIT--8. Final steps_D94A" -> "note down important learnings from the conversation"
+		"send learnings to appropriate managers" [shape=box]
+		"OR_SPLIT--8. Final steps_D94A" -> "send learnings to appropriate managers"
+		"OR_JOIN--8. Final steps_D94A" [label=O fixedsize=true shape=diamond width=0.5]
+		"note down important learnings from the conversation" -> "OR_JOIN--8. Final steps_D94A"
+		"send learnings to appropriate managers" -> "OR_JOIN--8. Final steps_D94A"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--8. Final steps_D94A" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It starts with recording basic details. 
+When recording basic details is completed, determining ways to increase value should be done. 
+When determining ways to increase value is completed, the next tasks should be recording if they are willing to talk, sending them an email and giving them a call, they should be done in parallel. 
+When giving them a call is completed, confirming call date and time should be done. 
+Once all pre-tasks are executed, then summarizing why they want to leave should be done. 
+When summarizing why they want to leave is completed, informing them of key metrics demonstrating value should be done. 
+After informing them of key metrics demonstrating value, the process is split into 2 parallel branches: thanking them for their time and feedback and recording the customer’s decision. 
+Once all pre-tasks are executed, then you need to ask if they have any other concerns.
+When asking if they have any other concerns is completed, one or more of the following paths should be executed: noting down important learnings from the conversation, sending learnings to appropriate managers. 
+The process is now completed. 
+"
+}

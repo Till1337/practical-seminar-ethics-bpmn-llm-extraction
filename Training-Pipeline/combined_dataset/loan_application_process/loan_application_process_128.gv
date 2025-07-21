@@ -1,0 +1,36 @@
+digraph loan_application_process_128 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the ID proof to the lender" [shape=box]
+		"AND_SPLIT--2. Loan application_4MU4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"submit the ID proof to the lender" -> "AND_SPLIT--2. Loan application_4MU4"
+		"receive the application by credit department" [shape=box]
+		"AND_SPLIT--2. Loan application_4MU4" -> "receive the application by credit department"
+		"complete the loan application by borrower" [shape=box]
+		"AND_SPLIT--2. Loan application_4MU4" -> "complete the loan application by borrower"
+		"AND_JOIN--2. Loan application_4MU4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "AND_JOIN--2. Loan application_4MU4"
+		"complete the loan application by borrower" -> "AND_JOIN--2. Loan application_4MU4"
+		"give the written notice to applicant" [shape=box]
+		"AND_JOIN--2. Loan application_4MU4" -> "give the written notice to applicant"
+		"check the credit score and risk score" [shape=box]
+		"give the written notice to applicant" -> "check the credit score and risk score"
+		"approve the loan application" [shape=box]
+		"check the credit score and risk score" -> "approve the loan application"
+		"receive the loans fund" [shape=box]
+		"approve the loan application" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the ID proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the loan application process. It starts with submitting the ID proof to the lender. 
+When submitting the ID proof to the lender is completed, the next tasks should be receiving the application by credit department and completing the loan application by borrower, they should be done in parallel. 
+Once all pre-tasks are executed, then giving the written notice to applicant should be done. 
+After giving the written notice to applicant, checking the credit score and risk score should be done. 
+When checking the credit score and risk score is completed, approving the loan application needs to be done. 
+After approving the loan application, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

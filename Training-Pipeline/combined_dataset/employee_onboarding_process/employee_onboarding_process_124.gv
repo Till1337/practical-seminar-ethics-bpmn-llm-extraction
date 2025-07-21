@@ -1,0 +1,36 @@
+digraph employee_onboarding_process_124 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"discuss role, goals and projects with supervisor" [shape=box]
+		"make an introduction" -> "discuss role, goals and projects with supervisor"
+		"AND_SPLIT--3. First day_6SAB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"discuss role, goals and projects with supervisor" -> "AND_SPLIT--3. First day_6SAB"
+		"assign a mentor" [shape=box]
+		"AND_SPLIT--3. First day_6SAB" -> "assign a mentor"
+		"explain your expectations" [shape=box]
+		"AND_SPLIT--3. First day_6SAB" -> "explain your expectations"
+		"assign training material" [shape=box]
+		"explain your expectations" -> "assign training material"
+		"AND_JOIN--3. First day_6SAB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign a mentor" -> "AND_JOIN--3. First day_6SAB"
+		"assign training material" -> "AND_JOIN--3. First day_6SAB"
+		"assign first project" [shape=box]
+		"AND_JOIN--3. First day_6SAB" -> "assign first project"
+		"encourage them to socially interact with the team" [shape=box]
+		"assign first project" -> "encourage them to socially interact with the team"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"encourage them to socially interact with the team" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It begins when you make an introduction. 
+After making an introduction, discussing role, goals and projects with supervisor needs to be done. 
+When discussing role, goals and projects with supervisor is completed, the process is split into 2 parallel branches: assigning a mentor and explaining your expectations. 
+After explaining your expectations, you need to assign training material.
+Once all pre-tasks are executed, then assigning first project should be done. 
+Once assigning first project occurs, encouraging them to socially interact with the team needs to be done. 
+The process is now completed. 
+"
+}

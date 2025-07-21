@@ -1,0 +1,50 @@
+digraph accounts_receivable_process_184 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MEVQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "AND_SPLIT--2. Establish your credit practices_MEVQ"
+		"send a credit application form to the buyer" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MEVQ" -> "send a credit application form to the buyer"
+		"get approval for post-credit check review" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MEVQ" -> "get approval for post-credit check review"
+		"AND_JOIN--2. Establish your credit practices_MEVQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send a credit application form to the buyer" -> "AND_JOIN--2. Establish your credit practices_MEVQ"
+		"get approval for post-credit check review" -> "AND_JOIN--2. Establish your credit practices_MEVQ"
+		"send the invoice in your accounting software" [shape=box]
+		"AND_JOIN--2. Establish your credit practices_MEVQ" -> "send the invoice in your accounting software"
+		"OR_SPLIT--4. Tracking_PS7H" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the invoice in your accounting software" -> "OR_SPLIT--4. Tracking_PS7H"
+		"establish monthly contact with your client" [shape=box]
+		"OR_SPLIT--4. Tracking_PS7H" -> "establish monthly contact with your client"
+		"record your activity digitally" [shape=box]
+		"OR_SPLIT--4. Tracking_PS7H" -> "record your activity digitally"
+		"make a second physical copy" [shape=box]
+		"OR_SPLIT--4. Tracking_PS7H" -> "make a second physical copy"
+		"OR_JOIN--4. Tracking_PS7H" [label=O fixedsize=true shape=diamond width=0.5]
+		"establish monthly contact with your client" -> "OR_JOIN--4. Tracking_PS7H"
+		"record your activity digitally" -> "OR_JOIN--4. Tracking_PS7H"
+		"make a second physical copy" -> "OR_JOIN--4. Tracking_PS7H"
+		"OR_SPLIT--5. Accounting for accounts receivable_72UE" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Tracking_PS7H" -> "OR_SPLIT--5. Accounting for accounts receivable_72UE"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_72UE" -> "record the sales on credit of services"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_72UE" -> "record the sales on credit of goods"
+		"OR_JOIN--5. Accounting for accounts receivable_72UE" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_72UE"
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_72UE"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_72UE" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the accounts receivable process. It begins when you record the buyer's details. 
+After recording the buyer's details, the process is split into 2 parallel branches: sending a credit application form to the buyer and getting approval for post-credit check review. 
+Once all pre-tasks are executed, then you need to send the invoice in your accounting software.
+Once sending the invoice in your accounting software occurs, one or more of the following paths should be executed: establishing monthly contact with your client, recording your activity digitally, making a second physical copy. 
+Then, one or more of the following paths should be executed: recording the sales on credit of services, recording the sales on credit of goods. 
+The process is now completed. 
+"
+}

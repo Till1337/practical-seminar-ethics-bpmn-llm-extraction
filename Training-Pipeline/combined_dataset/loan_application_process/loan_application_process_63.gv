@@ -1,0 +1,57 @@
+digraph loan_application_process_63 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the bank statement to the lender" [shape=box]
+		"OR_SPLIT--2. Loan application_0TRX" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide the bank statement to the lender" -> "OR_SPLIT--2. Loan application_0TRX"
+		"receive the application by credit department" [shape=box]
+		"OR_SPLIT--2. Loan application_0TRX" -> "receive the application by credit department"
+		"complete the loan application by borrower" [shape=box]
+		"OR_SPLIT--2. Loan application_0TRX" -> "complete the loan application by borrower"
+		"OR_JOIN--2. Loan application_0TRX" [label=O fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "OR_JOIN--2. Loan application_0TRX"
+		"complete the loan application by borrower" -> "OR_JOIN--2. Loan application_0TRX"
+		"AND_SPLIT--3. Application processing _7UJX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Loan application_0TRX" -> "AND_SPLIT--3. Application processing _7UJX"
+		"send application back to the applicant" [shape=box]
+		"AND_SPLIT--3. Application processing _7UJX" -> "send application back to the applicant"
+		"give the written notice to applicant" [shape=box]
+		"AND_SPLIT--3. Application processing _7UJX" -> "give the written notice to applicant"
+		"AND_JOIN--3. Application processing _7UJX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send application back to the applicant" -> "AND_JOIN--3. Application processing _7UJX"
+		"give the written notice to applicant" -> "AND_JOIN--3. Application processing _7UJX"
+		"OR_SPLIT--4. Underwriting process_7VZP" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Application processing _7UJX" -> "OR_SPLIT--4. Underwriting process_7VZP"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_7VZP" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_7VZP" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_7VZP" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_7VZP"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_7VZP"
+		"OR_SPLIT--5. Credit decision_DO91" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_7VZP" -> "OR_SPLIT--5. Credit decision_DO91"
+		"change the interest rate" [shape=box]
+		"OR_SPLIT--5. Credit decision_DO91" -> "change the interest rate"
+		"reduce loan amount" [shape=box]
+		"OR_SPLIT--5. Credit decision_DO91" -> "reduce loan amount"
+		"OR_JOIN--5. Credit decision_DO91" [label=O fixedsize=true shape=diamond width=0.5]
+		"change the interest rate" -> "OR_JOIN--5. Credit decision_DO91"
+		"reduce loan amount" -> "OR_JOIN--5. Credit decision_DO91"
+		"receive the loans fund" [shape=box]
+		"OR_JOIN--5. Credit decision_DO91" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the bank statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It starts with providing the bank statement to the lender. 
+Once providing the bank statement to the lender occurs, one or more of the following paths should be executed: receiving the application by credit department, completing the loan application by borrower. 
+Afterwards, the process is split into 2 parallel branches: sending application back to the applicant and giving the written notice to applicant. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+Then, one or more of the following paths should be executed: changing the interest rate, reducing loan amount. 
+After that, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,33 @@
+digraph accounts_receivable_process_172 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"send the buyer your terms of sale" [shape=box]
+		"record the buyer's details" -> "send the buyer your terms of sale"
+		"generate the invoice" [shape=box]
+		"send the buyer your terms of sale" -> "generate the invoice"
+		"AND_SPLIT--4. Tracking_7T6Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"generate the invoice" -> "AND_SPLIT--4. Tracking_7T6Q"
+		"establish monthly contact with your client" [shape=box]
+		"AND_SPLIT--4. Tracking_7T6Q" -> "establish monthly contact with your client"
+		"record your activity digitally" [shape=box]
+		"AND_SPLIT--4. Tracking_7T6Q" -> "record your activity digitally"
+		"AND_JOIN--4. Tracking_7T6Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"establish monthly contact with your client" -> "AND_JOIN--4. Tracking_7T6Q"
+		"record your activity digitally" -> "AND_JOIN--4. Tracking_7T6Q"
+		"record the sales on credit of goods" [shape=box]
+		"AND_JOIN--4. Tracking_7T6Q" -> "record the sales on credit of goods"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of goods" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It starts with recording the buyer's details. 
+Once recording the buyer's details occurs, sending the buyer your terms of sale should be done. 
+After sending the buyer your terms of sale, generating the invoice needs to be done. 
+When generating the invoice is completed, the next tasks should be establishing monthly contact with your client and recording your activity digitally, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to record the sales on credit of goods.
+The process is now completed. 
+"
+}

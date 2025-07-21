@@ -1,0 +1,53 @@
+digraph loan_application_process_70 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the bank statement to the lender" [shape=box]
+		"OR_SPLIT--2. Loan application_9H03" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide the bank statement to the lender" -> "OR_SPLIT--2. Loan application_9H03"
+		"complete the loan application by borrower" [shape=box]
+		"OR_SPLIT--2. Loan application_9H03" -> "complete the loan application by borrower"
+		"receive the application by credit department" [shape=box]
+		"OR_SPLIT--2. Loan application_9H03" -> "receive the application by credit department"
+		"OR_JOIN--2. Loan application_9H03" [label=O fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "OR_JOIN--2. Loan application_9H03"
+		"receive the application by credit department" -> "OR_JOIN--2. Loan application_9H03"
+		"AND_SPLIT--3. Application processing _I730" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Loan application_9H03" -> "AND_SPLIT--3. Application processing _I730"
+		"check for the completeness" [shape=box]
+		"AND_SPLIT--3. Application processing _I730" -> "check for the completeness"
+		"give the written notice to applicant" [shape=box]
+		"AND_SPLIT--3. Application processing _I730" -> "give the written notice to applicant"
+		"send application back to the applicant" [shape=box]
+		"give the written notice to applicant" -> "send application back to the applicant"
+		"AND_JOIN--3. Application processing _I730" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check for the completeness" -> "AND_JOIN--3. Application processing _I730"
+		"send application back to the applicant" -> "AND_JOIN--3. Application processing _I730"
+		"OR_SPLIT--4. Underwriting process_VAK2" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Application processing _I730" -> "OR_SPLIT--4. Underwriting process_VAK2"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_VAK2" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_VAK2" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_VAK2" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_VAK2"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_VAK2"
+		"reduce loan amount" [shape=box]
+		"OR_JOIN--4. Underwriting process_VAK2" -> "reduce loan amount"
+		"receive the loans fund" [shape=box]
+		"reduce loan amount" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the bank statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It starts with providing the bank statement to the lender. 
+When providing the bank statement to the lender is completed, one or more of the following paths should be executed: completing the loan application by borrower, receiving the application by credit department. 
+After that, the process is split into 2 parallel branches: checking for the completeness and giving the written notice to applicant. 
+After giving the written notice to applicant, sending application back to the applicant needs to be done. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+Afterwards, reducing loan amount needs to be done. 
+After reducing loan amount, you need to receive the loans fund.
+The process is now completed. 
+"
+}

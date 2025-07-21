@@ -1,0 +1,34 @@
+digraph content_promotion_process_141 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"OR_SPLIT--2. Content promotion_XEP3" [label=O fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "OR_SPLIT--2. Content promotion_XEP3"
+		"comment on related blog posts" [shape=box]
+		"OR_SPLIT--2. Content promotion_XEP3" -> "comment on related blog posts"
+		"email your subscribers" [shape=box]
+		"OR_SPLIT--2. Content promotion_XEP3" -> "email your subscribers"
+		"OR_SPLIT--2. Content promotion_LFKK" [label=O fixedsize=true shape=diamond width=0.5]
+		"comment on related blog posts" -> "OR_SPLIT--2. Content promotion_LFKK"
+		"submit to link roundups" [shape=box]
+		"OR_SPLIT--2. Content promotion_LFKK" -> "submit to link roundups"
+		"post on Q&A sites" [shape=box]
+		"OR_SPLIT--2. Content promotion_LFKK" -> "post on Q&A sites"
+		"OR_JOIN--2. Content promotion_LFKK" [label=O fixedsize=true shape=diamond width=0.5]
+		"submit to link roundups" -> "OR_JOIN--2. Content promotion_LFKK"
+		"post on Q&A sites" -> "OR_JOIN--2. Content promotion_LFKK"
+		"OR_JOIN--2. Content promotion_XEP3" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Content promotion_LFKK" -> "OR_JOIN--2. Content promotion_XEP3"
+		"email your subscribers" -> "OR_JOIN--2. Content promotion_XEP3"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--2. Content promotion_XEP3" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It starts with preparing a summary of your content. 
+Once preparing a summary of your content occurs, one or more of the following paths should be executed: commenting on related blog posts, emailing your subscribers. 
+After commenting on related blog posts, one or more of the following paths should be executed: submitting to link roundups, posting on Q&A sites. 
+The process is now completed. 
+"
+}

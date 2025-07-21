@@ -1,0 +1,40 @@
+digraph client_onboarding_process_for_a_marketing_agency_98 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"request marketing and media resources from the client" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_LFX3" [label=O fixedsize=true shape=diamond width=0.5]
+		"request marketing and media resources from the client" -> "OR_SPLIT--2. Setting the agenda_LFX3"
+		"update client's CRM" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_LFX3" -> "update client's CRM"
+		"schedule future calls" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_LFX3" -> "schedule future calls"
+		"AND_SPLIT--2. Setting the agenda_KHUR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"update client's CRM" -> "AND_SPLIT--2. Setting the agenda_KHUR"
+		"get approval for the first draft" [shape=box]
+		"AND_SPLIT--2. Setting the agenda_KHUR" -> "get approval for the first draft"
+		"confirm questionnaire is complete" [shape=box]
+		"AND_SPLIT--2. Setting the agenda_KHUR" -> "confirm questionnaire is complete"
+		"AND_JOIN--2. Setting the agenda_KHUR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for the first draft" -> "AND_JOIN--2. Setting the agenda_KHUR"
+		"confirm questionnaire is complete" -> "AND_JOIN--2. Setting the agenda_KHUR"
+		"OR_JOIN--2. Setting the agenda_LFX3" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Setting the agenda_KHUR" -> "OR_JOIN--2. Setting the agenda_LFX3"
+		"schedule future calls" -> "OR_JOIN--2. Setting the agenda_LFX3"
+		"inform client of project start" [shape=box]
+		"OR_JOIN--2. Setting the agenda_LFX3" -> "inform client of project start"
+		"send a post-onboarding survey" [shape=box]
+		"inform client of project start" -> "send a post-onboarding survey"
+	}
+	START_NODE -> "request marketing and media resources from the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a post-onboarding survey" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It starts with requesting marketing and media resources from the client. 
+Once requesting marketing and media resources from the client occurs, one or more of the following paths should be executed: updating client's CRM, scheduling future calls. 
+After updating client's CRM, the next tasks should be getting approval for the first draft and confirming questionnaire is complete, they should be done in parallel. 
+Afterwards, you need to inform client of project start.
+When informing client of project start is completed, sending a post-onboarding survey should be done. 
+The process is now completed. 
+"
+}

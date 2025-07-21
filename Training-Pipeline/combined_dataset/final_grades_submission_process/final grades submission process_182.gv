@@ -1,0 +1,40 @@
+digraph "final grades submission process_182" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"ensure 'EX' or zero marks are applied as need" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_NL62" [label=O fixedsize=true shape=diamond width=0.5]
+		"ensure 'EX' or zero marks are applied as need" -> "OR_SPLIT--2. Apply special grades or criteria_NL62"
+		"import gradebook" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_NL62" -> "import gradebook"
+		"apply special grades to individuals" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_NL62" -> "apply special grades to individuals"
+		"OR_JOIN--2. Apply special grades or criteria_NL62" [label=O fixedsize=true shape=diamond width=0.5]
+		"import gradebook" -> "OR_JOIN--2. Apply special grades or criteria_NL62"
+		"apply special grades to individuals" -> "OR_JOIN--2. Apply special grades or criteria_NL62"
+		"apply any changes" [shape=box]
+		"OR_JOIN--2. Apply special grades or criteria_NL62" -> "apply any changes"
+		"OR_SPLIT--4. Re-calculate and get approval_CB6E" [label=O fixedsize=true shape=diamond width=0.5]
+		"apply any changes" -> "OR_SPLIT--4. Re-calculate and get approval_CB6E"
+		"export the final grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_CB6E" -> "export the final grades"
+		"recalculate the grades" [shape=box]
+		"OR_SPLIT--4. Re-calculate and get approval_CB6E" -> "recalculate the grades"
+		"OR_JOIN--4. Re-calculate and get approval_CB6E" [label=O fixedsize=true shape=diamond width=0.5]
+		"export the final grades" -> "OR_JOIN--4. Re-calculate and get approval_CB6E"
+		"recalculate the grades" -> "OR_JOIN--4. Re-calculate and get approval_CB6E"
+		"get approval signatures by the course director" [shape=box]
+		"OR_JOIN--4. Re-calculate and get approval_CB6E" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "ensure 'EX' or zero marks are applied as need"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with ensuring 'EX' or zero marks are applied as need. 
+When ensuring 'EX' or zero marks are applied as need is completed, one or more of the following paths should be executed: importing gradebook, applying special grades to individuals. 
+Afterwards, applying any changes needs to be done. 
+When applying any changes is completed, one or more of the following paths should be executed: exporting the final grades, recalculating the grades. 
+After that, getting approval signatures by the course director should be done. 
+The process is now completed. 
+"
+}

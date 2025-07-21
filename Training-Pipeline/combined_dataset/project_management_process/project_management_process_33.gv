@@ -1,0 +1,37 @@
+digraph project_management_process_33 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		subgraph "CLUSTER_XOR_2. Conception and Initiation_C044" {
+			color=white label="identify the approval status"
+			"XOR_SPLIT--identify the approval status_W1ZF" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"make an introduction" -> "XOR_SPLIT--identify the approval status_W1ZF" [label="identify the approval status"]
+		"XOR_SPLIT--identify the approval status_W1ZF" -> "XOR_JOIN--identify the approval status_W1ZF" [label=approved]
+		"work out its value" [shape=box]
+		"XOR_SPLIT--identify the approval status_W1ZF" -> "work out its value" [label=rejected]
+		"XOR_JOIN--identify the approval status_W1ZF" [label=X fixedsize=true shape=diamond width=0.5]
+		"work out its value" -> "XOR_JOIN--identify the approval status_W1ZF"
+		"draw up a project plan" [shape=box]
+		"XOR_JOIN--identify the approval status_W1ZF" -> "draw up a project plan"
+		"have a kickoff meeting" [shape=box]
+		"draw up a project plan" -> "have a kickoff meeting"
+		"record KPIs" [shape=box]
+		"have a kickoff meeting" -> "record KPIs"
+		"terminate contractors" [shape=box]
+		"record KPIs" -> "terminate contractors"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"terminate contractors" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the project management process. It starts with making an introduction. 
+Once making an introduction occurs, identifying the approval status should be considered. if all approved, then nothing needs to be done, otherwise you should work out its value. 
+Afterwards, drawing up a project plan needs to be done. 
+After drawing up a project plan, having a kickoff meeting needs to be done. 
+After having a kickoff meeting, you need to record KPIs.
+After recording KPIs, you need to terminate contractors.
+The process is now completed. 
+"
+}

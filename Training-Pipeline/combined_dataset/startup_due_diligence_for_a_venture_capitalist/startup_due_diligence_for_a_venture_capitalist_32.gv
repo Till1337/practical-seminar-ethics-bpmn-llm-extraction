@@ -1,0 +1,29 @@
+digraph startup_due_diligence_for_a_venture_capitalist_32 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"specific product details" [shape=box]
+		"learn how to identify future failures" -> "specific product details"
+		"review number of employees" [shape=box]
+		"specific product details" -> "review number of employees"
+		"check exit strategy" [shape=box]
+		"review number of employees" -> "check exit strategy"
+		"project the market share" [shape=box]
+		"check exit strategy" -> "project the market share"
+		"check insurance" [shape=box]
+		"project the market share" -> "check insurance"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check insurance" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It begins when you learn how to identify future failures. 
+When learning how to identify future failures is completed, you need to specific product details.
+When specificking product details is completed, reviewing number of employees needs to be done. 
+Once reviewing number of employees occurs, checking exit strategy should be done. 
+Once checking exit strategy occurs, projecting the market share should be done. 
+Once projecting the market share occurs, you need to check insurance.
+The process is now completed. 
+"
+}

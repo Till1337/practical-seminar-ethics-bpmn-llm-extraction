@@ -1,0 +1,26 @@
+digraph employee_onboarding_process_63 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"provide a job description with responsibilities" [shape=box]
+		"make an introduction" -> "provide a job description with responsibilities"
+		"induct into company culture" [shape=box]
+		"provide a job description with responsibilities" -> "induct into company culture"
+		"check the paperwork" [shape=box]
+		"induct into company culture" -> "check the paperwork"
+		"review onboarding process over the next 60 days" [shape=box]
+		"check the paperwork" -> "review onboarding process over the next 60 days"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"review onboarding process over the next 60 days" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It starts with making an introduction. 
+After making an introduction, providing a job description with responsibilities needs to be done. 
+Once providing a job description with responsibilities occurs, inducting into company culture should be done. 
+When inducting into company culture is completed, checking the paperwork needs to be done. 
+After checking the paperwork, you need to review onboarding process over the next 60 days.
+The process is now completed. 
+"
+}

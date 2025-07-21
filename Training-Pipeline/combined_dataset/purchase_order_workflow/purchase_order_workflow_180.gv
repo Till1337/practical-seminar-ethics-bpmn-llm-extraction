@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_180 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the basic details" [shape=box]
+		"get approval from manager" [shape=box]
+		"record the basic details" -> "get approval from manager"
+		"AND_SPLIT--4. Creation_ALOA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from manager" -> "AND_SPLIT--4. Creation_ALOA"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"AND_SPLIT--4. Creation_ALOA" -> "inform the supplier the order is ready for approval"
+		"create the purchase order" [shape=box]
+		"AND_SPLIT--4. Creation_ALOA" -> "create the purchase order"
+		"AND_JOIN--4. Creation_ALOA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform the supplier the order is ready for approval" -> "AND_JOIN--4. Creation_ALOA"
+		"create the purchase order" -> "AND_JOIN--4. Creation_ALOA"
+		"get approval from supplier" [shape=box]
+		"AND_JOIN--4. Creation_ALOA" -> "get approval from supplier"
+		"send details to the department" [shape=box]
+		"get approval from supplier" -> "send details to the department"
+	}
+	START_NODE -> "record the basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send details to the department" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It starts with recording the basic details. 
+After recording the basic details, you need to get approval from manager.
+When getting approval from manager is completed, the process is split into 2 parallel branches: informing the supplier the order is ready for approval and creating the purchase order. 
+Once all pre-tasks are executed, then you need to get approval from supplier.
+Once getting approval from supplier occurs, sending details to the department should be done. 
+The process is now completed. 
+"
+}

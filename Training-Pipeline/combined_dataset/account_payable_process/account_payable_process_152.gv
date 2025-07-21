@@ -1,0 +1,23 @@
+digraph account_payable_process_152 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"create voucher for the documents" [shape=box]
+		"report errors to relevant team member" -> "create voucher for the documents"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"create voucher for the documents" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the account payable process. It begins when you send to the receiving department. 
+When sending to the receiving department is completed, creating a receiving report should be done. 
+When creating a receiving report is completed, reporting errors to relevant team member should be done. 
+Once reporting errors to relevant team member occurs, creating voucher for the documents needs to be done. 
+The process is now completed. 
+"
+}

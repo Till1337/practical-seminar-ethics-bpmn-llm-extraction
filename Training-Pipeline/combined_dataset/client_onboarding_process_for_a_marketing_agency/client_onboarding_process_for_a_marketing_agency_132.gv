@@ -1,0 +1,40 @@
+digraph client_onboarding_process_for_a_marketing_agency_132 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"request marketing and media resources from the client" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_0R4A" [label=O fixedsize=true shape=diamond width=0.5]
+		"request marketing and media resources from the client" -> "OR_SPLIT--2. Setting the agenda_0R4A"
+		"create first draft of the marketing plan " [shape=box]
+		"OR_SPLIT--2. Setting the agenda_0R4A" -> "create first draft of the marketing plan "
+		"confirm questionnaire is complete" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_0R4A" -> "confirm questionnaire is complete"
+		"OR_SPLIT--2. Setting the agenda_QNH4" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm questionnaire is complete" -> "OR_SPLIT--2. Setting the agenda_QNH4"
+		"schedule future calls" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_QNH4" -> "schedule future calls"
+		"update the project management profile" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_QNH4" -> "update the project management profile"
+		"OR_JOIN--2. Setting the agenda_QNH4" [label=O fixedsize=true shape=diamond width=0.5]
+		"schedule future calls" -> "OR_JOIN--2. Setting the agenda_QNH4"
+		"update the project management profile" -> "OR_JOIN--2. Setting the agenda_QNH4"
+		"OR_JOIN--2. Setting the agenda_0R4A" [label=O fixedsize=true shape=diamond width=0.5]
+		"create first draft of the marketing plan " -> "OR_JOIN--2. Setting the agenda_0R4A"
+		"OR_JOIN--2. Setting the agenda_QNH4" -> "OR_JOIN--2. Setting the agenda_0R4A"
+		"assign work to the team" [shape=box]
+		"OR_JOIN--2. Setting the agenda_0R4A" -> "assign work to the team"
+		"send a post-onboarding survey" [shape=box]
+		"assign work to the team" -> "send a post-onboarding survey"
+	}
+	START_NODE -> "request marketing and media resources from the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a post-onboarding survey" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It begins when you request marketing and media resources from the client. 
+When requesting marketing and media resources from the client is completed, one or more of the following paths should be executed: creating first draft of the marketing plan , confirming questionnaire is complete. 
+When confirming questionnaire is complete is completed, one or more of the following paths should be executed: scheduling future calls, updating the project management profile. 
+After that, assigning work to the team needs to be done. 
+Once assigning work to the team occurs, you need to send a post-onboarding survey.
+The process is now completed. 
+"
+}

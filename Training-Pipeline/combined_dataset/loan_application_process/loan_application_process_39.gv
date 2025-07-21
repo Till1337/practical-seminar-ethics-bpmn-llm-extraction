@@ -1,0 +1,44 @@
+digraph loan_application_process_39 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the address proof to the lender" [shape=box]
+		"receive the application by credit department" [shape=box]
+		"submit the address proof to the lender" -> "receive the application by credit department"
+		subgraph "CLUSTER_XOR_3. Application processing _ZG1G" {
+			color=white label="check for the completeness"
+			"XOR_SPLIT--check for the completeness_O738" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"receive the application by credit department" -> "XOR_SPLIT--check for the completeness_O738" [label="check for the completeness"]
+		"XOR_SPLIT--check for the completeness_O738" -> "XOR_JOIN--check for the completeness_O738" [label="is complete"]
+		"give the written notice to applicant" [shape=box]
+		"XOR_SPLIT--check for the completeness_O738" -> "give the written notice to applicant" [label="is not complete"]
+		"XOR_JOIN--check for the completeness_O738" [label=X fixedsize=true shape=diamond width=0.5]
+		"give the written notice to applicant" -> "XOR_JOIN--check for the completeness_O738"
+		"OR_SPLIT--4. Underwriting process_8L22" [label=O fixedsize=true shape=diamond width=0.5]
+		"XOR_JOIN--check for the completeness_O738" -> "OR_SPLIT--4. Underwriting process_8L22"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_8L22" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_8L22" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_8L22" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_8L22"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_8L22"
+		"reduce loan amount" [shape=box]
+		"OR_JOIN--4. Underwriting process_8L22" -> "reduce loan amount"
+		"receive the loans fund" [shape=box]
+		"reduce loan amount" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the address proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It starts with submitting the address proof to the lender. 
+When submitting the address proof to the lender is completed, you need to receive the application by credit department.
+After receiving the application by credit department, checking for the completeness should be considered. if all is complete, then nothing needs to be done, otherwise you should give the written notice to applicant. 
+After that, one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+Then, reducing loan amount should be done. 
+Once reducing loan amount occurs, receiving the loans fund should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,26 @@
+digraph "final grades submission process_97" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"ensure 'EX' or zero marks are applied as need" [shape=box]
+		"select exam assignment" [shape=box]
+		"ensure 'EX' or zero marks are applied as need" -> "select exam assignment"
+		"apply any changes" [shape=box]
+		"select exam assignment" -> "apply any changes"
+		"export the final grades" [shape=box]
+		"apply any changes" -> "export the final grades"
+		"get approval signatures by the course director" [shape=box]
+		"export the final grades" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "ensure 'EX' or zero marks are applied as need"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It starts with ensuring 'EX' or zero marks are applied as need. 
+After ensuring 'EX' or zero marks are applied as need, selecting exam assignment needs to be done. 
+When selecting exam assignment is completed, applying any changes should be done. 
+Once applying any changes occurs, exporting the final grades needs to be done. 
+When exporting the final grades is completed, you need to get approval signatures by the course director.
+The process is now completed. 
+"
+}

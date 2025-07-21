@@ -1,0 +1,40 @@
+digraph employee_onboarding_process_100 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"prepare employee's workstation" [shape=box]
+		"make an introduction" -> "prepare employee's workstation"
+		"hold a welcoming ceremony" [shape=box]
+		"prepare employee's workstation" -> "hold a welcoming ceremony"
+		"AND_SPLIT--4. First week_G5HP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "AND_SPLIT--4. First week_G5HP"
+		"get approval" [shape=box]
+		"AND_SPLIT--4. First week_G5HP" -> "get approval"
+		"check the paperwork" [shape=box]
+		"AND_SPLIT--4. First week_G5HP" -> "check the paperwork"
+		"AND_JOIN--4. First week_G5HP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "AND_JOIN--4. First week_G5HP"
+		"check the paperwork" -> "AND_JOIN--4. First week_G5HP"
+		"AND_SPLIT--5. First month_DPE1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. First week_G5HP" -> "AND_SPLIT--5. First month_DPE1"
+		"provide reading material for personal growth" [shape=box]
+		"AND_SPLIT--5. First month_DPE1" -> "provide reading material for personal growth"
+		"explain long-term goals" [shape=box]
+		"AND_SPLIT--5. First month_DPE1" -> "explain long-term goals"
+		"AND_JOIN--5. First month_DPE1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"provide reading material for personal growth" -> "AND_JOIN--5. First month_DPE1"
+		"explain long-term goals" -> "AND_JOIN--5. First month_DPE1"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. First month_DPE1" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the employee onboarding process. It begins when you make an introduction. 
+Once making an introduction occurs, preparing employee's workstation should be done. 
+When preparing employee's workstation is completed, holding a welcoming ceremony should be done. 
+Once holding a welcoming ceremony occurs, the process is split into 2 parallel branches: getting approval and checking the paperwork. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: providing reading material for personal growth and explaining long-term goals. 
+The process is now completed. 
+"
+}

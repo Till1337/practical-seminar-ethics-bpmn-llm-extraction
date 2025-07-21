@@ -1,0 +1,52 @@
+digraph budget_preparation_process_17 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"determine ways of achieving the goals" [shape=box]
+		"evaluate any significant variances" -> "determine ways of achieving the goals"
+		"OR_SPLIT--4. Projected expenses_5616" [label=O fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "OR_SPLIT--4. Projected expenses_5616"
+		"estimate the average monthly cost" [shape=box]
+		"OR_SPLIT--4. Projected expenses_5616" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"OR_SPLIT--4. Projected expenses_5616" -> "list all department expenses"
+		"OR_JOIN--4. Projected expenses_5616" [label=O fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "OR_JOIN--4. Projected expenses_5616"
+		"list all department expenses" -> "OR_JOIN--4. Projected expenses_5616"
+		"project total annual income" [shape=box]
+		"OR_JOIN--4. Projected expenses_5616" -> "project total annual income"
+		"finalize the budget" [shape=box]
+		"project total annual income" -> "finalize the budget"
+		"AND_SPLIT--7. Final steps_HYIQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "AND_SPLIT--7. Final steps_HYIQ"
+		"assign management responsibilities" [shape=box]
+		"AND_SPLIT--7. Final steps_HYIQ" -> "assign management responsibilities"
+		"incorporate into the master budget" [shape=box]
+		"AND_SPLIT--7. Final steps_HYIQ" -> "incorporate into the master budget"
+		"obtain approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_HYIQ" -> "obtain approval from top management"
+		"request approval from top management" [shape=box]
+		"assign management responsibilities" -> "request approval from top management"
+		"AND_JOIN--7. Final steps_HYIQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"request approval from top management" -> "AND_JOIN--7. Final steps_HYIQ"
+		"incorporate into the master budget" -> "AND_JOIN--7. Final steps_HYIQ"
+		"obtain approval from top management" -> "AND_JOIN--7. Final steps_HYIQ"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_HYIQ" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It begins when you set target date for approval. 
+When setting target date for approval is completed, evaluating any significant variances should be done. 
+After evaluating any significant variances, determining ways of achieving the goals needs to be done. 
+When determining ways of achieving the goals is completed, one or more of the following paths should be executed: estimating the average monthly cost, listing all department expenses. 
+Afterwards, you need to project total annual income.
+When projecting total annual income is completed, you need to finalize the budget.
+When finalizing the budget is completed, the next tasks should be assigning management responsibilities, incorporating into the master budget and obtaining approval from top management, they should be done in parallel. 
+After assigning management responsibilities, requesting approval from top management should be done. 
+The process is now completed. 
+"
+}

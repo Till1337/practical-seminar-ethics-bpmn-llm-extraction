@@ -1,0 +1,33 @@
+digraph client_onboarding_process_for_a_marketing_agency_34 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the received marketing and media resources" [shape=box]
+		"create first draft of the marketing plan " [shape=box]
+		"confirm the received marketing and media resources" -> "create first draft of the marketing plan "
+		"inform client of project start" [shape=box]
+		"create first draft of the marketing plan " -> "inform client of project start"
+		"OR_SPLIT--5. Four weeks into the project_61UF" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "OR_SPLIT--5. Four weeks into the project_61UF"
+		"have a follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_61UF" -> "have a follow-up call"
+		"send a post-onboarding survey" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_61UF" -> "send a post-onboarding survey"
+		"make changes based on follow-up call" [shape=box]
+		"have a follow-up call" -> "make changes based on follow-up call"
+		"OR_JOIN--5. Four weeks into the project_61UF" [label=O fixedsize=true shape=diamond width=0.5]
+		"make changes based on follow-up call" -> "OR_JOIN--5. Four weeks into the project_61UF"
+		"send a post-onboarding survey" -> "OR_JOIN--5. Four weeks into the project_61UF"
+	}
+	START_NODE -> "confirm the received marketing and media resources"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Four weeks into the project_61UF" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the client onboarding process for a marketing agency. It starts with confirming the received marketing and media resources. 
+After confirming the received marketing and media resources, creating first draft of the marketing plan  needs to be done. 
+After creating first draft of the marketing plan , informing client of project start needs to be done. 
+When informing client of project start is completed, one or more of the following paths should be executed: having a follow-up call, sending a post-onboarding survey. 
+When having a follow-up call is completed, making changes based on follow-up call needs to be done. 
+The process is now completed. 
+"
+}

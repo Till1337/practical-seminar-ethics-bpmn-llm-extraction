@@ -1,0 +1,24 @@
+digraph content_promotion_process_132 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_V8W3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_V8W3"
+		"post on related forums and groups" [shape=box]
+		"AND_SPLIT--2. Content promotion_V8W3" -> "post on related forums and groups"
+		"reverse engineer your competition" [shape=box]
+		"AND_SPLIT--2. Content promotion_V8W3" -> "reverse engineer your competition"
+		"AND_JOIN--2. Content promotion_V8W3" [label="+" fixedsize=true shape=diamond width=0.5]
+		"post on related forums and groups" -> "AND_JOIN--2. Content promotion_V8W3"
+		"reverse engineer your competition" -> "AND_JOIN--2. Content promotion_V8W3"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_V8W3" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It begins when you prepare a summary of your content. 
+Once preparing a summary of your content occurs, the next tasks should be posting on related forums and groups and reversing engineer your competition, they should be done in parallel. 
+The process is now completed. 
+"
+}

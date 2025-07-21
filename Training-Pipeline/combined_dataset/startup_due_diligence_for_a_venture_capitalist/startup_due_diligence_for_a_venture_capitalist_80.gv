@@ -1,0 +1,36 @@
+digraph startup_due_diligence_for_a_venture_capitalist_80 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"consider product necessity" [shape=box]
+		"learn how to identify future failures" -> "consider product necessity"
+		"OR_SPLIT--3. Review the funding team_OZ1T" [label=O fixedsize=true shape=diamond width=0.5]
+		"consider product necessity" -> "OR_SPLIT--3. Review the funding team_OZ1T"
+		"review employee salary and benefits" [shape=box]
+		"OR_SPLIT--3. Review the funding team_OZ1T" -> "review employee salary and benefits"
+		"review team chemistry" [shape=box]
+		"OR_SPLIT--3. Review the funding team_OZ1T" -> "review team chemistry"
+		"OR_JOIN--3. Review the funding team_OZ1T" [label=O fixedsize=true shape=diamond width=0.5]
+		"review employee salary and benefits" -> "OR_JOIN--3. Review the funding team_OZ1T"
+		"review team chemistry" -> "OR_JOIN--3. Review the funding team_OZ1T"
+		"check cash flow" [shape=box]
+		"OR_JOIN--3. Review the funding team_OZ1T" -> "check cash flow"
+		"analyze the reputation of competition" [shape=box]
+		"check cash flow" -> "analyze the reputation of competition"
+		"check past lawsuits" [shape=box]
+		"analyze the reputation of competition" -> "check past lawsuits"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check past lawsuits" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+When learning how to identify future failures is completed, you need to consider product necessity.
+When considering product necessity is completed, one or more of the following paths should be executed: reviewing employee salary and benefits, reviewing team chemistry. 
+After that, checking cash flow should be done. 
+After checking cash flow, analyzing the reputation of competition needs to be done. 
+After analyzing the reputation of competition, checking past lawsuits needs to be done. 
+The process is now completed. 
+"
+}

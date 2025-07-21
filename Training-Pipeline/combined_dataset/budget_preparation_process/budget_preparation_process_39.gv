@@ -1,0 +1,63 @@
+digraph budget_preparation_process_39 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"AND_SPLIT--2. Current financial status_SYXV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "AND_SPLIT--2. Current financial status_SYXV"
+		"review the most recent budget" [shape=box]
+		"AND_SPLIT--2. Current financial status_SYXV" -> "review the most recent budget"
+		"evaluate any significant variances" [shape=box]
+		"AND_SPLIT--2. Current financial status_SYXV" -> "evaluate any significant variances"
+		"AND_JOIN--2. Current financial status_SYXV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review the most recent budget" -> "AND_JOIN--2. Current financial status_SYXV"
+		"evaluate any significant variances" -> "AND_JOIN--2. Current financial status_SYXV"
+		"OR_SPLIT--3. Goals_H1LA" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Current financial status_SYXV" -> "OR_SPLIT--3. Goals_H1LA"
+		"define three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_H1LA" -> "define three to five goals"
+		"prioritize three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_H1LA" -> "prioritize three to five goals"
+		"determine ways of achieving the goals" [shape=box]
+		"define three to five goals" -> "determine ways of achieving the goals"
+		"OR_JOIN--3. Goals_H1LA" [label=O fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "OR_JOIN--3. Goals_H1LA"
+		"prioritize three to five goals" -> "OR_JOIN--3. Goals_H1LA"
+		"OR_SPLIT--4. Projected expenses_PX8E" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Goals_H1LA" -> "OR_SPLIT--4. Projected expenses_PX8E"
+		"estimate the average monthly cost" [shape=box]
+		"OR_SPLIT--4. Projected expenses_PX8E" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"OR_SPLIT--4. Projected expenses_PX8E" -> "list all department expenses"
+		"OR_JOIN--4. Projected expenses_PX8E" [label=O fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "OR_JOIN--4. Projected expenses_PX8E"
+		"list all department expenses" -> "OR_JOIN--4. Projected expenses_PX8E"
+		"AND_SPLIT--5. Projected income/funding_MVBE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Projected expenses_PX8E" -> "AND_SPLIT--5. Projected income/funding_MVBE"
+		"project total annual income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_MVBE" -> "project total annual income"
+		"list all sources of income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_MVBE" -> "list all sources of income"
+		"AND_JOIN--5. Projected income/funding_MVBE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "AND_JOIN--5. Projected income/funding_MVBE"
+		"list all sources of income" -> "AND_JOIN--5. Projected income/funding_MVBE"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_JOIN--5. Projected income/funding_MVBE" -> "record financial data in a budget spreadsheet"
+		"request approval from top management" [shape=box]
+		"record financial data in a budget spreadsheet" -> "request approval from top management"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"request approval from top management" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It starts with recording basic details. 
+Once recording basic details occurs, the next tasks should be reviewing the most recent budget and evaluating any significant variances, they should be done in parallel. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: defining three to five goals, prioritizing three to five goals. 
+Once defining three to five goals occurs, you need to determine ways of achieving the goals.
+Afterwards, one or more of the following paths should be executed: estimating the average monthly cost, listing all department expenses. 
+Afterwards, the process is split into 2 parallel branches: projecting total annual income and listing all sources of income. 
+Once all pre-tasks are executed, then recording financial data in a budget spreadsheet should be done. 
+Once recording financial data in a budget spreadsheet occurs, you need to request approval from top management.
+The process is now completed. 
+"
+}

@@ -1,0 +1,25 @@
+.ethical-heatmap-overlay {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 500 !important;
+  background: transparent !important;
+}
+
+.ethical-heatmap-overlay canvas {
+  pointer-events: none !important;
+}
+
+/* Ensure heatmap doesn't interfere with diagram interactions */
+.djs-container .ethical-heatmap-overlay {
+  pointer-events: none !important;
+}
+
+.djs-container .ethical-heatmap-overlay * {
+  pointer-events: none !important;
+}

@@ -1,0 +1,33 @@
+digraph purchase_order_workflow_117 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"get approval from finance team" [shape=box]
+		"create the purchase requisition" -> "get approval from finance team"
+		"AND_SPLIT--4. Creation_9VPG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from finance team" -> "AND_SPLIT--4. Creation_9VPG"
+		"inform the supplier the order is ready for approval" [shape=box]
+		"AND_SPLIT--4. Creation_9VPG" -> "inform the supplier the order is ready for approval"
+		"create the purchase order" [shape=box]
+		"AND_SPLIT--4. Creation_9VPG" -> "create the purchase order"
+		"AND_JOIN--4. Creation_9VPG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform the supplier the order is ready for approval" -> "AND_JOIN--4. Creation_9VPG"
+		"create the purchase order" -> "AND_JOIN--4. Creation_9VPG"
+		"get approval from supplier" [shape=box]
+		"AND_JOIN--4. Creation_9VPG" -> "get approval from supplier"
+		"confirm the delivery date" [shape=box]
+		"get approval from supplier" -> "confirm the delivery date"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"confirm the delivery date" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the purchase order workflow. It starts with creating the purchase requisition. 
+After creating the purchase requisition, you need to get approval from finance team.
+Once getting approval from finance team occurs, the process is split into 2 parallel branches: informing the supplier the order is ready for approval and creating the purchase order. 
+Once all pre-tasks are executed, then you need to get approval from supplier.
+Once getting approval from supplier occurs, you need to confirm the delivery date.
+The process is now completed. 
+"
+}

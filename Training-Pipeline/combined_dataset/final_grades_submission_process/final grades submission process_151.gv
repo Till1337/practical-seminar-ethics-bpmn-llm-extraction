@@ -1,0 +1,33 @@
+digraph "final grades submission process_151" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_Q8AJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "AND_SPLIT--2. Apply special grades or criteria_Q8AJ"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_Q8AJ" -> "import gradebook"
+		"select exam assignment" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_Q8AJ" -> "select exam assignment"
+		"AND_JOIN--2. Apply special grades or criteria_Q8AJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_Q8AJ"
+		"select exam assignment" -> "AND_JOIN--2. Apply special grades or criteria_Q8AJ"
+		"apply any changes" [shape=box]
+		"AND_JOIN--2. Apply special grades or criteria_Q8AJ" -> "apply any changes"
+		"recalculate the grades" [shape=box]
+		"apply any changes" -> "recalculate the grades"
+		"send examiners grade approval sheet" [shape=box]
+		"recalculate the grades" -> "send examiners grade approval sheet"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send examiners grade approval sheet" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It starts with entering results in the canvas gradebook. 
+After entering results in the canvas gradebook, the process is split into 2 parallel branches: importing gradebook and selecting exam assignment. 
+Once all pre-tasks are executed, then you need to apply any changes.
+After applying any changes, recalculating the grades should be done. 
+After recalculating the grades, you need to send examiners grade approval sheet.
+The process is now completed. 
+"
+}

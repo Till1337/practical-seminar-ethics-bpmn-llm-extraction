@@ -1,0 +1,80 @@
+digraph startup_due_diligence_for_a_venture_capitalist_82 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_IZUN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_IZUN"
+		"specific product market size" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_IZUN" -> "specific product market size"
+		"specific product market share" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_IZUN" -> "specific product market share"
+		"check location of startup" [shape=box]
+		"specific product market share" -> "check location of startup"
+		"AND_JOIN--2. Filter out the terrible products_IZUN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market size" -> "AND_JOIN--2. Filter out the terrible products_IZUN"
+		"check location of startup" -> "AND_JOIN--2. Filter out the terrible products_IZUN"
+		"AND_SPLIT--3. Review the funding team_44TN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Filter out the terrible products_IZUN" -> "AND_SPLIT--3. Review the funding team_44TN"
+		"review relationship to founder" [shape=box]
+		"AND_SPLIT--3. Review the funding team_44TN" -> "review relationship to founder"
+		"review enthusiasm" [shape=box]
+		"AND_SPLIT--3. Review the funding team_44TN" -> "review enthusiasm"
+		"OR_SPLIT--3. Review the funding team_IW9I" [label=O fixedsize=true shape=diamond width=0.5]
+		"review relationship to founder" -> "OR_SPLIT--3. Review the funding team_IW9I"
+		"review team chemistry" [shape=box]
+		"OR_SPLIT--3. Review the funding team_IW9I" -> "review team chemistry"
+		"review the business plan" [shape=box]
+		"OR_SPLIT--3. Review the funding team_IW9I" -> "review the business plan"
+		"OR_JOIN--3. Review the funding team_IW9I" [label=O fixedsize=true shape=diamond width=0.5]
+		"review team chemistry" -> "OR_JOIN--3. Review the funding team_IW9I"
+		"review the business plan" -> "OR_JOIN--3. Review the funding team_IW9I"
+		"AND_JOIN--3. Review the funding team_44TN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Review the funding team_IW9I" -> "AND_JOIN--3. Review the funding team_44TN"
+		"review enthusiasm" -> "AND_JOIN--3. Review the funding team_44TN"
+		"OR_SPLIT--4. Evaluate Financial Viability_P7V6" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_44TN" -> "OR_SPLIT--4. Evaluate Financial Viability_P7V6"
+		"check income statements" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_P7V6" -> "check income statements"
+		"check exit strategy" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_P7V6" -> "check exit strategy"
+		"check cash flow" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_P7V6" -> "check cash flow"
+		"OR_JOIN--4. Evaluate Financial Viability_P7V6" [label=O fixedsize=true shape=diamond width=0.5]
+		"check income statements" -> "OR_JOIN--4. Evaluate Financial Viability_P7V6"
+		"check exit strategy" -> "OR_JOIN--4. Evaluate Financial Viability_P7V6"
+		"check cash flow" -> "OR_JOIN--4. Evaluate Financial Viability_P7V6"
+		"OR_SPLIT--5. Evaluate the Competition_J7Z1" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Evaluate Financial Viability_P7V6" -> "OR_SPLIT--5. Evaluate the Competition_J7Z1"
+		"know exact competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_J7Z1" -> "know exact competition"
+		"project the market share" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_J7Z1" -> "project the market share"
+		"OR_JOIN--5. Evaluate the Competition_J7Z1" [label=O fixedsize=true shape=diamond width=0.5]
+		"know exact competition" -> "OR_JOIN--5. Evaluate the Competition_J7Z1"
+		"project the market share" -> "OR_JOIN--5. Evaluate the Competition_J7Z1"
+		"AND_SPLIT--6. Legal Analysis_ZU4G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Evaluate the Competition_J7Z1" -> "AND_SPLIT--6. Legal Analysis_ZU4G"
+		"check insurance" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_ZU4G" -> "check insurance"
+		"check trademarks" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_ZU4G" -> "check trademarks"
+		"AND_JOIN--6. Legal Analysis_ZU4G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check insurance" -> "AND_JOIN--6. Legal Analysis_ZU4G"
+		"check trademarks" -> "AND_JOIN--6. Legal Analysis_ZU4G"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Legal Analysis_ZU4G" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, the next tasks should be specificking product market size and specificking product market share, they should be done in parallel. 
+When specificking product market share is completed, checking location of startup needs to be done. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: reviewing relationship to founder and reviewing enthusiasm. 
+When reviewing relationship to founder is completed, one or more of the following paths should be executed: reviewing team chemistry, reviewing the business plan. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: checking income statements, checking exit strategy, checking cash flow. 
+After that, one or more of the following paths should be executed: knowing exact competition, projecting the market share. 
+Then, the next tasks should be checking insurance and checking trademarks, they should be done in parallel. 
+The process is now completed. 
+"
+}

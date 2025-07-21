@@ -1,0 +1,69 @@
+digraph budget_preparation_process_57 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"determine ways of achieving the goals" [shape=box]
+		"evaluate any significant variances" -> "determine ways of achieving the goals"
+		"AND_SPLIT--4. Projected expenses_8P99" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "AND_SPLIT--4. Projected expenses_8P99"
+		"list all department expenses" [shape=box]
+		"AND_SPLIT--4. Projected expenses_8P99" -> "list all department expenses"
+		"calculate the total annual budget" [shape=box]
+		"AND_SPLIT--4. Projected expenses_8P99" -> "calculate the total annual budget"
+		"estimate the average monthly cost" [shape=box]
+		"AND_SPLIT--4. Projected expenses_8P99" -> "estimate the average monthly cost"
+		"AND_JOIN--4. Projected expenses_8P99" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_8P99"
+		"calculate the total annual budget" -> "AND_JOIN--4. Projected expenses_8P99"
+		"estimate the average monthly cost" -> "AND_JOIN--4. Projected expenses_8P99"
+		"AND_SPLIT--5. Projected income/funding_M4Q9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Projected expenses_8P99" -> "AND_SPLIT--5. Projected income/funding_M4Q9"
+		"project total annual income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_M4Q9" -> "project total annual income"
+		"list all sources of income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_M4Q9" -> "list all sources of income"
+		"AND_JOIN--5. Projected income/funding_M4Q9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "AND_JOIN--5. Projected income/funding_M4Q9"
+		"list all sources of income" -> "AND_JOIN--5. Projected income/funding_M4Q9"
+		"AND_SPLIT--6. Putting it all together_TICT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Projected income/funding_M4Q9" -> "AND_SPLIT--6. Putting it all together_TICT"
+		"finalize the budget" [shape=box]
+		"AND_SPLIT--6. Putting it all together_TICT" -> "finalize the budget"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_SPLIT--6. Putting it all together_TICT" -> "record financial data in a budget spreadsheet"
+		"AND_JOIN--6. Putting it all together_TICT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "AND_JOIN--6. Putting it all together_TICT"
+		"record financial data in a budget spreadsheet" -> "AND_JOIN--6. Putting it all together_TICT"
+		"AND_SPLIT--7. Final steps_AY29" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--6. Putting it all together_TICT" -> "AND_SPLIT--7. Final steps_AY29"
+		"obtain approval from top management" [shape=box]
+		"AND_SPLIT--7. Final steps_AY29" -> "obtain approval from top management"
+		"incorporate into the master budget" [shape=box]
+		"AND_SPLIT--7. Final steps_AY29" -> "incorporate into the master budget"
+		"assign management responsibilities" [shape=box]
+		"AND_SPLIT--7. Final steps_AY29" -> "assign management responsibilities"
+		"request approval from top management" [shape=box]
+		"assign management responsibilities" -> "request approval from top management"
+		"AND_JOIN--7. Final steps_AY29" [label="+" fixedsize=true shape=diamond width=0.5]
+		"obtain approval from top management" -> "AND_JOIN--7. Final steps_AY29"
+		"incorporate into the master budget" -> "AND_JOIN--7. Final steps_AY29"
+		"request approval from top management" -> "AND_JOIN--7. Final steps_AY29"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_AY29" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It starts with setting target date for approval. 
+Once setting target date for approval occurs, you need to evaluate any significant variances.
+Once evaluating any significant variances occurs, determining ways of achieving the goals needs to be done. 
+When determining ways of achieving the goals is completed, the next tasks should be listing all department expenses, calculating the total annual budget and estimating the average monthly cost, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be projecting total annual income and listing all sources of income, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: finalizing the budget and recording financial data in a budget spreadsheet. 
+Once all pre-tasks are executed, then the next tasks should be obtaining approval from top management, incorporating into the master budget and assigning management responsibilities, they should be done in parallel. 
+When assigning management responsibilities is completed, you need to request approval from top management.
+The process is now completed. 
+"
+}

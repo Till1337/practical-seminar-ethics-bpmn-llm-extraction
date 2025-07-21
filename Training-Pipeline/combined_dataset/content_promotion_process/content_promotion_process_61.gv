@@ -1,0 +1,24 @@
+digraph content_promotion_process_61 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_DQTP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_DQTP"
+		"submit to link roundups" [shape=box]
+		"AND_SPLIT--2. Content promotion_DQTP" -> "submit to link roundups"
+		"post on Q&A sites" [shape=box]
+		"AND_SPLIT--2. Content promotion_DQTP" -> "post on Q&A sites"
+		"AND_JOIN--2. Content promotion_DQTP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"submit to link roundups" -> "AND_JOIN--2. Content promotion_DQTP"
+		"post on Q&A sites" -> "AND_JOIN--2. Content promotion_DQTP"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_DQTP" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the content promotion process. It begins when you prepare a summary of your content. 
+Once preparing a summary of your content occurs, the process is split into 2 parallel branches: submitting to link roundups and posting on Q&A sites. 
+The process is now completed. 
+"
+}

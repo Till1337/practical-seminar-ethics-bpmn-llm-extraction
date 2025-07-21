@@ -1,0 +1,55 @@
+digraph churn_rate_prevention_process_157 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_R563" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "AND_SPLIT--2. Evaluate product usage_R563"
+		"determine ways to increase value" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_R563" -> "determine ways to increase value"
+		"identify key points of value" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_R563" -> "identify key points of value"
+		"analyze how they use your product" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_R563" -> "analyze how they use your product"
+		"quantify the impact of cancellation" [shape=box]
+		"identify key points of value" -> "quantify the impact of cancellation"
+		"AND_JOIN--2. Evaluate product usage_R563" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways to increase value" -> "AND_JOIN--2. Evaluate product usage_R563"
+		"quantify the impact of cancellation" -> "AND_JOIN--2. Evaluate product usage_R563"
+		"analyze how they use your product" -> "AND_JOIN--2. Evaluate product usage_R563"
+		"confirm call date and time" [shape=box]
+		"AND_JOIN--2. Evaluate product usage_R563" -> "confirm call date and time"
+		"summarize why they want to leave" [shape=box]
+		"confirm call date and time" -> "summarize why they want to leave"
+		"OR_SPLIT--5. Retention incentives_VQD6" [label=O fixedsize=true shape=diamond width=0.5]
+		"summarize why they want to leave" -> "OR_SPLIT--5. Retention incentives_VQD6"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_VQD6" -> "inform them of key metrics demonstrating value"
+		"describe your ideas to increase value" [shape=box]
+		"OR_SPLIT--5. Retention incentives_VQD6" -> "describe your ideas to increase value"
+		"OR_JOIN--5. Retention incentives_VQD6" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "OR_JOIN--5. Retention incentives_VQD6"
+		"describe your ideas to increase value" -> "OR_JOIN--5. Retention incentives_VQD6"
+		"record the customer’s decision" [shape=box]
+		"OR_JOIN--5. Retention incentives_VQD6" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It begins when you record basic details. 
+Once recording basic details occurs, the next tasks should be determining ways to increase value, identifying key points of value and analyzing how they use your product, they should be done in parallel. 
+Once identifying key points of value occurs, you need to quantify the impact of cancellation.
+Once all pre-tasks are executed, then confirming call date and time should be done. 
+After confirming call date and time, summarizing why they want to leave needs to be done. 
+When summarizing why they want to leave is completed, one or more of the following paths should be executed: informing them of key metrics demonstrating value, describing your ideas to increase value. 
+Then, you need to record the customer’s decision.
+When recording the customer’s decision is completed, you need to ask if they have any other concerns.
+After asking if they have any other concerns, you need to send learnings to appropriate managers.
+The process is now completed. 
+"
+}

@@ -1,0 +1,30 @@
+digraph account_payable_process_136 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the receiving department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the receiving department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"OR_SPLIT--4. Payment_TZCA" [label=O fixedsize=true shape=diamond width=0.5]
+		"report errors to relevant team member" -> "OR_SPLIT--4. Payment_TZCA"
+		"enter the invoice into the accounts payable account" [shape=box]
+		"OR_SPLIT--4. Payment_TZCA" -> "enter the invoice into the accounts payable account"
+		"schedule the payment" [shape=box]
+		"OR_SPLIT--4. Payment_TZCA" -> "schedule the payment"
+		"OR_JOIN--4. Payment_TZCA" [label=O fixedsize=true shape=diamond width=0.5]
+		"enter the invoice into the accounts payable account" -> "OR_JOIN--4. Payment_TZCA"
+		"schedule the payment" -> "OR_JOIN--4. Payment_TZCA"
+	}
+	START_NODE -> "send to the receiving department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--4. Payment_TZCA" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the account payable process. It begins when you send to the receiving department. 
+Once sending to the receiving department occurs, creating a receiving report should be done. 
+Once creating a receiving report occurs, you need to report errors to relevant team member.
+After reporting errors to relevant team member, one or more of the following paths should be executed: entering the invoice into the accounts payable account, scheduling the payment. 
+The process is now completed. 
+"
+}

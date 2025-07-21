@@ -1,0 +1,66 @@
+digraph startup_due_diligence_for_a_venture_capitalist_31 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_SZ2V" [label=O fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "OR_SPLIT--2. Filter out the terrible products_SZ2V"
+		"specific product market size" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_SZ2V" -> "specific product market size"
+		"specific product rate of growth" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_SZ2V" -> "specific product rate of growth"
+		"OR_JOIN--2. Filter out the terrible products_SZ2V" [label=O fixedsize=true shape=diamond width=0.5]
+		"specific product market size" -> "OR_JOIN--2. Filter out the terrible products_SZ2V"
+		"specific product rate of growth" -> "OR_JOIN--2. Filter out the terrible products_SZ2V"
+		"review company mission and direction" [shape=box]
+		"OR_JOIN--2. Filter out the terrible products_SZ2V" -> "review company mission and direction"
+		"OR_SPLIT--4. Evaluate Financial Viability_X883" [label=O fixedsize=true shape=diamond width=0.5]
+		"review company mission and direction" -> "OR_SPLIT--4. Evaluate Financial Viability_X883"
+		"check cash flow" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_X883" -> "check cash flow"
+		"check income statements" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_X883" -> "check income statements"
+		"check quarterly projections" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_X883" -> "check quarterly projections"
+		"OR_JOIN--4. Evaluate Financial Viability_X883" [label=O fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "OR_JOIN--4. Evaluate Financial Viability_X883"
+		"check income statements" -> "OR_JOIN--4. Evaluate Financial Viability_X883"
+		"check quarterly projections" -> "OR_JOIN--4. Evaluate Financial Viability_X883"
+		"OR_SPLIT--5. Evaluate the Competition_U4GP" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Evaluate Financial Viability_X883" -> "OR_SPLIT--5. Evaluate the Competition_U4GP"
+		"analyze the growth stage of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_U4GP" -> "analyze the growth stage of competition"
+		"project the market share" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_U4GP" -> "project the market share"
+		"analyze the reputation of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_U4GP" -> "analyze the reputation of competition"
+		"OR_JOIN--5. Evaluate the Competition_U4GP" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze the growth stage of competition" -> "OR_JOIN--5. Evaluate the Competition_U4GP"
+		"project the market share" -> "OR_JOIN--5. Evaluate the Competition_U4GP"
+		"analyze the reputation of competition" -> "OR_JOIN--5. Evaluate the Competition_U4GP"
+		"OR_SPLIT--6. Legal Analysis_BKEI" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Evaluate the Competition_U4GP" -> "OR_SPLIT--6. Legal Analysis_BKEI"
+		"check past lawsuits" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_BKEI" -> "check past lawsuits"
+		"check trademarks" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_BKEI" -> "check trademarks"
+		"check insurance" [shape=box]
+		"check trademarks" -> "check insurance"
+		"OR_JOIN--6. Legal Analysis_BKEI" [label=O fixedsize=true shape=diamond width=0.5]
+		"check past lawsuits" -> "OR_JOIN--6. Legal Analysis_BKEI"
+		"check insurance" -> "OR_JOIN--6. Legal Analysis_BKEI"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Legal Analysis_BKEI" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, one or more of the following paths should be executed: specificking product market size, specificking product rate of growth. 
+Then, reviewing company mission and direction needs to be done. 
+Once reviewing company mission and direction occurs, one or more of the following paths should be executed: checking cash flow, checking income statements, checking quarterly projections. 
+After that, one or more of the following paths should be executed: analyzing the growth stage of competition, projecting the market share, analyzing the reputation of competition. 
+Then, one or more of the following paths should be executed: checking past lawsuits, checking trademarks. 
+When checking trademarks is completed, you need to check insurance.
+The process is now completed. 
+"
+}

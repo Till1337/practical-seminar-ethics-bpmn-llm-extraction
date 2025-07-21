@@ -1,0 +1,48 @@
+{
+  "ethicalAnalysis": {
+    "Zero-Shot": {
+      "Data-controls review": {
+        "privacy": { 
+          "score": 10, 
+          "explanation": "Excellent data privacy controls are in place, including encryption and access management." 
+        },
+        "security": { 
+          "score": 8, 
+          "explanation": "Security measures are strong, but could be enhanced with more frequent penetration testing." 
+        }
+      },
+      "Sustainability audit": {
+        "sustainability": { 
+          "score": 9, 
+          "explanation": "A comprehensive sustainability audit is performed annually with public reports." 
+        },
+        "non_maleficence": { 
+          "score": 7, 
+          "explanation": "The audit helps prevent environmental harm, but social harm aspects are less covered." 
+        }
+      }
+    },
+    "Few-Shot": {
+      "Data-controls review": {
+        "privacy": { 
+          "score": 9, 
+          "explanation": "Data privacy is a top priority, with robust controls and regular employee training." 
+        },
+        "security": { 
+          "score": 9, 
+          "explanation": "A dedicated security team manages a comprehensive security program." 
+        }
+      },
+      "Sustainability audit": {
+        "sustainability": { 
+          "score": 8, 
+          "explanation": "The company conducts regular sustainability audits and is showing year-over-year improvement." 
+        },
+        "non_maleficence": { 
+          "score": 8, 
+          "explanation": "The audit process is effective at identifying and mitigating potential environmental and social harms." 
+        }
+      }
+    }
+  }
+}

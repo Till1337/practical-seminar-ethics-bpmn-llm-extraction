@@ -1,0 +1,33 @@
+digraph "final grades submission process_77" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"seek pre-approval of final grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YS0U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"seek pre-approval of final grades" -> "AND_SPLIT--2. Apply special grades or criteria_YS0U"
+		"apply special grades to individuals" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YS0U" -> "apply special grades to individuals"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YS0U" -> "import gradebook"
+		"AND_JOIN--2. Apply special grades or criteria_YS0U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply special grades to individuals" -> "AND_JOIN--2. Apply special grades or criteria_YS0U"
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_YS0U"
+		"review grades summary" [shape=box]
+		"AND_JOIN--2. Apply special grades or criteria_YS0U" -> "review grades summary"
+		"export the final grades" [shape=box]
+		"review grades summary" -> "export the final grades"
+		"send examiners grade approval sheet" [shape=box]
+		"export the final grades" -> "send examiners grade approval sheet"
+	}
+	START_NODE -> "seek pre-approval of final grades"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send examiners grade approval sheet" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with seeking pre-approval of final grades. 
+Once seeking pre-approval of final grades occurs, the next tasks should be applying special grades to individuals and importing gradebook, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to review grades summary.
+After reviewing grades summary, exporting the final grades needs to be done. 
+Once exporting the final grades occurs, you need to send examiners grade approval sheet.
+The process is now completed. 
+"
+}

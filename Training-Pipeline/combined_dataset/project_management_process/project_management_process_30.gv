@@ -1,0 +1,36 @@
+digraph project_management_process_30 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"identify the approval status" [shape=box]
+		"make an introduction" -> "identify the approval status"
+		"OR_SPLIT--3. Definition and Planning_FPT1" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the approval status" -> "OR_SPLIT--3. Definition and Planning_FPT1"
+		"draw up a project plan" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_FPT1" -> "draw up a project plan"
+		"set a budget" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_FPT1" -> "set a budget"
+		"OR_JOIN--3. Definition and Planning_FPT1" [label=O fixedsize=true shape=diamond width=0.5]
+		"draw up a project plan" -> "OR_JOIN--3. Definition and Planning_FPT1"
+		"set a budget" -> "OR_JOIN--3. Definition and Planning_FPT1"
+		"have a kickoff meeting" [shape=box]
+		"OR_JOIN--3. Definition and Planning_FPT1" -> "have a kickoff meeting"
+		"record KPIs" [shape=box]
+		"have a kickoff meeting" -> "record KPIs"
+		"evaluate project outcomes" [shape=box]
+		"record KPIs" -> "evaluate project outcomes"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"evaluate project outcomes" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It starts with making an introduction. 
+When making an introduction is completed, you need to identify the approval status.
+Once identifying the approval status occurs, one or more of the following paths should be executed: drawing up a project plan, setting a budget. 
+Afterwards, having a kickoff meeting needs to be done. 
+After having a kickoff meeting, recording KPIs needs to be done. 
+When recording KPIs is completed, evaluating project outcomes should be done. 
+The process is now completed. 
+"
+}

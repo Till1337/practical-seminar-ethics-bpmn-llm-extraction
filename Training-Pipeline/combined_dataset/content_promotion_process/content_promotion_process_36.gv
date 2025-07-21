@@ -1,0 +1,24 @@
+digraph content_promotion_process_36 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_EQLI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_EQLI"
+		"share on social media" [shape=box]
+		"AND_SPLIT--2. Content promotion_EQLI" -> "share on social media"
+		"post on related forums and groups" [shape=box]
+		"AND_SPLIT--2. Content promotion_EQLI" -> "post on related forums and groups"
+		"AND_JOIN--2. Content promotion_EQLI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"share on social media" -> "AND_JOIN--2. Content promotion_EQLI"
+		"post on related forums and groups" -> "AND_JOIN--2. Content promotion_EQLI"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_EQLI" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the content promotion process. It starts with preparing a summary of your content. 
+When preparing a summary of your content is completed, the next tasks should be sharing on social media and posting on related forums and groups, they should be done in parallel. 
+The process is now completed. 
+"
+}

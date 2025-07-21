@@ -1,0 +1,43 @@
+digraph "final grades submission process_15" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_98JI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "AND_SPLIT--2. Apply special grades or criteria_98JI"
+		"select exam assignment" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_98JI" -> "select exam assignment"
+		"apply score criteria" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_98JI" -> "apply score criteria"
+		"AND_JOIN--2. Apply special grades or criteria_98JI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "AND_JOIN--2. Apply special grades or criteria_98JI"
+		"apply score criteria" -> "AND_JOIN--2. Apply special grades or criteria_98JI"
+		"AND_SPLIT--3. Review grades and course summary_ND2J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Apply special grades or criteria_98JI" -> "AND_SPLIT--3. Review grades and course summary_ND2J"
+		"apply any changes" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_ND2J" -> "apply any changes"
+		"review grades summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_ND2J" -> "review grades summary"
+		"review course summary" [shape=box]
+		"review grades summary" -> "review course summary"
+		"AND_JOIN--3. Review grades and course summary_ND2J" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply any changes" -> "AND_JOIN--3. Review grades and course summary_ND2J"
+		"review course summary" -> "AND_JOIN--3. Review grades and course summary_ND2J"
+		"export the final grades" [shape=box]
+		"AND_JOIN--3. Review grades and course summary_ND2J" -> "export the final grades"
+		"send examiners grade approval sheet" [shape=box]
+		"export the final grades" -> "send examiners grade approval sheet"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send examiners grade approval sheet" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with entering results in the canvas gradebook. 
+Once entering results in the canvas gradebook occurs, the process is split into 2 parallel branches: selecting exam assignment and applying score criteria. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: applying any changes and reviewing grades summary. 
+After reviewing grades summary, reviewing course summary should be done. 
+Once all pre-tasks are executed, then you need to export the final grades.
+After exporting the final grades, you need to send examiners grade approval sheet.
+The process is now completed. 
+"
+}

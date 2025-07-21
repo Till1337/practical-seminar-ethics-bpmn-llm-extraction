@@ -1,0 +1,49 @@
+digraph order_fulfillment_process_45 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"request the ordered products from your inventory" [shape=box]
+		"confirm that payment has been received" -> "request the ordered products from your inventory"
+		"OR_SPLIT--3. Packaging products_74EK" [label=O fixedsize=true shape=diamond width=0.5]
+		"request the ordered products from your inventory" -> "OR_SPLIT--3. Packaging products_74EK"
+		"get approval" [shape=box]
+		"OR_SPLIT--3. Packaging products_74EK" -> "get approval"
+		"attach the shipping label to the packaging" [shape=box]
+		"OR_SPLIT--3. Packaging products_74EK" -> "attach the shipping label to the packaging"
+		"print packing slip" [shape=box]
+		"OR_SPLIT--3. Packaging products_74EK" -> "print packing slip"
+		"OR_SPLIT--3. Packaging products_ZRDL" [label=O fixedsize=true shape=diamond width=0.5]
+		"attach the shipping label to the packaging" -> "OR_SPLIT--3. Packaging products_ZRDL"
+		"print invoice" [shape=box]
+		"OR_SPLIT--3. Packaging products_ZRDL" -> "print invoice"
+		"measure products" [shape=box]
+		"OR_SPLIT--3. Packaging products_ZRDL" -> "measure products"
+		"package the items securely" [shape=box]
+		"print invoice" -> "package the items securely"
+		"OR_JOIN--3. Packaging products_ZRDL" [label=O fixedsize=true shape=diamond width=0.5]
+		"package the items securely" -> "OR_JOIN--3. Packaging products_ZRDL"
+		"measure products" -> "OR_JOIN--3. Packaging products_ZRDL"
+		"OR_JOIN--3. Packaging products_74EK" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_JOIN--3. Packaging products_74EK"
+		"OR_JOIN--3. Packaging products_ZRDL" -> "OR_JOIN--3. Packaging products_74EK"
+		"print packing slip" -> "OR_JOIN--3. Packaging products_74EK"
+		"arrange the delivery" [shape=box]
+		"OR_JOIN--3. Packaging products_74EK" -> "arrange the delivery"
+		"send a confirmation email to the customer" [shape=box]
+		"arrange the delivery" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+When confirming that payment has been received is completed, you need to request the ordered products from your inventory.
+After requesting the ordered products from your inventory, one or more of the following paths should be executed: getting approval, attaching the shipping label to the packaging, printing packing slip. 
+After attaching the shipping label to the packaging, one or more of the following paths should be executed: printing invoice, measuring products. 
+Once printing invoice occurs, packaging the items securely should be done. 
+Afterwards, arranging the delivery should be done. 
+Once arranging the delivery occurs, you need to send a confirmation email to the customer.
+The process is now completed. 
+"
+}

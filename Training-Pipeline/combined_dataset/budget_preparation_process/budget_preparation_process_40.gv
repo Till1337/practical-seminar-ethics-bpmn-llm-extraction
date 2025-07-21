@@ -1,0 +1,52 @@
+digraph budget_preparation_process_40 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"record basic details" -> "evaluate any significant variances"
+		"OR_SPLIT--3. Goals_79ZB" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_SPLIT--3. Goals_79ZB"
+		"define three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_79ZB" -> "define three to five goals"
+		"prioritize three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_79ZB" -> "prioritize three to five goals"
+		"determine ways of achieving the goals" [shape=box]
+		"prioritize three to five goals" -> "determine ways of achieving the goals"
+		"OR_JOIN--3. Goals_79ZB" [label=O fixedsize=true shape=diamond width=0.5]
+		"define three to five goals" -> "OR_JOIN--3. Goals_79ZB"
+		"determine ways of achieving the goals" -> "OR_JOIN--3. Goals_79ZB"
+		"AND_SPLIT--4. Projected expenses_Q3HE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Goals_79ZB" -> "AND_SPLIT--4. Projected expenses_Q3HE"
+		"estimate the average monthly cost" [shape=box]
+		"AND_SPLIT--4. Projected expenses_Q3HE" -> "estimate the average monthly cost"
+		"calculate the total annual budget" [shape=box]
+		"AND_SPLIT--4. Projected expenses_Q3HE" -> "calculate the total annual budget"
+		"list all department expenses" [shape=box]
+		"estimate the average monthly cost" -> "list all department expenses"
+		"AND_JOIN--4. Projected expenses_Q3HE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_Q3HE"
+		"calculate the total annual budget" -> "AND_JOIN--4. Projected expenses_Q3HE"
+		"list all sources of income" [shape=box]
+		"AND_JOIN--4. Projected expenses_Q3HE" -> "list all sources of income"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"list all sources of income" -> "record financial data in a budget spreadsheet"
+		"obtain approval from top management" [shape=box]
+		"record financial data in a budget spreadsheet" -> "obtain approval from top management"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"obtain approval from top management" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It begins when you record basic details. 
+Once recording basic details occurs, evaluating any significant variances needs to be done. 
+When evaluating any significant variances is completed, one or more of the following paths should be executed: defining three to five goals, prioritizing three to five goals. 
+When prioritizing three to five goals is completed, determining ways of achieving the goals should be done. 
+Then, the process is split into 2 parallel branches: estimating the average monthly cost and calculating the total annual budget. 
+After estimating the average monthly cost, listing all department expenses needs to be done. 
+Once all pre-tasks are executed, then you need to list all sources of income.
+Once listing all sources of income occurs, recording financial data in a budget spreadsheet should be done. 
+When recording financial data in a budget spreadsheet is completed, obtaining approval from top management should be done. 
+The process is now completed. 
+"
+}

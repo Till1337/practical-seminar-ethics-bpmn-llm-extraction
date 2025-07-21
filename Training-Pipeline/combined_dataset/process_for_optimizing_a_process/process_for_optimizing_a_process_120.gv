@@ -1,0 +1,46 @@
+digraph process_for_optimizing_a_process_120 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"OR_SPLIT--2. Identifying the process_NP0U" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "OR_SPLIT--2. Identifying the process_NP0U"
+		"identify the process's components" [shape=box]
+		"OR_SPLIT--2. Identifying the process_NP0U" -> "identify the process's components"
+		"assess the performance of the process" [shape=box]
+		"OR_SPLIT--2. Identifying the process_NP0U" -> "assess the performance of the process"
+		"OR_JOIN--2. Identifying the process_NP0U" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify the process's components" -> "OR_JOIN--2. Identifying the process_NP0U"
+		"assess the performance of the process" -> "OR_JOIN--2. Identifying the process_NP0U"
+		"OR_SPLIT--3. Rethinking the process_9ROG" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Identifying the process_NP0U" -> "OR_SPLIT--3. Rethinking the process_9ROG"
+		"assess if any steps are confusing" [shape=box]
+		"OR_SPLIT--3. Rethinking the process_9ROG" -> "assess if any steps are confusing"
+		"consider where bottlenecks occur" [shape=box]
+		"OR_SPLIT--3. Rethinking the process_9ROG" -> "consider where bottlenecks occur"
+		"OR_JOIN--3. Rethinking the process_9ROG" [label=O fixedsize=true shape=diamond width=0.5]
+		"assess if any steps are confusing" -> "OR_JOIN--3. Rethinking the process_9ROG"
+		"consider where bottlenecks occur" -> "OR_JOIN--3. Rethinking the process_9ROG"
+		"write the potential process improvements" [shape=box]
+		"OR_JOIN--3. Rethinking the process_9ROG" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"choose who will test the updated process" [shape=box]
+		"get approval for processing improvements" -> "choose who will test the updated process"
+		"implement the process changes" [shape=box]
+		"choose who will test the updated process" -> "implement the process changes"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"implement the process changes" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the process for optimizing a process. It begins when you confirm the basic information. 
+When confirming the basic information is completed, one or more of the following paths should be executed: identifying the process's components, assessing the performance of the process. 
+After that, one or more of the following paths should be executed: assessing if any steps are confusing, considering where bottlenecks occur. 
+After that, you need to write the potential process improvements.
+Once writing the potential process improvements occurs, getting approval for processing improvements should be done. 
+After getting approval for processing improvements, you need to choose who will test the updated process.
+After choosing who will test the updated process, you need to implement the process changes.
+The process is now completed. 
+"
+}

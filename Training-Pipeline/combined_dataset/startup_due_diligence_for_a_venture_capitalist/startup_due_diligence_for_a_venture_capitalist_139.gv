@@ -1,0 +1,36 @@
+digraph startup_due_diligence_for_a_venture_capitalist_139 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_B5B7" [label=O fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "OR_SPLIT--2. Filter out the terrible products_B5B7"
+		"consider product necessity" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_B5B7" -> "consider product necessity"
+		"make plans for future products" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_B5B7" -> "make plans for future products"
+		"OR_JOIN--2. Filter out the terrible products_B5B7" [label=O fixedsize=true shape=diamond width=0.5]
+		"consider product necessity" -> "OR_JOIN--2. Filter out the terrible products_B5B7"
+		"make plans for future products" -> "OR_JOIN--2. Filter out the terrible products_B5B7"
+		"review number of employees" [shape=box]
+		"OR_JOIN--2. Filter out the terrible products_B5B7" -> "review number of employees"
+		"check exit strategy" [shape=box]
+		"review number of employees" -> "check exit strategy"
+		"project the market share" [shape=box]
+		"check exit strategy" -> "project the market share"
+		"check patents" [shape=box]
+		"project the market share" -> "check patents"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check patents" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the startup due diligence for a venture capitalist. It begins when you learn how to identify future failures. 
+When learning how to identify future failures is completed, one or more of the following paths should be executed: considering product necessity, making plans for future products. 
+Afterwards, you need to review number of employees.
+Once reviewing number of employees occurs, checking exit strategy should be done. 
+Once checking exit strategy occurs, projecting the market share needs to be done. 
+Once projecting the market share occurs, you need to check patents.
+The process is now completed. 
+"
+}

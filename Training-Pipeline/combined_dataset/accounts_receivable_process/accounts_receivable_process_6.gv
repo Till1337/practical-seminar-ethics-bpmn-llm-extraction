@@ -1,0 +1,46 @@
+digraph accounts_receivable_process_6 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_M9GZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "AND_SPLIT--2. Establish your credit practices_M9GZ"
+		"send a credit application form to the buyer" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_M9GZ" -> "send a credit application form to the buyer"
+		"get approval for post-credit check review" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_M9GZ" -> "get approval for post-credit check review"
+		"run a credit check on the purchasing company" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_M9GZ" -> "run a credit check on the purchasing company"
+		"AND_JOIN--2. Establish your credit practices_M9GZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send a credit application form to the buyer" -> "AND_JOIN--2. Establish your credit practices_M9GZ"
+		"get approval for post-credit check review" -> "AND_JOIN--2. Establish your credit practices_M9GZ"
+		"run a credit check on the purchasing company" -> "AND_JOIN--2. Establish your credit practices_M9GZ"
+		"OR_SPLIT--3. Invoicing_AUQG" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Establish your credit practices_M9GZ" -> "OR_SPLIT--3. Invoicing_AUQG"
+		"generate the invoice" [shape=box]
+		"OR_SPLIT--3. Invoicing_AUQG" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"OR_SPLIT--3. Invoicing_AUQG" -> "send the invoice in your accounting software"
+		"check customer payment terms" [shape=box]
+		"send the invoice in your accounting software" -> "check customer payment terms"
+		"OR_JOIN--3. Invoicing_AUQG" [label=O fixedsize=true shape=diamond width=0.5]
+		"generate the invoice" -> "OR_JOIN--3. Invoicing_AUQG"
+		"check customer payment terms" -> "OR_JOIN--3. Invoicing_AUQG"
+		"record your activity digitally" [shape=box]
+		"OR_JOIN--3. Invoicing_AUQG" -> "record your activity digitally"
+		"record the sales on credit of services" [shape=box]
+		"record your activity digitally" -> "record the sales on credit of services"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of services" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the accounts receivable process. It starts with recording the buyer's details. 
+When recording the buyer's details is completed, the process is split into 3 parallel branches: sending a credit application form to the buyer, getting approval for post-credit check review and running a credit check on the purchasing company. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: generating the invoice, sending the invoice in your accounting software. 
+After sending the invoice in your accounting software, checking customer payment terms should be done. 
+Afterwards, you need to record your activity digitally.
+Once recording your activity digitally occurs, recording the sales on credit of services needs to be done. 
+The process is now completed. 
+"
+}

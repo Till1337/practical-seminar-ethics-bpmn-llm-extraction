@@ -1,0 +1,56 @@
+digraph budget_preparation_process_123 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"review the most recent budget" [shape=box]
+		"set target date for approval" -> "review the most recent budget"
+		"AND_SPLIT--3. Goals_9UOS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review the most recent budget" -> "AND_SPLIT--3. Goals_9UOS"
+		"determine ways of achieving the goals" [shape=box]
+		"AND_SPLIT--3. Goals_9UOS" -> "determine ways of achieving the goals"
+		"prioritize three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_9UOS" -> "prioritize three to five goals"
+		"define three to five goals" [shape=box]
+		"AND_SPLIT--3. Goals_9UOS" -> "define three to five goals"
+		"AND_JOIN--3. Goals_9UOS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "AND_JOIN--3. Goals_9UOS"
+		"prioritize three to five goals" -> "AND_JOIN--3. Goals_9UOS"
+		"define three to five goals" -> "AND_JOIN--3. Goals_9UOS"
+		"OR_SPLIT--4. Projected expenses_8GUQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Goals_9UOS" -> "OR_SPLIT--4. Projected expenses_8GUQ"
+		"estimate the average monthly cost" [shape=box]
+		"OR_SPLIT--4. Projected expenses_8GUQ" -> "estimate the average monthly cost"
+		"list all department expenses" [shape=box]
+		"OR_SPLIT--4. Projected expenses_8GUQ" -> "list all department expenses"
+		"OR_JOIN--4. Projected expenses_8GUQ" [label=O fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "OR_JOIN--4. Projected expenses_8GUQ"
+		"list all department expenses" -> "OR_JOIN--4. Projected expenses_8GUQ"
+		"project total annual income" [shape=box]
+		"OR_JOIN--4. Projected expenses_8GUQ" -> "project total annual income"
+		"AND_SPLIT--6. Putting it all together_SFBW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "AND_SPLIT--6. Putting it all together_SFBW"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_SPLIT--6. Putting it all together_SFBW" -> "record financial data in a budget spreadsheet"
+		"finalize the budget" [shape=box]
+		"AND_SPLIT--6. Putting it all together_SFBW" -> "finalize the budget"
+		"AND_JOIN--6. Putting it all together_SFBW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_JOIN--6. Putting it all together_SFBW"
+		"finalize the budget" -> "AND_JOIN--6. Putting it all together_SFBW"
+		"obtain approval from top management" [shape=box]
+		"AND_JOIN--6. Putting it all together_SFBW" -> "obtain approval from top management"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"obtain approval from top management" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you set target date for approval. 
+Once setting target date for approval occurs, reviewing the most recent budget needs to be done. 
+After reviewing the most recent budget, the next tasks should be determining ways of achieving the goals, prioritizing three to five goals and defining three to five goals, they should be done in parallel. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: estimating the average monthly cost, listing all department expenses. 
+After that, you need to project total annual income.
+After projecting total annual income, the next tasks should be recording financial data in a budget spreadsheet and finalizing the budget, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to obtain approval from top management.
+The process is now completed. 
+"
+}

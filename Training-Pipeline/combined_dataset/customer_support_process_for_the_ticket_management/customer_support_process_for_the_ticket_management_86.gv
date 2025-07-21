@@ -1,0 +1,20 @@
+digraph customer_support_process_for_the_ticket_management_86 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'Feature Request'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'Feature Request'"
+		"replicate the issue" [shape=box]
+		"Determine ticket type as 'Feature Request'" -> "replicate the issue"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"replicate the issue" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It begins when you check the ticket type. 
+Once checking the ticket type occurs, you need to Determine ticket type as 'Feature Request'.
+After determining ticket type as 'Feature Request', you need to replicate the issue.
+The process is now completed. 
+"
+}

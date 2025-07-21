@@ -1,0 +1,50 @@
+digraph "final grades submission process_70" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"seek pre-approval of final grades" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_IEUS" [label=O fixedsize=true shape=diamond width=0.5]
+		"seek pre-approval of final grades" -> "OR_SPLIT--2. Apply special grades or criteria_IEUS"
+		"select exam assignment" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_IEUS" -> "select exam assignment"
+		"prepare grades for SSO" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_IEUS" -> "prepare grades for SSO"
+		"calculate the grades" [shape=box]
+		"prepare grades for SSO" -> "calculate the grades"
+		"OR_JOIN--2. Apply special grades or criteria_IEUS" [label=O fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "OR_JOIN--2. Apply special grades or criteria_IEUS"
+		"calculate the grades" -> "OR_JOIN--2. Apply special grades or criteria_IEUS"
+		"AND_SPLIT--3. Review grades and course summary_0LGE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Apply special grades or criteria_IEUS" -> "AND_SPLIT--3. Review grades and course summary_0LGE"
+		"apply any changes" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_0LGE" -> "apply any changes"
+		"review course summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_0LGE" -> "review course summary"
+		"AND_JOIN--3. Review grades and course summary_0LGE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply any changes" -> "AND_JOIN--3. Review grades and course summary_0LGE"
+		"review course summary" -> "AND_JOIN--3. Review grades and course summary_0LGE"
+		"AND_SPLIT--4. Re-calculate and get approval_L5R0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review grades and course summary_0LGE" -> "AND_SPLIT--4. Re-calculate and get approval_L5R0"
+		"export the final grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_L5R0" -> "export the final grades"
+		"export the course summary" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_L5R0" -> "export the course summary"
+		"AND_JOIN--4. Re-calculate and get approval_L5R0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"export the final grades" -> "AND_JOIN--4. Re-calculate and get approval_L5R0"
+		"export the course summary" -> "AND_JOIN--4. Re-calculate and get approval_L5R0"
+		"send examiners grade approval sheet" [shape=box]
+		"AND_JOIN--4. Re-calculate and get approval_L5R0" -> "send examiners grade approval sheet"
+	}
+	START_NODE -> "seek pre-approval of final grades"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send examiners grade approval sheet" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the final grades submission process. It begins when you seek pre-approval of final grades. 
+When seeking pre-approval of final grades is completed, one or more of the following paths should be executed: selecting exam assignment, preparing grades for SSO. 
+Once preparing grades for SSO occurs, calculating the grades should be done. 
+Then, the process is split into 2 parallel branches: applying any changes and reviewing course summary. 
+Once all pre-tasks are executed, then the next tasks should be exporting the final grades and exporting the course summary, they should be done in parallel. 
+Once all pre-tasks are executed, then sending examiners grade approval sheet should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,42 @@
+digraph churn_rate_prevention_process_58 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"determine ways to increase value" [shape=box]
+		"record basic details" -> "determine ways to increase value"
+		"AND_SPLIT--3. Contact the customer_764U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways to increase value" -> "AND_SPLIT--3. Contact the customer_764U"
+		"record whether or not the customer responded" [shape=box]
+		"AND_SPLIT--3. Contact the customer_764U" -> "record whether or not the customer responded"
+		"record if they are willing to talk" [shape=box]
+		"AND_SPLIT--3. Contact the customer_764U" -> "record if they are willing to talk"
+		"AND_JOIN--3. Contact the customer_764U" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record whether or not the customer responded" -> "AND_JOIN--3. Contact the customer_764U"
+		"record if they are willing to talk" -> "AND_JOIN--3. Contact the customer_764U"
+		"identify the root cause(s) of the problem" [shape=box]
+		"AND_JOIN--3. Contact the customer_764U" -> "identify the root cause(s) of the problem"
+		"present them with a special offer" [shape=box]
+		"identify the root cause(s) of the problem" -> "present them with a special offer"
+		"record the customer’s decision" [shape=box]
+		"present them with a special offer" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"send learnings to appropriate managers" [shape=box]
+		"ask if they have any other concerns" -> "send learnings to appropriate managers"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send learnings to appropriate managers" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the churn rate prevention process. It starts with recording basic details. 
+Once recording basic details occurs, determining ways to increase value should be done. 
+After determining ways to increase value, the next tasks should be recording whether or not the customer responded and recording if they are willing to talk, they should be done in parallel. 
+Once all pre-tasks are executed, then identifying the root cause(s) of the problem needs to be done. 
+Once identifying the root cause(s) of the problem occurs, presenting them with a special offer needs to be done. 
+After presenting them with a special offer, recording the customer’s decision should be done. 
+Once recording the customer’s decision occurs, asking if they have any other concerns needs to be done. 
+Once asking if they have any other concerns occurs, sending learnings to appropriate managers needs to be done. 
+The process is now completed. 
+"
+}

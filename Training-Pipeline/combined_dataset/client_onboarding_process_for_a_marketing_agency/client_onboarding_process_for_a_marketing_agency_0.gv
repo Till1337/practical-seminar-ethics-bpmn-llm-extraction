@@ -1,0 +1,30 @@
+digraph client_onboarding_process_for_a_marketing_agency_0 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send a welcome email" [shape=box]
+		"confirm questionnaire is complete" [shape=box]
+		"send a welcome email" -> "confirm questionnaire is complete"
+		"inform client of project start" [shape=box]
+		"confirm questionnaire is complete" -> "inform client of project start"
+		"AND_SPLIT--5. Four weeks into the project_B1WM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "AND_SPLIT--5. Four weeks into the project_B1WM"
+		"have a follow-up call" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_B1WM" -> "have a follow-up call"
+		"make changes based on follow-up call" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_B1WM" -> "make changes based on follow-up call"
+		"AND_JOIN--5. Four weeks into the project_B1WM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"have a follow-up call" -> "AND_JOIN--5. Four weeks into the project_B1WM"
+		"make changes based on follow-up call" -> "AND_JOIN--5. Four weeks into the project_B1WM"
+	}
+	START_NODE -> "send a welcome email"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Four weeks into the project_B1WM" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It starts with sending a welcome email. 
+When sending a welcome email is completed, confirming questionnaire is complete needs to be done. 
+Once confirming questionnaire is complete occurs, informing client of project start needs to be done. 
+After informing client of project start, the next tasks should be having a follow-up call and making changes based on follow-up call, they should be done in parallel. 
+The process is now completed. 
+"
+}

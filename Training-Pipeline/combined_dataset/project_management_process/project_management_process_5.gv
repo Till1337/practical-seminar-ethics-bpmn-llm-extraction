@@ -1,0 +1,36 @@
+digraph project_management_process_5 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"record the basic idea" [shape=box]
+		"make an introduction" -> "record the basic idea"
+		"OR_SPLIT--3. Definition and Planning_DH4R" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the basic idea" -> "OR_SPLIT--3. Definition and Planning_DH4R"
+		"state the available resources" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_DH4R" -> "state the available resources"
+		"set a budget" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_DH4R" -> "set a budget"
+		"OR_JOIN--3. Definition and Planning_DH4R" [label=O fixedsize=true shape=diamond width=0.5]
+		"state the available resources" -> "OR_JOIN--3. Definition and Planning_DH4R"
+		"set a budget" -> "OR_JOIN--3. Definition and Planning_DH4R"
+		"have a kickoff meeting" [shape=box]
+		"OR_JOIN--3. Definition and Planning_DH4R" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"evaluate project outcomes" [shape=box]
+		"keep communication" -> "evaluate project outcomes"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"evaluate project outcomes" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the project management process. It starts with making an introduction. 
+Once making an introduction occurs, recording the basic idea should be done. 
+After recording the basic idea, one or more of the following paths should be executed: stating the available resources, setting a budget. 
+Afterwards, having a kickoff meeting should be done. 
+Once having a kickoff meeting occurs, keeping communication needs to be done. 
+After keeping communication, evaluating project outcomes should be done. 
+The process is now completed. 
+"
+}

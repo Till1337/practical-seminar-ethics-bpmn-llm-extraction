@@ -1,0 +1,59 @@
+digraph churn_rate_prevention_process_40 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_EEGQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "AND_SPLIT--2. Evaluate product usage_EEGQ"
+		"analyze how they use your product" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_EEGQ" -> "analyze how they use your product"
+		"quantify the impact of cancellation" [shape=box]
+		"AND_SPLIT--2. Evaluate product usage_EEGQ" -> "quantify the impact of cancellation"
+		"AND_JOIN--2. Evaluate product usage_EEGQ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze how they use your product" -> "AND_JOIN--2. Evaluate product usage_EEGQ"
+		"quantify the impact of cancellation" -> "AND_JOIN--2. Evaluate product usage_EEGQ"
+		"AND_SPLIT--3. Contact the customer_KFOG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Evaluate product usage_EEGQ" -> "AND_SPLIT--3. Contact the customer_KFOG"
+		"confirm call date and time" [shape=box]
+		"AND_SPLIT--3. Contact the customer_KFOG" -> "confirm call date and time"
+		"record if they are willing to talk" [shape=box]
+		"AND_SPLIT--3. Contact the customer_KFOG" -> "record if they are willing to talk"
+		"AND_JOIN--3. Contact the customer_KFOG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm call date and time" -> "AND_JOIN--3. Contact the customer_KFOG"
+		"record if they are willing to talk" -> "AND_JOIN--3. Contact the customer_KFOG"
+		"ask open-ended questions" [shape=box]
+		"AND_JOIN--3. Contact the customer_KFOG" -> "ask open-ended questions"
+		"AND_SPLIT--5. Retention incentives_UQDW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ask open-ended questions" -> "AND_SPLIT--5. Retention incentives_UQDW"
+		"describe your ideas to increase value" [shape=box]
+		"AND_SPLIT--5. Retention incentives_UQDW" -> "describe your ideas to increase value"
+		"present them with a special offer" [shape=box]
+		"AND_SPLIT--5. Retention incentives_UQDW" -> "present them with a special offer"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"present them with a special offer" -> "inform them of key metrics demonstrating value"
+		"AND_JOIN--5. Retention incentives_UQDW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"describe your ideas to increase value" -> "AND_JOIN--5. Retention incentives_UQDW"
+		"inform them of key metrics demonstrating value" -> "AND_JOIN--5. Retention incentives_UQDW"
+		"record the customer’s decision" [shape=box]
+		"AND_JOIN--5. Retention incentives_UQDW" -> "record the customer’s decision"
+		"ask if they have any other concerns" [shape=box]
+		"record the customer’s decision" -> "ask if they have any other concerns"
+		"note down important learnings from the conversation" [shape=box]
+		"ask if they have any other concerns" -> "note down important learnings from the conversation"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"note down important learnings from the conversation" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It starts with recording basic details. 
+Once recording basic details occurs, the process is split into 2 parallel branches: analyzing how they use your product and quantifying the impact of cancellation. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: confirming call date and time and recording if they are willing to talk. 
+Once all pre-tasks are executed, then asking open-ended questions should be done. 
+After asking open-ended questions, the process is split into 2 parallel branches: describing your ideas to increase value and presenting them with a special offer. 
+Once presenting them with a special offer occurs, informing them of key metrics demonstrating value should be done. 
+Once all pre-tasks are executed, then recording the customer’s decision needs to be done. 
+Once recording the customer’s decision occurs, asking if they have any other concerns should be done. 
+When asking if they have any other concerns is completed, you need to note down important learnings from the conversation.
+The process is now completed. 
+"
+}

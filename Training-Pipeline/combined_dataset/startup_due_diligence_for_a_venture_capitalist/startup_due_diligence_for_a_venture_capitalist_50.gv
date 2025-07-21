@@ -1,0 +1,63 @@
+digraph startup_due_diligence_for_a_venture_capitalist_50 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn why startups fail so often" [shape=box]
+		"check location of startup" [shape=box]
+		"learn why startups fail so often" -> "check location of startup"
+		"AND_SPLIT--3. Review the funding team_CVM9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check location of startup" -> "AND_SPLIT--3. Review the funding team_CVM9"
+		"review employee salary and benefits" [shape=box]
+		"AND_SPLIT--3. Review the funding team_CVM9" -> "review employee salary and benefits"
+		"review number of employees" [shape=box]
+		"AND_SPLIT--3. Review the funding team_CVM9" -> "review number of employees"
+		"AND_JOIN--3. Review the funding team_CVM9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review employee salary and benefits" -> "AND_JOIN--3. Review the funding team_CVM9"
+		"review number of employees" -> "AND_JOIN--3. Review the funding team_CVM9"
+		"check exit strategy" [shape=box]
+		"AND_JOIN--3. Review the funding team_CVM9" -> "check exit strategy"
+		"AND_SPLIT--5. Evaluate the Competition_OY0O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check exit strategy" -> "AND_SPLIT--5. Evaluate the Competition_OY0O"
+		"project the market share" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_OY0O" -> "project the market share"
+		"analyze the growth stage of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_OY0O" -> "analyze the growth stage of competition"
+		"OR_SPLIT--5. Evaluate the Competition_0L25" [label=O fixedsize=true shape=diamond width=0.5]
+		"project the market share" -> "OR_SPLIT--5. Evaluate the Competition_0L25"
+		"analyze the reputation of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_0L25" -> "analyze the reputation of competition"
+		"know exact competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_0L25" -> "know exact competition"
+		"OR_JOIN--5. Evaluate the Competition_0L25" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze the reputation of competition" -> "OR_JOIN--5. Evaluate the Competition_0L25"
+		"know exact competition" -> "OR_JOIN--5. Evaluate the Competition_0L25"
+		"AND_JOIN--5. Evaluate the Competition_OY0O" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Evaluate the Competition_0L25" -> "AND_JOIN--5. Evaluate the Competition_OY0O"
+		"analyze the growth stage of competition" -> "AND_JOIN--5. Evaluate the Competition_OY0O"
+		"AND_SPLIT--6. Legal Analysis_NTX2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Evaluate the Competition_OY0O" -> "AND_SPLIT--6. Legal Analysis_NTX2"
+		"check trademarks" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_NTX2" -> "check trademarks"
+		"check past lawsuits" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_NTX2" -> "check past lawsuits"
+		"check patents" [shape=box]
+		"check past lawsuits" -> "check patents"
+		"AND_JOIN--6. Legal Analysis_NTX2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check trademarks" -> "AND_JOIN--6. Legal Analysis_NTX2"
+		"check patents" -> "AND_JOIN--6. Legal Analysis_NTX2"
+	}
+	START_NODE -> "learn why startups fail so often"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Legal Analysis_NTX2" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It begins when you learn why startups fail so often. 
+Once learning why startups fail so often occurs, checking location of startup should be done. 
+When checking location of startup is completed, the process is split into 2 parallel branches: reviewing employee salary and benefits and reviewing number of employees. 
+Once all pre-tasks are executed, then checking exit strategy should be done. 
+When checking exit strategy is completed, the next tasks should be projecting the market share and analyzing the growth stage of competition, they should be done in parallel. 
+When projecting the market share is completed, one or more of the following paths should be executed: analyzing the reputation of competition, knowing exact competition. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: checking trademarks and checking past lawsuits. 
+After checking past lawsuits, you need to check patents.
+The process is now completed. 
+"
+}

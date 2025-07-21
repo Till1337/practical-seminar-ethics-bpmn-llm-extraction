@@ -1,0 +1,62 @@
+digraph churn_rate_prevention_process_0 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_TKS4" [label=O fixedsize=true shape=diamond width=0.5]
+		"record basic details" -> "OR_SPLIT--2. Evaluate product usage_TKS4"
+		"analyze how they use your product" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_TKS4" -> "analyze how they use your product"
+		"quantify the impact of cancellation" [shape=box]
+		"OR_SPLIT--2. Evaluate product usage_TKS4" -> "quantify the impact of cancellation"
+		"identify key points of value" [shape=box]
+		"analyze how they use your product" -> "identify key points of value"
+		"determine ways to increase value" [shape=box]
+		"quantify the impact of cancellation" -> "determine ways to increase value"
+		"OR_JOIN--2. Evaluate product usage_TKS4" [label=O fixedsize=true shape=diamond width=0.5]
+		"identify key points of value" -> "OR_JOIN--2. Evaluate product usage_TKS4"
+		"determine ways to increase value" -> "OR_JOIN--2. Evaluate product usage_TKS4"
+		"OR_SPLIT--3. Contact the customer_GYIV" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Evaluate product usage_TKS4" -> "OR_SPLIT--3. Contact the customer_GYIV"
+		"confirm call date and time" [shape=box]
+		"OR_SPLIT--3. Contact the customer_GYIV" -> "confirm call date and time"
+		"record whether or not the customer responded" [shape=box]
+		"OR_SPLIT--3. Contact the customer_GYIV" -> "record whether or not the customer responded"
+		"OR_JOIN--3. Contact the customer_GYIV" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm call date and time" -> "OR_JOIN--3. Contact the customer_GYIV"
+		"record whether or not the customer responded" -> "OR_JOIN--3. Contact the customer_GYIV"
+		"identify the root cause(s) of the problem" [shape=box]
+		"OR_JOIN--3. Contact the customer_GYIV" -> "identify the root cause(s) of the problem"
+		"inform them of key metrics demonstrating value" [shape=box]
+		"identify the root cause(s) of the problem" -> "inform them of key metrics demonstrating value"
+		"OR_SPLIT--6. Outcome_Q31P" [label=O fixedsize=true shape=diamond width=0.5]
+		"inform them of key metrics demonstrating value" -> "OR_SPLIT--6. Outcome_Q31P"
+		"record the customer’s decision" [shape=box]
+		"OR_SPLIT--6. Outcome_Q31P" -> "record the customer’s decision"
+		"thank them for their time and feedback" [shape=box]
+		"OR_SPLIT--6. Outcome_Q31P" -> "thank them for their time and feedback"
+		"OR_JOIN--6. Outcome_Q31P" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the customer’s decision" -> "OR_JOIN--6. Outcome_Q31P"
+		"thank them for their time and feedback" -> "OR_JOIN--6. Outcome_Q31P"
+		"ask if they have any other concerns" [shape=box]
+		"OR_JOIN--6. Outcome_Q31P" -> "ask if they have any other concerns"
+		"note down important learnings from the conversation" [shape=box]
+		"ask if they have any other concerns" -> "note down important learnings from the conversation"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"note down important learnings from the conversation" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the churn rate prevention process. It begins when you record basic details. 
+Once recording basic details occurs, one or more of the following paths should be executed: analyzing how they use your product, quantifying the impact of cancellation. 
+When analyzing how they use your product is completed, you need to identify key points of value.
+When quantifying the impact of cancellation is completed, you need to determine ways to increase value.
+Then, one or more of the following paths should be executed: confirming call date and time, recording whether or not the customer responded. 
+Then, identifying the root cause(s) of the problem should be done. 
+After identifying the root cause(s) of the problem, informing them of key metrics demonstrating value should be done. 
+After informing them of key metrics demonstrating value, one or more of the following paths should be executed: recording the customer’s decision, thanking them for their time and feedback. 
+Then, you need to ask if they have any other concerns.
+When asking if they have any other concerns is completed, noting down important learnings from the conversation needs to be done. 
+The process is now completed. 
+"
+}

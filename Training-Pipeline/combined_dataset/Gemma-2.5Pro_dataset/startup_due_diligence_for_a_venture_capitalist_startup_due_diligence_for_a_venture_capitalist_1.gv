@@ -1,0 +1,70 @@
+digraph startup_due_diligence_for_a_venture_capitalist_1 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_ZV8T" [label=O fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "OR_SPLIT--2. Filter out the terrible products_ZV8T"
+		"specific product market size" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_ZV8T" -> "specific product market size"
+		"specific product details" [shape=box]
+		"OR_SPLIT--2. Filter out the terrible products_ZV8T" -> "specific product details"
+		"OR_JOIN--2. Filter out the terrible products_ZV8T" [label=O fixedsize=true shape=diamond width=0.5]
+		"specific product market size" -> "OR_JOIN--2. Filter out the terrible products_ZV8T"
+		"specific product details" -> "OR_JOIN--2. Filter out the terrible products_ZV8T"
+		"OR_SPLIT--3. Review the funding team_ZKAZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Filter out the terrible products_ZV8T" -> "OR_SPLIT--3. Review the funding team_ZKAZ"
+		"review number of employees" [shape=box]
+		"OR_SPLIT--3. Review the funding team_ZKAZ" -> "review number of employees"
+		"review expertise" [shape=box]
+		"OR_SPLIT--3. Review the funding team_ZKAZ" -> "review expertise"
+		"review ability as a team leader" [shape=box]
+		"OR_SPLIT--3. Review the funding team_ZKAZ" -> "review ability as a team leader"
+		"AND_SPLIT--3. Review the funding team_T84A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review number of employees" -> "AND_SPLIT--3. Review the funding team_T84A"
+		"review enthusiasm" [shape=box]
+		"AND_SPLIT--3. Review the funding team_T84A" -> "review enthusiasm"
+		"review the business plan" [shape=box]
+		"AND_SPLIT--3. Review the funding team_T84A" -> "review the business plan"
+		"AND_JOIN--3. Review the funding team_T84A" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review enthusiasm" -> "AND_JOIN--3. Review the funding team_T84A"
+		"review the business plan" -> "AND_JOIN--3. Review the funding team_T84A"
+		"OR_JOIN--3. Review the funding team_ZKAZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_T84A" -> "OR_JOIN--3. Review the funding team_ZKAZ"
+		"review expertise" -> "OR_JOIN--3. Review the funding team_ZKAZ"
+		"review ability as a team leader" -> "OR_JOIN--3. Review the funding team_ZKAZ"
+		"OR_SPLIT--4. Evaluate Financial Viability_33OU" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Review the funding team_ZKAZ" -> "OR_SPLIT--4. Evaluate Financial Viability_33OU"
+		"check current debt" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_33OU" -> "check current debt"
+		"check income statements" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_33OU" -> "check income statements"
+		"OR_JOIN--4. Evaluate Financial Viability_33OU" [label=O fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "OR_JOIN--4. Evaluate Financial Viability_33OU"
+		"check income statements" -> "OR_JOIN--4. Evaluate Financial Viability_33OU"
+		"analyze the growth stage of competition" [shape=box]
+		"OR_JOIN--4. Evaluate Financial Viability_33OU" -> "analyze the growth stage of competition"
+		"OR_SPLIT--6. Legal Analysis_JKI8" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze the growth stage of competition" -> "OR_SPLIT--6. Legal Analysis_JKI8"
+		"check trademarks" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_JKI8" -> "check trademarks"
+		"check past lawsuits" [shape=box]
+		"OR_SPLIT--6. Legal Analysis_JKI8" -> "check past lawsuits"
+		"OR_JOIN--6. Legal Analysis_JKI8" [label=O fixedsize=true shape=diamond width=0.5]
+		"check trademarks" -> "OR_JOIN--6. Legal Analysis_JKI8"
+		"check past lawsuits" -> "OR_JOIN--6. Legal Analysis_JKI8"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Legal Analysis_JKI8" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, one or more of the following paths should be executed: specificking product market size, specificking product details. 
+Afterwards, one or more of the following paths should be executed: reviewing number of employees, reviewing expertise, reviewing ability as a team leader. 
+Once reviewing number of employees occurs, the process is split into 2 parallel branches: reviewing enthusiasm and reviewing the business plan. 
+Afterwards, one or more of the following paths should be executed: checking current debt, checking income statements. 
+After that, analyzing the growth stage of competition needs to be done. 
+Once analyzing the growth stage of competition occurs, one or more of the following paths should be executed: checking trademarks, checking past lawsuits. 
+The process is now completed. 
+"
+}

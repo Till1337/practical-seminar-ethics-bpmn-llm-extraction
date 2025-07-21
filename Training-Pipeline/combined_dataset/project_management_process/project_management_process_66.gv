@@ -1,0 +1,46 @@
+digraph project_management_process_66 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_BVEO" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Conception and Initiation_BVEO"
+		"record the basic idea" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_BVEO" -> "record the basic idea"
+		"get approval" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_BVEO" -> "get approval"
+		"identify the approval status" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_BVEO" -> "identify the approval status"
+		"AND_JOIN--2. Conception and Initiation_BVEO" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the basic idea" -> "AND_JOIN--2. Conception and Initiation_BVEO"
+		"get approval" -> "AND_JOIN--2. Conception and Initiation_BVEO"
+		"identify the approval status" -> "AND_JOIN--2. Conception and Initiation_BVEO"
+		"set a budget" [shape=box]
+		"AND_JOIN--2. Conception and Initiation_BVEO" -> "set a budget"
+		"have a kickoff meeting" [shape=box]
+		"set a budget" -> "have a kickoff meeting"
+		"record KPIs" [shape=box]
+		"have a kickoff meeting" -> "record KPIs"
+		"AND_SPLIT--6. Close_82DF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "AND_SPLIT--6. Close_82DF"
+		"ensure the project is completed" [shape=box]
+		"AND_SPLIT--6. Close_82DF" -> "ensure the project is completed"
+		"evaluate project outcomes" [shape=box]
+		"AND_SPLIT--6. Close_82DF" -> "evaluate project outcomes"
+		"AND_JOIN--6. Close_82DF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"ensure the project is completed" -> "AND_JOIN--6. Close_82DF"
+		"evaluate project outcomes" -> "AND_JOIN--6. Close_82DF"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_82DF" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It starts with making an introduction. 
+After making an introduction, the process is split into 3 parallel branches: recording the basic idea, getting approval and identifying the approval status. 
+Once all pre-tasks are executed, then you need to set a budget.
+When setting a budget is completed, you need to have a kickoff meeting.
+Once having a kickoff meeting occurs, recording KPIs needs to be done. 
+After recording KPIs, the process is split into 2 parallel branches: ensuring the project is completed and evaluating project outcomes. 
+The process is now completed. 
+"
+}

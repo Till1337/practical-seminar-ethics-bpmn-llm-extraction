@@ -1,0 +1,49 @@
+digraph process_for_optimizing_a_process_191 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"OR_SPLIT--2. Identifying the process_4OIU" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm the basic information" -> "OR_SPLIT--2. Identifying the process_4OIU"
+		"assess the performance of the process" [shape=box]
+		"OR_SPLIT--2. Identifying the process_4OIU" -> "assess the performance of the process"
+		"confirm if the process requires optimization" [shape=box]
+		"OR_SPLIT--2. Identifying the process_4OIU" -> "confirm if the process requires optimization"
+		"identify the process's components" [shape=box]
+		"OR_SPLIT--2. Identifying the process_4OIU" -> "identify the process's components"
+		"OR_JOIN--2. Identifying the process_4OIU" [label=O fixedsize=true shape=diamond width=0.5]
+		"assess the performance of the process" -> "OR_JOIN--2. Identifying the process_4OIU"
+		"confirm if the process requires optimization" -> "OR_JOIN--2. Identifying the process_4OIU"
+		"identify the process's components" -> "OR_JOIN--2. Identifying the process_4OIU"
+		"assess if any steps are confusing" [shape=box]
+		"OR_JOIN--2. Identifying the process_4OIU" -> "assess if any steps are confusing"
+		"write the potential process improvements" [shape=box]
+		"assess if any steps are confusing" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"AND_SPLIT--6. Testing the process improvements_9GPW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for processing improvements" -> "AND_SPLIT--6. Testing the process improvements_9GPW"
+		"define what would make the improvements successful" [shape=box]
+		"AND_SPLIT--6. Testing the process improvements_9GPW" -> "define what would make the improvements successful"
+		"update the process documents" [shape=box]
+		"AND_SPLIT--6. Testing the process improvements_9GPW" -> "update the process documents"
+		"AND_JOIN--6. Testing the process improvements_9GPW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define what would make the improvements successful" -> "AND_JOIN--6. Testing the process improvements_9GPW"
+		"update the process documents" -> "AND_JOIN--6. Testing the process improvements_9GPW"
+		"determine how the process will be monitored" [shape=box]
+		"AND_JOIN--6. Testing the process improvements_9GPW" -> "determine how the process will be monitored"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"determine how the process will be monitored" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the process for optimizing a process. It begins when you confirm the basic information. 
+Once confirming the basic information occurs, one or more of the following paths should be executed: assessing the performance of the process, confirming if the process requires optimization, identifying the process's components. 
+After that, assessing if any steps are confusing needs to be done. 
+Once assessing if any steps are confusing occurs, you need to write the potential process improvements.
+Once writing the potential process improvements occurs, you need to get approval for processing improvements.
+After getting approval for processing improvements, the next tasks should be defining what would make the improvements successful and updating the process documents, they should be done in parallel. 
+Once all pre-tasks are executed, then determining how the process will be monitored should be done. 
+The process is now completed. 
+"
+}

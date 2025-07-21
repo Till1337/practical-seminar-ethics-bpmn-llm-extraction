@@ -1,0 +1,33 @@
+digraph accounts_receivable_process_158 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"run a credit check on the purchasing company" [shape=box]
+		"record the buyer's details" -> "run a credit check on the purchasing company"
+		"AND_SPLIT--3. Invoicing_1KYF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"run a credit check on the purchasing company" -> "AND_SPLIT--3. Invoicing_1KYF"
+		"send the invoice in your accounting software" [shape=box]
+		"AND_SPLIT--3. Invoicing_1KYF" -> "send the invoice in your accounting software"
+		"generate the invoice" [shape=box]
+		"AND_SPLIT--3. Invoicing_1KYF" -> "generate the invoice"
+		"AND_JOIN--3. Invoicing_1KYF" [label="+" fixedsize=true shape=diamond width=0.5]
+		"send the invoice in your accounting software" -> "AND_JOIN--3. Invoicing_1KYF"
+		"generate the invoice" -> "AND_JOIN--3. Invoicing_1KYF"
+		"record your activity digitally" [shape=box]
+		"AND_JOIN--3. Invoicing_1KYF" -> "record your activity digitally"
+		"record the sales on credit of services" [shape=box]
+		"record your activity digitally" -> "record the sales on credit of services"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of services" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It begins when you record the buyer's details. 
+When recording the buyer's details is completed, you need to run a credit check on the purchasing company.
+Once running a credit check on the purchasing company occurs, the process is split into 2 parallel branches: sending the invoice in your accounting software and generating the invoice. 
+Once all pre-tasks are executed, then recording your activity digitally should be done. 
+After recording your activity digitally, recording the sales on credit of services should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,23 @@
+digraph account_payable_process_140 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"file a copy for internal records" [shape=box]
+		"create a receiving report" [shape=box]
+		"file a copy for internal records" -> "create a receiving report"
+		"gather the vendors invoice" [shape=box]
+		"create a receiving report" -> "gather the vendors invoice"
+		"store in paid invoice file" [shape=box]
+		"gather the vendors invoice" -> "store in paid invoice file"
+	}
+	START_NODE -> "file a copy for internal records"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"store in paid invoice file" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the account payable process. It begins when you file a copy for internal records. 
+When filing a copy for internal records is completed, creating a receiving report needs to be done. 
+When creating a receiving report is completed, gathering the vendors invoice should be done. 
+When gathering the vendors invoice is completed, storing in paid invoice file needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,30 @@
+digraph account_payable_process_60 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send to the vendor accounting department" [shape=box]
+		"create a receiving report" [shape=box]
+		"send to the vendor accounting department" -> "create a receiving report"
+		"report errors to relevant team member" [shape=box]
+		"create a receiving report" -> "report errors to relevant team member"
+		"AND_SPLIT--4. Payment_PUJL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"report errors to relevant team member" -> "AND_SPLIT--4. Payment_PUJL"
+		"store in paid invoice file" [shape=box]
+		"AND_SPLIT--4. Payment_PUJL" -> "store in paid invoice file"
+		"check dates to avoid penalty charges" [shape=box]
+		"AND_SPLIT--4. Payment_PUJL" -> "check dates to avoid penalty charges"
+		"AND_JOIN--4. Payment_PUJL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"store in paid invoice file" -> "AND_JOIN--4. Payment_PUJL"
+		"check dates to avoid penalty charges" -> "AND_JOIN--4. Payment_PUJL"
+	}
+	START_NODE -> "send to the vendor accounting department"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--4. Payment_PUJL" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the account payable process. It begins when you send to the vendor accounting department. 
+After sending to the vendor accounting department, you need to create a receiving report.
+Once creating a receiving report occurs, reporting errors to relevant team member should be done. 
+After reporting errors to relevant team member, the next tasks should be storing in paid invoice file and checking dates to avoid penalty charges, they should be done in parallel. 
+The process is now completed. 
+"
+}

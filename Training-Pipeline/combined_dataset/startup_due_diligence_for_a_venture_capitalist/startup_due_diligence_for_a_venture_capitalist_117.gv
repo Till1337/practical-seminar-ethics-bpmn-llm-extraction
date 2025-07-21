@@ -1,0 +1,56 @@
+digraph startup_due_diligence_for_a_venture_capitalist_117 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZSDP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_ZSDP"
+		"do the SWOT analysis" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZSDP" -> "do the SWOT analysis"
+		"specific product market size" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZSDP" -> "specific product market size"
+		"AND_JOIN--2. Filter out the terrible products_ZSDP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"do the SWOT analysis" -> "AND_JOIN--2. Filter out the terrible products_ZSDP"
+		"specific product market size" -> "AND_JOIN--2. Filter out the terrible products_ZSDP"
+		"OR_SPLIT--3. Review the funding team_GC83" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Filter out the terrible products_ZSDP" -> "OR_SPLIT--3. Review the funding team_GC83"
+		"review number of employees" [shape=box]
+		"OR_SPLIT--3. Review the funding team_GC83" -> "review number of employees"
+		"review enthusiasm" [shape=box]
+		"OR_SPLIT--3. Review the funding team_GC83" -> "review enthusiasm"
+		"review relationship to founder" [shape=box]
+		"OR_SPLIT--3. Review the funding team_GC83" -> "review relationship to founder"
+		"OR_SPLIT--3. Review the funding team_N000" [label=O fixedsize=true shape=diamond width=0.5]
+		"review relationship to founder" -> "OR_SPLIT--3. Review the funding team_N000"
+		"review the business plan" [shape=box]
+		"OR_SPLIT--3. Review the funding team_N000" -> "review the business plan"
+		"review trustworthiness" [shape=box]
+		"OR_SPLIT--3. Review the funding team_N000" -> "review trustworthiness"
+		"OR_JOIN--3. Review the funding team_N000" [label=O fixedsize=true shape=diamond width=0.5]
+		"review the business plan" -> "OR_JOIN--3. Review the funding team_N000"
+		"review trustworthiness" -> "OR_JOIN--3. Review the funding team_N000"
+		"OR_JOIN--3. Review the funding team_GC83" [label=O fixedsize=true shape=diamond width=0.5]
+		"review number of employees" -> "OR_JOIN--3. Review the funding team_GC83"
+		"review enthusiasm" -> "OR_JOIN--3. Review the funding team_GC83"
+		"OR_JOIN--3. Review the funding team_N000" -> "OR_JOIN--3. Review the funding team_GC83"
+		"check cash flow" [shape=box]
+		"OR_JOIN--3. Review the funding team_GC83" -> "check cash flow"
+		"analyze the growth stage of competition" [shape=box]
+		"check cash flow" -> "analyze the growth stage of competition"
+		"check past lawsuits" [shape=box]
+		"analyze the growth stage of competition" -> "check past lawsuits"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check past lawsuits" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the startup due diligence for a venture capitalist. It begins when you learn how to identify future failures. 
+When learning how to identify future failures is completed, the process is split into 2 parallel branches: doing the SWOT analysis and specificking product market size. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: reviewing number of employees, reviewing enthusiasm, reviewing relationship to founder. 
+When reviewing relationship to founder is completed, one or more of the following paths should be executed: reviewing the business plan, reviewing trustworthiness. 
+After that, checking cash flow needs to be done. 
+When checking cash flow is completed, you need to analyze the growth stage of competition.
+When analyzing the growth stage of competition is completed, checking past lawsuits should be done. 
+The process is now completed. 
+"
+}

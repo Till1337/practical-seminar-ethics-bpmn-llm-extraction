@@ -1,0 +1,43 @@
+digraph startup_due_diligence_for_a_venture_capitalist_155 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"specific product market size" [shape=box]
+		"learn how to identify future failures" -> "specific product market size"
+		"AND_SPLIT--3. Review the funding team_QKC6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market size" -> "AND_SPLIT--3. Review the funding team_QKC6"
+		"review relationship to founder" [shape=box]
+		"AND_SPLIT--3. Review the funding team_QKC6" -> "review relationship to founder"
+		"review ability as a team leader" [shape=box]
+		"AND_SPLIT--3. Review the funding team_QKC6" -> "review ability as a team leader"
+		"AND_JOIN--3. Review the funding team_QKC6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review relationship to founder" -> "AND_JOIN--3. Review the funding team_QKC6"
+		"review ability as a team leader" -> "AND_JOIN--3. Review the funding team_QKC6"
+		"OR_SPLIT--4. Evaluate Financial Viability_5IAU" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review the funding team_QKC6" -> "OR_SPLIT--4. Evaluate Financial Viability_5IAU"
+		"check cash flow" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_5IAU" -> "check cash flow"
+		"check income statements" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_5IAU" -> "check income statements"
+		"OR_JOIN--4. Evaluate Financial Viability_5IAU" [label=O fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "OR_JOIN--4. Evaluate Financial Viability_5IAU"
+		"check income statements" -> "OR_JOIN--4. Evaluate Financial Viability_5IAU"
+		"analyze the reputation of competition" [shape=box]
+		"OR_JOIN--4. Evaluate Financial Viability_5IAU" -> "analyze the reputation of competition"
+		"check insurance" [shape=box]
+		"analyze the reputation of competition" -> "check insurance"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check insurance" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It begins when you learn how to identify future failures. 
+When learning how to identify future failures is completed, specificking product market size should be done. 
+When specificking product market size is completed, the next tasks should be reviewing relationship to founder and reviewing ability as a team leader, they should be done in parallel. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: checking cash flow, checking income statements. 
+After that, analyzing the reputation of competition should be done. 
+Once analyzing the reputation of competition occurs, checking insurance should be done. 
+The process is now completed. 
+"
+}

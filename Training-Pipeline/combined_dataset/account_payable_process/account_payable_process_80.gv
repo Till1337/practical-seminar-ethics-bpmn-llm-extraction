@@ -1,0 +1,40 @@
+digraph account_payable_process_80 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"file a copy for internal records" [shape=box]
+		"create a receiving report" [shape=box]
+		"file a copy for internal records" -> "create a receiving report"
+		"AND_SPLIT--3. Document validation_TGN8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create a receiving report" -> "AND_SPLIT--3. Document validation_TGN8"
+		"confirm all documents have been amended" [shape=box]
+		"AND_SPLIT--3. Document validation_TGN8" -> "confirm all documents have been amended"
+		"gather the vendors invoice" [shape=box]
+		"AND_SPLIT--3. Document validation_TGN8" -> "gather the vendors invoice"
+		"gather the receiving report" [shape=box]
+		"gather the vendors invoice" -> "gather the receiving report"
+		"AND_JOIN--3. Document validation_TGN8" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm all documents have been amended" -> "AND_JOIN--3. Document validation_TGN8"
+		"gather the receiving report" -> "AND_JOIN--3. Document validation_TGN8"
+		"AND_SPLIT--4. Payment_LRJE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Document validation_TGN8" -> "AND_SPLIT--4. Payment_LRJE"
+		"check dates to avoid penalty charges" [shape=box]
+		"AND_SPLIT--4. Payment_LRJE" -> "check dates to avoid penalty charges"
+		"enter the invoice into the accounts payable account" [shape=box]
+		"AND_SPLIT--4. Payment_LRJE" -> "enter the invoice into the accounts payable account"
+		"AND_JOIN--4. Payment_LRJE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check dates to avoid penalty charges" -> "AND_JOIN--4. Payment_LRJE"
+		"enter the invoice into the accounts payable account" -> "AND_JOIN--4. Payment_LRJE"
+	}
+	START_NODE -> "file a copy for internal records"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--4. Payment_LRJE" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the account payable process. It starts with filing a copy for internal records. 
+When filing a copy for internal records is completed, creating a receiving report should be done. 
+Once creating a receiving report occurs, the process is split into 2 parallel branches: confirming all documents have been amended and gathering the vendors invoice. 
+When gathering the vendors invoice is completed, you need to gather the receiving report.
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: checking dates to avoid penalty charges and entering the invoice into the accounts payable account. 
+The process is now completed. 
+"
+}

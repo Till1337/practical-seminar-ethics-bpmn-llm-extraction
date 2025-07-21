@@ -1,0 +1,30 @@
+digraph customer_support_process_for_the_ticket_management_66 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'I'm not sure question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'I'm not sure question'"
+		"AND_SPLIT--3. Ticket Action_2WO4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'I'm not sure question'" -> "AND_SPLIT--3. Ticket Action_2WO4"
+		"replicate the issue" [shape=box]
+		"AND_SPLIT--3. Ticket Action_2WO4" -> "replicate the issue"
+		"response ticket question" [shape=box]
+		"AND_SPLIT--3. Ticket Action_2WO4" -> "response ticket question"
+		"test technical issues" [shape=box]
+		"replicate the issue" -> "test technical issues"
+		"AND_JOIN--3. Ticket Action_2WO4" [label="+" fixedsize=true shape=diamond width=0.5]
+		"test technical issues" -> "AND_JOIN--3. Ticket Action_2WO4"
+		"response ticket question" -> "AND_JOIN--3. Ticket Action_2WO4"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--3. Ticket Action_2WO4" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the customer support process for the ticket management. It starts with checking the ticket type. 
+When checking the ticket type is completed, determining ticket type as 'I'm not sure question' needs to be done. 
+When determining ticket type as 'I'm not sure question' is completed, the process is split into 2 parallel branches: replicating the issue and responsing ticket question. 
+After replicating the issue, you need to test technical issues.
+The process is now completed. 
+"
+}

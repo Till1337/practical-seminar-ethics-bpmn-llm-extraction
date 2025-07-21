@@ -1,0 +1,27 @@
+digraph customer_support_process_for_the_ticket_management_70 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'Mixed-type question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'Mixed-type question'"
+		"AND_SPLIT--3. Ticket Action_IX34" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Mixed-type question'" -> "AND_SPLIT--3. Ticket Action_IX34"
+		"replicate the issue" [shape=box]
+		"AND_SPLIT--3. Ticket Action_IX34" -> "replicate the issue"
+		"response ticket question" [shape=box]
+		"AND_SPLIT--3. Ticket Action_IX34" -> "response ticket question"
+		"AND_JOIN--3. Ticket Action_IX34" [label="+" fixedsize=true shape=diamond width=0.5]
+		"replicate the issue" -> "AND_JOIN--3. Ticket Action_IX34"
+		"response ticket question" -> "AND_JOIN--3. Ticket Action_IX34"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--3. Ticket Action_IX34" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the customer support process for the ticket management. It begins when you check the ticket type. 
+When checking the ticket type is completed, determining ticket type as 'Mixed-type question' should be done. 
+After determining ticket type as 'Mixed-type question', the process is split into 2 parallel branches: replicating the issue and responsing ticket question. 
+The process is now completed. 
+"
+}

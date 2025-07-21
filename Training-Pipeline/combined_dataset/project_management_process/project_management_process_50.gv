@@ -1,0 +1,56 @@
+digraph project_management_process_50 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_U4EJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Conception and Initiation_U4EJ"
+		"identify the approval status" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_U4EJ" -> "identify the approval status"
+		"record the basic idea" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_U4EJ" -> "record the basic idea"
+		"work out its value" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_U4EJ" -> "work out its value"
+		"AND_JOIN--2. Conception and Initiation_U4EJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify the approval status" -> "AND_JOIN--2. Conception and Initiation_U4EJ"
+		"record the basic idea" -> "AND_JOIN--2. Conception and Initiation_U4EJ"
+		"work out its value" -> "AND_JOIN--2. Conception and Initiation_U4EJ"
+		"AND_SPLIT--3. Definition and Planning_Q7IV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Conception and Initiation_U4EJ" -> "AND_SPLIT--3. Definition and Planning_Q7IV"
+		"lay out a timeline" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_Q7IV" -> "lay out a timeline"
+		"set a budget" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_Q7IV" -> "set a budget"
+		"state the available resources" [shape=box]
+		"AND_SPLIT--3. Definition and Planning_Q7IV" -> "state the available resources"
+		"AND_JOIN--3. Definition and Planning_Q7IV" [label="+" fixedsize=true shape=diamond width=0.5]
+		"lay out a timeline" -> "AND_JOIN--3. Definition and Planning_Q7IV"
+		"set a budget" -> "AND_JOIN--3. Definition and Planning_Q7IV"
+		"state the available resources" -> "AND_JOIN--3. Definition and Planning_Q7IV"
+		"have a kickoff meeting" [shape=box]
+		"AND_JOIN--3. Definition and Planning_Q7IV" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"OR_SPLIT--6. Close_JTW2" [label=O fixedsize=true shape=diamond width=0.5]
+		"keep communication" -> "OR_SPLIT--6. Close_JTW2"
+		"terminate contractors" [shape=box]
+		"OR_SPLIT--6. Close_JTW2" -> "terminate contractors"
+		"ensure the project is completed" [shape=box]
+		"OR_SPLIT--6. Close_JTW2" -> "ensure the project is completed"
+		"OR_JOIN--6. Close_JTW2" [label=O fixedsize=true shape=diamond width=0.5]
+		"terminate contractors" -> "OR_JOIN--6. Close_JTW2"
+		"ensure the project is completed" -> "OR_JOIN--6. Close_JTW2"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Close_JTW2" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It starts with making an introduction. 
+After making an introduction, the process is split into 3 parallel branches: identifying the approval status, recording the basic idea and working out its value. 
+Once all pre-tasks are executed, then the next tasks should be laying out a timeline, setting a budget and stating the available resources, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to have a kickoff meeting.
+Once having a kickoff meeting occurs, keeping communication needs to be done. 
+Once keeping communication occurs, one or more of the following paths should be executed: terminating contractors, ensuring the project is completed. 
+The process is now completed. 
+"
+}

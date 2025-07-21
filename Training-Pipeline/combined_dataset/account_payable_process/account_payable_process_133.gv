@@ -1,0 +1,30 @@
+digraph account_payable_process_133 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"file a copy for internal records" [shape=box]
+		"create a receiving report" [shape=box]
+		"file a copy for internal records" -> "create a receiving report"
+		"gather the vendors invoice" [shape=box]
+		"create a receiving report" -> "gather the vendors invoice"
+		"AND_SPLIT--4. Payment_YYNU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"gather the vendors invoice" -> "AND_SPLIT--4. Payment_YYNU"
+		"stamp all documents" [shape=box]
+		"AND_SPLIT--4. Payment_YYNU" -> "stamp all documents"
+		"store in paid invoice file" [shape=box]
+		"AND_SPLIT--4. Payment_YYNU" -> "store in paid invoice file"
+		"AND_JOIN--4. Payment_YYNU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"stamp all documents" -> "AND_JOIN--4. Payment_YYNU"
+		"store in paid invoice file" -> "AND_JOIN--4. Payment_YYNU"
+	}
+	START_NODE -> "file a copy for internal records"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--4. Payment_YYNU" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the account payable process. It starts with filing a copy for internal records. 
+Once filing a copy for internal records occurs, creating a receiving report needs to be done. 
+Once creating a receiving report occurs, gathering the vendors invoice should be done. 
+Once gathering the vendors invoice occurs, the next tasks should be stamping all documents and storing in paid invoice file, they should be done in parallel. 
+The process is now completed. 
+"
+}

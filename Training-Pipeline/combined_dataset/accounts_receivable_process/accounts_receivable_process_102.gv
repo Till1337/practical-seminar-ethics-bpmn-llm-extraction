@@ -1,0 +1,50 @@
+digraph accounts_receivable_process_102 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"run a credit check on the purchasing company" [shape=box]
+		"record the buyer's details" -> "run a credit check on the purchasing company"
+		"OR_SPLIT--3. Invoicing_DRMG" [label=O fixedsize=true shape=diamond width=0.5]
+		"run a credit check on the purchasing company" -> "OR_SPLIT--3. Invoicing_DRMG"
+		"send the invoice in your accounting software" [shape=box]
+		"OR_SPLIT--3. Invoicing_DRMG" -> "send the invoice in your accounting software"
+		"check customer payment terms" [shape=box]
+		"OR_SPLIT--3. Invoicing_DRMG" -> "check customer payment terms"
+		"OR_JOIN--3. Invoicing_DRMG" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the invoice in your accounting software" -> "OR_JOIN--3. Invoicing_DRMG"
+		"check customer payment terms" -> "OR_JOIN--3. Invoicing_DRMG"
+		"AND_SPLIT--4. Tracking_FKP7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Invoicing_DRMG" -> "AND_SPLIT--4. Tracking_FKP7"
+		"establish monthly contact with your client" [shape=box]
+		"AND_SPLIT--4. Tracking_FKP7" -> "establish monthly contact with your client"
+		"make a second physical copy" [shape=box]
+		"AND_SPLIT--4. Tracking_FKP7" -> "make a second physical copy"
+		"record your activity digitally" [shape=box]
+		"AND_SPLIT--4. Tracking_FKP7" -> "record your activity digitally"
+		"AND_JOIN--4. Tracking_FKP7" [label="+" fixedsize=true shape=diamond width=0.5]
+		"establish monthly contact with your client" -> "AND_JOIN--4. Tracking_FKP7"
+		"make a second physical copy" -> "AND_JOIN--4. Tracking_FKP7"
+		"record your activity digitally" -> "AND_JOIN--4. Tracking_FKP7"
+		"AND_SPLIT--5. Accounting for accounts receivable_8CPU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Tracking_FKP7" -> "AND_SPLIT--5. Accounting for accounts receivable_8CPU"
+		"record the sales on credit of goods" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_8CPU" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_8CPU" -> "record the sales on credit of services"
+		"AND_JOIN--5. Accounting for accounts receivable_8CPU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "AND_JOIN--5. Accounting for accounts receivable_8CPU"
+		"record the sales on credit of services" -> "AND_JOIN--5. Accounting for accounts receivable_8CPU"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Accounting for accounts receivable_8CPU" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It begins when you record the buyer's details. 
+When recording the buyer's details is completed, running a credit check on the purchasing company needs to be done. 
+When running a credit check on the purchasing company is completed, one or more of the following paths should be executed: sending the invoice in your accounting software, checking customer payment terms. 
+After that, the next tasks should be establishing monthly contact with your client, making a second physical copy and recording your activity digitally, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: recording the sales on credit of goods and recording the sales on credit of services. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,27 @@
+digraph content_promotion_process_55 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_R26F" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_R26F"
+		"post on Q&A sites" [shape=box]
+		"AND_SPLIT--2. Content promotion_R26F" -> "post on Q&A sites"
+		"reverse engineer your competition" [shape=box]
+		"AND_SPLIT--2. Content promotion_R26F" -> "reverse engineer your competition"
+		"repurpose your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_R26F" -> "repurpose your content"
+		"AND_JOIN--2. Content promotion_R26F" [label="+" fixedsize=true shape=diamond width=0.5]
+		"post on Q&A sites" -> "AND_JOIN--2. Content promotion_R26F"
+		"reverse engineer your competition" -> "AND_JOIN--2. Content promotion_R26F"
+		"repurpose your content" -> "AND_JOIN--2. Content promotion_R26F"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_R26F" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the content promotion process. It starts with preparing a summary of your content. 
+Once preparing a summary of your content occurs, the process is split into 3 parallel branches: posting on Q&A sites, reversing engineer your competition and repurposing your content. 
+The process is now completed. 
+"
+}

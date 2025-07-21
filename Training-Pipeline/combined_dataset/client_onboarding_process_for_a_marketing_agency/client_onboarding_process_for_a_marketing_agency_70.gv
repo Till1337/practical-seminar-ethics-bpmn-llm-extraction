@@ -1,0 +1,37 @@
+digraph client_onboarding_process_for_a_marketing_agency_70 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send out a new client questionnaire" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_RY4S" [label=O fixedsize=true shape=diamond width=0.5]
+		"send out a new client questionnaire" -> "OR_SPLIT--2. Setting the agenda_RY4S"
+		"research the campaign ideas" [shape=box]
+		"OR_SPLIT--2. Setting the agenda_RY4S" -> "research the campaign ideas"
+		"create first draft of the marketing plan " [shape=box]
+		"OR_SPLIT--2. Setting the agenda_RY4S" -> "create first draft of the marketing plan "
+		"OR_JOIN--2. Setting the agenda_RY4S" [label=O fixedsize=true shape=diamond width=0.5]
+		"research the campaign ideas" -> "OR_JOIN--2. Setting the agenda_RY4S"
+		"create first draft of the marketing plan " -> "OR_JOIN--2. Setting the agenda_RY4S"
+		"AND_SPLIT--4. Project start_4IP0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Setting the agenda_RY4S" -> "AND_SPLIT--4. Project start_4IP0"
+		"assign work to the team" [shape=box]
+		"AND_SPLIT--4. Project start_4IP0" -> "assign work to the team"
+		"inform client of project start" [shape=box]
+		"AND_SPLIT--4. Project start_4IP0" -> "inform client of project start"
+		"AND_JOIN--4. Project start_4IP0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign work to the team" -> "AND_JOIN--4. Project start_4IP0"
+		"inform client of project start" -> "AND_JOIN--4. Project start_4IP0"
+		"have a follow-up call" [shape=box]
+		"AND_JOIN--4. Project start_4IP0" -> "have a follow-up call"
+	}
+	START_NODE -> "send out a new client questionnaire"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"have a follow-up call" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the client onboarding process for a marketing agency. It starts with sending out a new client questionnaire. 
+After sending out a new client questionnaire, one or more of the following paths should be executed: researching the campaign ideas, creating first draft of the marketing plan . 
+After that, the next tasks should be assigning work to the team and informing client of project start, they should be done in parallel. 
+Once all pre-tasks are executed, then having a follow-up call should be done. 
+The process is now completed. 
+"
+}

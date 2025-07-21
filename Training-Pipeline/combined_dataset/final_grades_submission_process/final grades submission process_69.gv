@@ -1,0 +1,60 @@
+digraph "final grades submission process_69" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"ensure 'EX' or zero marks are applied as need" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_SKQE" [label=O fixedsize=true shape=diamond width=0.5]
+		"ensure 'EX' or zero marks are applied as need" -> "OR_SPLIT--2. Apply special grades or criteria_SKQE"
+		"apply special grades to individuals" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_SKQE" -> "apply special grades to individuals"
+		"prepare grades for SSO" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_SKQE" -> "prepare grades for SSO"
+		"OR_SPLIT--2. Apply special grades or criteria_FRVL" [label=O fixedsize=true shape=diamond width=0.5]
+		"prepare grades for SSO" -> "OR_SPLIT--2. Apply special grades or criteria_FRVL"
+		"import gradebook" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_FRVL" -> "import gradebook"
+		"apply score criteria" [shape=box]
+		"OR_SPLIT--2. Apply special grades or criteria_FRVL" -> "apply score criteria"
+		"OR_JOIN--2. Apply special grades or criteria_FRVL" [label=O fixedsize=true shape=diamond width=0.5]
+		"import gradebook" -> "OR_JOIN--2. Apply special grades or criteria_FRVL"
+		"apply score criteria" -> "OR_JOIN--2. Apply special grades or criteria_FRVL"
+		"OR_JOIN--2. Apply special grades or criteria_SKQE" [label=O fixedsize=true shape=diamond width=0.5]
+		"apply special grades to individuals" -> "OR_JOIN--2. Apply special grades or criteria_SKQE"
+		"OR_JOIN--2. Apply special grades or criteria_FRVL" -> "OR_JOIN--2. Apply special grades or criteria_SKQE"
+		"AND_SPLIT--3. Review grades and course summary_XX2L" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Apply special grades or criteria_SKQE" -> "AND_SPLIT--3. Review grades and course summary_XX2L"
+		"apply any changes" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_XX2L" -> "apply any changes"
+		"review course summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_XX2L" -> "review course summary"
+		"review grades summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_XX2L" -> "review grades summary"
+		"AND_JOIN--3. Review grades and course summary_XX2L" [label="+" fixedsize=true shape=diamond width=0.5]
+		"apply any changes" -> "AND_JOIN--3. Review grades and course summary_XX2L"
+		"review course summary" -> "AND_JOIN--3. Review grades and course summary_XX2L"
+		"review grades summary" -> "AND_JOIN--3. Review grades and course summary_XX2L"
+		"AND_SPLIT--4. Re-calculate and get approval_PLTH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review grades and course summary_XX2L" -> "AND_SPLIT--4. Re-calculate and get approval_PLTH"
+		"export the course summary" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_PLTH" -> "export the course summary"
+		"export the final grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_PLTH" -> "export the final grades"
+		"AND_JOIN--4. Re-calculate and get approval_PLTH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "AND_JOIN--4. Re-calculate and get approval_PLTH"
+		"export the final grades" -> "AND_JOIN--4. Re-calculate and get approval_PLTH"
+		"get approval signatures by the course director" [shape=box]
+		"AND_JOIN--4. Re-calculate and get approval_PLTH" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "ensure 'EX' or zero marks are applied as need"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with ensuring 'EX' or zero marks are applied as need. 
+When ensuring 'EX' or zero marks are applied as need is completed, one or more of the following paths should be executed: applying special grades to individuals, preparing grades for SSO. 
+After preparing grades for SSO, one or more of the following paths should be executed: importing gradebook, applying score criteria. 
+Afterwards, the next tasks should be applying any changes, reviewing course summary and reviewing grades summary, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: exporting the course summary and exporting the final grades. 
+Once all pre-tasks are executed, then getting approval signatures by the course director should be done. 
+The process is now completed. 
+"
+}

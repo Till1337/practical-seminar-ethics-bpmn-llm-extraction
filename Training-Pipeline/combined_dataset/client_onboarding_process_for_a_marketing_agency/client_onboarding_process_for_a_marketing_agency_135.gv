@@ -1,0 +1,37 @@
+digraph client_onboarding_process_for_a_marketing_agency_135 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"have an onboarding call with the client" [shape=box]
+		"get approval for the first draft" [shape=box]
+		"have an onboarding call with the client" -> "get approval for the first draft"
+		"AND_SPLIT--4. Project start_LDXE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for the first draft" -> "AND_SPLIT--4. Project start_LDXE"
+		"inform client of project start" [shape=box]
+		"AND_SPLIT--4. Project start_LDXE" -> "inform client of project start"
+		"assign work to the team" [shape=box]
+		"AND_SPLIT--4. Project start_LDXE" -> "assign work to the team"
+		"AND_JOIN--4. Project start_LDXE" [label="+" fixedsize=true shape=diamond width=0.5]
+		"inform client of project start" -> "AND_JOIN--4. Project start_LDXE"
+		"assign work to the team" -> "AND_JOIN--4. Project start_LDXE"
+		"OR_SPLIT--5. Four weeks into the project_SJEO" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Project start_LDXE" -> "OR_SPLIT--5. Four weeks into the project_SJEO"
+		"send a post-onboarding survey" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_SJEO" -> "send a post-onboarding survey"
+		"make changes based on follow-up call" [shape=box]
+		"OR_SPLIT--5. Four weeks into the project_SJEO" -> "make changes based on follow-up call"
+		"OR_JOIN--5. Four weeks into the project_SJEO" [label=O fixedsize=true shape=diamond width=0.5]
+		"send a post-onboarding survey" -> "OR_JOIN--5. Four weeks into the project_SJEO"
+		"make changes based on follow-up call" -> "OR_JOIN--5. Four weeks into the project_SJEO"
+	}
+	START_NODE -> "have an onboarding call with the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Four weeks into the project_SJEO" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the client onboarding process for a marketing agency. It begins when you have an onboarding call with the client. 
+Once having an onboarding call with the client occurs, getting approval for the first draft needs to be done. 
+After getting approval for the first draft, the next tasks should be informing client of project start and assigning work to the team, they should be done in parallel. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: sending a post-onboarding survey, making changes based on follow-up call. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,50 @@
+digraph employee_onboarding_process_144 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"OR_SPLIT--2. Before first day_KJWF" [label=O fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "OR_SPLIT--2. Before first day_KJWF"
+		"get approval" [shape=box]
+		"OR_SPLIT--2. Before first day_KJWF" -> "get approval"
+		"give access to any tools they will need" [shape=box]
+		"OR_SPLIT--2. Before first day_KJWF" -> "give access to any tools they will need"
+		"prepare employee paperwork" [shape=box]
+		"give access to any tools they will need" -> "prepare employee paperwork"
+		"OR_JOIN--2. Before first day_KJWF" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_JOIN--2. Before first day_KJWF"
+		"prepare employee paperwork" -> "OR_JOIN--2. Before first day_KJWF"
+		"hold a welcoming ceremony" [shape=box]
+		"OR_JOIN--2. Before first day_KJWF" -> "hold a welcoming ceremony"
+		"OR_SPLIT--4. First week_B4HE" [label=O fixedsize=true shape=diamond width=0.5]
+		"hold a welcoming ceremony" -> "OR_SPLIT--4. First week_B4HE"
+		"check the paperwork" [shape=box]
+		"OR_SPLIT--4. First week_B4HE" -> "check the paperwork"
+		"assign first project" [shape=box]
+		"OR_SPLIT--4. First week_B4HE" -> "assign first project"
+		"OR_JOIN--4. First week_B4HE" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the paperwork" -> "OR_JOIN--4. First week_B4HE"
+		"assign first project" -> "OR_JOIN--4. First week_B4HE"
+		"AND_SPLIT--5. First month_O9DT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. First week_B4HE" -> "AND_SPLIT--5. First month_O9DT"
+		"explain long-term goals" [shape=box]
+		"AND_SPLIT--5. First month_O9DT" -> "explain long-term goals"
+		"provide reading material for personal growth" [shape=box]
+		"AND_SPLIT--5. First month_O9DT" -> "provide reading material for personal growth"
+		"AND_JOIN--5. First month_O9DT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"explain long-term goals" -> "AND_JOIN--5. First month_O9DT"
+		"provide reading material for personal growth" -> "AND_JOIN--5. First month_O9DT"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. First month_O9DT" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the employee onboarding process. It begins when you make an introduction. 
+After making an introduction, one or more of the following paths should be executed: getting approval, giving access to any tools they will need. 
+Once giving access to any tools they will need occurs, you need to prepare employee paperwork.
+Then, holding a welcoming ceremony needs to be done. 
+Once holding a welcoming ceremony occurs, one or more of the following paths should be executed: checking the paperwork, assigning first project. 
+Afterwards, the next tasks should be explaining long-term goals and providing reading material for personal growth, they should be done in parallel. 
+The process is now completed. 
+"
+}

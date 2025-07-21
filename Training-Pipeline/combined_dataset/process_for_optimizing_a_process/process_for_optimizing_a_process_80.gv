@@ -1,0 +1,46 @@
+digraph process_for_optimizing_a_process_80 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm the basic information" [shape=box]
+		"assess the performance of the process" [shape=box]
+		"confirm the basic information" -> "assess the performance of the process"
+		"AND_SPLIT--3. Rethinking the process_PPB6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assess the performance of the process" -> "AND_SPLIT--3. Rethinking the process_PPB6"
+		"consider where bottlenecks occur" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_PPB6" -> "consider where bottlenecks occur"
+		"examine potentially wasteful steps" [shape=box]
+		"AND_SPLIT--3. Rethinking the process_PPB6" -> "examine potentially wasteful steps"
+		"AND_JOIN--3. Rethinking the process_PPB6" [label="+" fixedsize=true shape=diamond width=0.5]
+		"consider where bottlenecks occur" -> "AND_JOIN--3. Rethinking the process_PPB6"
+		"examine potentially wasteful steps" -> "AND_JOIN--3. Rethinking the process_PPB6"
+		"write the potential process improvements" [shape=box]
+		"AND_JOIN--3. Rethinking the process_PPB6" -> "write the potential process improvements"
+		"get approval for processing improvements" [shape=box]
+		"write the potential process improvements" -> "get approval for processing improvements"
+		"define what would make the improvements successful" [shape=box]
+		"get approval for processing improvements" -> "define what would make the improvements successful"
+		"AND_SPLIT--7. Optimizing the process_6QXJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"define what would make the improvements successful" -> "AND_SPLIT--7. Optimizing the process_6QXJ"
+		"communicate the process changes" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_6QXJ" -> "communicate the process changes"
+		"implement the process changes" [shape=box]
+		"AND_SPLIT--7. Optimizing the process_6QXJ" -> "implement the process changes"
+		"AND_JOIN--7. Optimizing the process_6QXJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"communicate the process changes" -> "AND_JOIN--7. Optimizing the process_6QXJ"
+		"implement the process changes" -> "AND_JOIN--7. Optimizing the process_6QXJ"
+	}
+	START_NODE -> "confirm the basic information"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Optimizing the process_6QXJ" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the process for optimizing a process. It begins when you confirm the basic information. 
+When confirming the basic information is completed, assessing the performance of the process should be done. 
+When assessing the performance of the process is completed, the next tasks should be considering where bottlenecks occur and examining potentially wasteful steps, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to write the potential process improvements.
+Once writing the potential process improvements occurs, you need to get approval for processing improvements.
+Once getting approval for processing improvements occurs, defining what would make the improvements successful should be done. 
+Once defining what would make the improvements successful occurs, the process is split into 2 parallel branches: communicating the process changes and implementing the process changes. 
+The process is now completed. 
+"
+}

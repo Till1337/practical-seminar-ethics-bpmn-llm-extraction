@@ -1,0 +1,42 @@
+digraph budget_preparation_process_113 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"review the most recent budget" [shape=box]
+		"set target date for approval" -> "review the most recent budget"
+		"determine ways of achieving the goals" [shape=box]
+		"review the most recent budget" -> "determine ways of achieving the goals"
+		"AND_SPLIT--4. Projected expenses_YH20" [label="+" fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "AND_SPLIT--4. Projected expenses_YH20"
+		"calculate the total annual budget" [shape=box]
+		"AND_SPLIT--4. Projected expenses_YH20" -> "calculate the total annual budget"
+		"list all department expenses" [shape=box]
+		"AND_SPLIT--4. Projected expenses_YH20" -> "list all department expenses"
+		"estimate the average monthly cost" [shape=box]
+		"calculate the total annual budget" -> "estimate the average monthly cost"
+		"AND_JOIN--4. Projected expenses_YH20" [label="+" fixedsize=true shape=diamond width=0.5]
+		"estimate the average monthly cost" -> "AND_JOIN--4. Projected expenses_YH20"
+		"list all department expenses" -> "AND_JOIN--4. Projected expenses_YH20"
+		"list all sources of income" [shape=box]
+		"AND_JOIN--4. Projected expenses_YH20" -> "list all sources of income"
+		"finalize the budget" [shape=box]
+		"list all sources of income" -> "finalize the budget"
+		"incorporate into the master budget" [shape=box]
+		"finalize the budget" -> "incorporate into the master budget"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"incorporate into the master budget" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the budget preparation process. It begins when you set target date for approval. 
+Once setting target date for approval occurs, reviewing the most recent budget needs to be done. 
+Once reviewing the most recent budget occurs, you need to determine ways of achieving the goals.
+Once determining ways of achieving the goals occurs, the next tasks should be calculating the total annual budget and listing all department expenses, they should be done in parallel. 
+After calculating the total annual budget, estimating the average monthly cost needs to be done. 
+Once all pre-tasks are executed, then you need to list all sources of income.
+Once listing all sources of income occurs, you need to finalize the budget.
+After finalizing the budget, incorporating into the master budget needs to be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,86 @@
+digraph employee_onboarding_process_151 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"OR_SPLIT--2. Before first day_G5CU" [label=O fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "OR_SPLIT--2. Before first day_G5CU"
+		"prepare employee's workstation" [shape=box]
+		"OR_SPLIT--2. Before first day_G5CU" -> "prepare employee's workstation"
+		"prepare benefits package" [shape=box]
+		"OR_SPLIT--2. Before first day_G5CU" -> "prepare benefits package"
+		"discuss role, goals and projects with supervisor" [shape=box]
+		"prepare employee's workstation" -> "discuss role, goals and projects with supervisor"
+		"OR_SPLIT--2. Before first day_EPJJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"prepare benefits package" -> "OR_SPLIT--2. Before first day_EPJJ"
+		"create accounts" [shape=box]
+		"OR_SPLIT--2. Before first day_EPJJ" -> "create accounts"
+		"assign required reading materials" [shape=box]
+		"OR_SPLIT--2. Before first day_EPJJ" -> "assign required reading materials"
+		"AND_SPLIT--2. Before first day_RVCS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create accounts" -> "AND_SPLIT--2. Before first day_RVCS"
+		"prepare employee paperwork" [shape=box]
+		"AND_SPLIT--2. Before first day_RVCS" -> "prepare employee paperwork"
+		"provide a job description with responsibilities" [shape=box]
+		"AND_SPLIT--2. Before first day_RVCS" -> "provide a job description with responsibilities"
+		"get approval" [shape=box]
+		"AND_SPLIT--2. Before first day_RVCS" -> "get approval"
+		"AND_JOIN--2. Before first day_RVCS" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare employee paperwork" -> "AND_JOIN--2. Before first day_RVCS"
+		"provide a job description with responsibilities" -> "AND_JOIN--2. Before first day_RVCS"
+		"get approval" -> "AND_JOIN--2. Before first day_RVCS"
+		"OR_JOIN--2. Before first day_EPJJ" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Before first day_RVCS" -> "OR_JOIN--2. Before first day_EPJJ"
+		"assign required reading materials" -> "OR_JOIN--2. Before first day_EPJJ"
+		"OR_JOIN--2. Before first day_G5CU" [label=O fixedsize=true shape=diamond width=0.5]
+		"discuss role, goals and projects with supervisor" -> "OR_JOIN--2. Before first day_G5CU"
+		"OR_JOIN--2. Before first day_EPJJ" -> "OR_JOIN--2. Before first day_G5CU"
+		"OR_SPLIT--3. First day_3LSY" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Before first day_G5CU" -> "OR_SPLIT--3. First day_3LSY"
+		"take out to lunch" [shape=box]
+		"OR_SPLIT--3. First day_3LSY" -> "take out to lunch"
+		"assign training material" [shape=box]
+		"OR_SPLIT--3. First day_3LSY" -> "assign training material"
+		"induct into company culture" [shape=box]
+		"OR_SPLIT--3. First day_3LSY" -> "induct into company culture"
+		"OR_JOIN--3. First day_3LSY" [label=O fixedsize=true shape=diamond width=0.5]
+		"take out to lunch" -> "OR_JOIN--3. First day_3LSY"
+		"assign training material" -> "OR_JOIN--3. First day_3LSY"
+		"induct into company culture" -> "OR_JOIN--3. First day_3LSY"
+		"AND_SPLIT--4. First week_YOPZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. First day_3LSY" -> "AND_SPLIT--4. First week_YOPZ"
+		"assign first project" [shape=box]
+		"AND_SPLIT--4. First week_YOPZ" -> "assign first project"
+		"get approval" [shape=box]
+		"AND_SPLIT--4. First week_YOPZ" -> "get approval"
+		"check the paperwork" [shape=box]
+		"AND_SPLIT--4. First week_YOPZ" -> "check the paperwork"
+		"AND_JOIN--4. First week_YOPZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"assign first project" -> "AND_JOIN--4. First week_YOPZ"
+		"get approval" -> "AND_JOIN--4. First week_YOPZ"
+		"check the paperwork" -> "AND_JOIN--4. First week_YOPZ"
+		"AND_SPLIT--5. First month_INFL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. First week_YOPZ" -> "AND_SPLIT--5. First month_INFL"
+		"review onboarding process over the next 60 days" [shape=box]
+		"AND_SPLIT--5. First month_INFL" -> "review onboarding process over the next 60 days"
+		"encourage them to socially interact with the team" [shape=box]
+		"AND_SPLIT--5. First month_INFL" -> "encourage them to socially interact with the team"
+		"AND_JOIN--5. First month_INFL" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review onboarding process over the next 60 days" -> "AND_JOIN--5. First month_INFL"
+		"encourage them to socially interact with the team" -> "AND_JOIN--5. First month_INFL"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. First month_INFL" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the employee onboarding process. It begins when you make an introduction. 
+When making an introduction is completed, one or more of the following paths should be executed: preparing employee's workstation, preparing benefits package. 
+When preparing employee's workstation is completed, discussing role, goals and projects with supervisor should be done. 
+Once preparing benefits package occurs, one or more of the following paths should be executed: creating accounts, assigning required reading materials. 
+Once creating accounts occurs, the process is split into 3 parallel branches: preparing employee paperwork, providing a job description with responsibilities and getting approval. 
+Then, one or more of the following paths should be executed: taking out to lunch, assigning training material, inducting into company culture. 
+After that, the process is split into 3 parallel branches: assigning first project, getting approval and checking the paperwork. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: reviewing onboarding process over the next 60 days and encouraging them to socially interact with the team. 
+The process is now completed. 
+"
+}

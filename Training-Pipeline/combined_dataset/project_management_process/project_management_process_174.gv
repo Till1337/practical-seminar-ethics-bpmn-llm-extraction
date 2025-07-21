@@ -1,0 +1,60 @@
+digraph project_management_process_174 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_YEF0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make an introduction" -> "AND_SPLIT--2. Conception and Initiation_YEF0"
+		"identify the approval status" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_YEF0" -> "identify the approval status"
+		"record the basic idea" [shape=box]
+		"AND_SPLIT--2. Conception and Initiation_YEF0" -> "record the basic idea"
+		"AND_JOIN--2. Conception and Initiation_YEF0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"identify the approval status" -> "AND_JOIN--2. Conception and Initiation_YEF0"
+		"record the basic idea" -> "AND_JOIN--2. Conception and Initiation_YEF0"
+		"OR_SPLIT--3. Definition and Planning_M8SY" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Conception and Initiation_YEF0" -> "OR_SPLIT--3. Definition and Planning_M8SY"
+		"state the available resources" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_M8SY" -> "state the available resources"
+		"set a budget" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_M8SY" -> "set a budget"
+		"OR_SPLIT--3. Definition and Planning_2J6A" [label=O fixedsize=true shape=diamond width=0.5]
+		"state the available resources" -> "OR_SPLIT--3. Definition and Planning_2J6A"
+		"draw up a project plan" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_2J6A" -> "draw up a project plan"
+		"lay out a timeline" [shape=box]
+		"OR_SPLIT--3. Definition and Planning_2J6A" -> "lay out a timeline"
+		"OR_JOIN--3. Definition and Planning_2J6A" [label=O fixedsize=true shape=diamond width=0.5]
+		"draw up a project plan" -> "OR_JOIN--3. Definition and Planning_2J6A"
+		"lay out a timeline" -> "OR_JOIN--3. Definition and Planning_2J6A"
+		"OR_JOIN--3. Definition and Planning_M8SY" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Definition and Planning_2J6A" -> "OR_JOIN--3. Definition and Planning_M8SY"
+		"set a budget" -> "OR_JOIN--3. Definition and Planning_M8SY"
+		"have a kickoff meeting" [shape=box]
+		"OR_JOIN--3. Definition and Planning_M8SY" -> "have a kickoff meeting"
+		"keep communication" [shape=box]
+		"have a kickoff meeting" -> "keep communication"
+		"AND_SPLIT--6. Close_M4CI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"keep communication" -> "AND_SPLIT--6. Close_M4CI"
+		"terminate contractors" [shape=box]
+		"AND_SPLIT--6. Close_M4CI" -> "terminate contractors"
+		"evaluate project outcomes" [shape=box]
+		"AND_SPLIT--6. Close_M4CI" -> "evaluate project outcomes"
+		"AND_JOIN--6. Close_M4CI" [label="+" fixedsize=true shape=diamond width=0.5]
+		"terminate contractors" -> "AND_JOIN--6. Close_M4CI"
+		"evaluate project outcomes" -> "AND_JOIN--6. Close_M4CI"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_M4CI" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, the process is split into 2 parallel branches: identifying the approval status and recording the basic idea. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: stating the available resources, setting a budget. 
+When stating the available resources is completed, one or more of the following paths should be executed: drawing up a project plan, laying out a timeline. 
+After that, having a kickoff meeting should be done. 
+When having a kickoff meeting is completed, keeping communication should be done. 
+Once keeping communication occurs, the process is split into 2 parallel branches: terminating contractors and evaluating project outcomes. 
+The process is now completed. 
+"
+}

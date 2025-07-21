@@ -1,0 +1,50 @@
+digraph loan_application_process_11 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the previous loan statement to the lender" [shape=box]
+		"OR_SPLIT--2. Loan application_AQSZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"provide the previous loan statement to the lender" -> "OR_SPLIT--2. Loan application_AQSZ"
+		"receive the application by credit department" [shape=box]
+		"OR_SPLIT--2. Loan application_AQSZ" -> "receive the application by credit department"
+		"complete the loan application by borrower" [shape=box]
+		"OR_SPLIT--2. Loan application_AQSZ" -> "complete the loan application by borrower"
+		"OR_JOIN--2. Loan application_AQSZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "OR_JOIN--2. Loan application_AQSZ"
+		"complete the loan application by borrower" -> "OR_JOIN--2. Loan application_AQSZ"
+		"give the written notice to applicant" [shape=box]
+		"OR_JOIN--2. Loan application_AQSZ" -> "give the written notice to applicant"
+		"AND_SPLIT--4. Underwriting process_OT1Y" [label="+" fixedsize=true shape=diamond width=0.5]
+		"give the written notice to applicant" -> "AND_SPLIT--4. Underwriting process_OT1Y"
+		"check the credit score and risk score" [shape=box]
+		"AND_SPLIT--4. Underwriting process_OT1Y" -> "check the credit score and risk score"
+		"begin the underwriting process" [shape=box]
+		"AND_SPLIT--4. Underwriting process_OT1Y" -> "begin the underwriting process"
+		"AND_JOIN--4. Underwriting process_OT1Y" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check the credit score and risk score" -> "AND_JOIN--4. Underwriting process_OT1Y"
+		"begin the underwriting process" -> "AND_JOIN--4. Underwriting process_OT1Y"
+		"AND_SPLIT--5. Credit decision_VUH9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Underwriting process_OT1Y" -> "AND_SPLIT--5. Credit decision_VUH9"
+		"change the interest rate" [shape=box]
+		"AND_SPLIT--5. Credit decision_VUH9" -> "change the interest rate"
+		"approve the loan application" [shape=box]
+		"AND_SPLIT--5. Credit decision_VUH9" -> "approve the loan application"
+		"AND_JOIN--5. Credit decision_VUH9" [label="+" fixedsize=true shape=diamond width=0.5]
+		"change the interest rate" -> "AND_JOIN--5. Credit decision_VUH9"
+		"approve the loan application" -> "AND_JOIN--5. Credit decision_VUH9"
+		"receive the loans fund" [shape=box]
+		"AND_JOIN--5. Credit decision_VUH9" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the previous loan statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the loan application process. It begins when you provide the previous loan statement to the lender. 
+After providing the previous loan statement to the lender, one or more of the following paths should be executed: receiving the application by credit department, completing the loan application by borrower. 
+Then, giving the written notice to applicant should be done. 
+Once giving the written notice to applicant occurs, the process is split into 2 parallel branches: checking the credit score and risk score and beginning the underwriting process. 
+Once all pre-tasks are executed, then the next tasks should be changing the interest rate and approving the loan application, they should be done in parallel. 
+Once all pre-tasks are executed, then receiving the loans fund should be done. 
+The process is now completed. 
+"
+}

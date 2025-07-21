@@ -1,0 +1,43 @@
+digraph project_management_process_162 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		"identify the approval status" [shape=box]
+		"make an introduction" -> "identify the approval status"
+		"draw up a project plan" [shape=box]
+		"identify the approval status" -> "draw up a project plan"
+		"have a kickoff meeting" [shape=box]
+		"draw up a project plan" -> "have a kickoff meeting"
+		"OR_SPLIT--5. Performance and Control_RPS7" [label=O fixedsize=true shape=diamond width=0.5]
+		"have a kickoff meeting" -> "OR_SPLIT--5. Performance and Control_RPS7"
+		"record KPIs" [shape=box]
+		"OR_SPLIT--5. Performance and Control_RPS7" -> "record KPIs"
+		"keep communication" [shape=box]
+		"OR_SPLIT--5. Performance and Control_RPS7" -> "keep communication"
+		"OR_JOIN--5. Performance and Control_RPS7" [label=O fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "OR_JOIN--5. Performance and Control_RPS7"
+		"keep communication" -> "OR_JOIN--5. Performance and Control_RPS7"
+		"OR_SPLIT--6. Close_F2G1" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Performance and Control_RPS7" -> "OR_SPLIT--6. Close_F2G1"
+		"evaluate project outcomes" [shape=box]
+		"OR_SPLIT--6. Close_F2G1" -> "evaluate project outcomes"
+		"terminate contractors" [shape=box]
+		"OR_SPLIT--6. Close_F2G1" -> "terminate contractors"
+		"OR_JOIN--6. Close_F2G1" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate project outcomes" -> "OR_JOIN--6. Close_F2G1"
+		"terminate contractors" -> "OR_JOIN--6. Close_F2G1"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--6. Close_F2G1" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the project management process. It begins when you make an introduction. 
+After making an introduction, you need to identify the approval status.
+After identifying the approval status, drawing up a project plan needs to be done. 
+When drawing up a project plan is completed, having a kickoff meeting should be done. 
+After having a kickoff meeting, one or more of the following paths should be executed: recording KPIs, keeping communication. 
+Then, one or more of the following paths should be executed: evaluating project outcomes, terminating contractors. 
+The process is now completed. 
+"
+}

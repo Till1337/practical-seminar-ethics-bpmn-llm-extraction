@@ -1,0 +1,79 @@
+digraph startup_due_diligence_for_a_venture_capitalist_70 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZW4Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_ZW4Q"
+		"specific product market share" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZW4Q" -> "specific product market share"
+		"do the SWOT analysis" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZW4Q" -> "do the SWOT analysis"
+		"specific product rate of growth" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_ZW4Q" -> "specific product rate of growth"
+		"AND_SPLIT--2. Filter out the terrible products_87JJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market share" -> "AND_SPLIT--2. Filter out the terrible products_87JJ"
+		"make plans for future products" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_87JJ" -> "make plans for future products"
+		"consider product necessity" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_87JJ" -> "consider product necessity"
+		"AND_SPLIT--2. Filter out the terrible products_YC36" [label="+" fixedsize=true shape=diamond width=0.5]
+		"consider product necessity" -> "AND_SPLIT--2. Filter out the terrible products_YC36"
+		"specific product market size" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_YC36" -> "specific product market size"
+		"specific product details" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_YC36" -> "specific product details"
+		"AND_JOIN--2. Filter out the terrible products_YC36" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product market size" -> "AND_JOIN--2. Filter out the terrible products_YC36"
+		"specific product details" -> "AND_JOIN--2. Filter out the terrible products_YC36"
+		"AND_JOIN--2. Filter out the terrible products_87JJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make plans for future products" -> "AND_JOIN--2. Filter out the terrible products_87JJ"
+		"AND_JOIN--2. Filter out the terrible products_YC36" -> "AND_JOIN--2. Filter out the terrible products_87JJ"
+		"check location of startup" [shape=box]
+		"specific product rate of growth" -> "check location of startup"
+		"AND_JOIN--2. Filter out the terrible products_ZW4Q" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Filter out the terrible products_87JJ" -> "AND_JOIN--2. Filter out the terrible products_ZW4Q"
+		"do the SWOT analysis" -> "AND_JOIN--2. Filter out the terrible products_ZW4Q"
+		"check location of startup" -> "AND_JOIN--2. Filter out the terrible products_ZW4Q"
+		"review trustworthiness" [shape=box]
+		"AND_JOIN--2. Filter out the terrible products_ZW4Q" -> "review trustworthiness"
+		"check cash flow" [shape=box]
+		"review trustworthiness" -> "check cash flow"
+		"AND_SPLIT--5. Evaluate the Competition_7AX1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "AND_SPLIT--5. Evaluate the Competition_7AX1"
+		"know exact competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_7AX1" -> "know exact competition"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_7AX1" -> "analyze the reputation of competition"
+		"OR_SPLIT--5. Evaluate the Competition_JSRP" [label=O fixedsize=true shape=diamond width=0.5]
+		"know exact competition" -> "OR_SPLIT--5. Evaluate the Competition_JSRP"
+		"project the market share" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_JSRP" -> "project the market share"
+		"analyze the growth stage of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_JSRP" -> "analyze the growth stage of competition"
+		"OR_JOIN--5. Evaluate the Competition_JSRP" [label=O fixedsize=true shape=diamond width=0.5]
+		"project the market share" -> "OR_JOIN--5. Evaluate the Competition_JSRP"
+		"analyze the growth stage of competition" -> "OR_JOIN--5. Evaluate the Competition_JSRP"
+		"AND_JOIN--5. Evaluate the Competition_7AX1" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--5. Evaluate the Competition_JSRP" -> "AND_JOIN--5. Evaluate the Competition_7AX1"
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_7AX1"
+		"check past lawsuits" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_7AX1" -> "check past lawsuits"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check past lawsuits" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+Once learning how to identify future failures occurs, the next tasks should be specificking product market share, doing the SWOT analysis and specificking product rate of growth, they should be done in parallel. 
+Once specificking product market share occurs, the process is split into 2 parallel branches: making plans for future products and considering product necessity. 
+When considering product necessity is completed, the next tasks should be specificking product market size and specificking product details, they should be done in parallel. 
+After specificking product rate of growth, you need to check location of startup.
+Once all pre-tasks are executed, then reviewing trustworthiness should be done. 
+Once reviewing trustworthiness occurs, checking cash flow should be done. 
+When checking cash flow is completed, the process is split into 2 parallel branches: knowing exact competition and analyzing the reputation of competition. 
+When knowing exact competition is completed, one or more of the following paths should be executed: projecting the market share, analyzing the growth stage of competition. 
+Once all pre-tasks are executed, then you need to check past lawsuits.
+The process is now completed. 
+"
+}

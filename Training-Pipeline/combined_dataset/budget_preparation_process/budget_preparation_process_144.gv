@@ -1,0 +1,59 @@
+digraph budget_preparation_process_144 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"OR_SPLIT--3. Goals_6JUK" [label=O fixedsize=true shape=diamond width=0.5]
+		"evaluate any significant variances" -> "OR_SPLIT--3. Goals_6JUK"
+		"determine ways of achieving the goals" [shape=box]
+		"OR_SPLIT--3. Goals_6JUK" -> "determine ways of achieving the goals"
+		"define three to five goals" [shape=box]
+		"OR_SPLIT--3. Goals_6JUK" -> "define three to five goals"
+		"prioritize three to five goals" [shape=box]
+		"define three to five goals" -> "prioritize three to five goals"
+		"OR_JOIN--3. Goals_6JUK" [label=O fixedsize=true shape=diamond width=0.5]
+		"determine ways of achieving the goals" -> "OR_JOIN--3. Goals_6JUK"
+		"prioritize three to five goals" -> "OR_JOIN--3. Goals_6JUK"
+		"calculate the total annual budget" [shape=box]
+		"OR_JOIN--3. Goals_6JUK" -> "calculate the total annual budget"
+		"AND_SPLIT--5. Projected income/funding_YQDH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"calculate the total annual budget" -> "AND_SPLIT--5. Projected income/funding_YQDH"
+		"list all sources of income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_YQDH" -> "list all sources of income"
+		"project total annual income" [shape=box]
+		"AND_SPLIT--5. Projected income/funding_YQDH" -> "project total annual income"
+		"AND_JOIN--5. Projected income/funding_YQDH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"list all sources of income" -> "AND_JOIN--5. Projected income/funding_YQDH"
+		"project total annual income" -> "AND_JOIN--5. Projected income/funding_YQDH"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"AND_JOIN--5. Projected income/funding_YQDH" -> "record financial data in a budget spreadsheet"
+		"OR_SPLIT--7. Final steps_DDYN" [label=O fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "OR_SPLIT--7. Final steps_DDYN"
+		"obtain approval from top management" [shape=box]
+		"OR_SPLIT--7. Final steps_DDYN" -> "obtain approval from top management"
+		"incorporate into the master budget" [shape=box]
+		"OR_SPLIT--7. Final steps_DDYN" -> "incorporate into the master budget"
+		"assign management responsibilities" [shape=box]
+		"incorporate into the master budget" -> "assign management responsibilities"
+		"OR_JOIN--7. Final steps_DDYN" [label=O fixedsize=true shape=diamond width=0.5]
+		"obtain approval from top management" -> "OR_JOIN--7. Final steps_DDYN"
+		"assign management responsibilities" -> "OR_JOIN--7. Final steps_DDYN"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--7. Final steps_DDYN" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you set target date for approval. 
+After setting target date for approval, evaluating any significant variances should be done. 
+After evaluating any significant variances, one or more of the following paths should be executed: determining ways of achieving the goals, defining three to five goals. 
+Once defining three to five goals occurs, prioritizing three to five goals should be done. 
+After that, calculating the total annual budget needs to be done. 
+When calculating the total annual budget is completed, the process is split into 2 parallel branches: listing all sources of income and projecting total annual income. 
+Once all pre-tasks are executed, then you need to record financial data in a budget spreadsheet.
+After recording financial data in a budget spreadsheet, one or more of the following paths should be executed: obtaining approval from top management, incorporating into the master budget. 
+Once incorporating into the master budget occurs, assigning management responsibilities should be done. 
+The process is now completed. 
+"
+}

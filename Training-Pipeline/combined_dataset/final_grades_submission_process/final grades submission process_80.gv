@@ -1,0 +1,49 @@
+digraph "final grades submission process_80" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"seek pre-approval of final grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YZ73" [label="+" fixedsize=true shape=diamond width=0.5]
+		"seek pre-approval of final grades" -> "AND_SPLIT--2. Apply special grades or criteria_YZ73"
+		"prepare grades for SSO" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YZ73" -> "prepare grades for SSO"
+		"apply special grades to individuals" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YZ73" -> "apply special grades to individuals"
+		"calculate the grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_YZ73" -> "calculate the grades"
+		"import gradebook" [shape=box]
+		"apply special grades to individuals" -> "import gradebook"
+		"AND_SPLIT--2. Apply special grades or criteria_C3SR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"calculate the grades" -> "AND_SPLIT--2. Apply special grades or criteria_C3SR"
+		"select exam assignment" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_C3SR" -> "select exam assignment"
+		"apply score criteria" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_C3SR" -> "apply score criteria"
+		"AND_JOIN--2. Apply special grades or criteria_C3SR" [label="+" fixedsize=true shape=diamond width=0.5]
+		"select exam assignment" -> "AND_JOIN--2. Apply special grades or criteria_C3SR"
+		"apply score criteria" -> "AND_JOIN--2. Apply special grades or criteria_C3SR"
+		"AND_JOIN--2. Apply special grades or criteria_YZ73" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare grades for SSO" -> "AND_JOIN--2. Apply special grades or criteria_YZ73"
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_YZ73"
+		"AND_JOIN--2. Apply special grades or criteria_C3SR" -> "AND_JOIN--2. Apply special grades or criteria_YZ73"
+		"review grades summary" [shape=box]
+		"AND_JOIN--2. Apply special grades or criteria_YZ73" -> "review grades summary"
+		"export the final grades" [shape=box]
+		"review grades summary" -> "export the final grades"
+		"get approval signatures by the course director" [shape=box]
+		"export the final grades" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "seek pre-approval of final grades"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It begins when you seek pre-approval of final grades. 
+Once seeking pre-approval of final grades occurs, the process is split into 3 parallel branches: preparing grades for SSO, applying special grades to individuals and calculating the grades. 
+After applying special grades to individuals, you need to import gradebook.
+Once calculating the grades occurs, the process is split into 2 parallel branches: selecting exam assignment and applying score criteria. 
+Once all pre-tasks are executed, then reviewing grades summary needs to be done. 
+After reviewing grades summary, exporting the final grades should be done. 
+After exporting the final grades, getting approval signatures by the course director should be done. 
+The process is now completed. 
+"
+}

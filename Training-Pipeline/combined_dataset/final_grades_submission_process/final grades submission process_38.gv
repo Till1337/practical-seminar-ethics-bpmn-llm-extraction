@@ -1,0 +1,53 @@
+digraph "final grades submission process_38" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_F8QH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"enter results in the canvas gradebook" -> "AND_SPLIT--2. Apply special grades or criteria_F8QH"
+		"import gradebook" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_F8QH" -> "import gradebook"
+		"calculate the grades" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_F8QH" -> "calculate the grades"
+		"apply special grades to individuals" [shape=box]
+		"AND_SPLIT--2. Apply special grades or criteria_F8QH" -> "apply special grades to individuals"
+		"AND_JOIN--2. Apply special grades or criteria_F8QH" [label="+" fixedsize=true shape=diamond width=0.5]
+		"import gradebook" -> "AND_JOIN--2. Apply special grades or criteria_F8QH"
+		"calculate the grades" -> "AND_JOIN--2. Apply special grades or criteria_F8QH"
+		"apply special grades to individuals" -> "AND_JOIN--2. Apply special grades or criteria_F8QH"
+		"AND_SPLIT--3. Review grades and course summary_O7QZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Apply special grades or criteria_F8QH" -> "AND_SPLIT--3. Review grades and course summary_O7QZ"
+		"review grades summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_O7QZ" -> "review grades summary"
+		"apply any changes" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_O7QZ" -> "apply any changes"
+		"review course summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_O7QZ" -> "review course summary"
+		"AND_JOIN--3. Review grades and course summary_O7QZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review grades summary" -> "AND_JOIN--3. Review grades and course summary_O7QZ"
+		"apply any changes" -> "AND_JOIN--3. Review grades and course summary_O7QZ"
+		"review course summary" -> "AND_JOIN--3. Review grades and course summary_O7QZ"
+		"AND_SPLIT--4. Re-calculate and get approval_BVYZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review grades and course summary_O7QZ" -> "AND_SPLIT--4. Re-calculate and get approval_BVYZ"
+		"export the course summary" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_BVYZ" -> "export the course summary"
+		"recalculate the grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_BVYZ" -> "recalculate the grades"
+		"AND_JOIN--4. Re-calculate and get approval_BVYZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "AND_JOIN--4. Re-calculate and get approval_BVYZ"
+		"recalculate the grades" -> "AND_JOIN--4. Re-calculate and get approval_BVYZ"
+		"get approval signatures by the course director" [shape=box]
+		"AND_JOIN--4. Re-calculate and get approval_BVYZ" -> "get approval signatures by the course director"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"get approval signatures by the course director" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It begins when you enter results in the canvas gradebook. 
+After entering results in the canvas gradebook, the process is split into 3 parallel branches: importing gradebook, calculating the grades and applying special grades to individuals. 
+Once all pre-tasks are executed, then the process is split into 3 parallel branches: reviewing grades summary, applying any changes and reviewing course summary. 
+Once all pre-tasks are executed, then the next tasks should be exporting the course summary and recalculating the grades, they should be done in parallel. 
+Once all pre-tasks are executed, then you need to get approval signatures by the course director.
+The process is now completed. 
+"
+}

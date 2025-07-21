@@ -1,0 +1,53 @@
+digraph "final grades submission process_58" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"enter results in the canvas gradebook" [shape=box]
+		"prepare grades for SSO" [shape=box]
+		"enter results in the canvas gradebook" -> "prepare grades for SSO"
+		"AND_SPLIT--3. Review grades and course summary_BHQT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare grades for SSO" -> "AND_SPLIT--3. Review grades and course summary_BHQT"
+		"review grades summary" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_BHQT" -> "review grades summary"
+		"apply any changes" [shape=box]
+		"AND_SPLIT--3. Review grades and course summary_BHQT" -> "apply any changes"
+		"AND_JOIN--3. Review grades and course summary_BHQT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review grades summary" -> "AND_JOIN--3. Review grades and course summary_BHQT"
+		"apply any changes" -> "AND_JOIN--3. Review grades and course summary_BHQT"
+		"AND_SPLIT--4. Re-calculate and get approval_5ZD2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Review grades and course summary_BHQT" -> "AND_SPLIT--4. Re-calculate and get approval_5ZD2"
+		"export the course summary" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_5ZD2" -> "export the course summary"
+		"export the final grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_5ZD2" -> "export the final grades"
+		"recalculate the grades" [shape=box]
+		"AND_SPLIT--4. Re-calculate and get approval_5ZD2" -> "recalculate the grades"
+		"AND_JOIN--4. Re-calculate and get approval_5ZD2" [label="+" fixedsize=true shape=diamond width=0.5]
+		"export the course summary" -> "AND_JOIN--4. Re-calculate and get approval_5ZD2"
+		"export the final grades" -> "AND_JOIN--4. Re-calculate and get approval_5ZD2"
+		"recalculate the grades" -> "AND_JOIN--4. Re-calculate and get approval_5ZD2"
+		"AND_SPLIT--5. Submit results to SSO_HHQJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Re-calculate and get approval_5ZD2" -> "AND_SPLIT--5. Submit results to SSO_HHQJ"
+		"submit results to SSO" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_HHQJ" -> "submit results to SSO"
+		"send examiners grade approval sheet" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_HHQJ" -> "send examiners grade approval sheet"
+		"get approval signatures by the course director" [shape=box]
+		"AND_SPLIT--5. Submit results to SSO_HHQJ" -> "get approval signatures by the course director"
+		"AND_JOIN--5. Submit results to SSO_HHQJ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"submit results to SSO" -> "AND_JOIN--5. Submit results to SSO_HHQJ"
+		"send examiners grade approval sheet" -> "AND_JOIN--5. Submit results to SSO_HHQJ"
+		"get approval signatures by the course director" -> "AND_JOIN--5. Submit results to SSO_HHQJ"
+	}
+	START_NODE -> "enter results in the canvas gradebook"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Submit results to SSO_HHQJ" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the final grades submission process. It starts with entering results in the canvas gradebook. 
+When entering results in the canvas gradebook is completed, you need to prepare grades for SSO.
+Once preparing grades for SSO occurs, the next tasks should be reviewing grades summary and applying any changes, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be exporting the course summary, exporting the final grades and recalculating the grades, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 3 parallel branches: submitting results to SSO, sending examiners grade approval sheet and getting approval signatures by the course director. 
+The process is now completed. 
+"
+}

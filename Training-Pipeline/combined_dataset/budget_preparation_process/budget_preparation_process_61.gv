@@ -1,0 +1,39 @@
+digraph budget_preparation_process_61 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record basic details" [shape=box]
+		"review the most recent budget" [shape=box]
+		"record basic details" -> "review the most recent budget"
+		"define three to five goals" [shape=box]
+		"review the most recent budget" -> "define three to five goals"
+		"estimate the average monthly cost" [shape=box]
+		"define three to five goals" -> "estimate the average monthly cost"
+		"project total annual income" [shape=box]
+		"estimate the average monthly cost" -> "project total annual income"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"project total annual income" -> "record financial data in a budget spreadsheet"
+		"AND_SPLIT--7. Final steps_UB2E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record financial data in a budget spreadsheet" -> "AND_SPLIT--7. Final steps_UB2E"
+		"incorporate into the master budget" [shape=box]
+		"AND_SPLIT--7. Final steps_UB2E" -> "incorporate into the master budget"
+		"assign management responsibilities" [shape=box]
+		"AND_SPLIT--7. Final steps_UB2E" -> "assign management responsibilities"
+		"AND_JOIN--7. Final steps_UB2E" [label="+" fixedsize=true shape=diamond width=0.5]
+		"incorporate into the master budget" -> "AND_JOIN--7. Final steps_UB2E"
+		"assign management responsibilities" -> "AND_JOIN--7. Final steps_UB2E"
+	}
+	START_NODE -> "record basic details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--7. Final steps_UB2E" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you record basic details. 
+After recording basic details, reviewing the most recent budget should be done. 
+Once reviewing the most recent budget occurs, defining three to five goals should be done. 
+Once defining three to five goals occurs, estimating the average monthly cost should be done. 
+After estimating the average monthly cost, projecting total annual income needs to be done. 
+After projecting total annual income, you need to record financial data in a budget spreadsheet.
+When recording financial data in a budget spreadsheet is completed, the process is split into 2 parallel branches: incorporating into the master budget and assigning management responsibilities. 
+The process is now completed. 
+"
+}

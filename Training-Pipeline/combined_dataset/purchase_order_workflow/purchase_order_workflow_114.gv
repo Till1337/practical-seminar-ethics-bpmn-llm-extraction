@@ -1,0 +1,43 @@
+digraph purchase_order_workflow_114 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"create the purchase requisition" [shape=box]
+		"AND_SPLIT--2. Approval_MXVB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"create the purchase requisition" -> "AND_SPLIT--2. Approval_MXVB"
+		"get approval from manager" [shape=box]
+		"AND_SPLIT--2. Approval_MXVB" -> "get approval from manager"
+		"get approval from finance team" [shape=box]
+		"AND_SPLIT--2. Approval_MXVB" -> "get approval from finance team"
+		"AND_JOIN--2. Approval_MXVB" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from manager" -> "AND_JOIN--2. Approval_MXVB"
+		"get approval from finance team" -> "AND_JOIN--2. Approval_MXVB"
+		"create the purchase order" [shape=box]
+		"AND_JOIN--2. Approval_MXVB" -> "create the purchase order"
+		"get approval from supplier" [shape=box]
+		"create the purchase order" -> "get approval from supplier"
+		"AND_SPLIT--6. Final steps_COF5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval from supplier" -> "AND_SPLIT--6. Final steps_COF5"
+		"confirm the delivery date" [shape=box]
+		"AND_SPLIT--6. Final steps_COF5" -> "confirm the delivery date"
+		"record the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_COF5" -> "record the purchase order"
+		"file the purchase order" [shape=box]
+		"AND_SPLIT--6. Final steps_COF5" -> "file the purchase order"
+		"AND_JOIN--6. Final steps_COF5" [label="+" fixedsize=true shape=diamond width=0.5]
+		"confirm the delivery date" -> "AND_JOIN--6. Final steps_COF5"
+		"record the purchase order" -> "AND_JOIN--6. Final steps_COF5"
+		"file the purchase order" -> "AND_JOIN--6. Final steps_COF5"
+	}
+	START_NODE -> "create the purchase requisition"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Final steps_COF5" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the purchase order workflow. It starts with creating the purchase requisition. 
+When creating the purchase requisition is completed, the next tasks should be getting approval from manager and getting approval from finance team, they should be done in parallel. 
+Once all pre-tasks are executed, then creating the purchase order needs to be done. 
+Once creating the purchase order occurs, you need to get approval from supplier.
+Once getting approval from supplier occurs, the next tasks should be confirming the delivery date, recording the purchase order and filing the purchase order, they should be done in parallel. 
+The process is now completed. 
+"
+}

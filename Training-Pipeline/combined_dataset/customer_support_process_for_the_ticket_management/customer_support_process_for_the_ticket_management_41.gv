@@ -1,0 +1,37 @@
+digraph customer_support_process_for_the_ticket_management_41 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"OR_SPLIT--2. Ticket type_5POY" [label=O fixedsize=true shape=diamond width=0.5]
+		"check the ticket type" -> "OR_SPLIT--2. Ticket type_5POY"
+		"Determine ticket type as 'Sales Question'" [shape=box]
+		"OR_SPLIT--2. Ticket type_5POY" -> "Determine ticket type as 'Sales Question'"
+		"Determine ticket type as 'Feature Request'" [shape=box]
+		"OR_SPLIT--2. Ticket type_5POY" -> "Determine ticket type as 'Feature Request'"
+		"Determine ticket type as 'Simple Question'" [shape=box]
+		"Determine ticket type as 'Sales Question'" -> "Determine ticket type as 'Simple Question'"
+		"OR_JOIN--2. Ticket type_5POY" [label=O fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'Simple Question'" -> "OR_JOIN--2. Ticket type_5POY"
+		"Determine ticket type as 'Feature Request'" -> "OR_JOIN--2. Ticket type_5POY"
+		"AND_SPLIT--3. Ticket Action_7V02" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Ticket type_5POY" -> "AND_SPLIT--3. Ticket Action_7V02"
+		"response ticket question" [shape=box]
+		"AND_SPLIT--3. Ticket Action_7V02" -> "response ticket question"
+		"test technical issues" [shape=box]
+		"AND_SPLIT--3. Ticket Action_7V02" -> "test technical issues"
+		"AND_JOIN--3. Ticket Action_7V02" [label="+" fixedsize=true shape=diamond width=0.5]
+		"response ticket question" -> "AND_JOIN--3. Ticket Action_7V02"
+		"test technical issues" -> "AND_JOIN--3. Ticket Action_7V02"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--3. Ticket Action_7V02" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It starts with checking the ticket type. 
+When checking the ticket type is completed, one or more of the following paths should be executed: determining ticket type as 'Sales Question', determining ticket type as 'Feature Request'. 
+After determining ticket type as 'Sales Question', determining ticket type as 'Simple Question' should be done. 
+After that, the next tasks should be responsing ticket question and testing technical issues, they should be done in parallel. 
+The process is now completed. 
+"
+}

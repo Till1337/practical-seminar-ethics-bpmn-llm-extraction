@@ -1,0 +1,73 @@
+digraph startup_due_diligence_for_a_venture_capitalist_178 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_UXZT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"learn how to identify future failures" -> "AND_SPLIT--2. Filter out the terrible products_UXZT"
+		"specific product rate of growth" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_UXZT" -> "specific product rate of growth"
+		"make plans for future products" [shape=box]
+		"AND_SPLIT--2. Filter out the terrible products_UXZT" -> "make plans for future products"
+		"AND_JOIN--2. Filter out the terrible products_UXZT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"specific product rate of growth" -> "AND_JOIN--2. Filter out the terrible products_UXZT"
+		"make plans for future products" -> "AND_JOIN--2. Filter out the terrible products_UXZT"
+		"review company mission and direction" [shape=box]
+		"AND_JOIN--2. Filter out the terrible products_UXZT" -> "review company mission and direction"
+		"AND_SPLIT--4. Evaluate Financial Viability_L5VZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"review company mission and direction" -> "AND_SPLIT--4. Evaluate Financial Viability_L5VZ"
+		"check quarterly projections" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_L5VZ" -> "check quarterly projections"
+		"check current debt" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_L5VZ" -> "check current debt"
+		"check exit strategy" [shape=box]
+		"check quarterly projections" -> "check exit strategy"
+		"AND_SPLIT--4. Evaluate Financial Viability_P8HN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "AND_SPLIT--4. Evaluate Financial Viability_P8HN"
+		"check cash flow" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_P8HN" -> "check cash flow"
+		"check income statements" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_P8HN" -> "check income statements"
+		"AND_JOIN--4. Evaluate Financial Viability_P8HN" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "AND_JOIN--4. Evaluate Financial Viability_P8HN"
+		"check income statements" -> "AND_JOIN--4. Evaluate Financial Viability_P8HN"
+		"AND_JOIN--4. Evaluate Financial Viability_L5VZ" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check exit strategy" -> "AND_JOIN--4. Evaluate Financial Viability_L5VZ"
+		"AND_JOIN--4. Evaluate Financial Viability_P8HN" -> "AND_JOIN--4. Evaluate Financial Viability_L5VZ"
+		"AND_SPLIT--5. Evaluate the Competition_FK4D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Evaluate Financial Viability_L5VZ" -> "AND_SPLIT--5. Evaluate the Competition_FK4D"
+		"know exact competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_FK4D" -> "know exact competition"
+		"analyze the growth stage of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_FK4D" -> "analyze the growth stage of competition"
+		"AND_SPLIT--5. Evaluate the Competition_3IZG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze the growth stage of competition" -> "AND_SPLIT--5. Evaluate the Competition_3IZG"
+		"analyze the reputation of competition" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_3IZG" -> "analyze the reputation of competition"
+		"project the market share" [shape=box]
+		"AND_SPLIT--5. Evaluate the Competition_3IZG" -> "project the market share"
+		"AND_JOIN--5. Evaluate the Competition_3IZG" [label="+" fixedsize=true shape=diamond width=0.5]
+		"analyze the reputation of competition" -> "AND_JOIN--5. Evaluate the Competition_3IZG"
+		"project the market share" -> "AND_JOIN--5. Evaluate the Competition_3IZG"
+		"AND_JOIN--5. Evaluate the Competition_FK4D" [label="+" fixedsize=true shape=diamond width=0.5]
+		"know exact competition" -> "AND_JOIN--5. Evaluate the Competition_FK4D"
+		"AND_JOIN--5. Evaluate the Competition_3IZG" -> "AND_JOIN--5. Evaluate the Competition_FK4D"
+		"check trademarks" [shape=box]
+		"AND_JOIN--5. Evaluate the Competition_FK4D" -> "check trademarks"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check trademarks" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+Once learning how to identify future failures occurs, the process is split into 2 parallel branches: specificking product rate of growth and making plans for future products. 
+Once all pre-tasks are executed, then you need to review company mission and direction.
+When reviewing company mission and direction is completed, the process is split into 2 parallel branches: checking quarterly projections and checking current debt. 
+After checking quarterly projections, checking exit strategy should be done. 
+Once checking current debt occurs, the next tasks should be checking cash flow and checking income statements, they should be done in parallel. 
+Once all pre-tasks are executed, then the next tasks should be knowing exact competition and analyzing the growth stage of competition, they should be done in parallel. 
+When analyzing the growth stage of competition is completed, the next tasks should be analyzing the reputation of competition and projecting the market share, they should be done in parallel. 
+Once all pre-tasks are executed, then checking trademarks should be done. 
+The process is now completed. 
+"
+}

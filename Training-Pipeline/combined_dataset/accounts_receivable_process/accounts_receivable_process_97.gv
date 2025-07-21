@@ -1,0 +1,36 @@
+digraph accounts_receivable_process_97 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"send the buyer your terms of sale" [shape=box]
+		"record the buyer's details" -> "send the buyer your terms of sale"
+		"OR_SPLIT--3. Invoicing_7BII" [label=O fixedsize=true shape=diamond width=0.5]
+		"send the buyer your terms of sale" -> "OR_SPLIT--3. Invoicing_7BII"
+		"check customer payment terms" [shape=box]
+		"OR_SPLIT--3. Invoicing_7BII" -> "check customer payment terms"
+		"generate the invoice" [shape=box]
+		"OR_SPLIT--3. Invoicing_7BII" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"generate the invoice" -> "send the invoice in your accounting software"
+		"OR_JOIN--3. Invoicing_7BII" [label=O fixedsize=true shape=diamond width=0.5]
+		"check customer payment terms" -> "OR_JOIN--3. Invoicing_7BII"
+		"send the invoice in your accounting software" -> "OR_JOIN--3. Invoicing_7BII"
+		"make a second physical copy" [shape=box]
+		"OR_JOIN--3. Invoicing_7BII" -> "make a second physical copy"
+		"record the sales on credit of goods" [shape=box]
+		"make a second physical copy" -> "record the sales on credit of goods"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"record the sales on credit of goods" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the accounts receivable process. It begins when you record the buyer's details. 
+When recording the buyer's details is completed, sending the buyer your terms of sale needs to be done. 
+When sending the buyer your terms of sale is completed, one or more of the following paths should be executed: checking customer payment terms, generating the invoice. 
+Once generating the invoice occurs, sending the invoice in your accounting software needs to be done. 
+Afterwards, making a second physical copy should be done. 
+When making a second physical copy is completed, recording the sales on credit of goods needs to be done. 
+The process is now completed. 
+"
+}

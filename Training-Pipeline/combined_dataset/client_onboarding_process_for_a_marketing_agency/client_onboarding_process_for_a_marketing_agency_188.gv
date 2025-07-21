@@ -1,0 +1,40 @@
+digraph client_onboarding_process_for_a_marketing_agency_188 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"send the contract to the client" [shape=box]
+		"research the campaign ideas" [shape=box]
+		"send the contract to the client" -> "research the campaign ideas"
+		"OR_SPLIT--4. Project start_WHBR" [label=O fixedsize=true shape=diamond width=0.5]
+		"research the campaign ideas" -> "OR_SPLIT--4. Project start_WHBR"
+		"assign work to the team" [shape=box]
+		"OR_SPLIT--4. Project start_WHBR" -> "assign work to the team"
+		"inform client of project start" [shape=box]
+		"OR_SPLIT--4. Project start_WHBR" -> "inform client of project start"
+		"OR_JOIN--4. Project start_WHBR" [label=O fixedsize=true shape=diamond width=0.5]
+		"assign work to the team" -> "OR_JOIN--4. Project start_WHBR"
+		"inform client of project start" -> "OR_JOIN--4. Project start_WHBR"
+		"AND_SPLIT--5. Four weeks into the project_WTJP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Project start_WHBR" -> "AND_SPLIT--5. Four weeks into the project_WTJP"
+		"have a follow-up call" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_WTJP" -> "have a follow-up call"
+		"send a post-onboarding survey" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_WTJP" -> "send a post-onboarding survey"
+		"make changes based on follow-up call" [shape=box]
+		"AND_SPLIT--5. Four weeks into the project_WTJP" -> "make changes based on follow-up call"
+		"AND_JOIN--5. Four weeks into the project_WTJP" [label="+" fixedsize=true shape=diamond width=0.5]
+		"have a follow-up call" -> "AND_JOIN--5. Four weeks into the project_WTJP"
+		"send a post-onboarding survey" -> "AND_JOIN--5. Four weeks into the project_WTJP"
+		"make changes based on follow-up call" -> "AND_JOIN--5. Four weeks into the project_WTJP"
+	}
+	START_NODE -> "send the contract to the client"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Four weeks into the project_WTJP" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the client onboarding process for a marketing agency. It begins when you send the contract to the client. 
+When sending the contract to the client is completed, you need to research the campaign ideas.
+After researching the campaign ideas, one or more of the following paths should be executed: assigning work to the team, informing client of project start. 
+Afterwards, the next tasks should be having a follow-up call, sending a post-onboarding survey and making changes based on follow-up call, they should be done in parallel. 
+The process is now completed. 
+"
+}

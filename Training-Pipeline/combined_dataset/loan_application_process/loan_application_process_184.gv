@@ -1,0 +1,61 @@
+digraph loan_application_process_184 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"submit the ID proof to the lender" [shape=box]
+		"AND_SPLIT--2. Loan application_7C28" [label="+" fixedsize=true shape=diamond width=0.5]
+		"submit the ID proof to the lender" -> "AND_SPLIT--2. Loan application_7C28"
+		"complete the loan application by borrower" [shape=box]
+		"AND_SPLIT--2. Loan application_7C28" -> "complete the loan application by borrower"
+		"receive the application by credit department" [shape=box]
+		"AND_SPLIT--2. Loan application_7C28" -> "receive the application by credit department"
+		"AND_JOIN--2. Loan application_7C28" [label="+" fixedsize=true shape=diamond width=0.5]
+		"complete the loan application by borrower" -> "AND_JOIN--2. Loan application_7C28"
+		"receive the application by credit department" -> "AND_JOIN--2. Loan application_7C28"
+		subgraph "CLUSTER_XOR_3. Application processing _40OW" {
+			color=white label="check for the completeness"
+			"XOR_SPLIT--check for the completeness_0MB5" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"AND_JOIN--2. Loan application_7C28" -> "XOR_SPLIT--check for the completeness_0MB5" [label="check for the completeness"]
+		"XOR_SPLIT--check for the completeness_0MB5" -> "XOR_JOIN--check for the completeness_0MB5" [label="is complete"]
+		"give the written notice to applicant" [shape=box]
+		"XOR_SPLIT--check for the completeness_0MB5" -> "give the written notice to applicant" [label="is not complete"]
+		"XOR_JOIN--check for the completeness_0MB5" [label=X fixedsize=true shape=diamond width=0.5]
+		"give the written notice to applicant" -> "XOR_JOIN--check for the completeness_0MB5"
+		"AND_SPLIT--4. Underwriting process_8X6W" [label="+" fixedsize=true shape=diamond width=0.5]
+		"XOR_JOIN--check for the completeness_0MB5" -> "AND_SPLIT--4. Underwriting process_8X6W"
+		"begin the underwriting process" [shape=box]
+		"AND_SPLIT--4. Underwriting process_8X6W" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"AND_SPLIT--4. Underwriting process_8X6W" -> "check the credit score and risk score"
+		"AND_JOIN--4. Underwriting process_8X6W" [label="+" fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "AND_JOIN--4. Underwriting process_8X6W"
+		"check the credit score and risk score" -> "AND_JOIN--4. Underwriting process_8X6W"
+		"AND_SPLIT--5. Credit decision_CXR0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Underwriting process_8X6W" -> "AND_SPLIT--5. Credit decision_CXR0"
+		"approve the loan application" [shape=box]
+		"AND_SPLIT--5. Credit decision_CXR0" -> "approve the loan application"
+		"change the interest rate" [shape=box]
+		"AND_SPLIT--5. Credit decision_CXR0" -> "change the interest rate"
+		"reduce loan amount" [shape=box]
+		"approve the loan application" -> "reduce loan amount"
+		"AND_JOIN--5. Credit decision_CXR0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"reduce loan amount" -> "AND_JOIN--5. Credit decision_CXR0"
+		"change the interest rate" -> "AND_JOIN--5. Credit decision_CXR0"
+		"receive the loans fund" [shape=box]
+		"AND_JOIN--5. Credit decision_CXR0" -> "receive the loans fund"
+	}
+	START_NODE -> "submit the ID proof to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the loan application process. It starts with submitting the ID proof to the lender. 
+When submitting the ID proof to the lender is completed, the next tasks should be completing the loan application by borrower and receiving the application by credit department, they should be done in parallel. 
+Once all pre-tasks are executed, then checking for the completeness should be taken into account. if all is complete, then nothing needs to be done, otherwise you should give the written notice to applicant. 
+After that, the process is split into 2 parallel branches: beginning the underwriting process and checking the credit score and risk score. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: approving the loan application and changing the interest rate. 
+Once approving the loan application occurs, reducing loan amount should be done. 
+Once all pre-tasks are executed, then receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

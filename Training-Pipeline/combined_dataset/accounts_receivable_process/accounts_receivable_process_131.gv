@@ -1,0 +1,43 @@
+digraph accounts_receivable_process_131 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"get approval for post-credit check review" [shape=box]
+		"record the buyer's details" -> "get approval for post-credit check review"
+		"AND_SPLIT--3. Invoicing_RQ8G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"get approval for post-credit check review" -> "AND_SPLIT--3. Invoicing_RQ8G"
+		"generate the invoice" [shape=box]
+		"AND_SPLIT--3. Invoicing_RQ8G" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"AND_SPLIT--3. Invoicing_RQ8G" -> "send the invoice in your accounting software"
+		"check customer payment terms" [shape=box]
+		"AND_SPLIT--3. Invoicing_RQ8G" -> "check customer payment terms"
+		"AND_JOIN--3. Invoicing_RQ8G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"generate the invoice" -> "AND_JOIN--3. Invoicing_RQ8G"
+		"send the invoice in your accounting software" -> "AND_JOIN--3. Invoicing_RQ8G"
+		"check customer payment terms" -> "AND_JOIN--3. Invoicing_RQ8G"
+		"make a second physical copy" [shape=box]
+		"AND_JOIN--3. Invoicing_RQ8G" -> "make a second physical copy"
+		"OR_SPLIT--5. Accounting for accounts receivable_FB8C" [label=O fixedsize=true shape=diamond width=0.5]
+		"make a second physical copy" -> "OR_SPLIT--5. Accounting for accounts receivable_FB8C"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_FB8C" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_FB8C" -> "record the sales on credit of services"
+		"OR_JOIN--5. Accounting for accounts receivable_FB8C" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_FB8C"
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_FB8C"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_FB8C" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the accounts receivable process. It starts with recording the buyer's details. 
+When recording the buyer's details is completed, you need to get approval for post-credit check review.
+Once getting approval for post-credit check review occurs, the process is split into 3 parallel branches: generating the invoice, sending the invoice in your accounting software and checking customer payment terms. 
+Once all pre-tasks are executed, then you need to make a second physical copy.
+Once making a second physical copy occurs, one or more of the following paths should be executed: recording the sales on credit of goods, recording the sales on credit of services. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,64 @@
+digraph project_management_process_118 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"make an introduction" [shape=box]
+		subgraph "CLUSTER_XOR_2. Conception and Initiation_J7C7" {
+			color=white label="identify the approval status"
+			"XOR_SPLIT--identify the approval status_1ATH" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"make an introduction" -> "XOR_SPLIT--identify the approval status_1ATH" [label="identify the approval status"]
+		"XOR_SPLIT--identify the approval status_1ATH" -> "XOR_JOIN--identify the approval status_1ATH" [label=approved]
+		"work out its value" [shape=box]
+		"XOR_SPLIT--identify the approval status_1ATH" -> "work out its value" [label=rejected]
+		"OR_SPLIT--2. Conception and Initiation_FOPF" [label=O fixedsize=true shape=diamond width=0.5]
+		"work out its value" -> "OR_SPLIT--2. Conception and Initiation_FOPF"
+		"get approval" [shape=box]
+		"OR_SPLIT--2. Conception and Initiation_FOPF" -> "get approval"
+		"identify the approval status" [shape=box]
+		"OR_SPLIT--2. Conception and Initiation_FOPF" -> "identify the approval status"
+		"OR_JOIN--2. Conception and Initiation_FOPF" [label=O fixedsize=true shape=diamond width=0.5]
+		"get approval" -> "OR_JOIN--2. Conception and Initiation_FOPF"
+		"identify the approval status" -> "OR_JOIN--2. Conception and Initiation_FOPF"
+		"XOR_JOIN--identify the approval status_1ATH" [label=X fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Conception and Initiation_FOPF" -> "XOR_JOIN--identify the approval status_1ATH"
+		"draw up a project plan" [shape=box]
+		"XOR_JOIN--identify the approval status_1ATH" -> "draw up a project plan"
+		"have a kickoff meeting" [shape=box]
+		"draw up a project plan" -> "have a kickoff meeting"
+		"AND_SPLIT--5. Performance and Control_BUWA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"have a kickoff meeting" -> "AND_SPLIT--5. Performance and Control_BUWA"
+		"record KPIs" [shape=box]
+		"AND_SPLIT--5. Performance and Control_BUWA" -> "record KPIs"
+		"keep communication" [shape=box]
+		"AND_SPLIT--5. Performance and Control_BUWA" -> "keep communication"
+		"AND_JOIN--5. Performance and Control_BUWA" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record KPIs" -> "AND_JOIN--5. Performance and Control_BUWA"
+		"keep communication" -> "AND_JOIN--5. Performance and Control_BUWA"
+		"AND_SPLIT--6. Close_V95V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--5. Performance and Control_BUWA" -> "AND_SPLIT--6. Close_V95V"
+		"evaluate project outcomes" [shape=box]
+		"AND_SPLIT--6. Close_V95V" -> "evaluate project outcomes"
+		"ensure the project is completed" [shape=box]
+		"AND_SPLIT--6. Close_V95V" -> "ensure the project is completed"
+		"terminate contractors" [shape=box]
+		"ensure the project is completed" -> "terminate contractors"
+		"AND_JOIN--6. Close_V95V" [label="+" fixedsize=true shape=diamond width=0.5]
+		"evaluate project outcomes" -> "AND_JOIN--6. Close_V95V"
+		"terminate contractors" -> "AND_JOIN--6. Close_V95V"
+	}
+	START_NODE -> "make an introduction"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Close_V95V" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the project management process. It begins when you make an introduction. 
+When making an introduction is completed, identifying the approval status should be considered. if all approved, then nothing needs to be done, otherwise you should work out its value. 
+When working out its value is completed, one or more of the following paths should be executed: getting approval, identifying the approval status. 
+Then, you need to draw up a project plan.
+After drawing up a project plan, you need to have a kickoff meeting.
+Once having a kickoff meeting occurs, the process is split into 2 parallel branches: recording KPIs and keeping communication. 
+Once all pre-tasks are executed, then the next tasks should be evaluating project outcomes and ensuring the project is completed, they should be done in parallel. 
+When ensuring the project is completed is completed, you need to terminate contractors.
+The process is now completed. 
+"
+}

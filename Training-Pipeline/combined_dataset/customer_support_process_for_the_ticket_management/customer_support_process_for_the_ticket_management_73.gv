@@ -1,0 +1,28 @@
+digraph customer_support_process_for_the_ticket_management_73 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'App Question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'App Question'"
+		subgraph "CLUSTER_XOR_3. Ticket Action_GQ3E" {
+			color=white label="replicate the issue"
+			"XOR_SPLIT--replicate the issue_Z58I" [label=X fixedsize=true shape=diamond width=0.5]
+		}
+		"Determine ticket type as 'App Question'" -> "XOR_SPLIT--replicate the issue_Z58I" [label="replicate the issue"]
+		"XOR_SPLIT--replicate the issue_Z58I" -> "XOR_JOIN--replicate the issue_Z58I" [label="could replicate"]
+		"response ticket question" [shape=box]
+		"XOR_SPLIT--replicate the issue_Z58I" -> "response ticket question" [label="could not replicate"]
+		"XOR_JOIN--replicate the issue_Z58I" [label=X fixedsize=true shape=diamond width=0.5]
+		"response ticket question" -> "XOR_JOIN--replicate the issue_Z58I"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"XOR_JOIN--replicate the issue_Z58I" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the customer support process for the ticket management. It begins when you check the ticket type. 
+Once checking the ticket type occurs, you need to Determine ticket type as 'App Question'.
+After determining ticket type as 'App Question', replicating the issue should be considered. if all could replicate, then nothing needs to be done, otherwise you should response ticket question. 
+The process is now completed. 
+"
+}

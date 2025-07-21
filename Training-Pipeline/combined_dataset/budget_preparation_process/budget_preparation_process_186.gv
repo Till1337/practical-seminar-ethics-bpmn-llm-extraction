@@ -1,0 +1,39 @@
+digraph budget_preparation_process_186 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"set target date for approval" [shape=box]
+		"evaluate any significant variances" [shape=box]
+		"set target date for approval" -> "evaluate any significant variances"
+		"prioritize three to five goals" [shape=box]
+		"evaluate any significant variances" -> "prioritize three to five goals"
+		"calculate the total annual budget" [shape=box]
+		"prioritize three to five goals" -> "calculate the total annual budget"
+		"project total annual income" [shape=box]
+		"calculate the total annual budget" -> "project total annual income"
+		"OR_SPLIT--6. Putting it all together_C538" [label=O fixedsize=true shape=diamond width=0.5]
+		"project total annual income" -> "OR_SPLIT--6. Putting it all together_C538"
+		"finalize the budget" [shape=box]
+		"OR_SPLIT--6. Putting it all together_C538" -> "finalize the budget"
+		"record financial data in a budget spreadsheet" [shape=box]
+		"OR_SPLIT--6. Putting it all together_C538" -> "record financial data in a budget spreadsheet"
+		"OR_JOIN--6. Putting it all together_C538" [label=O fixedsize=true shape=diamond width=0.5]
+		"finalize the budget" -> "OR_JOIN--6. Putting it all together_C538"
+		"record financial data in a budget spreadsheet" -> "OR_JOIN--6. Putting it all together_C538"
+		"incorporate into the master budget" [shape=box]
+		"OR_JOIN--6. Putting it all together_C538" -> "incorporate into the master budget"
+	}
+	START_NODE -> "set target date for approval"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"incorporate into the master budget" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the budget preparation process. It begins when you set target date for approval. 
+Once setting target date for approval occurs, evaluating any significant variances needs to be done. 
+Once evaluating any significant variances occurs, prioritizing three to five goals should be done. 
+Once prioritizing three to five goals occurs, calculating the total annual budget needs to be done. 
+After calculating the total annual budget, projecting total annual income needs to be done. 
+After projecting total annual income, one or more of the following paths should be executed: finalizing the budget, recording financial data in a budget spreadsheet. 
+Then, incorporating into the master budget should be done. 
+The process is now completed. 
+"
+}

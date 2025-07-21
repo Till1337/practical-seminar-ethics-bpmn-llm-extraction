@@ -1,0 +1,24 @@
+digraph content_promotion_process_100 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"AND_SPLIT--2. Content promotion_7SNU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"prepare a summary of your content" -> "AND_SPLIT--2. Content promotion_7SNU"
+		"email your subscribers" [shape=box]
+		"AND_SPLIT--2. Content promotion_7SNU" -> "email your subscribers"
+		"pay for promotion" [shape=box]
+		"AND_SPLIT--2. Content promotion_7SNU" -> "pay for promotion"
+		"AND_JOIN--2. Content promotion_7SNU" [label="+" fixedsize=true shape=diamond width=0.5]
+		"email your subscribers" -> "AND_JOIN--2. Content promotion_7SNU"
+		"pay for promotion" -> "AND_JOIN--2. Content promotion_7SNU"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--2. Content promotion_7SNU" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the content promotion process. It begins when you prepare a summary of your content. 
+After preparing a summary of your content, the process is split into 2 parallel branches: emailing your subscribers and paying for promotion. 
+The process is now completed. 
+"
+}

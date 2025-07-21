@@ -1,0 +1,27 @@
+digraph customer_support_process_for_the_ticket_management_33 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'App Question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'App Question'"
+		"AND_SPLIT--3. Ticket Action_6RCW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"Determine ticket type as 'App Question'" -> "AND_SPLIT--3. Ticket Action_6RCW"
+		"test technical issues" [shape=box]
+		"AND_SPLIT--3. Ticket Action_6RCW" -> "test technical issues"
+		"replicate the issue" [shape=box]
+		"AND_SPLIT--3. Ticket Action_6RCW" -> "replicate the issue"
+		"AND_JOIN--3. Ticket Action_6RCW" [label="+" fixedsize=true shape=diamond width=0.5]
+		"test technical issues" -> "AND_JOIN--3. Ticket Action_6RCW"
+		"replicate the issue" -> "AND_JOIN--3. Ticket Action_6RCW"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--3. Ticket Action_6RCW" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the customer support process for the ticket management. It starts with checking the ticket type. 
+When checking the ticket type is completed, determining ticket type as 'App Question' should be done. 
+After determining ticket type as 'App Question', the process is split into 2 parallel branches: testing technical issues and replicating the issue. 
+The process is now completed. 
+"
+}

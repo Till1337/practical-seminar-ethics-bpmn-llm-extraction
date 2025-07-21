@@ -1,0 +1,17 @@
+digraph content_promotion_process_64 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"prepare a summary of your content" [shape=box]
+		"submit to link roundups" [shape=box]
+		"prepare a summary of your content" -> "submit to link roundups"
+	}
+	START_NODE -> "prepare a summary of your content"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"submit to link roundups" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the content promotion process. It starts with preparing a summary of your content. 
+After preparing a summary of your content, you need to submit to link roundups.
+The process is now completed. 
+"
+}

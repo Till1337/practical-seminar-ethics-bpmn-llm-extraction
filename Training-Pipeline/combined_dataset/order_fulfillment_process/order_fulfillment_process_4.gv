@@ -1,0 +1,40 @@
+digraph order_fulfillment_process_4 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record order details" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_6CLC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record order details" -> "AND_SPLIT--2. Retrieving products from your inventory_6CLC"
+		"request the ordered products from your inventory" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_6CLC" -> "request the ordered products from your inventory"
+		"check that the products are in stock" [shape=box]
+		"AND_SPLIT--2. Retrieving products from your inventory_6CLC" -> "check that the products are in stock"
+		"AND_JOIN--2. Retrieving products from your inventory_6CLC" [label="+" fixedsize=true shape=diamond width=0.5]
+		"request the ordered products from your inventory" -> "AND_JOIN--2. Retrieving products from your inventory_6CLC"
+		"check that the products are in stock" -> "AND_JOIN--2. Retrieving products from your inventory_6CLC"
+		"package the items securely" [shape=box]
+		"AND_JOIN--2. Retrieving products from your inventory_6CLC" -> "package the items securely"
+		"OR_SPLIT--4. Dispatching the products_XS61" [label=O fixedsize=true shape=diamond width=0.5]
+		"package the items securely" -> "OR_SPLIT--4. Dispatching the products_XS61"
+		"load items into the delivery vehicle" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_XS61" -> "load items into the delivery vehicle"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_XS61" -> "examine your other orders for delivery overlaps"
+		"OR_JOIN--4. Dispatching the products_XS61" [label=O fixedsize=true shape=diamond width=0.5]
+		"load items into the delivery vehicle" -> "OR_JOIN--4. Dispatching the products_XS61"
+		"examine your other orders for delivery overlaps" -> "OR_JOIN--4. Dispatching the products_XS61"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_XS61" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "record order details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the order fulfillment process. It starts with recording order details. 
+Once recording order details occurs, the next tasks should be requesting the ordered products from your inventory and checking that the products are in stock, they should be done in parallel. 
+Once all pre-tasks are executed, then packaging the items securely needs to be done. 
+When packaging the items securely is completed, one or more of the following paths should be executed: loading items into the delivery vehicle, examining your other orders for delivery overlaps. 
+Afterwards, sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

@@ -1,0 +1,20 @@
+digraph customer_support_process_for_the_ticket_management_179 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"check the ticket type" [shape=box]
+		"Determine ticket type as 'Simple Question'" [shape=box]
+		"check the ticket type" -> "Determine ticket type as 'Simple Question'"
+		"test technical issues" [shape=box]
+		"Determine ticket type as 'Simple Question'" -> "test technical issues"
+	}
+	START_NODE -> "check the ticket type"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"test technical issues" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the customer support process for the ticket management. It starts with checking the ticket type. 
+When checking the ticket type is completed, determining ticket type as 'Simple Question' needs to be done. 
+When determining ticket type as 'Simple Question' is completed, testing technical issues should be done. 
+The process is now completed. 
+"
+}

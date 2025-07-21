@@ -1,0 +1,58 @@
+digraph startup_due_diligence_for_a_venture_capitalist_136 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"specific product rate of growth" [shape=box]
+		"learn how to identify future failures" -> "specific product rate of growth"
+		"review number of employees" [shape=box]
+		"specific product rate of growth" -> "review number of employees"
+		"OR_SPLIT--4. Evaluate Financial Viability_Z85J" [label=O fixedsize=true shape=diamond width=0.5]
+		"review number of employees" -> "OR_SPLIT--4. Evaluate Financial Viability_Z85J"
+		"check cash flow" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_Z85J" -> "check cash flow"
+		"check income statements" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_Z85J" -> "check income statements"
+		"check exit strategy" [shape=box]
+		"OR_SPLIT--4. Evaluate Financial Viability_Z85J" -> "check exit strategy"
+		"check current debt" [shape=box]
+		"check cash flow" -> "check current debt"
+		"check quarterly projections" [shape=box]
+		"check exit strategy" -> "check quarterly projections"
+		"OR_JOIN--4. Evaluate Financial Viability_Z85J" [label=O fixedsize=true shape=diamond width=0.5]
+		"check current debt" -> "OR_JOIN--4. Evaluate Financial Viability_Z85J"
+		"check income statements" -> "OR_JOIN--4. Evaluate Financial Viability_Z85J"
+		"check quarterly projections" -> "OR_JOIN--4. Evaluate Financial Viability_Z85J"
+		"know exact competition" [shape=box]
+		"OR_JOIN--4. Evaluate Financial Viability_Z85J" -> "know exact competition"
+		"AND_SPLIT--6. Legal Analysis_JU7N" [label="+" fixedsize=true shape=diamond width=0.5]
+		"know exact competition" -> "AND_SPLIT--6. Legal Analysis_JU7N"
+		"check past lawsuits" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_JU7N" -> "check past lawsuits"
+		"check patents" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_JU7N" -> "check patents"
+		"check insurance" [shape=box]
+		"AND_SPLIT--6. Legal Analysis_JU7N" -> "check insurance"
+		"check trademarks" [shape=box]
+		"check past lawsuits" -> "check trademarks"
+		"AND_JOIN--6. Legal Analysis_JU7N" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check trademarks" -> "AND_JOIN--6. Legal Analysis_JU7N"
+		"check patents" -> "AND_JOIN--6. Legal Analysis_JU7N"
+		"check insurance" -> "AND_JOIN--6. Legal Analysis_JU7N"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--6. Legal Analysis_JU7N" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+After learning how to identify future failures, you need to specific product rate of growth.
+After specificking product rate of growth, reviewing number of employees should be done. 
+After reviewing number of employees, one or more of the following paths should be executed: checking cash flow, checking income statements, checking exit strategy. 
+Once checking cash flow occurs, you need to check current debt.
+After checking exit strategy, checking quarterly projections should be done. 
+After that, knowing exact competition should be done. 
+When knowing exact competition is completed, the process is split into 3 parallel branches: checking past lawsuits, checking patents and checking insurance. 
+After checking past lawsuits, you need to check trademarks.
+The process is now completed. 
+"
+}

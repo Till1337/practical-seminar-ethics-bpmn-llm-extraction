@@ -1,0 +1,33 @@
+digraph accounts_receivable_process_199 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"send a credit application form to the buyer" [shape=box]
+		"record the buyer's details" -> "send a credit application form to the buyer"
+		"send the invoice in your accounting software" [shape=box]
+		"send a credit application form to the buyer" -> "send the invoice in your accounting software"
+		"make a second physical copy" [shape=box]
+		"send the invoice in your accounting software" -> "make a second physical copy"
+		"AND_SPLIT--5. Accounting for accounts receivable_GKO0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"make a second physical copy" -> "AND_SPLIT--5. Accounting for accounts receivable_GKO0"
+		"record the sales on credit of goods" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_GKO0" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"AND_SPLIT--5. Accounting for accounts receivable_GKO0" -> "record the sales on credit of services"
+		"AND_JOIN--5. Accounting for accounts receivable_GKO0" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "AND_JOIN--5. Accounting for accounts receivable_GKO0"
+		"record the sales on credit of services" -> "AND_JOIN--5. Accounting for accounts receivable_GKO0"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"AND_JOIN--5. Accounting for accounts receivable_GKO0" -> END_NODE
+	fontsize=15 label="\n\n
+The following description is about the accounts receivable process. It starts with recording the buyer's details. 
+After recording the buyer's details, sending a credit application form to the buyer should be done. 
+When sending a credit application form to the buyer is completed, sending the invoice in your accounting software needs to be done. 
+After sending the invoice in your accounting software, you need to make a second physical copy.
+Once making a second physical copy occurs, the process is split into 2 parallel branches: recording the sales on credit of goods and recording the sales on credit of services. 
+The process is now completed. 
+"
+}

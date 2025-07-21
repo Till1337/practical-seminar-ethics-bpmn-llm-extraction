@@ -1,0 +1,53 @@
+digraph loan_application_process_148 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"provide the previous loan statement to the lender" [shape=box]
+		"receive the application by credit department" [shape=box]
+		"provide the previous loan statement to the lender" -> "receive the application by credit department"
+		"OR_SPLIT--3. Application processing _CLF6" [label=O fixedsize=true shape=diamond width=0.5]
+		"receive the application by credit department" -> "OR_SPLIT--3. Application processing _CLF6"
+		"check for the completeness" [shape=box]
+		"OR_SPLIT--3. Application processing _CLF6" -> "check for the completeness"
+		"give the written notice to applicant" [shape=box]
+		"OR_SPLIT--3. Application processing _CLF6" -> "give the written notice to applicant"
+		"OR_JOIN--3. Application processing _CLF6" [label=O fixedsize=true shape=diamond width=0.5]
+		"check for the completeness" -> "OR_JOIN--3. Application processing _CLF6"
+		"give the written notice to applicant" -> "OR_JOIN--3. Application processing _CLF6"
+		"OR_SPLIT--4. Underwriting process_SVIP" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Application processing _CLF6" -> "OR_SPLIT--4. Underwriting process_SVIP"
+		"begin the underwriting process" [shape=box]
+		"OR_SPLIT--4. Underwriting process_SVIP" -> "begin the underwriting process"
+		"check the credit score and risk score" [shape=box]
+		"OR_SPLIT--4. Underwriting process_SVIP" -> "check the credit score and risk score"
+		"OR_JOIN--4. Underwriting process_SVIP" [label=O fixedsize=true shape=diamond width=0.5]
+		"begin the underwriting process" -> "OR_JOIN--4. Underwriting process_SVIP"
+		"check the credit score and risk score" -> "OR_JOIN--4. Underwriting process_SVIP"
+		"OR_SPLIT--5. Credit decision_PZAM" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Underwriting process_SVIP" -> "OR_SPLIT--5. Credit decision_PZAM"
+		"approve the loan application" [shape=box]
+		"OR_SPLIT--5. Credit decision_PZAM" -> "approve the loan application"
+		"change the interest rate" [shape=box]
+		"OR_SPLIT--5. Credit decision_PZAM" -> "change the interest rate"
+		"reduce loan amount" [shape=box]
+		"approve the loan application" -> "reduce loan amount"
+		"OR_JOIN--5. Credit decision_PZAM" [label=O fixedsize=true shape=diamond width=0.5]
+		"reduce loan amount" -> "OR_JOIN--5. Credit decision_PZAM"
+		"change the interest rate" -> "OR_JOIN--5. Credit decision_PZAM"
+		"receive the loans fund" [shape=box]
+		"OR_JOIN--5. Credit decision_PZAM" -> "receive the loans fund"
+	}
+	START_NODE -> "provide the previous loan statement to the lender"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"receive the loans fund" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the loan application process. It begins when you provide the previous loan statement to the lender. 
+When providing the previous loan statement to the lender is completed, you need to receive the application by credit department.
+After receiving the application by credit department, one or more of the following paths should be executed: checking for the completeness, giving the written notice to applicant. 
+Then, one or more of the following paths should be executed: beginning the underwriting process, checking the credit score and risk score. 
+After that, one or more of the following paths should be executed: approving the loan application, changing the interest rate. 
+When approving the loan application is completed, reducing loan amount should be done. 
+Then, receiving the loans fund needs to be done. 
+The process is now completed. 
+"
+}

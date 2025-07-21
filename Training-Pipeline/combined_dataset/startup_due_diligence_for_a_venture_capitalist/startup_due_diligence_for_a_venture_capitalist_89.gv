@@ -1,0 +1,53 @@
+digraph startup_due_diligence_for_a_venture_capitalist_89 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"learn how to identify future failures" [shape=box]
+		"consider product necessity" [shape=box]
+		"learn how to identify future failures" -> "consider product necessity"
+		"OR_SPLIT--3. Review the funding team_YAKA" [label=O fixedsize=true shape=diamond width=0.5]
+		"consider product necessity" -> "OR_SPLIT--3. Review the funding team_YAKA"
+		"review team chemistry" [shape=box]
+		"OR_SPLIT--3. Review the funding team_YAKA" -> "review team chemistry"
+		"review relationship to founder" [shape=box]
+		"OR_SPLIT--3. Review the funding team_YAKA" -> "review relationship to founder"
+		"OR_JOIN--3. Review the funding team_YAKA" [label=O fixedsize=true shape=diamond width=0.5]
+		"review team chemistry" -> "OR_JOIN--3. Review the funding team_YAKA"
+		"review relationship to founder" -> "OR_JOIN--3. Review the funding team_YAKA"
+		"AND_SPLIT--4. Evaluate Financial Viability_10KT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--3. Review the funding team_YAKA" -> "AND_SPLIT--4. Evaluate Financial Viability_10KT"
+		"check cash flow" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_10KT" -> "check cash flow"
+		"check quarterly projections" [shape=box]
+		"AND_SPLIT--4. Evaluate Financial Viability_10KT" -> "check quarterly projections"
+		"AND_JOIN--4. Evaluate Financial Viability_10KT" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check cash flow" -> "AND_JOIN--4. Evaluate Financial Viability_10KT"
+		"check quarterly projections" -> "AND_JOIN--4. Evaluate Financial Viability_10KT"
+		"OR_SPLIT--5. Evaluate the Competition_J872" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--4. Evaluate Financial Viability_10KT" -> "OR_SPLIT--5. Evaluate the Competition_J872"
+		"analyze the reputation of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_J872" -> "analyze the reputation of competition"
+		"know exact competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_J872" -> "know exact competition"
+		"analyze the growth stage of competition" [shape=box]
+		"OR_SPLIT--5. Evaluate the Competition_J872" -> "analyze the growth stage of competition"
+		"OR_JOIN--5. Evaluate the Competition_J872" [label=O fixedsize=true shape=diamond width=0.5]
+		"analyze the reputation of competition" -> "OR_JOIN--5. Evaluate the Competition_J872"
+		"know exact competition" -> "OR_JOIN--5. Evaluate the Competition_J872"
+		"analyze the growth stage of competition" -> "OR_JOIN--5. Evaluate the Competition_J872"
+		"check patents" [shape=box]
+		"OR_JOIN--5. Evaluate the Competition_J872" -> "check patents"
+	}
+	START_NODE -> "learn how to identify future failures"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"check patents" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the startup due diligence for a venture capitalist. It starts with learning how to identify future failures. 
+When learning how to identify future failures is completed, considering product necessity needs to be done. 
+Once considering product necessity occurs, one or more of the following paths should be executed: reviewing team chemistry, reviewing relationship to founder. 
+After that, the process is split into 2 parallel branches: checking cash flow and checking quarterly projections. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: analyzing the reputation of competition, knowing exact competition, analyzing the growth stage of competition. 
+Afterwards, checking patents should be done. 
+The process is now completed. 
+"
+}

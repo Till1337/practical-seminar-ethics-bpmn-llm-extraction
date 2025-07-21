@@ -1,0 +1,26 @@
+digraph order_fulfillment_process_29 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"record which products were taken from storage" [shape=box]
+		"confirm that payment has been received" -> "record which products were taken from storage"
+		"print packing slip" [shape=box]
+		"record which products were taken from storage" -> "print packing slip"
+		"load items into the delivery vehicle" [shape=box]
+		"print packing slip" -> "load items into the delivery vehicle"
+		"send a confirmation email to the customer" [shape=box]
+		"load items into the delivery vehicle" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It starts with confirming that payment has been received. 
+Once confirming that payment has been received occurs, recording which products were taken from storage needs to be done. 
+When recording which products were taken from storage is completed, printing packing slip needs to be done. 
+When printing packing slip is completed, you need to load items into the delivery vehicle.
+After loading items into the delivery vehicle, sending a confirmation email to the customer should be done. 
+The process is now completed. 
+"
+}

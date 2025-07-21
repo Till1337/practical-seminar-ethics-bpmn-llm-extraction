@@ -1,0 +1,47 @@
+digraph order_fulfillment_process_90 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"confirm that payment has been received" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_6IND" [label=O fixedsize=true shape=diamond width=0.5]
+		"confirm that payment has been received" -> "OR_SPLIT--2. Retrieving products from your inventory_6IND"
+		"request the ordered products from your inventory" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_6IND" -> "request the ordered products from your inventory"
+		"check that the products are in stock" [shape=box]
+		"OR_SPLIT--2. Retrieving products from your inventory_6IND" -> "check that the products are in stock"
+		"OR_JOIN--2. Retrieving products from your inventory_6IND" [label=O fixedsize=true shape=diamond width=0.5]
+		"request the ordered products from your inventory" -> "OR_JOIN--2. Retrieving products from your inventory_6IND"
+		"check that the products are in stock" -> "OR_JOIN--2. Retrieving products from your inventory_6IND"
+		"AND_SPLIT--3. Packaging products_IV3G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--2. Retrieving products from your inventory_6IND" -> "AND_SPLIT--3. Packaging products_IV3G"
+		"package the items securely" [shape=box]
+		"AND_SPLIT--3. Packaging products_IV3G" -> "package the items securely"
+		"print invoice" [shape=box]
+		"AND_SPLIT--3. Packaging products_IV3G" -> "print invoice"
+		"AND_JOIN--3. Packaging products_IV3G" [label="+" fixedsize=true shape=diamond width=0.5]
+		"package the items securely" -> "AND_JOIN--3. Packaging products_IV3G"
+		"print invoice" -> "AND_JOIN--3. Packaging products_IV3G"
+		"OR_SPLIT--4. Dispatching the products_O6UZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Packaging products_IV3G" -> "OR_SPLIT--4. Dispatching the products_O6UZ"
+		"examine your other orders for delivery overlaps" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_O6UZ" -> "examine your other orders for delivery overlaps"
+		"arrange the delivery" [shape=box]
+		"OR_SPLIT--4. Dispatching the products_O6UZ" -> "arrange the delivery"
+		"OR_JOIN--4. Dispatching the products_O6UZ" [label=O fixedsize=true shape=diamond width=0.5]
+		"examine your other orders for delivery overlaps" -> "OR_JOIN--4. Dispatching the products_O6UZ"
+		"arrange the delivery" -> "OR_JOIN--4. Dispatching the products_O6UZ"
+		"send a confirmation email to the customer" [shape=box]
+		"OR_JOIN--4. Dispatching the products_O6UZ" -> "send a confirmation email to the customer"
+	}
+	START_NODE -> "confirm that payment has been received"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"send a confirmation email to the customer" -> END_NODE
+	fontsize=15 label="\n\n
+The following text is about the order fulfillment process. It begins when you confirm that payment has been received. 
+After confirming that payment has been received, one or more of the following paths should be executed: requesting the ordered products from your inventory, checking that the products are in stock. 
+After that, the process is split into 2 parallel branches: packaging the items securely and printing invoice. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: examining your other orders for delivery overlaps, arranging the delivery. 
+Afterwards, sending a confirmation email to the customer needs to be done. 
+The process is now completed. 
+"
+}

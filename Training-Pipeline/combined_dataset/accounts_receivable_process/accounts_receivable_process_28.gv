@@ -1,0 +1,60 @@
+digraph accounts_receivable_process_28 {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"record the buyer's details" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MZTM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"record the buyer's details" -> "AND_SPLIT--2. Establish your credit practices_MZTM"
+		"run a credit check on the purchasing company" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MZTM" -> "run a credit check on the purchasing company"
+		"send a credit application form to the buyer" [shape=box]
+		"AND_SPLIT--2. Establish your credit practices_MZTM" -> "send a credit application form to the buyer"
+		"AND_JOIN--2. Establish your credit practices_MZTM" [label="+" fixedsize=true shape=diamond width=0.5]
+		"run a credit check on the purchasing company" -> "AND_JOIN--2. Establish your credit practices_MZTM"
+		"send a credit application form to the buyer" -> "AND_JOIN--2. Establish your credit practices_MZTM"
+		"AND_SPLIT--3. Invoicing_ZTWX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--2. Establish your credit practices_MZTM" -> "AND_SPLIT--3. Invoicing_ZTWX"
+		"check customer payment terms" [shape=box]
+		"AND_SPLIT--3. Invoicing_ZTWX" -> "check customer payment terms"
+		"generate the invoice" [shape=box]
+		"AND_SPLIT--3. Invoicing_ZTWX" -> "generate the invoice"
+		"send the invoice in your accounting software" [shape=box]
+		"generate the invoice" -> "send the invoice in your accounting software"
+		"AND_JOIN--3. Invoicing_ZTWX" [label="+" fixedsize=true shape=diamond width=0.5]
+		"check customer payment terms" -> "AND_JOIN--3. Invoicing_ZTWX"
+		"send the invoice in your accounting software" -> "AND_JOIN--3. Invoicing_ZTWX"
+		"OR_SPLIT--4. Tracking_BZSC" [label=O fixedsize=true shape=diamond width=0.5]
+		"AND_JOIN--3. Invoicing_ZTWX" -> "OR_SPLIT--4. Tracking_BZSC"
+		"make a second physical copy" [shape=box]
+		"OR_SPLIT--4. Tracking_BZSC" -> "make a second physical copy"
+		"establish monthly contact with your client" [shape=box]
+		"OR_SPLIT--4. Tracking_BZSC" -> "establish monthly contact with your client"
+		"record your activity digitally" [shape=box]
+		"make a second physical copy" -> "record your activity digitally"
+		"OR_JOIN--4. Tracking_BZSC" [label=O fixedsize=true shape=diamond width=0.5]
+		"record your activity digitally" -> "OR_JOIN--4. Tracking_BZSC"
+		"establish monthly contact with your client" -> "OR_JOIN--4. Tracking_BZSC"
+		"OR_SPLIT--5. Accounting for accounts receivable_68O9" [label=O fixedsize=true shape=diamond width=0.5]
+		"OR_JOIN--4. Tracking_BZSC" -> "OR_SPLIT--5. Accounting for accounts receivable_68O9"
+		"record the sales on credit of goods" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_68O9" -> "record the sales on credit of goods"
+		"record the sales on credit of services" [shape=box]
+		"OR_SPLIT--5. Accounting for accounts receivable_68O9" -> "record the sales on credit of services"
+		"OR_JOIN--5. Accounting for accounts receivable_68O9" [label=O fixedsize=true shape=diamond width=0.5]
+		"record the sales on credit of goods" -> "OR_JOIN--5. Accounting for accounts receivable_68O9"
+		"record the sales on credit of services" -> "OR_JOIN--5. Accounting for accounts receivable_68O9"
+	}
+	START_NODE -> "record the buyer's details"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Accounting for accounts receivable_68O9" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the accounts receivable process. It begins when you record the buyer's details. 
+After recording the buyer's details, the next tasks should be running a credit check on the purchasing company and sending a credit application form to the buyer, they should be done in parallel. 
+Once all pre-tasks are executed, then the process is split into 2 parallel branches: checking customer payment terms and generating the invoice. 
+Once generating the invoice occurs, sending the invoice in your accounting software should be done. 
+Once all pre-tasks are executed, then one or more of the following paths should be executed: making a second physical copy, establishing monthly contact with your client. 
+After making a second physical copy, recording your activity digitally should be done. 
+Afterwards, one or more of the following paths should be executed: recording the sales on credit of goods, recording the sales on credit of services. 
+The process is now completed. 
+"
+}

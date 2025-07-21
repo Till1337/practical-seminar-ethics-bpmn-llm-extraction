@@ -1,0 +1,33 @@
+digraph "final grades submission process_51" {
+	graph [rankdir=LR]
+	START_NODE [label="" shape=circle width=0.3]
+	subgraph CLUSTER_0 {
+		"unmute all gradebook columns" [shape=box]
+		"import gradebook" [shape=box]
+		"unmute all gradebook columns" -> "import gradebook"
+		"review grades summary" [shape=box]
+		"import gradebook" -> "review grades summary"
+		"recalculate the grades" [shape=box]
+		"review grades summary" -> "recalculate the grades"
+		"OR_SPLIT--5. Submit results to SSO_TRKP" [label=O fixedsize=true shape=diamond width=0.5]
+		"recalculate the grades" -> "OR_SPLIT--5. Submit results to SSO_TRKP"
+		"submit results to SSO" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_TRKP" -> "submit results to SSO"
+		"send examiners grade approval sheet" [shape=box]
+		"OR_SPLIT--5. Submit results to SSO_TRKP" -> "send examiners grade approval sheet"
+		"OR_JOIN--5. Submit results to SSO_TRKP" [label=O fixedsize=true shape=diamond width=0.5]
+		"submit results to SSO" -> "OR_JOIN--5. Submit results to SSO_TRKP"
+		"send examiners grade approval sheet" -> "OR_JOIN--5. Submit results to SSO_TRKP"
+	}
+	START_NODE -> "unmute all gradebook columns"
+	END_NODE [label="" shape=doublecircle width=0.2]
+	"OR_JOIN--5. Submit results to SSO_TRKP" -> END_NODE
+	fontsize=15 label="\n\n
+The text below is about the final grades submission process. It starts with unmuting all gradebook columns. 
+Once unmuting all gradebook columns occurs, importing gradebook needs to be done. 
+Once importing gradebook occurs, reviewing grades summary should be done. 
+Once reviewing grades summary occurs, recalculating the grades should be done. 
+Once recalculating the grades occurs, one or more of the following paths should be executed: submitting results to SSO, sending examiners grade approval sheet. 
+The process is now completed. 
+"
+}
