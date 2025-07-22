@@ -9,18 +9,7 @@ This project is divided into three main components, each housed in its own direc
 
 -   **`EthicalAPI/`**: A Flask-based API that serves as the backend for the plugin. It receives process model data, orchestrates the ethical analysis by calling a Large Language Model (LLM), and returns the structured results.
 
--   **`Training-Pipeline/`**: Includes all the scripts and data necessary for the automated training, analysis, and evaluation of the ethical analysis pipeline. This is where the core logic for applying prompting techniques and using an LLM-as-judge resides. For more details, see the `README.md` inside this directory.
-
-## Repository Structure
-
-- **Plugin/**:
-  This folder includes the main plugin developed as part of the project.
-
-- **EthicalAPI/**:
-  This folder contains the additional Ethical API Service.
-
-- **Training-Pipeline/**:
-  This folder contains the training pipeline as well as the data used for model training and evaluation.
+-   **`Training-Pipeline/`**: Includes all the scripts and data necessary for the automated training, analysis, and evaluation of the ethical analysis pipeline. This is where the core logic for applying prompting techniques for the evaulation part of the work and using an LLM-as-judge resides. For more details, see the `README.md` inside this directory.
 
 ## Getting Started
 
